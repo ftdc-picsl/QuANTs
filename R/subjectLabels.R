@@ -32,11 +32,17 @@ subjectLabels <- function( labels, image=NULL, mask=NULL, outfile=NULL ) {
   voxvol = prod(antsGetSpacing(labels))
   for ( i in mindBoggleLabels$Number ) {
     value = NA
+    count = sum(labels==i)
+    if (count > 0 ) {}
     if ( is.null(image) ) {
-      count = sum(labels==i)
-      if ( count > 0 ) {
-        value = count*voxvol
-      }
+      value = count*voxvol
+    }
+    else {
+      vals = image[labels==i]
+      mean = mean(vals)
+      min = min(vals)
+      max = max(vals)
+      sd = sqrt(var(vals))  
     }
   }
 
