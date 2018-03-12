@@ -14,11 +14,14 @@
   \item Lobe: lobe groupings
   \item Cortex: is this in cortex
   \item Bilateral: label grouping together bilateral regions
-}}
+ }}
 \usage{
 mindBoggleLabels
 }
 \description{
 A dataset containing mind boggle labels and associated information:
+}
+\examples{
+data(mindBoggleLabels)
 }
 \keyword{datasets}

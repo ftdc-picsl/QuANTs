@@ -12,5 +12,7 @@
 #'   \item Lobe: lobe groupings
 #'   \item Cortex: is this in cortex
 #'   \item Bilateral: label grouping together bilateral regions
-#' }
+#'  }
+#' @examples
+#' data(mindBoggleLabels)
 "mindBoggleLabels"
