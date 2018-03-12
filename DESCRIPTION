@@ -17,5 +17,6 @@ Imports:
 Suggests:
   ANTsR,
   testthat
+LazyData: true
 LinkingTo: Rcpp, ITKR, ANTsRCore
 RoxygenNote: 6.0.1
