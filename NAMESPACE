@@ -1,3 +1,4 @@
 export(subjectLabels)
+export(getLabelMask)
 
 importFrom(ANTsRCore, antsImageRead)
