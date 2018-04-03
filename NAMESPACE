@@ -1,4 +1,9 @@
 export(subjectLabels)
+export(subjectLabelStats)
+export(getLabelSystem)
 export(getLabelMask)
+export(mergeBilateralLabels)
+export(antsCorticalThicknessSummary)
+export(antsJointLabelFusionSummary)
 
 importFrom(ANTsRCore, antsImageRead)

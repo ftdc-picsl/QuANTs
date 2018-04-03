@@ -8,7 +8,8 @@ Authors@R: person("Jeffrey", "Duda", email = "jeff.duda@gmail.com",
 Description: Summarize image metrics using labeled T1 data
 License: Apache License 2.0
 Depends:
-  ANTsRCore
+  ANTsRCore,
+  optparse
 Imports:
   methods,
   Rcpp,
