@@ -14,6 +14,8 @@ option_list = list(
               help="filename of labeled image", metavar="ScalarImage.nii.gz"),
   make_option(c("-m", "--mask"), type="character", default=NA,
               help="filename of an image to mask the labels", metavar="MaskImage.nii.gz"),
+  make_option(c("-n", "--name"), type="character", default=NA,
+              help="name of measure in --image", metavar="thickness"),
   make_option(c("-x", "--maskvalue"), type="numeric", default=1,
               help="value in mask image to use", metavar="1"),
   make_option(c("-a", "--image"), type="character", default=NULL,
@@ -68,9 +70,10 @@ if ( opt$cortical ) {
 
 # Get volumes
 labelImg = antsImageRead(opt$labels)
-dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number)
+dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=opt$system)
 
 n = dim(dat)[1]
 dat = data.frame(id=rep(opt$id,n), time=rep(opt$time,n), dat )
 
+print(dat)
 write.csv(dat, opt$out, row.names=F)

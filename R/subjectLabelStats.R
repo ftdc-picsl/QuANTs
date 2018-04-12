@@ -8,7 +8,8 @@
 #' @param mask an image mask to apply to labels, or it's filename
 #' @param outfile filename for resulting data to be saved
 #'
-subjectLabelStats <- function( labels, image=NULL, mask=NULL, weights=NULL, outfile=NULL, labelSet=NULL, labelSystem="mindboggle" ) {
+subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
+  weights=NULL, outfile=NULL, labelSet=NULL, labelSystem="mindboggle", include.volume=TRUE ) {
 
   if ( is.character(labels) ) {
     labels = antsImageRead(labels)
@@ -27,22 +28,28 @@ subjectLabelStats <- function( labels, image=NULL, mask=NULL, weights=NULL, outf
   }
 
   if ( is.null(labelSet) ) {
+    print(labelSystem)
     if ( labelSystem=="mindboggle") {
       labelSet = mindBoggleLabels$number
     }
+    else if ( labelSystem=="antsct") {
+      labelSet = antsct$number
+    }
+    else if (labelSystem=="brain") {
+      labelSet = c(1)
+    }
     else {
-      stop("Only mindboggle labels are currently supported")
+      stop("Only mindboggle & antsct labels are currently supported")
     }
   }
 
+  dataRow = data.frame(system=NA, label=NA, measure=NA, type=NA, value=NA)
+
   voxvol = prod(antsGetSpacing(labels))
   volumes = rep(NA, length(labelSet))
-  outData = NA
-  if ( is.null(image) ) {
-      outData = data.frame(number=labelSet, volume=volumes)
-    }
-  else {
-    outData = data.frame(number=labelSet, volume=volumes, mean=volumes, median=volumes, min=volumes, max=volumes, sd=volumes)
+  outData = NULL
+  if ( !is.null(image) ) {
+    #outData = data.frame(number=labelSet, volume=volumes, mean=volumes, median=volumes, min=volumes, max=volumes, sd=volumes)
     if ( !antsImagePhysicalSpaceConsistency(labels, image) ) {
       #print("Resample image to label image space")
       #image = resampleImageToTarget(image, labels, interpType="genericLabel")
@@ -60,28 +67,41 @@ subjectLabelStats <- function( labels, image=NULL, mask=NULL, weights=NULL, outf
   }
 
   for ( i in 1:length(labelSet) ) {
+    print(labelSet[i])
     value = NA
     count = sum(labels==labelSet[i])
 
     if (count > 0 ) {
-      outData$volume[i] = count*voxvol
 
-      if (!is.null(image) ) {
+      if ( include.volume ) {
+        volumeRow = dataRow
+        volumeRow$value = count*voxvol
+        volumeRow$measure = "volume"
+        volumeRow$type = "numeric"
+        volumeRow$label = labelSet[i]
+        volumeRow$system = labelSystem
+        outData = rbind(outData,volumeRow)
+      }
+
+      if ( !is.null(image) ) {
         vals = image[labels==labelSet[i]]
-        outData$mean[i] = mean(vals)
-        outData$median[i] = median(vals)
-        outData$min[i] = min(vals)
-        outData$max[i] = max(vals)
-        outData$sd[i] = sqrt(var(vals))
+
+        dRows = rbind(dataRow,dataRow,dataRow,dataRow,dataRow,dataRow,dataRow)
+        dRows$measure=rep(measure,7)
+        dRows$type=c("mean", "median", "min", "max", "sd", "q1", "q3")
+        quant = quantile( vals, probs=c(0.25,0.75))
+        dRows$value=c( mean(vals), median(vals), min(vals), max(vals), sqrt(var(vals)), quant[1], quant[2] )
+        dRows$label=rep(labelSet[i],7)
+        dRows$system=rep(labelSystem,7)
+        outData=rbind(outData, dRows)
       }
     }
-    #print(outData[i,])
+
   }
 
   if ( !is.null(outfile) ) {
     write.csv(outData, outfile, row.names=F)
   }
-
   return(outData)
 
 }
