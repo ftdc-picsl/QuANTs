@@ -28,7 +28,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
   }
 
   if ( is.null(labelSet) ) {
-    print(labelSystem)
+    #print(labelSystem)
     if ( labelSystem=="mindboggle") {
       labelSet = mindBoggleLabels$number
     }
@@ -67,7 +67,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
   }
 
   for ( i in 1:length(labelSet) ) {
-    print(labelSet[i])
+    #print(labelSet[i])
     value = NA
     count = sum(labels==labelSet[i])
 

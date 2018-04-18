@@ -9,7 +9,8 @@ Description: Summarize image metrics using labeled T1 data
 License: Apache License 2.0
 Depends:
   ANTsRCore,
-  optparse
+  optparse,
+  reshape2
 Imports:
   methods,
   Rcpp,

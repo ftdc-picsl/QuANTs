@@ -2,6 +2,7 @@ export(subjectLabels)
 export(subjectLabelStats)
 export(getLabelSystem)
 export(getLabelMask)
+export(getQuant)
 export(mergeBilateralLabels)
 
 importFrom(ANTsRCore, antsImageRead)
