@@ -25,6 +25,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
   }
 
   dat = NULL
+  filenames = NULL
   for ( f in files ) {
     fDat = read.csv(f)
     if ( isQuants(fDat) ) {
@@ -90,15 +91,20 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
       }
 
       fDat = fDat[idx==1,]
+      filenames = rep(f, dim(fDat)[1])
       dat = rbind(dat, fDat)
     }
   }
+
+  uniqFiles = unique(filenames)
+  print(uniqFiles)
+  dat$file = basename(filenames)
 
   if ( as.wide ) {
     dat$name = paste(sep="_", dat$system,dat$label,dat$measure,dat$metric)
     dat = dcast(dat, id + date ~ name, value.var="value")
   }
-  return(dat)
+  return(list(data=dat, filenames=uniqFiles))
 
 
 }
