@@ -38,13 +38,41 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
         }
         idx = idx*sysIdx
       }
+
       if ( !is.null(label) ) {
-        labelIdx = idx*0
-        for ( l in label ) {
-          labelIdx[fDat$label==l] = 1
+        if ( !is.list(label) ) {
+          print("generic labels")
+          labelIdx = idx*0
+          for ( l in label ) {
+            labelIdx[fDat$label==l] = 1
+          }
+          idx = idx*labelIdx
         }
-        idx = idx*labelIdx
+        else {
+          print("system specific labels")
+          fullIdx = idx*0
+
+          for (i in 1:length(label) ) {
+            systemName = NULL
+            labelIdx = idx*0
+            systemIdx = idx*0
+            if ( !is.null(system) ) {
+              systemIdx[fDat$system == system[i]] = 1
+            }
+            else {
+              systemIdx = systemIdx+1
+            }
+
+            for ( l in label[[i]] ) {
+              labelIdx[fDat$label==l] = 1
+            }
+
+            fullIdx[labelIdx*systemIdx==1] = 1
+          }
+          idx = idx*fullIdx
+        }
       }
+
       if ( !is.null(measure) ) {
         measureIdx = idx*0
         for ( m in measure ) {
@@ -52,6 +80,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
         }
         idx = idx*measureIdx
       }
+
       if ( !is.null(metric) ) {
         metricIdx = idx*0
         for ( m in metric ) {
