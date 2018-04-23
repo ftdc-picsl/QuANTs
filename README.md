@@ -36,3 +36,13 @@ Usage: RScript quantsANTsCTSummary.R -d outpath -t inpath/t1.nii.gz -o outpath/s
 | directory | -d | --directory | full path name of directory where a single subject's antsCorticalThickness output is located |
 | T1-image | -t | --t1 | full path to image used as input for antsCorticalThickness |
 | output file | -o | --output | full path name of file to store output (preferred location is in 'stats' subdirectory of ACT output directory) |
+
+The output file includes:
+
+| system | measure | metric | description |
+| ---  | --- | --- | --- |
+| brain | volume | numeric | defined via binary brain extraction mask |
+| antsct | volume | numeric | defined via brain segmentation image |
+| antsct | thickness | mean, median, sd, max, min, q1, q3 | defined via cortical thickness image and cortex from brain segmentation |
+| antsct | T1_intentisty | mean, median, sd, max, min, q1, q3 | defined via original T1 image and brain segmentation |
+| antsct | N4_intentisty | mean, median, sd, max, min, q1, q3 | defined via brain segmentation bias corrected image and brain segmentation |
