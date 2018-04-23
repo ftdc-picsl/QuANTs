@@ -6,8 +6,22 @@ There are three main components to QuANTs.
 2. Rscripts used to generate .csv files to summarize measures using label systems
 3. R functions used to query to data stored in the .csv files
 
+# Labeling systems
+Currently, there are four different labeling systems supported by QuANTS
 
-# Output files
+* brain (mask) - a single binary mask indicating brain (=1) or background (=0)
+* antsct - the brain segmentation provided by antsCorticalThickness (ACT)
+  0. Background
+  1. CSF
+  2. Cortex
+  3. White matter
+  4. Deep gray
+  5. Brain stem
+  6. Cerebellum
+* mindboggle
+* mideval
+
+# Generating summary .csv files
 All generated .csv files store data in "long" format, where each
 row describes and records a single value. The columns are as follows:
 
@@ -25,14 +39,14 @@ All scripts for generating the .csv files are stored in inst/bin so that they
 are accessible after installation. These scripts include:
 
 ## quantsANTsCTSummary.R
-Purpose: Summarize various useful quantities from output of antsCorticalThickness
+Purpose: Summarize various useful quantities from output of ACT
 
 Usage: RScript quantsANTsCTSummary.R -d outpath -t inpath/t1.nii.gz -o outpath/stats/out.csv
 
 | option | flag | longflag | description |
 | --- | --- | --- | --- |
-| directory | -d | --directory | full path name of directory where a single subject's antsCorticalThickness output is located |
-| T1-image | -t | --t1 | full path to image used as input for antsCorticalThickness |
+| directory | -d | --directory | full path name of directory where a single subject's ACT output is located |
+| T1-image | -t | --t1 | full path to image used as input for ACT |
 | output file | -o | --output | full path name of file to store output (preferred location is in 'stats' subdirectory of ACT output directory) |
 
 The output file includes:
@@ -47,6 +61,6 @@ The output file includes:
 
 Examples: Here we assume input is stored in /path/subjects/ and output is stored in /path/act/
 
-To run in serial (from /path/):
+To run in serial:
 
-for i in `ls `
+for i in `ls /path/subjects`; do for j in `ls /path/subjects/$i`; Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/$i/$j/stats/${i}_${j}_qc.csv; done; done
