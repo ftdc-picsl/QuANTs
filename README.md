@@ -1,5 +1,11 @@
 # QuANTs
-Quality control, quantifying regional values, and querying of ANTs output
+Quality control, quantifying regional values, and querying of ANTs output.
+There are three main components to QuANTs.
+
+1. Label system definitions that define the relationship between labels and anatomy
+2. Rscripts used to generate .csv files to summarize measures using label systems
+3. R functions used to query to data stored in the .csv files
+
 
 # Output files
 All generated .csv files store data in "long" format, where each
