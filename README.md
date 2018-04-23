@@ -63,4 +63,4 @@ Examples: Here we assume input is stored in /path/subjects/ and output is stored
 
 To run in serial:
 
-for i in `ls /path/subjects`; do for j in `ls /path/subjects/$i`; Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/$i/$j/stats/${i}_${j}_qc.csv; done; done
+for i in \`ls /path/subjects\`; do for j in \`ls /path/subjects/$i\`; Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/$i/$j/stats/${i}_${j}_qc.csv; done; done
