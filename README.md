@@ -61,6 +61,10 @@ The output file includes:
 
 Examples: Here we assume input is stored in /path/subjects/ and output is stored in /path/act/
 
-To run in serial:
+To run in serial for a data set:
 
-for i in \`ls /path/subjects\`; do for j in \`ls /path/subjects/$i\`; Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/$i/$j/stats/${i}_${j}_qc.csv; done; done
+for i in \`ls /path/subjects\`; do for j in \`ls /path/subjects/$i\`; Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/${i}/${j}/stats/${i}_${j}_qc.csv; done; done
+
+To run in parallel for a data set:
+
+for i in \`ls /path/subjects\`; do for j in \`ls /path/subjects/$i\`; mkdir /path/act/${i}/${j}/stats; echo "#!/bin/bash" > /path/act/${i}/${j}/stats/${i}_{j}_qc.sh; echo "Rscript  quantsANTsCTSummary.R -d /path/act/${i}/${j} -t /path/subjects/${i}/${j}/MPRAGE/\*MPRAGE.nii.gz -o /path/act/${i}/${j}/stats/${i}_${j}_qc.csv" > /path/act/${i}/${j}/stats/${i}_{j}_qc.sh; qsub ${i}_{j}_qc.sh -o /path/act/${i}/${j}/stats/${i}_{j}_qc.stderr -e /path/act/${i}/${j}/stats/${i}_{j}_qc.stderr; done; done
