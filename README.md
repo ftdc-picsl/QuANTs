@@ -31,7 +31,7 @@ This scripts produces a .csv file with a number of measures, defined as follows:
 
 Usage: RScript quantsANTsCTSummary.R
 
-| option | flag | long-flag | description |
+| option | flag | longflag | description |
 | --- | --- | --- | --- |
 | directory | -d | --directory | full path name of directory where a single subject's antsCorticalThickness output is located |
 | T1-image | -t | --t1 | full path to image used as input for antsCorticalThickness |
