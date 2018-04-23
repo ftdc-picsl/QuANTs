@@ -20,6 +20,7 @@ are accessible after installation. These scripts include:
 
 ## quantsANTsCTSummary.R
 Purpose: Summarize various useful quantities from output of antsCorticalThickness
+
 Usage: RScript quantsANTsCTSummary.R -d outpath -t inpath/t1.nii.gz -o outpath/stats/out.csv
 
 | option | flag | longflag | description |
