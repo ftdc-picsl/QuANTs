@@ -1,5 +1,5 @@
 # QuANTs
-Summarize values from ANTs/Pipedream processed data
+Quality control, quantifying regional values, and querying of ANTs output
 
 # Output files
 All generated .csv files store data in "long" format, where each
