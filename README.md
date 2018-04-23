@@ -4,6 +4,7 @@ Summarize values from ANTs/Pipedream processed data
 # Output files
 All generated .csv files store data in "long" format, where each
 row describes and records a single value. The columns are as follows:
+
 | column name | description |
 | --- | --- |
 | id | subject ID |
