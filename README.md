@@ -36,5 +36,11 @@ The output file includes:
 | brain | volume | numeric | defined via binary brain extraction mask |
 | antsct | volume | numeric | defined via brain segmentation image |
 | antsct | thickness | mean, median, sd, max, min, q1, q3 | defined via cortical thickness image and cortex from brain segmentation |
-| antsct | T1_intentisty | mean, median, sd, max, min, q1, q3 | defined via original T1 image and brain segmentation |
-| antsct | N4_intentisty | mean, median, sd, max, min, q1, q3 | defined via brain segmentation bias corrected image and brain segmentation |
+| antsct | T1_intensity | mean, median, sd, max, min, q1, q3 | defined via original T1 image and brain segmentation |
+| antsct | N4_intensity | mean, median, sd, max, min, q1, q3 | defined via brain segmentation bias corrected image and brain segmentation |
+
+Examples: Here we assume input is stored in /path/subjects/ and output is stored in /path/act/
+
+To run in serial (from /path/):
+
+for i in `ls `
