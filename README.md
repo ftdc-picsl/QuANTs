@@ -9,7 +9,7 @@ row describes and records a single value. The columns are as follows:
 | --- | --- |
 | id | subject ID |
 | date | timestamp indicating when images were acquired |
-| system | name of labeling system used for this measure ( brain, anstsct, mindboggle, etc ) |
+| system | name of labeling system used for this measure ( brain, antsct, mindboggle, etc ) |
 | label | label number |
 | measure | what is being measured ( volume, thickness, FA, etc) |
 | metric | how is measure summarized ( numeric, mean, max, etc) |
