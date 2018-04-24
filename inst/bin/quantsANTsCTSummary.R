@@ -58,7 +58,7 @@ gmpImg = antsImageRead(gmp[1])
 bdat = subjectLabelStats(maskImg, labelSystem="brain")
 
 # Tisse volumes - ignore cortex since we will mask that by thickness values
-dat = subjectLabelStats(segImg, labelSystem="antsct", labelSet=c(1,3,4,5,6) )
+dat = subjectLabelStats(segImg, labelSystem="antsct", labelSet=c(1,2,3,4,5,6) )
 
 # T1 intensity
 datt1 = subjectLabelStats(segImg, image=t1Img, measure="T1_intensity", labelSystem="antsct", include.volume=F )
@@ -72,10 +72,10 @@ mask2[ thkImg <= 0 ] = 0
 mask2[ mask2 > 0] = 1
 
 # Cortical thickness
-dat2 = subjectLabelStats(segImg, mask=mask2, image=thkImg, labelSet=c(2), measure="thickness", labelSystem="antsct")
+dat2 = subjectLabelStats(segImg, mask=mask2, image=thkImg, labelSet=c(2), measure="thickness", labelSystem="antsct", include.volume=F)
 
 # GMP
-datGMP = subjectLabelStats(segImg, mask=mask2, image=gmpImg, labelSet=c(2), measure="gmp", labelSystem="antsct")
+datGMP = subjectLabelStats(segImg, mask=mask2, image=gmpImg, labelSet=c(2), measure="gmp", labelSystem="antsct", include.volume=F)
 
 dat = rbind(bdat, dat, dat2, datn4, datt1, datGMP)
 dat = data.frame(id=id, date=date, dat )
