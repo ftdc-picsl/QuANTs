@@ -27,7 +27,7 @@ mask = list.files(path=opt$directory, pattern=glob2rx("*_BrainExtractionMask.nii
 seg = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentation.nii.gz"), full.names=T)
 thk = list.files(path=opt$directory, pattern=glob2rx("*_CorticalThickness.nii.gz"), full.names=T)
 n4 = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentation0N4.nii.gz"), full.names=T)
-
+gmp = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentationPosteriors2.nii.gz"),full.names=T)
 
 if ( length(mask) < 1 ) {
   stop("Brain extraction mask not found")
@@ -37,6 +37,8 @@ if ( length(mask) < 1 ) {
   stop("Cortical thickness image not found")
 } else if ( length(n4) < 1 ) {
   stop("N4 image not found")
+} else if ( length(gmp) < 1 ) {
+  stop("GMP image not found")
 }
 
 if ( !file.exists(opt$t1) )
@@ -50,6 +52,7 @@ segImg = antsImageRead(seg[1])
 thkImg = antsImageRead(thk[1])
 n4Img = antsImageRead(n4[1])
 t1Img = antsImageRead(opt$t1)
+gmpImg = antsImageRead(gmp[1])
 
 # Brain volume
 bdat = subjectLabelStats(maskImg, labelSystem="brain")
@@ -71,7 +74,10 @@ mask2[ mask2 > 0] = 1
 # Cortical thickness
 dat2 = subjectLabelStats(segImg, mask=mask2, image=thkImg, labelSet=c(2), measure="thickness", labelSystem="antsct")
 
-dat = rbind(bdat, dat, dat2, datn4, datt1)
+# GMP
+datGMP = subjectLabelStats(segImg, mask=mask2, image=gmpImg, labelSet=c(2), measure="gmp", labelSystem="antsct")
+
+dat = rbind(bdat, dat, dat2, datn4, datt1, datGMP)
 dat = data.frame(id=id, date=date, dat )
 
 print(dat)
