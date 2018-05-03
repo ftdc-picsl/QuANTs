@@ -7,9 +7,13 @@
 #' @param image the image whose values are summarized, or its filename
 #' @param mask an image mask to apply to labels, or it's filename
 #' @param outfile filename for resulting data to be saved
+#' @param measure name of the measure in 'image' (default="measure")
+#' @param labelSystem name of label system (default="mindboggle")
+#' @param include.volume should volumes be calculated (default=TRUE)
+#' @param force.resample resample image to match label space if necessary (default=FALSE)
 #'
 subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
-  weights=NULL, outfile=NULL, labelSet=NULL, labelSystem="mindboggle", include.volume=TRUE ) {
+  weights=NULL, outfile=NULL, labelSet=NULL, labelSystem="mindboggle", include.volume=TRUE, force.resample=FALSE ) {
 
   if ( is.character(labels) ) {
     labels = antsImageRead(labels)
@@ -53,15 +57,25 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
     if ( !antsImagePhysicalSpaceConsistency(labels, image) ) {
       #print("Resample image to label image space")
       #image = resampleImageToTarget(image, labels, interpType="genericLabel")
-      image = resampleImageToTarget(image, labels, interpType="linear")
-      warning("Image was resampled to match physical space of labeled image")
+      if ( force.resample ) {
+        image = resampleImageToTarget(image, labels, interpType="linear")
+        warning("Image was resampled to match physical space of labeled image")
+      }
+      else {
+        stop("Image not in same physical space as labeled image")
+      }
     }
   }
 
   if ( !is.null(mask) ) {
     if ( !antsImagePhysicalSpaceConsistency(mask, labels) ) {
-      #print("Resample mask")
-      mask = resampleImageToTarget(mask, labels, interpType="nearestNeighbor")
+
+      if ( force.resample ) {
+        mask = resampleImageToTarget(mask, labels, interpType="nearestNeighbor")
+      }
+      else {
+        stop("Mask not in same space as label image")
+      }
     }
     labels = labels*mask
   }

@@ -55,7 +55,7 @@ The output file includes:
 | system | measure | metric | description |
 | ---  | --- | --- | --- |
 | brain | volume | numeric | defined via binary brain extraction mask |
-| antsct | volume | numeric | defined via brain segmentation image |
+| antsct | volume | numeric | defined via brain segmentation image, cortex is also masked by thickness > 0 |
 | antsct | thickness | mean, median, sd, max, min, q1, q3 | defined via cortical thickness image and cortex from brain segmentation |
 | antsct | gmp | mean, median, sd, max, min, q1, q3 | defined with cortex segmentation and cortex posterior image |
 | antsct | T1_intensity | mean, median, sd, max, min, q1, q3 | defined via original T1 image and brain segmentation |
