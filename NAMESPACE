@@ -5,5 +5,6 @@ export(getLabelMask)
 export(getQuants)
 export(isQuants)
 export(mergeBilateralLabels)
+export(quants_qc)
 
 importFrom(ANTsRCore, antsImageRead)

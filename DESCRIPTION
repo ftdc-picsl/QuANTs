@@ -10,7 +10,9 @@ License: Apache License 2.0
 Depends:
   ANTsRCore,
   optparse,
-  reshape2
+  reshape2,
+  shiny,
+  shinyFiles
 Imports:
   methods,
   Rcpp,

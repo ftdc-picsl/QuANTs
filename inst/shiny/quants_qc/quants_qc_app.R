@@ -1,8 +1,10 @@
 library(shiny)
 library(shinyFiles)
-source("directoryInput.R")
+#source("directoryInput.R")
 
-defaultPath="/mnt/chead/grossman/pipedream2018/crossSectional/antsct"
+
+
+defaultPath="/data/grossman/pipedream2018/crossSectional/antsct"
 
 load_subject = function( id, date, path ) {
     print("load_subject")
@@ -10,7 +12,7 @@ load_subject = function( id, date, path ) {
     #t1 = list.files(path=subpath, pattern=glob2rx("*t1Head.nii.gz"), full.names=T)
     t1 = list.files(path=subpath,  pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
     seg = list.files(path=subpath, pattern=glob2rx("*BrainSegmentation.nii.gz"), full.names=T)
-    snapCall = paste("/Applications/ITK-SNAP.app/Contents/MacOS/ITK-SNAP -g",t1,"-s",seg)
+    snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
     system(paste(snapCall, "&"))
     return(snapCall)
 }
