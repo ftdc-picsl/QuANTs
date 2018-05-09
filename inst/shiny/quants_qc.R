@@ -1,5 +1,8 @@
 library(shiny)
 library(shinyFiles)
+source("directoryInput.R")
+
+defaultPath="/mnt/chead/grossman/pipedream2018/crossSectional/antsct"
 
 load_subject = function( id, date, path ) {
     print("load_subject")
@@ -32,8 +35,15 @@ ui <- fluidPage(
     # Sidebar panel for inputs ----
     sidebarPanel(
 
-      textInput("path", "Path to base directory of ACT output",
-        value="/mnt/chead/grossman/pipedream2018/crossSectional/antsct" ),
+      #textInput("path", "Path to base directory of ACT output",
+      #  value=defaultPath ),
+
+      #directoryInput('directory', label = 'select a directory', value=defaultPath),
+
+      fluidRow( column(12,h5("Path to base directory of ACT output") )),
+      fluidRow(
+        column(2, div(style="padding: 0px 0px;", shinyDirButton("path", "Browse...", "ACT"))),
+        column(10, div(style="padding: 0px 0px; margin-left:-5px", verbatimTextOutput("path")))),
 
       # Input: Select a file ----
       fileInput("file1", "Choose subject list",
@@ -47,12 +57,12 @@ ui <- fluidPage(
                            "text/comma-separated-values,text/plain",
                            ".csv")),
 
-      shinyFilesButton('files', 'File select', 'Please select a file', FALSE),
+      #shinyFilesButton('files', 'File select', 'Please select a file', FALSE),
 
       # Horizontal line ----
       tags$hr(),
 
-      h2(textOutput("text1")),
+      h4(textOutput("text1")),
 
       tags$hr(),
 
@@ -94,10 +104,13 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   roots = c(wd='/')
-  #shinyFileChoose(input, 'files', session=session, roots=roots, filetypes=c('', 'txt'))
+  shinyFileChoose(input, 'files', session=session, roots=roots, filetypes=c('', 'txt'))
 
   options(DT.options = list(pageLength = 25))
-  values = reactiveValues(subjects=NULL,id="NA", date="NA", loaded=0, qcData=NULL, snap=NULL)
+  values = reactiveValues(subjects=NULL,id="NA", date="NA", loaded=0, qcData=NULL, snap=NULL,
+                          path=defaultPath)
+
+  output$path = renderText({values$path})
 
   shinyFileSave(input, 'save', roots=roots, session=session, restrictions=system.file(package='base'))
 
@@ -109,6 +122,19 @@ server <- function(input, output, session) {
   #output$down = downloadHandler(
   #  print("download handler")
   #)
+
+  shinyDirChoose(input, "path", roots=roots)
+  observeEvent(input$path, {
+    print("Choose ACT path")
+    values$path = parseDirPath(roots, input$path)
+  })
+
+  #observeEvent( ignoreNULL=TRUE, eventExp={input$directory},
+  #              handlerExp={
+  #              newpath = choose.dir(default = readDirectoryInput(session, 'directory'))
+  #              values$path = newpath[length(newpath)]
+  #              updateDirectoryInput(session, 'directory', value = values$path)
+  #              })
 
   observeEvent( input$save, {
     print("input$save called")
@@ -208,6 +234,8 @@ server <- function(input, output, session) {
   #})
 
   output$text1 = renderText({paste("ID:",values$id,"Date:",values$date)})
+
+  output
 
   output$qc = renderTable({
     req(values$qcData)
