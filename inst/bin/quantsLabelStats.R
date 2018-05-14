@@ -8,8 +8,8 @@ option_list = list(
               help="subject ID", metavar="ID"),
   make_option(c("-t", "--time"), type="character", default=NA,
               help="timestamp for data", metavar="yyyy_mm_dd_time"),
-  make_option(c("-c", "--cortical"), type="logical", action="store_true",default=FALSE,
-              help="only examine cortical labels", metavar="logical"),
+  make_option(c("-c", "--cortical"), type="logical", default=NA,
+              help="only examine non-cortical labels(=FALSE), only examine cortical(=TRUE)", metavar="logical"),
   make_option(c("-l", "--labels"), type="character", default=NULL,
               help="filename of labeled image", metavar="ScalarImage.nii.gz"),
   make_option(c("-m", "--mask"), type="character", default=NA,
@@ -62,9 +62,15 @@ if ( file.exists(opt$mask) ) {
   mask[ mask != 0 ] = 1
 }
 
-if ( opt$cortical ) {
-  print("Cortical labels only")
-  sys=sys[sys$cortex==1,]
+if ( !is.na(opt$cortical) ) {
+  if ( opt$cortical ) {
+    print("Cortical labels only")
+    sys=sys[sys$cortex==1,]
+  }
+  else {
+    print("Non-cortical labels only")
+    sys=sys[sys$cortex==0,]
+  }
 }
 
 

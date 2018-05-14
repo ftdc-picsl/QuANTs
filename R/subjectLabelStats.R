@@ -47,7 +47,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
     }
   }
 
-  dataRow = data.frame(system=NA, label=NA, measure=NA, type=NA, value=NA)
+  dataRow = data.frame(system=NA, label=NA, measure=NA, metric=NA, value=NA)
 
   voxvol = prod(antsGetSpacing(labels))
   volumes = rep(NA, length(labelSet))
@@ -91,7 +91,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
         volumeRow = dataRow
         volumeRow$value = count*voxvol
         volumeRow$measure = "volume"
-        volumeRow$type = "numeric"
+        volumeRow$metric = "numeric"
         volumeRow$label = labelSet[i]
         volumeRow$system = labelSystem
         outData = rbind(outData,volumeRow)
@@ -102,7 +102,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
 
         dRows = rbind(dataRow,dataRow,dataRow,dataRow,dataRow,dataRow,dataRow)
         dRows$measure=rep(measure,7)
-        dRows$type=c("mean", "median", "min", "max", "sd", "q1", "q3")
+        dRows$metric=c("mean", "median", "min", "max", "sd", "q1", "q3")
         quant = quantile( vals, probs=c(0.25,0.75))
         dRows$value=c( mean(vals), median(vals), min(vals), max(vals), sqrt(var(vals)), quant[1], quant[2] )
         dRows$label=rep(labelSet[i],7)

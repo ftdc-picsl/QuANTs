@@ -1,6 +1,12 @@
 
+makeQuants <- function(x) {
+  names(x) =  c("id","date","system","label","measure","metric","value")
+  return(x)
+}
+
 isQuants <- function(x) {
   return( sum(names(x) == c("id","date","system","label","measure","metric","value"))==7 )
+  #return( TRUE )
 }
 
 getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE ) {
@@ -17,9 +23,12 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     }
 
     for (d in subPaths) {
+
       statDir = paste(sep="", d, "/stats")
-      subFiles = list.files(path=statDir, pattern=glob2rx("*.csv"), full.names=T)
-      files = c(files, subFiles)
+      if ( dir.exists(statDir) ) {
+        subFiles = list.files(path=statDir, pattern=glob2rx("*.csv"), full.names=T)
+        files = c(files, subFiles)
+      }
     }
 
   }
@@ -28,6 +37,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
   filenames = NULL
   for ( f in files ) {
     fDat = read.csv(f)
+
     if ( isQuants(fDat) ) {
 
       idx = rep(1, dim(fDat)[1])
@@ -91,13 +101,12 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
       }
 
       fDat = fDat[idx==1,]
-      filenames = rep(f, dim(fDat)[1])
+      filenames = c(filenames, rep(f, dim(fDat)[1]))
       dat = rbind(dat, fDat)
     }
   }
 
   uniqFiles = unique(filenames)
-  print(uniqFiles)
   dat$file = basename(filenames)
 
   if ( as.wide ) {
@@ -105,6 +114,5 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     dat = dcast(dat, id + date ~ name, value.var="value")
   }
   return(list(data=dat, filenames=uniqFiles))
-
 
 }

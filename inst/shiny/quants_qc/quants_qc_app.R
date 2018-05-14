@@ -9,8 +9,8 @@ defaultPath="/data/grossman/pipedream2018/crossSectional/antsct"
 load_subject = function( id, date, path ) {
     print("load_subject")
     subpath = paste(sep="/", path, id, date )
-    #t1 = list.files(path=subpath, pattern=glob2rx("*t1Head.nii.gz"), full.names=T)
-    t1 = list.files(path=subpath,  pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
+    t1 = list.files(path=subpath, pattern=glob2rx("*t1Head.nii.gz"), full.names=T)
+    #t1 = list.files(path=subpath,  pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
     seg = list.files(path=subpath, pattern=glob2rx("*BrainSegmentation.nii.gz"), full.names=T)
     snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
     system(paste(snapCall, "&"))
@@ -37,29 +37,30 @@ ui <- fluidPage(
     # Sidebar panel for inputs ----
     sidebarPanel(
 
-      #textInput("path", "Path to base directory of ACT output",
-      #  value=defaultPath ),
-
-      #directoryInput('directory', label = 'select a directory', value=defaultPath),
-
       fluidRow( column(12,h5("Path to base directory of ACT output") )),
       fluidRow(
         column(2, div(style="padding: 0px 0px;", shinyDirButton("path", "Browse...", "ACT"))),
         column(10, div(style="padding: 0px 0px; margin-left:-5px", verbatimTextOutput("path")))),
 
       # Input: Select a file ----
-      fileInput("file1", "Choose subject list",
-                multiple = TRUE,
-                accept = c("text/csv",
-                         "text/comma-separated-values,text/plain",
-                         ".csv")),
+      #fileInput("file1", "Choose subject list",
+      #          multiple = TRUE,
+      #          accept = c("text/csv",
+      #                   "text/comma-separated-values,text/plain",
+      #                   ".csv")),
 
-      fileInput("load", "Load a QC file", multiple = TRUE,
-                accept = c("text/csv",
-                           "text/comma-separated-values,text/plain",
-                           ".csv")),
+      #fileInput("load", "Load a QC file", multiple = TRUE,
+      #          accept = c("text/csv",
+      #                     "text/comma-separated-values,text/plain",
+      #                     ".csv")),
+      fluidRow(
+        column(4, shinyFilesButton('loadsubs', 'Load Subjects File', 'load file...', multiple=FALSE)),
+        column(4, shinyFilesButton('load', 'Load QC File', 'load file...', multiple=FALSE))
+      ),
 
-      #shinyFilesButton('files', 'File select', 'Please select a file', FALSE),
+      tags$hr(),
+
+      actionButton("start", "Start reviewing"),
 
       # Horizontal line ----
       tags$hr(),
@@ -91,9 +92,11 @@ ui <- fluidPage(
     # Main panel for displaying outputs ----
     mainPanel(
 
-      # Output: Data file ----
-      #div(style="display: inline-block;vertical-align:top; width: 300px;",downloadButton("down", "Save QC Data")),
-      shinySaveButton('save', 'Save file', 'Save file as...', filetype=list(csv='csv')),
+      fluidRow(
+        column(2, div(style="padding: 0px 0px;", shinySaveButton('save', 'Save file', 'Save file as...', filetype=list(csv='csv')))),
+        column(10, div(style="padding: 0px 0px; margin-left:-5px", verbatimTextOutput("savefile")))),
+
+
       #verbatimTextOutput('savefile'),
       tableOutput("qc")
 
@@ -106,46 +109,96 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   roots = c(wd='/')
-  shinyFileChoose(input, 'files', session=session, roots=roots, filetypes=c('', 'txt'))
+  #shinyFileChoose(input, 'files', session=session, roots=roots, filetypes=c('', 'txt'))
 
   options(DT.options = list(pageLength = 25))
   values = reactiveValues(subjects=NULL,id="NA", date="NA", loaded=0, qcData=NULL, snap=NULL,
-                          path=defaultPath)
+                          path=defaultPath, save="NA", subfile=NULL)
 
-  output$path = renderText({values$path})
+  observeEvent(input$start, {
+    print("start reviewing")
+    req(values$subjects)
+
+    nSubs = dim(values$subjects)[1]
+    values$id = values$subjects$ID[1]
+    values$date = values$subjects$Date[1]
+    if (nSubs > 1) {
+      values$subjects = values$subjects[2:nSubs,]
+    }
+    else {
+      values$subjects = NULL
+    }
+
+    if (values$id != "NA") {
+      values$snap = load_subject(values$id, values$date, values$path)
+    }
+
+  })
+
+  shinyFileChoose(input, 'loadsubs', roots=roots, session=session, filetypes=c('txt', 'csv') )
+  observeEvent( input$loadsubs, {
+    print("input$load subjects called")
+    fname = parseFilePaths(roots, input$loadsubs)
+    print( fname )
+
+    df <- read.csv(as.character(fname$datapath), sep = "/", header = FALSE )
+    names(df) = c("ID", "Date")
+
+    if ( !is.null(values$qcData) ) {
+        subList = paste(df$ID, df$Date)
+        datList = paste(values$qcData$INDDID, values$qcData$Timepoint)
+        df = df[!(subList %in% datList), ]
+    }
+
+    values$subjects = df
+    values$loaded = 1
+
+  })
+
+  shinyFileChoose(input, 'load', roots=roots, session=session, filetypes=c('', 'csv') )
+  observeEvent( input$load, {
+    print( "input$load QC event called" )
+    fname = parseFilePaths(roots, input$load)
+    print( fname$datapath )
+
+    loadData = read.csv(as.character(fname$datapath))
+    print(names(loadData))
+    print(loadData)
+
+    values$qcData = rbind(values$qcData, loadData)
+
+    values$save = as.character(fname$datapath)
+
+    # check againts subjects list
+    print(values$subjects)
+
+    subList = paste(values$subjects$ID, values$subjects$Date)
+
+    datList = paste(values$qcData$INDDID, values$qcData$Timepoint)
+
+    #print( subList %in% datList )
+    values$subjects = values$subjects[!(subList %in% datList), ]
+
+  })
 
   shinyFileSave(input, 'save', roots=roots, session=session, restrictions=system.file(package='base'))
-
-  #output$savefile <- renderPrint({
-  #  print("output$savefile")
-  #  parseSavePath(roots, input$save)
-#})
-
-  #output$down = downloadHandler(
-  #  print("download handler")
-  #)
+  observeEvent( input$save, {
+    print("input$save called")
+    fname=parseSavePath(roots, input$save)
+    print(fname)
+    print(fname$datapath)
+    values$save = as.character(fname$datapath)
+    write.csv( values$qcData, values$save, row.names=F )
+  })
+  output$savefile = renderText((values$save))
 
   shinyDirChoose(input, "path", roots=roots)
   observeEvent(input$path, {
     print("Choose ACT path")
     values$path = parseDirPath(roots, input$path)
   })
+  output$path = renderText({values$path})
 
-  #observeEvent( ignoreNULL=TRUE, eventExp={input$directory},
-  #              handlerExp={
-  #              newpath = choose.dir(default = readDirectoryInput(session, 'directory'))
-  #              values$path = newpath[length(newpath)]
-  #              updateDirectoryInput(session, 'directory', value = values$path)
-  #              })
-
-  observeEvent( input$save, {
-    print("input$save called")
-    fname=parseSavePath(roots, input$save)
-    print(fname)
-    print(fname$datapath)
-
-    write.csv( values$qcData, as.character(fname$datapath), row.names=F )
-  })
 
   observeEvent(input$t1, {
     if ( input$t1 == 1 ) {
@@ -165,9 +218,9 @@ server <- function(input, output, session) {
     }
   })
 
-  observeEvent(input$load, {
-    print("Load QC Data")
-  })
+  #observeEvent(input$load, {
+  #  print("Load QC Data")
+  #})
 
   observeEvent(input$submit, {
     if ( values$id != "NA") {
@@ -207,37 +260,28 @@ server <- function(input, output, session) {
       updateRadioButtons(session, "seg", selected=0)
       updateTextInput(session, "notes", value="")
 
-      psCall = paste(sep="", 'ps | grep "', values$snap, '"| grep -v grep')
-      print(psCall)
-      inf = system(psCall,intern=T)
-      if (length(inf) > 0 ) {
-        killid = get_kill_id(inf)
-        system(paste("kill",killid))
+      if (values$save != "NA") {
+        print("Save submission")
+        write.csv(row.names=F, values$qcData, values$save)
       }
 
+      #psCall = paste(sep="", 'ps | grep "', values$snap, '"| grep -v grep')
+      #print(psCall)
+      #inf = system(psCall,intern=T)
+      #if (length(inf) > 0 ) {
+      #  killid = get_kill_id(inf)
+      #  system(paste("kill",killid))
+      #}
+
       if (values$id != "NA") {
-        values$snap = load_subject(values$id, values$date, input$path)
+        values$snap = load_subject(values$id, values$date, values$path)
       }
 
 
     }
   })
 
-  #values$subjects = {
-  #  req(input$file1)
-  #  df = read.csv(input$file1$datapath, sep="/", header=F )
-  #  names(df) = c("ID", "Date")
-  #  return(df)
-  #}
-
-  #output$contents = renderTable( {
-  #  req(values$subjects)
-  #  return(values$subjects)
-  #})
-
   output$text1 = renderText({paste("ID:",values$id,"Date:",values$date)})
-
-  output
 
   output$qc = renderTable({
     req(values$qcData)
@@ -250,19 +294,21 @@ server <- function(input, output, session) {
     # and uploads a file, head of that data file by default,
     # or all rows if selected, will be shown.
 
-    req(input$file1)
+    req(values$subjects)
 
     if ( !values$loaded  ) {
       df <- read.csv(input$file1$datapath,
                sep = "/",
                header = FALSE )
       names(df) = c("ID", "Date")
-      values$id = df$ID[1]
-      values$date = df$Date[1]
+
+      #values$id = df$ID[1]
+      #values$date = df$Date[1]
       values$loaded = 1
 
-      values$snap = load_subject( values$id, values$date, input$path)
-      values$subjects = df[-1,]
+      #values$snap = load_subject( values$id, values$date, values$path)
+      #values$subjects = df[-1,]
+      values$subjects = df
     }
     df = values$subjects
     return(df)

@@ -6,6 +6,8 @@ option_list = list(
               help="directory with a subject's ACT output", metavar="character"),
   make_option(c("-t", "--t1"), type="character", default=NA,
               help="raw T1 filename", metavar="T1.nii.gz"),
+  make_option(c("-s", "--timestamp"), type="character", default=NA,
+              help="time stamp of data acquisition", metavar="YYYYMMDD"),
   make_option(c("-o", "--out"), type="character", default="out.csv",
               help="output file name [default= %default]", metavar="out.csv")
 
@@ -21,13 +23,17 @@ if (is.na(opt$directory) ) {
 
 arr = strsplit(opt$directory, "/")[[1]]
 id = arr[length(arr)-1]
-date = arr[length(arr)]
 
-mask = list.files(path=opt$directory, pattern=glob2rx("*_BrainExtractionMask.nii.gz"), full.names=T)
-seg = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentation.nii.gz"), full.names=T)
-thk = list.files(path=opt$directory, pattern=glob2rx("*_CorticalThickness.nii.gz"), full.names=T)
-n4 = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentation0N4.nii.gz"), full.names=T)
-gmp = list.files(path=opt$directory, pattern=glob2rx("*_BrainSegmentationPosteriors2.nii.gz"),full.names=T)
+date = arr[length(arr)]
+if ( !is.na(opt$timestamp) ) {
+  date = opt$timestamp
+}
+
+mask = list.files(path=opt$directory, pattern=glob2rx("*BrainExtractionMask.nii.gz"), full.names=T)
+seg = list.files(path=opt$directory, pattern=glob2rx("*BrainSegmentation.nii.gz"), full.names=T)
+thk = list.files(path=opt$directory, pattern=glob2rx("*CorticalThickness.nii.gz"), full.names=T)
+n4 = list.files(path=opt$directory, pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
+gmp = list.files(path=opt$directory, pattern=glob2rx("*BrainSegmentationPosteriors2.nii.gz"),full.names=T)
 
 if ( length(mask) < 1 ) {
   stop("Brain extraction mask not found")
