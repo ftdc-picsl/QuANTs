@@ -47,10 +47,12 @@ if ( is.na(opt$time) ) {
 
 
 print(opt)
-
+systemName = opt$system
 sys = NA
+
 if ( file.exists(opt$system ) ) {
   sys = read.csv(opt$system)
+  systemName = basename(tools::file_path_sans_ext(opt$system))
 } else {
   sys = getLabelSystem(opt$system)
 }
@@ -76,7 +78,7 @@ if ( !is.na(opt$cortical) ) {
 
 # Get volumes
 labelImg = antsImageRead(opt$labels)
-dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=opt$system)
+dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=systemName)
 
 n = dim(dat)[1]
 dat = data.frame(id=rep(opt$id,n), time=rep(opt$time,n), dat )
