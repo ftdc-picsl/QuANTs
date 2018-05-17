@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyFiles)
+library(shinyWidgets)
 #source("directoryInput.R")
 
 
@@ -81,10 +82,15 @@ ui <- fluidPage(
 
       textInput("notes", "Notes", value=""),
 
-      actionButton("submit", "Submit this subject"),
-
+      fluidRow(
+        column(8, actionButton("submit", "Submit this subject")),
+        column(4, actionButton("undo", "Undo last submit"))
+      ),
+      #actionButton("submit", "Submit this subject"),
 
       tags$hr(),
+
+      actionButton("exit", "Exit"),
 
       tableOutput("contents")
     ),
@@ -113,7 +119,7 @@ server <- function(input, output, session) {
 
   options(DT.options = list(pageLength = 25))
   values = reactiveValues(subjects=NULL,id="NA", date="NA", loaded=0, qcData=NULL, snap=NULL,
-                          path=defaultPath, save="NA", subfile=NULL)
+                          path=defaultPath, save="NA", subfile=NULL, lastID=NA, lastDate=NA, lastTimestamp=NA)
 
   observeEvent(input$start, {
     print("start reviewing")
@@ -226,14 +232,24 @@ server <- function(input, output, session) {
     if ( values$id != "NA") {
       print(paste("submitted",values$id,values$date,input$t1))
 
-      row = data.frame(INDDID=values$id,
-        Timepoint=values$date,
+      notes = input$notes
+      notes = gsub( '"', "'", input$notes)
+      sTime = as.character(Sys.time())
+
+      values$lastID = values$id
+      values$lastdate = values$date
+      values$lastTimestamp = sTime
+
+      row = data.frame(INDDID=as.character(values$id),
+        Timepoint=as.character(values$date),
         Reviewer=Sys.getenv("LOGNAME"),
-        T1Quality=input$t1,
-        ExtractQuality=input$mask,
-        SegmentationQuality=input$seg,
+        T1Quality=as.character(as.integer(input$t1)),
+        ExtractQuality=as.character(as.integer(input$mask)),
+        SegmentationQuality=as.character(as.integer(input$seg)),
         Movement=as.character(as.integer(input$motion)),
-        Notes=input$notes )
+        Artefact=as.character(as.integer(input$artefact)),
+        Timestamp=sTime,
+        Notes=notes )
 
       values$qcData = rbind(row, values$qcData)
       print(values$qcData)
@@ -278,6 +294,53 @@ server <- function(input, output, session) {
       }
 
 
+    }
+  })
+
+
+  observeEvent(input$undo, {
+    if (!is.null(values$qcData) ) {
+      nRows = dim(values$qcData)[1]
+      undoId = values$qcData$INDDID[1]
+      undoDate = values$qcData$Timepoint[1]
+      undoStamp = values$qcData$Timestamp[1]
+
+      if (nRows == 1) {
+        values$qcData = NULL
+      }
+      else {
+        values$qcData = values$qcData[2:nRows,]
+      }
+
+      if (values$save != "NA") {
+        print( paste("remove:", undoId, undoDate, undoStamp))
+        odat = read.csv(values$save)
+        idx = which( ((odat$INDDID==undoId) * (odat$Timepoint==undoDate) * (odat$Timestamp==undoStamp))==1 )
+        odat = odat[-idx,]
+        write.csv(row.names=F, odat, values$save)
+      }
+
+      values$subjects = rbind( data.frame(ID=values$id, Date=values$date), values$subjects )
+      values$id = undoId
+      values$date = undoDate
+      values$snap = load_subject(values$id, values$date, values$path)
+
+    }
+
+  })
+
+  observeEvent(input$exit, {
+    confirmSweetAlert(session=session,
+      inputId="quants_qc_exit",
+      type="warning",
+      title="Do you want to exit?",
+      danger_mode=TRUE,
+      btn_labels = c("Cancel", "Exit") )
+  })
+
+  observeEvent(input$quants_qc_exit, {
+    if ( input$quants_qc_exit ) {
+        stopApp()
     }
   })
 
