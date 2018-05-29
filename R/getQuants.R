@@ -19,11 +19,10 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
       subPaths = c(paste(sep="", path, "/", sub, "/", date ))
     }
     else {
-      subPaths = list.dirs(path=paste(sep="", path, "/", sub), full.names=T)
+      subPaths = list.dirs(path=paste(sep="", path, "/", sub), full.names=T, recursive=F)
     }
 
     for (d in subPaths) {
-
       statDir = paste(sep="", d, "/stats")
       if ( dir.exists(statDir) ) {
         subFiles = list.files(path=statDir, pattern=glob2rx("*.csv"), full.names=T)
@@ -37,6 +36,11 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
   filenames = NULL
   for ( f in files ) {
     fDat = read.csv(f)
+
+    if ( !isQuants(fDat) ) {
+      fDat = makeQuants(fDat)
+      #write.csv(fDat, f, row.names=F)
+    }
 
     if ( isQuants(fDat) ) {
 

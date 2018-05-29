@@ -88,7 +88,7 @@ ui <- fluidPage(
       ),
       #actionButton("submit", "Submit this subject"),
 
-      tags$hr(),
+      tags$hr(), tags$br(),
 
       actionButton("exit", "Exit"),
 
@@ -274,6 +274,9 @@ server <- function(input, output, session) {
       updateRadioButtons(session, "t1", selected=1)
       updateRadioButtons(session, "mask", selected=0)
       updateRadioButtons(session, "seg", selected=0)
+      updateCheckboxInput(session, "motion", value=F)
+      updateCheckboxInput(session, "artefact", value=F)
+
       updateTextInput(session, "notes", value="")
 
       if (values$save != "NA") {
