@@ -13,9 +13,16 @@ load_subject = function( id, date, path ) {
     t1 = list.files(path=subpath, pattern=glob2rx("*t1Head.nii.gz"), full.names=T)
     #t1 = list.files(path=subpath,  pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
     seg = list.files(path=subpath, pattern=glob2rx("*BrainSegmentation.nii.gz"), full.names=T)
-    snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
-    system(paste(snapCall, "&"))
-    return(snapCall)
+    if ( (length(t1) > 0) & (length(seg) > 0 ) ) {
+      snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
+      system(paste(snapCall, "&"))
+      return(snapCall)
+    }
+    else {
+      warning(paste(id, date, "does not exist"))
+    }
+
+    return(NULL)
 }
 
 get_kill_id = function( info ) {
@@ -147,7 +154,7 @@ server <- function(input, output, session) {
     fname = parseFilePaths(roots, input$loadsubs)
     print( fname )
 
-    df <- read.csv(as.character(fname$datapath), sep = "/", header = FALSE )
+    df <- read.csv(as.character(fname$datapath), sep = "/", header = FALSE,stringsAsFactors=FALSE )
     names(df) = c("ID", "Date")
 
     if ( !is.null(values$qcData) ) {
@@ -167,7 +174,18 @@ server <- function(input, output, session) {
     fname = parseFilePaths(roots, input$load)
     print( fname$datapath )
 
-    loadData = read.csv(as.character(fname$datapath))
+    loadData = read.csv(as.character(fname$datapath), stringsAsFactors=FALSE, colClasses=rep("character",10))
+    loadData$INDDID = as.character(loadData$INDDID)
+    loadData$Timepoint = as.character(loadData$Timepoint)
+    loadData$Reviewer = as.character(loadData$Reviewer)
+    loadData$T1Quality = as.character(loadData$T1Quality)
+    loadData$ExtractQuality = as.character(loadData$ExtractQuality)
+    loadData$SegmentationQuality = as.character(loadData$SegmentationQuality)
+    loadData$Movement = as.character(loadData$Movement)
+    loadData$Artefact = as.character(loadData$Artefact)
+    loadData$Timestamp = as.character(loadData$Timestamp)
+    loadData$Notes = as.character(loadData$Notes)
+
     print(names(loadData))
     print(loadData)
 
@@ -232,7 +250,7 @@ server <- function(input, output, session) {
     if ( values$id != "NA") {
       print(paste("submitted",values$id,values$date,input$t1))
 
-      notes = input$notes
+      notes = as.character(input$notes)
       notes = gsub( '"', "'", input$notes)
       sTime = as.character(Sys.time())
 
@@ -250,6 +268,7 @@ server <- function(input, output, session) {
         Artefact=as.character(as.integer(input$artefact)),
         Timestamp=sTime,
         Notes=notes )
+
 
       values$qcData = rbind(row, values$qcData)
       print(values$qcData)
@@ -317,7 +336,8 @@ server <- function(input, output, session) {
 
       if (values$save != "NA") {
         print( paste("remove:", undoId, undoDate, undoStamp))
-        odat = read.csv(values$save)
+        odat = read.csv(values$save,stringsAsFactors=FALSE,colClasses=rep("character",10))
+
         idx = which( ((odat$INDDID==undoId) * (odat$Timepoint==undoDate) * (odat$Timestamp==undoStamp))==1 )
         odat = odat[-idx,]
         write.csv(row.names=F, odat, values$save)
@@ -365,7 +385,7 @@ server <- function(input, output, session) {
     if ( !values$loaded  ) {
       df <- read.csv(input$file1$datapath,
                sep = "/",
-               header = FALSE )
+               header = FALSE, stringsAsFactors=FALSE )
       names(df) = c("ID", "Date")
 
       #values$id = df$ID[1]

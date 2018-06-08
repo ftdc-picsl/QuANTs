@@ -81,7 +81,7 @@ labelImg = antsImageRead(opt$labels)
 dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=systemName)
 
 n = dim(dat)[1]
-dat = data.frame(id=rep(opt$id,n), time=rep(opt$time,n), dat )
+dat = data.frame(id=rep(opt$id,n), date=rep(opt$time,n), dat )
 
 print(dat)
 write.csv(dat, opt$out, row.names=F)
