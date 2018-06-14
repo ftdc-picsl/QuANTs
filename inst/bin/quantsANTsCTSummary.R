@@ -86,6 +86,6 @@ datGMP = subjectLabelStats(segImg, mask=mask2, image=gmpImg, labelSet=c(2), meas
 dat = rbind(bdat, dat, dat2, datn4, datt1, datGMP)
 dat = data.frame(id=id, date=date, dat )
 
-print(dat)
+#print(dat)
 
 write.csv(dat, opt$out, row.names=F)
