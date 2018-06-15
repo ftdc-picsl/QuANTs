@@ -1,11 +1,5 @@
 #!/usr/bin/perl -w
 
-##
-## sample usage:  perl runQC.pl /out/put/dir/
-##
-##
-
-
 # use module
 use Data::Dumper;
 use Cwd 'realpath';
@@ -50,7 +44,7 @@ my $usage = qq{
 
   Output:
 
-    See runQCTimepoint.pl for details of output. This script is a wrapper that sets up I/O and logs for running processScanDTI.pl.
+    Creates an output summary file: <directory>/<subject>/<timepoint>/stats/<subject>_<timepoint>_mindboggle.csv
 
 };
 
@@ -70,7 +64,16 @@ GetOptions ("directory=s" => \$directory,
     )
     or die("Error in command line arguments\n");
 
-my @t1s = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_t1Head.nii.gz>;
+#my @t1s = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_t1Head.nii.gz>;
+
+my @thicks = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_CorticalThickness.nii.gz>;
+my $thick = $thicks[0];
+
+my @labels = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_PG_antsLabelFusionLabels.nii.gz>;
+my $label = $labels[0];
+
+my @segs = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_BrainSegmentation.nii.gz>;
+my $seg = $segs[0];
 
 my $localOutputDirectory = "${directory}/${id}/${timeStamp}/stats";
 
@@ -80,8 +83,8 @@ if( ! -d $localOutputDirectory )
   mkpath( $localOutputDirectory );
   }
 
-my $commandFile = "${localOutputDirectory}/antsQC.sh";
-my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_qc.csv";
+my $commandFile = "${localOutputDirectory}/antsMB.sh";
+my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_mindboggle.csv";
 
 if ( -f ${outFile} ) {
   if ( ! $force ) {
@@ -89,6 +92,9 @@ if ( -f ${outFile} ) {
     $runIt = 0;
   }
 }
+
+my $thickMask = "${localOutputDirectory}/${id}_${timeStamp}_thickMask.nii.gz";
+my $tempMask = "${localOutputDirectory}/${id}_${timeStamp}_cortexSegMask.nii.gz";
 
 if ( $runIt ) {
 
@@ -103,11 +109,17 @@ if ( $runIt ) {
   print FILE "\n";
 
   my @antsCommands = ();
-  $antsCommands[0] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsANTsCTSummary.R \\";
-  $antsCommands[1] = "   -d ${directory}/${id}/${timeStamp}/ \\";
-  $antsCommands[2] = "   -o ${outFile} \\";
-  $antsCommands[3] = "   -s $timeStamp \\";
-  $antsCommands[4] = "   -t $t1s[0]";
+  $antsCommands[0] = "ThresholdImage 3 $seg $tempMask 2 2";
+  $antsCommands[1] = "ThresholdImage 3 $thick $thickMask 0.00001 inf";
+  $antsCommands[2] = "ImageMath 3 $thickMask m $thickMask $tempMask";
+  $antsCommands[3] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  $antsCommands[4] = "   -l $label -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
+  $antsCommands[5] = "   -o ${outFile} -a FALSE \\";
+  $antsCommands[6] = "   -i $id -t $timeStamp";
+  $antsCommands[7] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  $antsCommands[8] = "   -l $label -c FALSE \\";
+  $antsCommands[9] = "   -o ${outFile} -a TRUE \\";
+  $antsCommands[10] = "   -i $id -t $timeStamp";
 
   print( "@antsCommands\n");
 
@@ -120,14 +132,15 @@ if ( $runIt ) {
     }
   print FILE "\n";
   close( FILE );
-  system("chmod ug+x $commandFile");
+  system("chmod ug+w $commandFile");
 
   if ( $submitToQueue == 1 ) {
-    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_qc.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_qc.stderr $commandFile" );
+    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_mb.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_mb.stderr $commandFile" );
   }
   else {
-    system( "sh $commandFile");
+    system("sh $commandFile");
   }
+
   #print("\n");
   sleep(1);
   }

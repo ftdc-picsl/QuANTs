@@ -11,17 +11,19 @@ option_list = list(
   make_option(c("-c", "--cortical"), type="logical", default=NA,
               help="only examine non-cortical labels(=FALSE), only examine cortical(=TRUE)", metavar="logical"),
   make_option(c("-l", "--labels"), type="character", default=NULL,
-              help="filename of labeled image", metavar="ScalarImage.nii.gz"),
+              help="filename of labeled image", metavar="Labels.nii.gz"),
   make_option(c("-m", "--mask"), type="character", default=NA,
               help="filename of an image to mask the labels", metavar="MaskImage.nii.gz"),
   make_option(c("-n", "--name"), type="character", default=NA,
               help="name of measure in --image", metavar="thickness"),
   make_option(c("-x", "--maskvalue"), type="numeric", default=1,
               help="value in mask image to use", metavar="1"),
-  make_option(c("-a", "--image"), type="character", default=NULL,
-              help="filename of labeled image", metavar="Labels.nii.gz"),
+  make_option(c("-g", "--image"), type="character", default=NULL,
+              help="filename of grayscale image that was labeled", metavar="GrayValues.nii.gz"),
   make_option(c("-o", "--out"), type="character", default="out.csv",
               help="output file name [default= %default]", metavar="out.csv"),
+  make_option(c("-a", "--append"), type="logical", default=FALSE,
+              help="append output file it already exists [default = %default]", metavar="FALSE"),
   make_option(c("-s", "--system"), type="character", default="mindboggle",
               help="labeling system name (or .csv file) [default= %default]", metavar="mindboggle")
 );
@@ -83,5 +85,9 @@ dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, me
 n = dim(dat)[1]
 dat = data.frame(id=rep(opt$id,n), date=rep(opt$time,n), dat )
 
-print(dat)
+if ( file.exists( opt$out ) ) {
+  appendDat = read.csv(opt$out)
+  dat = rbind(appendDat, dat)
+}
+
 write.csv(dat, opt$out, row.names=F)
