@@ -9,7 +9,7 @@ isQuants <- function(x) {
   #return( TRUE )
 }
 
-getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE ) {
+getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE, with.filenames=F ) {
 
   # Gather names of all requested .csv files
   files = c()
@@ -56,7 +56,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
 
       if ( !is.null(label) ) {
         if ( !is.list(label) ) {
-          print("generic labels")
+          #print("generic labels")
           labelIdx = idx*0
           for ( l in label ) {
             labelIdx[fDat$label==l] = 1
@@ -64,7 +64,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
           idx = idx*labelIdx
         }
         else {
-          print("system specific labels")
+          #print("system specific labels")
           fullIdx = idx*0
 
           for (i in 1:length(label) ) {
@@ -117,6 +117,11 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     dat$name = paste(sep="_", dat$system,dat$label,dat$measure,dat$metric)
     dat = dcast(dat, id + date ~ name, value.var="value")
   }
-  return(list(data=dat, filenames=uniqFiles))
+
+  if (with.filenames) {
+    dat = list(data=dat, filename=uniqFiles)
+  }
+
+  return(dat)
 
 }

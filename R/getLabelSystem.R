@@ -7,6 +7,8 @@
 #'   \item mindboggle
 #'   \item mindboggle-extended
 #'   \item antsct
+#'   \item jhuLabels
+#'   \item jhuTracts
 #'  }
 getLabelSystem <- function( systemName ) {
   if ( systemName == "mindboggle") {
@@ -17,6 +19,12 @@ getLabelSystem <- function( systemName ) {
   }
   else if ( systemName == "antsct" ) {
     sys = antsct
+  }
+  else if ( systemName == "jhuLabels") {
+    sys = jhuLabels
+  }
+  else if ( systemName == "jhuTracts") {
+    sys = jhuTracts
   }
   else {
     stop("Unsupported labeling system")

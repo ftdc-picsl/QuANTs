@@ -125,8 +125,48 @@ server <- function(input, output, session) {
   #shinyFileChoose(input, 'files', session=session, roots=roots, filetypes=c('', 'txt'))
 
   options(DT.options = list(pageLength = 25))
-  values = reactiveValues(subjects=NULL,id="NA", date="NA", loaded=0, qcData=NULL, snap=NULL,
-                          path=defaultPath, save="NA", subfile=NULL, lastID=NA, lastDate=NA, lastTimestamp=NA)
+
+  subfile=NULL
+  subjects=NULL
+  loaded=0
+  if ( .GlobalEnv$.quants_info$subjects != "" ) {
+    subfile = .GlobalEnv$.quants_info$subjects
+
+    df <- read.csv(subfile, sep = "/", header = FALSE,stringsAsFactors=FALSE )
+    names(df) = c("ID", "Date")
+    df$ID=as.character(df$ID)
+    df$Date=as.character(df$Date)
+    subjects = df
+    loaded = 1
+  }
+
+  save=NULL
+  qcData=NULL
+  if ( .GlobalEnv$.quants_info$qc_file != "" ) {
+    save = .GlobalEnv$.quants_info$qc_file
+
+    qcData = read.csv(save, stringsAsFactors=FALSE, colClasses=rep("character",10))
+    qcData$INDDID = as.character(qcData$INDDID)
+    qcData$Timepoint = as.character(qcData$Timepoint)
+    qcData$Reviewer = as.character(qcData$Reviewer)
+    qcData$T1Quality = as.character(qcData$T1Quality)
+    qcData$ExtractQuality = as.character(qcData$ExtractQuality)
+    qcData$SegmentationQuality = as.character(qcData$SegmentationQuality)
+    qcData$Movement = as.character(qcData$Movement)
+    qcData$Artefact = as.character(qcData$Artefact)
+    qcData$Timestamp = as.character(qcData$Timestamp)
+    qcData$Notes = as.character(qcData$Notes)
+
+    # check against subjects list
+    if ( !is.null(subjects) ) {
+      subList = paste(subjects$ID, subjects$Date)
+      datList = paste(qcData$INDDID, qcData$Timepoint)
+      subjects = subjects[!(subList %in% datList), ]
+    }
+
+  }
+  values = reactiveValues(subjects=subjects,id="NA", date="NA", loaded=loaded, qcData=qcData, snap=NULL,
+                          path=defaultPath, save=save, subfile=subfile, lastID=NA, lastDate=NA, lastTimestamp=NA)
 
   observeEvent(input$start, {
     print("start reviewing")
@@ -186,8 +226,8 @@ server <- function(input, output, session) {
     loadData$Timestamp = as.character(loadData$Timestamp)
     loadData$Notes = as.character(loadData$Notes)
 
-    print(names(loadData))
-    print(loadData)
+    #print(names(loadData))
+    #print(loadData)
 
     values$qcData = rbind(values$qcData, loadData)
 
