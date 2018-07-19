@@ -58,9 +58,9 @@ my $timeStamp = "";
 
 GetOptions ("directory=s" => \$directory,
     "subject=s" => \$id,
-	    "timepoint=s" => \$timeStamp,
-	    "qsub=i" => \$submitToQueue,
-      "force=i" => \$force
+	  "timepoint=s" => \$timeStamp,
+	  "qsub=i" => \$submitToQueue,
+    "force=i" => \$force
     )
     or die("Error in command line arguments\n");
 
