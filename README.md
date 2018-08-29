@@ -30,6 +30,10 @@ brainVolumes = getQuants(path=path, id=ids, system="brain", measure="volume", as
 
 tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", as.wide=T )
 
+## To get the volumes of only white matter and cortex
+
+tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", label=c(2,3), as.wide=T )
+
 ## To get mindboggle label volumes
 
 mbVolumes = getQuants(path=path, id=ids, system="mindboggle", measure="volume", as.wide=T )
