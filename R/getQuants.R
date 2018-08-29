@@ -9,6 +9,19 @@ isQuants <- function(x) {
   #return( TRUE )
 }
 
+#' getQuants
+#'
+#' get values of interest from pre-generated .csv files
+#'
+#' @param path base directory for ANTsCT output
+#' @param id list of subjects to collect values for
+#' @param date optional list of dates for each subject (one-to-one mapping with id list)
+#' @param system labeling systems to obtain values for
+#' @param label label numbers of interest
+#' @param measure what measure/s to collect
+#' @param metric which metric/s to collect
+#' @param as.wide flag to return wide format data frame
+
 getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE, with.filenames=F ) {
 
   # Gather names of all requested .csv files

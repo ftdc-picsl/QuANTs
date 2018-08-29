@@ -12,6 +12,8 @@ getLabelSystem(systemName)
   \item mindboggle
   \item mindboggle-extended
   \item antsct
+  \item jhuLabels
+  \item jhuTracts
  }}
 }
 \description{

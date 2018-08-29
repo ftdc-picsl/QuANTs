@@ -4,19 +4,29 @@
 \alias{subjectLabelStats}
 \title{subjectLabelStats}
 \usage{
-subjectLabelStats(labels, image = NULL, mask = NULL, weights = NULL,
-  outfile = NULL, labelSet = NULL, labelSystem = "mindboggle")
+subjectLabelStats(labels, image = NULL, measure = "measure", mask = NULL,
+  weights = NULL, outfile = NULL, labelSet = NULL,
+  labelSystem = "mindboggle", include.volume = TRUE,
+  force.resample = FALSE)
 }
 \arguments{
 \item{labels}{the image of labels or its filename}
 
 \item{image}{the image whose values are summarized, or its filename}
 
+\item{measure}{name of the measure in 'image' (default="measure")}
+
 \item{mask}{an image mask to apply to labels, or it's filename}
 
 \item{outfile}{filename for resulting data to be saved}
 
 \item{labelSet}{an array of all valid label values}
+
+\item{labelSystem}{name of label system (default="mindboggle")}
+
+\item{include.volume}{should volumes be calculated (default=TRUE)}
+
+\item{force.resample}{resample image to match label space if necessary (default=FALSE)}
 }
 \description{
 summarize a subjects labels:
