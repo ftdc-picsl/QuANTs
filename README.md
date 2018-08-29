@@ -8,16 +8,17 @@ There are three main components to QuANTs.
 
 # Get QuANTs values for subjects of interest
 The 'getQuants()' function may be used to generate a data.frame with the values of interest. The required parameters are:
-1. path: location of antsct base directory, e.g. /data/grossman/pipedream2018/crossSectional/antsct/
-2. id: list of subject includes
+* path: location of antsct base directory, e.g. /data/grossman/pipedream2018/crossSectional/antsct/
+* id: list of subjects to include
 
 A number of optional parameters, make it easier to obtain only the values of interest, these may be a single string, or a vector of strings:
-3. date: a list with a date for each id in the list (default is to obtain all dates for each id)
-4. system: only return values for the labeling system/s indicated
-5. label: the label numbers to return
-6. measure: the measure of interest (e.g. "thickness", "volume", etc)
-7. metric: the summary metric (e.g. "mean", "max", etc)
-8. as.wide: boolean flag to return a wide-format data.frame
+
+* date: a list with a date for each id in the list (default is to obtain all dates for each id)
+* system: only return values for the labeling system/s indicated
+* label: the label numbers to return
+* measure: the measure of interest (e.g. "thickness", "volume", etc)
+* metric: the summary metric (e.g. "mean", "max", etc)
+* as.wide: boolean flag to return a wide-format data.frame
 
 Here are some examples, assuming a pre-defined path and id list
 
