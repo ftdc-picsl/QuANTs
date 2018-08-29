@@ -43,13 +43,13 @@ Currently, there are four different labeling systems supported by QuANTS
 
 * brain (mask) - a single binary mask indicating brain (=1) or background (=0)
 * antsct - the brain segmentation provided by antsCorticalThickness (ACT)
-0. Background
-1. CSF
-2. Cortex
-3. White matter
-4. Deep gray
-5. Brain stem
-6. Cerebellum
+  0. Background
+  1. CSF
+  2. Cortex
+  3. White matter
+  4. Deep gray
+  5. Brain stem
+  6. Cerebellum
 * mindboggle
 * mideval
 * jhu - a set of white matter labels
