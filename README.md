@@ -52,8 +52,8 @@ Currently, there are four different labeling systems supported by QuANTS
   5. Brain stem
   6. Cerebellum
 
-* mindboggle
-* mideval
+* mindboggle - labels generated using JLF, inludes cortical and subcortical
+* mideval - a hybrid label set of subcortical gray matter structures
 * jhu - a set of white matter labels
 
 # Generating summary .csv files
