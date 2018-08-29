@@ -6,7 +6,7 @@ There are three main components to QuANTs.
 2. Rscripts used to generate .csv files to summarize measures using label systems
 3. R functions used to query to data stored in the .csv files
 
-# Get QuANTs values for subjects of interest
+# Get QuANTs values for subjects of interest (in R)
 The 'getQuants()' function may be used to generate a data.frame with the values of interest. The required parameters are:
 * path: location of antsct base directory, e.g. /data/grossman/pipedream2018/crossSectional/antsct/
 * id: list of subjects to include
