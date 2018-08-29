@@ -22,19 +22,19 @@ A number of optional parameters, make it easier to obtain only the values of int
 
 Here are some examples, assuming a pre-defined path and id list
 
-To get brain volumes
+## To get brain volumes
 
 brainVolumes = getQuants(path=path, id=ids, system="brain", measure="volume", as.wide=T )
 
-To get the volumes of the six-tissue segmentations:
+## To get the volumes of the six-tissue segmentations:
 
 tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", as.wide=T )
 
-To get mindboggle label brainVolumes
+## To get mindboggle label brainVolumes
 
 mbVolumes = getQuants(path=path, id=ids, system="mindboggle", measure="volume", as.wide=T )
 
-To get mean thickness in mindboggle labels
+## To get mean thickness in mindboggle labels
 
 mbThickness = getQuants(path=path, id=ids, system="mindboggle", measure="thickness", metric="mean", as.wide=T )
 
