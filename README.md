@@ -30,7 +30,7 @@ brainVolumes = getQuants(path=path, id=ids, system="brain", measure="volume", as
 
 tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", as.wide=T )
 
-## To get mindboggle label brainVolumes
+## To get mindboggle label volumes
 
 mbVolumes = getQuants(path=path, id=ids, system="mindboggle", measure="volume", as.wide=T )
 
