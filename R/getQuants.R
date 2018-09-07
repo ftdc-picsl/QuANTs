@@ -26,13 +26,14 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
 
   # Gather names of all requested .csv files
   files = c()
-  for (sub in id) {
+  for (i in 1:length(id)) {
+
     subPaths=NULL
     if ( !is.null(date) ) {
-      subPaths = c(paste(sep="", path, "/", sub, "/", date ))
+      subPaths = paste(sep="", path, "/", id[i], "/", date[i] )
     }
     else {
-      subPaths = list.dirs(path=paste(sep="", path, "/", sub), full.names=T, recursive=F)
+      subPaths = list.dirs(path=paste(sep="", path, "/", id[i]), full.names=T, recursive=F)
     }
 
     for (d in subPaths) {
