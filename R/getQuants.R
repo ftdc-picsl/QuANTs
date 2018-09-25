@@ -118,9 +118,12 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
         idx = idx*metricIdx
       }
 
-      fDat = fDat[idx==1,]
-      filenames = c(filenames, rep(f, dim(fDat)[1]))
-      dat = rbind(dat, fDat)
+      if ( sum(idx) > 0 ) {
+        fDat = fDat[idx==1,]
+        filenames = c(filenames, rep(f, dim(fDat)[1]))
+        dat = rbind(dat, fDat)
+      }
+
     }
   }
 
@@ -132,9 +135,12 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     dat = dcast(dat, id + date ~ name, value.var="value")
   }
 
-  if (with.filenames) {
-    dat = list(data=dat, filename=uniqFiles)
-  }
+  #if (with.filenames) {
+  #  dat = list(data=dat, filename=uniqFiles)
+  #}
+
+  # This prevents IDs from being cast as double values    
+  dat$id = as.character(dat$id)
 
   return(dat)
 
