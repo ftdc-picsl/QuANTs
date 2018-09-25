@@ -24,23 +24,23 @@ Here are some examples, assuming a pre-defined path and id list
 
 ## To get brain volumes
 
-brainVolumes = getQuants(path=path, id=ids, system="brain", measure="volume", as.wide=T )
+brainVolumes = getQuants(path=path, id=ids, system="brain", measure="volume", as.wide=T)
 
 ## To get the volumes of the six-tissue segmentations:
 
-tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", as.wide=T )
+tissueVolumes = getQuants(path=path, id=ids, system="antsct", measure="volume", as.wide=T)
 
 ## To get the volumes of only white matter and cortex
-
-tissue2Volumes = getQuants(path=path, id=ids, system="antsct", measure="volume", label=c(2,3), as.wide=T )
+tissue2Volumes = getQuants(path=path, id=ids, system="antsct", measure="volume", label=c(2,3), as.wide=T)
 
 ## To get mindboggle label volumes
-
-mbVolumes = getQuants(path=path, id=ids, system="mindboggle", measure="volume", as.wide=T )
+mbVolumes = getQuants(path=path, id=ids, system="mindboggle", measure="volume", as.wide=T)
 
 ## To get mean thickness in mindboggle labels
+mbThickness = getQuants(path=path, id=ids, system="mindboggle", measure="thickness", metric="mean", as.wide=T)
 
-mbThickness = getQuants(path=path, id=ids, system="mindboggle", measure="thickness", metric="mean", as.wide=T )
+## Getting thickness if left-hemisphere cortical regions
+
 
 # Labeling systems
 Currently, there are four different labeling systems supported by QuANTS
