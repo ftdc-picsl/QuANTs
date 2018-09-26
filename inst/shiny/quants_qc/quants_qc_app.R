@@ -3,8 +3,6 @@ library(shinyFiles)
 library(shinyWidgets)
 #source("directoryInput.R")
 
-
-
 defaultPath="/data/grossman/pipedream2018/crossSectional/antsct"
 
 load_subject = function( id, date, path ) {
@@ -106,7 +104,7 @@ ui <- fluidPage(
     mainPanel(
 
       fluidRow(
-        column(2, div(style="padding: 0px 0px;", shinySaveButton('save', 'Save file', 'Save file as...', filetype=list(csv='csv')))),
+        column(2, div(style="padding: 0px 0px;", shinySaveButton('save', 'Select save file', 'Save file as...', filetype=list(csv='csv')))),
         column(10, div(style="padding: 0px 0px; margin-left:-5px", verbatimTextOutput("savefile")))),
 
 
