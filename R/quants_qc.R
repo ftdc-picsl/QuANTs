@@ -1,3 +1,11 @@
+#' quants_qc
+#'
+#' run the shiny app for data quality review
+#'
+#' @param subjects filename of list of subjects and dates to review
+#' @param qc_file filename of location to store results
+
+
 library(shiny)
 
 quants_qc <- function(subjects="", qc_file="") {

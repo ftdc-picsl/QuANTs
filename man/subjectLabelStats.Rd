@@ -4,8 +4,8 @@
 \alias{subjectLabelStats}
 \title{subjectLabelStats}
 \usage{
-subjectLabelStats(labels, image = NULL, measure = "measure", mask = NULL,
-  weights = NULL, outfile = NULL, labelSet = NULL,
+subjectLabelStats(labels, image = NULL, measure = "measure",
+  mask = NULL, weights = NULL, outfile = NULL, labelSet = NULL,
   labelSystem = "mindboggle", include.volume = TRUE,
   force.resample = FALSE)
 }
