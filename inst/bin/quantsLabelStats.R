@@ -25,7 +25,9 @@ option_list = list(
   make_option(c("-a", "--append"), type="logical", default=FALSE,
               help="append output file it already exists [default = %default]", metavar="FALSE"),
   make_option(c("-s", "--system"), type="character", default="mindboggle",
-              help="labeling system name (or .csv file) [default= %default]", metavar="mindboggle")
+              help="labeling system name (or .csv file) [default= %default]", metavar="mindboggle"),
+  make_option(c("-v", "--volume"), type="logical", default=TRUE,
+              help="should volume be reported)", metavar="logical")
 );
 
 opt_parser = OptionParser(option_list=option_list);
@@ -78,9 +80,10 @@ if ( !is.na(opt$cortical) ) {
 }
 
 
+
 # Get volumes
 labelImg = antsImageRead(opt$labels)
-dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=systemName)
+dat = subjectLabelStats(labelImg, image=opt$image, mask, labelSet=sys$number, measure=opt$name, labelSystem=systemName, include.volume=opt$volume)
 
 n = dim(dat)[1]
 dat = data.frame(id=rep(opt$id,n), date=rep(opt$time,n), dat )
