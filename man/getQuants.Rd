@@ -5,7 +5,7 @@
 \title{getQuants}
 \usage{
 getQuants(path, id, date = NULL, system = NULL, label = NULL,
-  measure = NULL, metric = NULL, as.wide = FALSE,
+  measure = NULL, metric = NULL, as.wide = FALSE, rename = FALSE,
   with.filenames = F)
 }
 \arguments{

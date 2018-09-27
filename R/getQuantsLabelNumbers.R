@@ -3,9 +3,15 @@
 #' get label numbers for regions of interest
 #'
 #' @param system labeling systems to obtain values for
+#' @param cortex TRUE/FALSE flag for cortical regions
+#' @param subcortical TRUE/FALSE flag for subcortical regions
+#' @param hemishere flag for 'right' or 'left'
+#' @param name return regions by name
+#' @param group type of grouping (temporal, parietal, etc)
+#' @param return.index flag to return system info index instead of label number
 
 
-getQuantsLabelNumbers <- function(system="mindboggle", cortex=NA, group=NA, hemisphere=NA, return.index=FALSE) {
+getQuantsLabelNumbers <- function(system="mindboggle", cortex=NA, group=NA, hemisphere=NA, name=NA, return.index=FALSE) {
 
   labels = c()
   idx = c()
@@ -28,6 +34,10 @@ getQuantsLabelNumbers <- function(system="mindboggle", cortex=NA, group=NA, hemi
 
     if ( !is.na(hemisphere) ) {
       idx = idx * (sys$hemisphere == hemisphere )
+    }
+
+    if ( !is.na(name) ) {
+      idx = idx * ( as.character(sys$name) == name )
     }
 
     idx[is.na(idx)] = 0

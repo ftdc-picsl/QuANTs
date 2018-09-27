@@ -5,10 +5,22 @@
 \title{getQuantsLabelNumbers}
 \usage{
 getQuantsLabelNumbers(system = "mindboggle", cortex = NA, group = NA,
-  hemisphere = NA, return.index = FALSE)
+  hemisphere = NA, name = NA, return.index = FALSE)
 }
 \arguments{
 \item{system}{labeling systems to obtain values for}
+
+\item{cortex}{TRUE/FALSE flag for cortical regions}
+
+\item{group}{type of grouping (temporal, parietal, etc)}
+
+\item{name}{return regions by name}
+
+\item{return.index}{flag to return system info index instead of label number}
+
+\item{subcortical}{TRUE/FALSE flag for subcortical regions}
+
+\item{hemishere}{flag for 'right' or 'left'}
 }
 \description{
 get label numbers for regions of interest
