@@ -22,7 +22,7 @@ isQuants <- function(x) {
 #' @param metric which metric/s to collect
 #' @param as.wide flag to return wide format data frame
 
-getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE, with.filenames=F ) {
+getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL, metric=NULL, as.wide=FALSE, rename=FALSE, with.filenames=F ) {
 
   # Gather names of all requested .csv files
   files = c()
@@ -130,8 +130,29 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
   uniqFiles = unique(filenames)
   dat$file = basename(filenames)
 
+  dat$name = paste(sep="_", dat$system,dat$label,dat$measure,dat$metric)
+
+  if ( rename ) {
+    if (length(system) > 1) {
+      stop("Renaming only works when using a single labeling system")
+    }
+
+    sys = getLabelSystem(system)
+    n = dim(dat)[1]
+    hemi = rep(NA, n)
+    anat = rep(NA, n)
+
+    for ( i in 1:n ) {
+      hemi[i] = as.character(sys$hemisphere[ which(sys$number==dat$label[i]) ])
+      iAnat =  as.character(sys$name[ which(sys$number==dat$label[i]) ])
+      iAnat = gsub(" ", "_", iAnat)
+      anat[i] = iAnat
+      dat$name[i] = paste(sep="_", hemi[i], anat[i], dat$metric[i], dat$measure[i] )
+    }
+
+  }
+
   if ( as.wide ) {
-    dat$name = paste(sep="_", dat$system,dat$label,dat$measure,dat$metric)
     dat = dcast(dat, id + date ~ name, value.var="value")
   }
 
@@ -139,7 +160,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
   #  dat = list(data=dat, filename=uniqFiles)
   #}
 
-  # This prevents IDs from being cast as double values    
+  # This prevents IDs from being cast as double values
   dat$id = as.character(dat$id)
 
   return(dat)
