@@ -26,6 +26,9 @@ getLabelSystem <- function( systemName ) {
   else if ( systemName == "jhuTracts") {
     sys = jhuTracts
   }
+  else if ( systemName == "midevel") {
+    sys = midEvelLabels
+  }
   else {
     stop("Unsupported labeling system")
   }

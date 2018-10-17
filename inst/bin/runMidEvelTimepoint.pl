@@ -65,12 +65,14 @@ GetOptions ("directory=s" => \$directory,
     or die("Error in command line arguments\n");
 
 #my @t1s = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_t1Head.nii.gz>;
+my @antsmats = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_TemplateToSubject1GenericAffine.mat>;
+my $tx4 = $antsmats[0];
 
-my @thicks = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_CorticalThickness.nii.gz>;
-my $thick = $thicks[0];
+my @antswarps = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_TemplateToSubject0Warp.nii.gz>;
+my $tx3 = $antswarps[0];
 
-my @labels = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_PG_antsLabelFusionLabels.nii.gz>;
-my $label = $labels[0];
+my $tx2 = "[ /data/grossman/pipedream2018/templates/OASIS/MNI152/T_template0_ToMNI1520GenericAffine.mat, 1]";
+my $tx1 = "/data/grossman/pipedream2018/templates/OASIS/MNI152/T_template0_ToMNI1521InverseWarp.nii.gz ";
 
 my @segs = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_BrainSegmentation.nii.gz>;
 my $seg = $segs[0];
@@ -83,8 +85,8 @@ if( ! -d $localOutputDirectory )
   mkpath( $localOutputDirectory );
   }
 
-my $commandFile = "${localOutputDirectory}/antsMB.sh";
-my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_mindboggle.csv";
+my $commandFile = "${localOutputDirectory}/antsME.sh";
+my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_midevel.csv";
 
 if ( -f ${outFile} ) {
   if ( ! $force ) {
@@ -93,8 +95,7 @@ if ( -f ${outFile} ) {
   }
 }
 
-my $thickMask = "${localOutputDirectory}/${id}_${timeStamp}_thickMask.nii.gz";
-my $tempMask = "${localOutputDirectory}/${id}_${timeStamp}_cortexSegMask.nii.gz";
+my $tempMask = "${localOutputDirectory}/${id}_${timeStamp}_midEvel.nii.gz";
 
 if ( $runIt ) {
 
@@ -109,17 +110,11 @@ if ( $runIt ) {
   print FILE "\n";
 
   my @antsCommands = ();
-  $antsCommands[0] = "ThresholdImage 3 $seg $tempMask 2 2";
-  $antsCommands[1] = "ThresholdImage 3 $thick $thickMask 0.00001 inf";
-  $antsCommands[2] = "ImageMath 3 $thickMask m $thickMask $tempMask";
-  $antsCommands[3] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[4] = "   -l $label -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
-  $antsCommands[5] = "   -o ${outFile} -a FALSE \\";
-  $antsCommands[6] = "   -i $id -t $timeStamp";
-  $antsCommands[7] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[8] = "   -l $label -c FALSE \\";
-  $antsCommands[9] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[10] = "   -i $id -t $timeStamp";
+  $antsCommands[0] = "antsApplyTransforms -v 1 -d 3 -i /data/grossman/master_templates/labels/MidEveL/MidEveL_MNI152.nii.gz -r $seg -o $tempMask -n MultiLabel -t $tx4 -t $tx3 -t $tx2 -t $tx1";
+  $antsCommands[1] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  $antsCommands[2] = "   -l $tempMask \\";
+  $antsCommands[3] = "   -o ${outFile} -a FALSE -s midevel\\";
+  $antsCommands[4] = "   -i $id -t $timeStamp";
 
   print( "@antsCommands\n");
 
@@ -135,7 +130,7 @@ if ( $runIt ) {
   system("chmod ug+w $commandFile");
 
   if ( $submitToQueue == 1 ) {
-    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_mb.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_mb.stderr $commandFile" );
+    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_me.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_me.stderr $commandFile" );
   }
   else {
     system("sh $commandFile");
