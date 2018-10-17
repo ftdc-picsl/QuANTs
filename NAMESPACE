@@ -7,5 +7,6 @@ export(getQuantsLabelNumbers)
 export(isQuants)
 export(mergeBilateralLabels)
 export(quants_qc)
+export(quantsRename)
 
 importFrom(ANTsRCore, antsImageRead)

@@ -8,19 +8,19 @@ Authors@R: person("Jeffrey", "Duda", email = "jeff.duda@gmail.com",
 Description: Summarize image metrics using labeled T1 data
 License: Apache License 2.0
 Depends:
-  ANTsRCore,
-  optparse,
-  reshape2,
-  shiny,
-  shinyFiles
+    ANTsRCore,
+    optparse,
+    reshape2,
+    shiny,
+    shinyFiles
 Imports:
-  methods,
-  Rcpp,
-  ITKR,
-  ANTsRCore
+    methods,
+    Rcpp,
+    ITKR,
+    ANTsRCore
 Suggests:
-  ANTsR,
-  testthat
+    ANTsR,
+    testthat
 LazyData: true
 LinkingTo: Rcpp, ITKR, ANTsRCore
 RoxygenNote: 6.1.0
