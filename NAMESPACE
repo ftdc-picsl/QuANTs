@@ -8,5 +8,6 @@ export(isQuants)
 export(mergeBilateralLabels)
 export(quants_qc)
 export(quantsRename)
+export(reduceQuants)
 
 importFrom(ANTsRCore, antsImageRead)
