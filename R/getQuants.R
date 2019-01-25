@@ -5,8 +5,13 @@ makeQuants <- function(x) {
 }
 
 isQuants <- function(x) {
-  return( sum(names(x) == c("id","date","system","label","measure","metric","value"))==7 )
-  #return( TRUE )
+  s=sum(names(x)[1:7] == c("id","date","system","label","measure","metric","value"))
+  if ( s == 7 ) {
+    return(TRUE)
+  }
+  print(names(x))
+  print( names(x)[1:7] == c("id","date","system","label","measure","metric","value") )
+  return( FALSE )
 }
 
 #' getQuants
@@ -147,7 +152,13 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
       iAnat =  as.character(sys$name[ which(sys$number==dat$label[i]) ])
       iAnat = gsub(" ", "_", iAnat)
       anat[i] = iAnat
-      dat$name[i] = paste(sep="_", hemi[i], anat[i], dat$metric[i], dat$measure[i] )
+
+      if ( !is.na(hemi[i]) ) {
+        dat$name[i] = paste(sep="_", hemi[i], anat[i], dat$metric[i], dat$measure[i] )
+      }
+      else {
+        dat$name[i] = paste(sep="_", anat[i], dat$metric[i], dat$measure[i] )
+      }
     }
 
   }
