@@ -1,5 +1,5 @@
 
-makeQuants <- function(x) {
+asQuants <- function(x) {
   names(x) =  c("id","date","system","label","measure","metric","value")
   return(x)
 }
@@ -57,7 +57,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     fDat = read.csv(f)
 
     if ( !isQuants(fDat) ) {
-      fDat = makeQuants(fDat)
+      fDat = asQuants(fDat)
       #write.csv(fDat, f, row.names=F)
     }
 
