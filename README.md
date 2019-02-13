@@ -8,7 +8,7 @@ There are three main components to QuANTs.
 
 # Running it
 We recommend running QuANTs on the cluster via the following:
-
+```
 export R_LIBS=""
 
 export R_LIBS_USER=""
@@ -16,6 +16,7 @@ export R_LIBS_USER=""
 /data/grossman/pipedream2018/bin/R/R-3.4.3/bin/R
 
 > library(QuANTs)
+```
 
 # Get QuANTs values for subjects of interest (in R)
 The 'getQuants()' function may be used to generate a data.frame with the values of interest. The required parameters are:
