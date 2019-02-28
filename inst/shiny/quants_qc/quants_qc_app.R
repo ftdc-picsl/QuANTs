@@ -12,7 +12,9 @@ load_subject = function( id, date, path ) {
     #t1 = list.files(path=subpath,  pattern=glob2rx("*BrainSegmentation0N4.nii.gz"), full.names=T)
     seg = list.files(path=subpath, pattern=glob2rx("*BrainSegmentation.nii.gz"), full.names=T)
     if ( (length(t1) > 0) & (length(seg) > 0 ) ) {
-      snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
+      #snapCall = paste("/share/apps/itksnap/itksnap-most-recent/bin/itksnap -g",t1,"-s",seg)
+      snapCall = paste("/share/apps/itksnap/itksnap-3.8.0-beta-20181019-Linux-x86_64-qt4/bin/itksnap -g",t1,"-s",seg)
+
       system(paste(snapCall, "&"))
       return(snapCall)
     }
