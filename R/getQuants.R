@@ -53,6 +53,7 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
 
   dat = NULL
   filenames = NULL
+
   for ( f in files ) {
     fDat = read.csv(f)
 
@@ -131,6 +132,12 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
 
     }
   }
+
+  if ( is.null(filenames) ) {
+    warning( "No data found")
+    return(NULL)
+  }
+  print(filenames)
 
   uniqFiles = unique(filenames)
   dat$file = basename(filenames)
