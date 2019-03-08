@@ -17,18 +17,22 @@ export R_LIBS_USER=""
 ```
 
 # Get QuANTs values for subjects of interest (in R)
-The 'getQuants()' function may be used to generate a data.frame with the values of interest. The required parameters are:
-* path: location of antsct base directory, e.g. /data/grossman/pipedream2018/crossSectional/antsct/
-* id: list of subjects to include
+The workhouse of the package is the getQuants() function. Here we'll describe its basic use and later we will discuss some helper functions that can make more complex tasks less complicated. The basic idea behind getQuants() is that allows the user to treat the output of the image processing pipeline as a database that one can query to obtain the data of interest. getQuants() attempts to fullfill the following request: "For the data stored at this **location**, I would like to obtain this **summary** of this **measure** in this **anatomy** for these **subjects** whose data was acquired on these **dates**."
 
-A number of optional parameters, make it easier to obtain only the values of interest, these may be a single string, or a vector of strings:
+First, the required parameters for any call to getQuants() are:
 
-* date: a list with a date for each id in the list (default is to obtain all dates for each id)
-* system: only return values for the labeling system/s indicated
-* label: the label numbers to return
-* measure: the measure of interest (e.g. "thickness", "volume", etc)
-* metric: the summary metric (e.g. "mean", "max", etc)
-* as.wide: boolean flag to return a wide-format data.frame
+* path: the **location** of the processed data, almost always "/data/grossman/pipedream2018/crossSectional/antsct/"
+* id: a list of ids for all **subjects** of interest
+
+If you only include the required parameters you will get all data for all subjects at all times which is probably a lot more than what you are actually interested in. The following parameters will help you narrow down the data returned and control the format in which the date is returned.
+
+* date: a list of **dates** for each id in the id-list (default is to obtain all dates for each id)
+* system: the name of the labeling system used to define the **anatomy** (may be a list)
+* label: the label numbers used by the to identify **anatomy** (only use this when asking for a single system)
+* measure: the image **measure** of interest (e.g. "thickness", "volume", etc)
+* metric: the **summary** metric (e.g. "mean", "max", etc)
+* as.wide: boolean flag to return a wide-format data.frame (default is long-format)
+* rename: boolean flag to return descriptive names (default is 'system_label_metric_measure')
 
 Here are some examples, assuming a pre-defined path and id list
 
