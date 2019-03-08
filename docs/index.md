@@ -1,20 +1,17 @@
 # QuANTs
 Quality control, quantifying regional values, and querying of ANTs output.
-There are three main components to QuANTs.
+There are three main components to QuANTs:
 
-1. Label system definitions that define the relationship between labels and anatomy
-2. Rscripts used to generate .csv files to summarize measures using label systems
-3. R functions used to query to data stored in the .csv files
+1. An R package that provides functions for obtaining summary values for images processed by the ANTs cortical thickness pipeline
+2. Rscripts used to generate .csv files that summarize measures using predefined anatonical labeling systems
+3. Some simple tools to help in performing QC
 
 # Running it
 We recommend running QuANTs on the cluster via the following:
 ```
 export R_LIBS=""
-
 export R_LIBS_USER=""
-
 /data/grossman/pipedream2018/bin/R/R-3.4.3/bin/R
-
 > library(QuANTs)
 ```
 
