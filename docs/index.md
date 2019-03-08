@@ -1,5 +1,4 @@
 # QuANTs
-Quality control, quantifying regional values, and querying of ANTs output.
 There are three main components to QuANTs:
 
 1. An R package that provides functions for obtaining summary values for images processed by the ANTs cortical thickness pipeline
