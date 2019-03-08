@@ -5,6 +5,8 @@ There are three main components to QuANTs:
 2. Rscripts used to generate .csv files that summarize measures using predefined anatonical labeling systems
 3. Some simple tools to help in performing QC
 
+Here we will focus on 1, the R functions that may be used to access the data in a hopefully convenient way.
+
 # Running it
 We recommend running QuANTs on the cluster via the following:
 ```
