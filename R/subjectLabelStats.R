@@ -42,7 +42,7 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
     else if (labelSystem=="brain") {
       labelSet = c(1)
     }
-    else if (labelSystem=="jhu") {
+    else if (labelSystem=="jhuLabels") {
       labelSet = jhuLabels$number
     }
     else {
