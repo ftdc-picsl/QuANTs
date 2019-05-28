@@ -42,6 +42,9 @@ subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
     else if (labelSystem=="brain") {
       labelSet = c(1)
     }
+    else if (labelSystem=="jhu") {
+      labelSet = jhuLabels$number
+    }
     else {
       stop("Only mindboggle & antsct labels are currently supported")
     }
