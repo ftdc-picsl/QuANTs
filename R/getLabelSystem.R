@@ -6,6 +6,7 @@
 #' \itemize{
 #'   \item mindboggle
 #'   \item mindboggle-extended
+#'   \item braincolor
 #'   \item antsct
 #'   \item jhuLabels
 #'   \item jhuTracts
@@ -16,6 +17,9 @@ getLabelSystem <- function( systemName ) {
   }
   else if ( systemName == "mindboggle-extended") {
     sys = mindBoggleLabelsExtended
+  }
+  else if ( systemName == "braincolor" ) {
+    sys = brainColorLabels
   }
   else if ( systemName == "antsct" ) {
     sys = antsct
