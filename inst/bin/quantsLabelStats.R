@@ -16,8 +16,8 @@ option_list = list(
               help="filename of an image to mask the labels", metavar="MaskImage.nii.gz"),
   make_option(c("-n", "--name"), type="character", default=NA,
               help="name of measure in --image", metavar="thickness"),
-  make_option(c("-x", "--maskvalue"), type="numeric", default=1,
-              help="value in mask image to use", metavar="1"),
+  make_option(c("-x", "--maskvalue"), type="character", default=1,
+              help="value/s in mask image to use (comma separated if multiple)", metavar="1"),
   make_option(c("-g", "--image"), type="character", default=NULL,
               help="filename of grayscale image that was labeled", metavar="GrayValues.nii.gz"),
   make_option(c("-o", "--out"), type="character", default="out.csv",
@@ -32,6 +32,8 @@ option_list = list(
 
 opt_parser = OptionParser(option_list=option_list);
 opt = parse_args(opt_parser);
+
+maskValues = strsplit( opt$maskvalue, ",")[[1]]
 
 # Check for valid inputs
 if (is.null(opt$labels)){
@@ -63,22 +65,12 @@ if ( file.exists(opt$system ) ) {
 
 mask=NULL
 if ( file.exists(opt$mask) ) {
-  mask = antsImageRead(opt$mask)
-  mask[ mask != opt$maskvalue ] = 0
-  mask[ mask != 0 ] = 1
-}
-
-if ( !is.na(opt$cortical) ) {
-  if ( opt$cortical ) {
-    print("Cortical labels only")
-    sys=sys[sys$cortex==1,]
-  }
-  else {
-    print("Non-cortical labels only")
-    sys=sys[sys$cortex==0,]
+  seg = antsImageRead(opt$mask)
+  mask = seg*0
+  for ( v in maskValues ) {
+    mask[ seg == v ] = 1
   }
 }
-
 
 
 # Get volumes

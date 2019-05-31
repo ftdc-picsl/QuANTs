@@ -17,7 +17,7 @@ export R_LIBS_USER=""
 ```
 
 # Get QuANTs values for subjects of interest (in R)
-The workhouse of the package is the getQuants() function. Here we'll describe its basic use and later we will discuss some helper functions that can make more complex tasks less complicated. The basic idea behind getQuants() is that allows the user to treat the output of the image processing pipeline as a database that one can query to obtain the data of interest. getQuants() attempts to fullfill the following request: "For the data stored at this **_location_**, I would like to obtain this **_summary_** of this **_measure_** in this **_anatomy_** for these **_subjects_** whose data was acquired on these **_dates_**."
+The workhouse of the package is the getQuants() function. Here we'll describe its basic use and later we will discuss some helper functions that can make more complex tasks less complicated. The basic idea behind getQuants() is that allows the user to treat the output of the image processing pipeline as a database that one can query to obtain the data of interest. getQuants() attempts to fulfill the following request: "For the data stored at this **_location_**, I would like to obtain this **_summary_** of this **_measure_** in this **_anatomy_** for these **_subjects_** whose data was acquired on these **_dates_**."
 
 First, the required parameters for any call to getQuants() are:
 
