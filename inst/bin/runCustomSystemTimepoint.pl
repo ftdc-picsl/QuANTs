@@ -131,7 +131,7 @@ if ( -f ${outFile} ) {
 my $maskValuesString = "";
 
 if ( scalar(@maskValues) > 0 ) {
-  $maskValuesString = "-x ".join( "-x ", @maskValues);
+  $maskValuesString = "-x ".join( ",", @maskValues);
 }
 
 if ( $runIt ) {

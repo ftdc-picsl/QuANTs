@@ -33,6 +33,18 @@ getLabelSystem <- function( systemName ) {
   else if ( systemName == "midevel") {
     sys = midEvelLabels
   }
+  else if ( systemName == "lausanne33" ) {
+    sys = lausanne33Labels
+  }
+  else if ( systemName == "lausanne60" ) {
+    sys = lausanne60Labels
+  }
+  else if ( systemName == "lausanne125" ) {
+    sys = lausanne125Labels
+  }
+  else if ( systemName == "lausanne250" ) {
+    sys = lausanne250Labels
+  }
   else {
     stop("Unsupported labeling system")
   }
