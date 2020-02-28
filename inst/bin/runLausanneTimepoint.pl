@@ -124,38 +124,42 @@ if ( $runIt ) {
   $antsCommands[3] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
   $antsCommands[4] = "   -l $label33 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
   $antsCommands[5] = "   -o ${outFile} -a FALSE \\";
-  $antsCommands[6] = "   -i $id -t $timeStamp -s Lausanne33";
+  $antsCommands[6] = "   -i $id -t $timeStamp -s lausanne33";
+
+  #$antsCommands[7] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  #$antsCommands[8] = "   -l $label33 -c FALSE \\";
+  #$antsCommands[9] = "   -o ${outFile} -a TRUE \\";
+  #$antsCommands[10] = "  -i $id -t $timeStamp -s lausanne33";
+
   $antsCommands[7] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[8] = "   -l $label33 -c FALSE \\";
+  $antsCommands[8] = "   -l $label60 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
   $antsCommands[9] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[10] = "  -i $id -t $timeStamp -s Lausanne33";
+  $antsCommands[10] = "   -i $id -t $timeStamp -s lausanne60";
+
+  #$antsCommands[15] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  #$antsCommands[16] = "   -l $label60 -c FALSE \\";
+  #$antsCommands[17] = "   -o ${outFile} -a TRUE \\";
+  #$antsCommands[18] = "  -i $id -t $timeStamp -s lausanne60";
 
   $antsCommands[11] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[12] = "   -l $label60 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
+  $antsCommands[12] = "   -l $label125 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
   $antsCommands[13] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[14] = "   -i $id -t $timeStamp -s Lausanne60";
+  $antsCommands[14] = "   -i $id -t $timeStamp -s lausanne125";
+
+  #$antsCommands[23] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  #$antsCommands[24] = "   -l $label125 -c FALSE \\";
+  #$antsCommands[25] = "   -o ${outFile} -a TRUE \\";
+  #$antsCommands[26] = "  -i $id -t $timeStamp -s lausanne125";
+
   $antsCommands[15] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[16] = "   -l $label60 -c FALSE \\";
+  $antsCommands[16] = "   -l $label250 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
   $antsCommands[17] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[18] = "  -i $id -t $timeStamp -s Lausanne60";
+  $antsCommands[18] = "   -i $id -t $timeStamp -s lausanne250";
 
-  $antsCommands[19] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[20] = "   -l $label125 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
-  $antsCommands[21] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[22] = "   -i $id -t $timeStamp -s Lausanne125";
-  $antsCommands[23] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[24] = "   -l $label125 -c FALSE \\";
-  $antsCommands[25] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[26] = "  -i $id -t $timeStamp -s Lausanne125";
-
-  $antsCommands[27] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[28] = "   -l $label250 -c TRUE -m $thickMask -x 1 -g $thick -n thickness \\";
-  $antsCommands[29] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[30] = "   -i $id -t $timeStamp -s Lausanne250";
-  $antsCommands[31] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[32] = "   -l $label250 -c FALSE \\";
-  $antsCommands[33] = "   -o ${outFile} -a TRUE \\";
-  $antsCommands[34] = "  -i $id -t $timeStamp -s Lausanne250";
+  #$antsCommands[31] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
+  #$antsCommands[32] = "   -l $label250 -c FALSE \\";
+  #$antsCommands[33] = "   -o ${outFile} -a TRUE \\";
+  #$antsCommands[34] = "  -i $id -t $timeStamp -s lausanne250";
 
   print( "@antsCommands\n");
 
