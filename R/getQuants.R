@@ -127,11 +127,21 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
       if ( sum(idx) > 0 ) {
         fDat = fDat[idx==1,]
         filenames = c(filenames, rep(f, dim(fDat)[1]))
+
+        # Check for multiple rows with same entry (that's bad)
+        #print(paste("testing", f))
+        if ( dim(fDat[,1:6])[1] != dim(unique(fDat[,1:6]))[1] ) {
+          warning( paste("Non-unique rows found in file:",f ) )
+          return( NULL )
+        }
+
         dat = rbind(dat, fDat)
       }
 
     }
   }
+
+
 
   if ( is.null(filenames) ) {
     warning( "No data found")
