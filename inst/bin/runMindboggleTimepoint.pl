@@ -135,7 +135,7 @@ if ( $runIt ) {
   system("chmod ug+w $commandFile");
 
   if ( $submitToQueue == 1 ) {
-    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_mb.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_mb.stderr $commandFile" );
+    system( "qsub -l h_vmem=6.1G,s_vmem=6.0G -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_mb.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_mb.stderr $commandFile" );
   }
   else {
     system("sh $commandFile");
