@@ -51,7 +51,6 @@ if ( is.na(opt$time) ) {
   stop("Must provide a timestamp")
 }
 
-
 print(opt)
 systemName = opt$system
 sys = NA
@@ -72,6 +71,16 @@ if ( file.exists(opt$mask) ) {
   }
 }
 
+if ( !is.na(opt$cortical) ) {
+  if ( opt$cortical ) {
+    print("Cortical labels only")
+    sys = sys[sys$cortical==1,]
+  }
+  else {
+    print("Non-cortical labels only")
+    system = sys[sys$cortical==0,]
+  }
+}
 
 # Get volumes
 labelImg = antsImageRead(opt$labels)
