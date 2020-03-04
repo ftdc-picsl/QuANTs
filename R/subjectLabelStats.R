@@ -12,6 +12,7 @@
 #' @param include.volume should volumes be calculated (default=TRUE)
 #' @param force.resample resample image to match label space if necessary (default=FALSE)
 #'
+
 subjectLabelStats <- function( labels, image=NULL, measure="measure", mask=NULL,
   weights=NULL, outfile=NULL, labelSet=NULL, labelSystem="mindboggle", include.volume=TRUE, force.resample=FALSE ) {
 
