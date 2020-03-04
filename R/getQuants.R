@@ -141,13 +141,20 @@ getQuants <- function(path, id, date=NULL, system=NULL, label=NULL, measure=NULL
     }
   }
 
-
+  # Check for multiple rows with same entry (that's bad)
+  if ( dim(dat[,1:6])[1] != dim(unique(dat[,1:6]))[1] ) {
+    warning( paste("Non-unique rows found in data, occurs across files" ) )
+    return( NULL )
+  }
 
   if ( is.null(filenames) ) {
     warning( "No data found")
     return(NULL)
   }
-  print(filenames)
+  #print(filenames)
+
+
+
 
   uniqFiles = unique(filenames)
   dat$file = basename(filenames)
