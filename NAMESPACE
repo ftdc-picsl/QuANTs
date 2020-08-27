@@ -11,5 +11,6 @@ export(quants_qc)
 export(quantsRename)
 export(quantsValueImage)
 export(reduceQuants)
+export(quantsTSNR)
 
 importFrom(ANTsRCore, antsImageRead)
