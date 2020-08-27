@@ -106,7 +106,7 @@ if ( ! -f ${fa} ) {
   $runIt=0;
 }
 
-my $labels = "${localOutputDirectory}/${id}_${timeStamp}_jhuLabels.nii.gz";
+#my $labels = "${localOutputDirectory}/${id}_${timeStamp}_jhuLabels.nii.gz";
 my $tempMask = "${localOutputDirectory}/${id}_${timeStamp}_jhuMask.nii.gz";
 
 if ( $runIt ) {
@@ -123,7 +123,8 @@ if ( $runIt ) {
 
   my $idx = 0
   @thresholds = (0,25,50)
-  foreach $thresh ( @threshold ) {
+  foreach $thresh ( @thresholds ) {
+    my $labels = "${localOutputDirectory}/${id}_${timeStamp}_jhuLabels${thresh}.nii.gz";
 
     my @antsCommands = ();
     $antsCommands[$idx++] = "antsApplyTransforms -v 1 -d 3 -i /data/grossman/pipedream2018/templates/OASIS/labels/JHU_ICBM/JHU-ICBM-tracts-maxprob-thr${thresh}-1mm.nii.gz -r $seg -o $labels -n GenericLabel -t $tx4 -t $tx3 -t $tx2 -t $tx1";
