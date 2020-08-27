@@ -23,7 +23,7 @@ option_list = list(
   make_option(c("-o", "--out"), type="character", default="out.csv",
               help="output file name [default= %default]", metavar="out.csv"),
   make_option(c("-a", "--append"), type="logical", default=FALSE,
-              help="append output file it already exists [default = %default]", metavar="FALSE"),
+              help="append output file if it already exists [default = %default]", metavar="FALSE"),
   make_option(c("-s", "--system"), type="character", default="mindboggle",
               help="labeling system name (or .csv file) [default= %default]", metavar="mindboggle"),
   make_option(c("-v", "--volume"), type="logical", default=TRUE,
@@ -62,6 +62,7 @@ if ( file.exists(opt$system ) ) {
   sys = getLabelSystem(opt$system)
 }
 
+
 mask=NULL
 if ( file.exists(opt$mask) ) {
   seg = antsImageRead(opt$mask)
@@ -74,11 +75,11 @@ if ( file.exists(opt$mask) ) {
 if ( !is.na(opt$cortical) ) {
   if ( opt$cortical ) {
     print("Cortical labels only")
-    sys = sys[sys$cortical==1,]
+    sys = sys[sys$cortex==1,]
   }
   else {
     print("Non-cortical labels only")
-    system = sys[sys$cortical==0,]
+    sys = sys[sys$cortex==0,]
   }
 }
 
@@ -90,8 +91,10 @@ n = dim(dat)[1]
 dat = data.frame(id=rep(opt$id,n), date=rep(opt$time,n), dat )
 
 if ( file.exists( opt$out ) ) {
-  appendDat = read.csv(opt$out)
-  dat = rbind(appendDat, dat)
+  if ( opt$append ) {
+    appendDat = read.csv(opt$out)
+    dat = rbind(appendDat, dat)
+  }
 }
 
 write.csv(dat, opt$out, row.names=F)
