@@ -19,15 +19,24 @@ getLabelSystem <- function( systemName ) {
     sys = mindBoggleLabelsExtended
   }
   else if ( systemName == "braincolor" ) {
-    sys = brainColorLabels
+    sys = braincolorLabels
   }
   else if ( systemName == "antsct" ) {
     sys = antsct
   }
+  else if ( systemName == "brain" ) {
+    sys = brainLabel
+  }
   else if ( systemName == "jhuLabels") {
     sys = jhuLabels
   }
-  else if ( systemName == "jhuTracts") {
+  else if ( systemName == "jhuTracts0") {
+    sys = jhuTracts
+  }
+  else if ( systemName == "jhuTracts25") {
+    sys = jhuTracts
+  }
+  else if ( systemName == "jhuTracts50") {
     sys = jhuTracts
   }
   else if ( systemName == "midevel") {

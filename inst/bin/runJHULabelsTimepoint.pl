@@ -131,17 +131,17 @@ if ( $runIt ) {
   $antsCommands[5] = "   -i $id -t $timeStamp";
 
   $antsCommands[6] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[7] = "   -l $tempMask -g $ad -n AD -m $tempMask -x 1 \\";
+  $antsCommands[7] = "   -l $labels -g $ad -n AD -m $tempMask -x 1 \\";
   $antsCommands[8] = "   -o ${outFile} -a TRUE -s jhuLabels\\";
   $antsCommands[9] = "   -i $id -t $timeStamp -v FALSE";
 
   $antsCommands[10] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[11] = "   -l $tempMask -g $rd -n RD -m $tempMask -x 1 \\";
+  $antsCommands[11] = "   -l $labels -g $rd -n RD -m $tempMask -x 1 \\";
   $antsCommands[12] = "   -o ${outFile} -a TRUE -s jhuLabels\\";
   $antsCommands[13] = "   -i $id -t $timeStamp -v FALSE";
 
   $antsCommands[14] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-  $antsCommands[15] = "   -l $tempMask -g $md -n MD -m $tempMask -x 1 \\";
+  $antsCommands[15] = "   -l $labels -g $md -n MD -m $tempMask -x 1 \\";
   $antsCommands[16] = "   -o ${outFile} -a TRUE -s jhuLabels\\";
   $antsCommands[17] = "   -i $id -t $timeStamp -v FALSE";
 

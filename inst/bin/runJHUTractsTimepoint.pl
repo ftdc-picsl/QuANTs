@@ -45,7 +45,7 @@ my $usage = qq{
 
   Output:
 
-    Creates an output summary file: <directory>/<subject>/<timepoint>/stats/<subject>_<timepoint>_mindboggle.csv
+    Creates an output summary file: <directory>/<subject>/<timepoint>/stats/<subject>_<timepoint>_jhuTracts.csv
 
 };
 
@@ -79,15 +79,23 @@ my @segs = <${directory}/${id}/${timeStamp}/${id}_${timeStamp}_BrainSegmentation
 my $seg = $segs[0];
 
 my $localOutputDirectory = "${directory}/${id}/${timeStamp}/stats";
+#$localOutputDirectory = "/data/grossman/jtduda/Diffusion/jhu_tract_test";
 
 my $runIt=1;
+if ( ! -d "${directory}/${id}/${timeStamp}" )
+  {
+  die("No data found at ${directory}/${id}/${timeStamp}");
+  $runIt=0;
+  }
+
+
 if( ! -d $localOutputDirectory )
   {
   mkpath( $localOutputDirectory );
   }
 
-my $commandFile = "${localOutputDirectory}/antsJHULabels.sh";
-my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_jhuLabels.csv";
+my $commandFile = "${localOutputDirectory}/antsJHUTracts.sh";
+my $outFile = "${localOutputDirectory}/${id}_${timeStamp}_jhuTracts.csv";
 
 my $fa = <${dtdirectory}/${id}/${timeStamp}/dtNorm/${id}_${timeStamp}_FANormalizedToStructural.nii.gz>;
 my $md = <${dtdirectory}/${id}/${timeStamp}/dtNorm/${id}_${timeStamp}_MDNormalizedToStructural.nii.gz>;
@@ -121,37 +129,47 @@ if ( $runIt ) {
   print FILE "export R_LIBS_USER=\"\"";
   print FILE "\n";
 
-  my $idx = 0
-  @thresholds = (0,25,50)
-  foreach $thresh ( @thresholds ) {
-    my $labels = "${localOutputDirectory}/${id}_${timeStamp}_jhuLabels${thresh}.nii.gz";
+  my $idx = 0;
+  @thresholds = (0,25,50);
+  my @antsCommands = ();
 
-    my @antsCommands = ();
+  foreach my $thresh ( @thresholds ) {
+
+    my $labels = "${localOutputDirectory}/${id}_${timeStamp}_jhuTracts${thresh}.nii.gz";
+
+    my $append = "FALSE";
+    if ( $thresh > 0 ) {
+      $append = "TRUE";
+    }
+
+
+
     $antsCommands[$idx++] = "antsApplyTransforms -v 1 -d 3 -i /data/grossman/pipedream2018/templates/OASIS/labels/JHU_ICBM/JHU-ICBM-tracts-maxprob-thr${thresh}-1mm.nii.gz -r $seg -o $labels -n GenericLabel -t $tx4 -t $tx3 -t $tx2 -t $tx1";
     $antsCommands[$idx++] = "ThresholdImage 3 $seg $tempMask 3 7";
+    #$antsCommands[$idx++] = "ImageMath 3 ${localOutputDirectory}/${id}_${timeStamp}_jhuTracts${thresh}_masked.nii.gz m $tempMask $labels";
 
     $antsCommands[$idx++] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
     $antsCommands[$idx++] = "   -l $labels -g $fa -n FA -m $tempMask -x 1 \\";
-    $antsCommands[$idx++] = "   -o ${outFile} -a FALSE -s jhuTracts${thresh}\\";
+    $antsCommands[$idx++] = "   -o ${outFile} -a $append -s jhuTracts${thresh}\\";
     $antsCommands[$idx++] = "   -i $id -t $timeStamp";
 
     $antsCommands[$idx++] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-    $antsCommands[$idx++] = "   -l $tempMask -g $ad -n AD -m $tempMask -x 1 \\";
+    $antsCommands[$idx++] = "   -l $labels -g $ad -n AD -m $tempMask -x 1 \\";
     $antsCommands[$idx++] = "   -o ${outFile} -a TRUE -s jhuTracts${thresh}\\";
     $antsCommands[$idx++] = "   -i $id -t $timeStamp -v FALSE";
 
     $antsCommands[$idx++] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-    $antsCommands[$idx++] = "   -l $tempMask -g $rd -n RD -m $tempMask -x 1 \\";
+    $antsCommands[$idx++] = "   -l $labels -g $rd -n RD -m $tempMask -x 1 \\";
     $antsCommands[$idx++] = "   -o ${outFile} -a TRUE -s jhuTracts${thresh}\\";
     $antsCommands[$idx++] = "   -i $id -t $timeStamp -v FALSE";
 
     $antsCommands[$idx++] = "/data/grossman/pipedream2018/bin/R/R-3.4.3/bin/Rscript /data/grossman/pipedream2018/bin/QuANTs/inst/bin/quantsLabelStats.R \\";
-    $antsCommands[$idx++] = "   -l $tempMask -g $md -n MD -m $tempMask -x 1 \\";
+    $antsCommands[$idx++] = "   -l $labels -g $md -n MD -m $tempMask -x 1 \\";
     $antsCommands[$idx++] = "   -o ${outFile} -a TRUE -s jhuTracts${thresh}\\";
     $antsCommands[$idx++] = "   -i $id -t $timeStamp -v FALSE";
   }
 
-  #print( "@antsCommands\n");
+  print( "commands:\n @antsCommands\n");
 
   for( my $k = 0; $k < @antsCommands; $k++ )
     {
@@ -165,12 +183,15 @@ if ( $runIt ) {
   system("chmod ug+w $commandFile");
 
   if ( $submitToQueue == 1 ) {
-    #system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_jhutracts.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_jhutracts.stderr $commandFile" );
+    system( "qsub -binding linear:1 -pe unihost 1 -o ${localOutputDirectory}/${id}_${timeStamp}_jhutracts.stdout -e ${localOutputDirectory}/${id}_${timeStamp}_jhutracts.stderr $commandFile" );
   }
   else {
-    #system("sh $commandFile");
+    system("sh $commandFile");
   }
+
 
   #print("\n");
   sleep(1);
   }
+
+  # while read p; do x=${p:0:6}; y=${p:7:8}; echo $x $y ; perl /data/grossman/pipedream2018/bin/QuANTs/inst/bin/runJHULabelsTimepoint.pl --subject $x --timepoint $y;  done < jhu_to_run2.txt
