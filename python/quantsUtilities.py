@@ -5,7 +5,7 @@ import pandas as pd
 def loadLabelSystem(name):
     sys=None
     if name=="BrainCOLOR":
-        sys = pd.read_csv("/flywheel/v0/braincolor_labels.csv")
+        sys = pd.read_csv("/apps/quants/data/braincolor_labels.csv")
 
     return(sys)
 
