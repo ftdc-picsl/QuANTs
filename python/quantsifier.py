@@ -24,6 +24,8 @@ class Quantsifier():
         self.labelRegions = None
         self.output = None
 
+        self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
+
     def AddMeasure(self, measure, name, regions, threshold=0.000001):
         if not name in self.measures.keys():
             if self.ValidateInput(measure):
@@ -32,7 +34,7 @@ class Quantsifier():
                     print("Added measure image named: "+name)
                 
     def SetSegmentation(self, segmentation):
-        if  self.ValidateInput(segmentation):
+        if self.ValidateInput(segmentation):
             self.segmentation = segmentation
             self.segmentationRegions = np.unique(itk.array_view_from_image(self.segmentation))
             if 0 in self.segmentationRegions:
@@ -60,13 +62,30 @@ class Quantsifier():
                     print("Added image labels for system: "+systemName)
 
     def ValidateSystemLabels(self, labels, system):
-        print("Not yet implemented")
-        return(True)
+
+        # FIXME - what needs to be done here?
+        valid = True
+        return(valid)
 
     def ValidateInput(self, img):
         # Check all image headers for consistency
-        print("ValidateInputs() Not yet implemented")
-        return(True)
+        valid = True
+        if self.refspace['origin'] is None:
+            self.refspace['origin'] = img.GetOrigin()
+            self.refspace['spacing'] = img.GetSpacing()
+            self.refspace['direction'] = img.GetDirection()
+            self.refspace['size'] = img.shape
+            valid = True
+        else:
+            valid = self.refspace['origin'] == img.GetOrigin()
+            valid = valid and self.refspace['spacing'] == img.GetSpacing()
+            valid = valid and self.refspace['direction'] == img.GetDirection()
+            valid = valid and self.refspace['size'] == img.shape
+
+        if not valid:
+            print("Invalid input image")
+
+        return(valid)
 
     def GetSegmentationMask(self, region):
         seg = itk.array_view_from_image(self.segmentation)
@@ -120,6 +139,7 @@ class Quantsifier():
             print("Precomputed region masks")
 
         stats = []
+        print( "Summarizing "+str(len(self.labels.keys())) + " labeling systems" )
         for sysName in self.labels.keys():
             if self.verbose:
                 print("Summarizing system: " + sysName)
@@ -162,6 +182,8 @@ class Quantsifier():
 
     def Summarize(self, systemName, measureName):
 
+        print("  >> Summarize( "+systemName+" "+measureName+" )")
+
         if self.verbose:
             print("Summarize( "+systemName+" "+measureName+" )")
 
@@ -194,8 +216,8 @@ class Quantsifier():
             else:
                 measureName = ""
 
-        print(labelNum)
-        print(labelReg)
+        #print(labelNum)
+        #print(labelReg)
         labelSubset = labelNum[labelReg==segRegion]
 
         statList = self.GetStats(labelView, labelSubset, measureView, measureName)
