@@ -6,6 +6,17 @@ import quantsifier as qf
 import glob
 import os
 
+def brainColorSubcorticalSystem():
+    sysDict={4:1,11:1,23:4,30:4,31:4,32:4,35:5,36:4,37:4,38:6,39:6,40:6,41:6,44:3,45:3,46:1,47:4,48:4,49:1,50:1,51:1,52:1,55:4,56:4,57:4,58:4,59:4,60:4,61:4,62:4,63:1,64:1,69:1,71:6,72:6,73:6,75:4,76:4}
+    
+    k, v = [], []
+    for key, value in sysDict.items():
+        k.append(key)
+        v.append(value)  
+
+    return( (k,v) )
+    
+
 def corticalSystemNames():
 
     names =  ['lausanne33', 
@@ -45,6 +56,8 @@ def getFTDCQuantsifier( imgFiles ):
 
     # Masking rule for subcortical(=4) == include everything except CSF(=1) and Whitematter(=3)
     q.AddSegmentationMaskingRule( 4, exclude=[1,3] )
+    #q.AddSegmentationMaskingRule( 5, include=[1,2,3,4,5,6] ) 
+
 
     # Add ANTsCT segmentation as a labeling system
     q.AddLabelingSystem(imgs['seg'], np.asarray([1,2,3,4,5,6]), np.asarray([1,2,3,4,5,6]), 'antsct', ['thickness','intensity0N4'] )
@@ -53,8 +66,12 @@ def getFTDCQuantsifier( imgFiles ):
     q.AddLabelingSystem(imgs['mask'], np.asarray([1]), np.asarray([1]), 'brain', [None])
 
     # Subcortical regions
-    bcLabels = np.unique(itk.GetArrayViewFromImage(imgs['braincolor']))
-    q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
+    #bcLabels = np.unique(itk.GetArrayViewFromImage(imgs['braincolor']))
+    #bcLabels = bcLabels[bcLabels > 0]
+    #q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
+    bc=brainColorSubcorticalSystem()
+    q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
+    
 
     for sys in corticalSystemNames():
         if not imgs[sys] is None:

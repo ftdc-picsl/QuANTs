@@ -213,6 +213,7 @@ class Quantsifier():
         labelNum = self.labels[systemName][1]
         labelReg = self.labels[systemName][2]
 
+
         maskView = itk.array_view_from_image(self.mask)
         labelView = np.copy(itk.array_view_from_image(labelImage))
         segView = itk.array_view_from_image(self.regionMasks[segRegion])
@@ -229,7 +230,9 @@ class Quantsifier():
 
         statList = []
         if not measureName is None:
-            labelSubset = labelNum[labelReg==segRegion]
+            #print(labelReg==segRegion)
+            #labelSubset = labelNum[labelReg==segRegion]
+            labelSubset = [x for (x,y) in zip(labelNum, labelReg) if y==segRegion]
 
             statList = self.GetStats(labelView, labelSubset, measureView, measureName)
             for i in range(len(statList)):
@@ -254,8 +257,8 @@ class Quantsifier():
     def LabelStats(self, labelView, number):
         #if self.verbose:
         #    print("LabelStats()")
-        dat = {"label":number, "measure": "numeric", "values": {} }
-        dat['values']['volume'] = self.voxvol*float(np.sum(labelView==number))
+        dat = {"label":number, "measure": "volume", "values": {} }
+        dat['values']['numeric'] = self.voxvol*float(np.sum(labelView==number))
         return(dat)
 
     def MeasureStats( self, values, number, measureName ):
