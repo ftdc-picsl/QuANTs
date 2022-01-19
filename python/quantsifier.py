@@ -26,7 +26,7 @@ class Quantsifier():
 
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
-    def AddMeasure(self, measure, name, regions, threshold=0.000001):
+    def AddMeasure(self, measure, name, regions, threshold=0.00001):
         if not name in self.measures.keys():
             if self.ValidateInput(measure):
                 self.measures[name] = {"image":measure, "regions":regions, "threshold":threshold}
@@ -54,10 +54,10 @@ class Quantsifier():
         if self.ValidateInput(mask):
             self.mask = mask
 
-    def AddSystemLabels(self, labelImage, numbers, regions, systemName):
+    def AddLabelingSystem(self, labelImage, numbers, regions, systemName, measures):
         if self.ValidateInput(labelImage) and ( not systemName in self.labels.keys() ):
             if self.ValidateSystemLabels(labelImage, regions):
-                self.labels[systemName] = (labelImage, numbers, regions)
+                self.labels[systemName] = (labelImage, numbers, regions, measures)
                 if self.verbose:
                     print("Added image labels for system: "+systemName)
 
@@ -143,11 +143,20 @@ class Quantsifier():
         for sysName in self.labels.keys():
             if self.verbose:
                 print("Summarizing system: " + sysName)
-            measureNames = [""]
+
+            measuresToUse = ['volume']
             if not self.measures is None:
                 measureNames = self.measures.keys()
 
-            for mName in measureNames:
+            sysMeasures = self.labels[sysName][3]
+            if not sysMeasures is None:
+
+                applicableMeaures = set(sysMeasures).intersection(measureNames)
+                if len(applicableMeaures) > 0:
+                    measuresToUse.extend(applicableMeaures)
+
+
+            for mName in measuresToUse:
                 if self.verbose:
                     print("Summarizing measure:"+mName)
                 mStats = self.Summarize(sysName, mName)
@@ -189,7 +198,9 @@ class Quantsifier():
 
         stats=[]
         for r in self.segmentationRegions:
-            stats += self.SummarizeRegion(systemName, measureName, r)
+            rstats = self.SummarizeRegion(systemName, measureName, r)
+            if len(rstats)>0:
+                stats += rstats
 
         return(stats)
 
@@ -208,21 +219,21 @@ class Quantsifier():
         labelView[segView==0] = 0
 
         measureView = None 
-        if measureName != "":
+        if measureName != "volume":
             if segRegion in self.measures[measureName]['regions']:
                 measureView = itk.array_view_from_image( self.measures[measureName]['image'] )
                 if self.measures[measureName]['threshold'] > 0:
                     labelView[measureView < self.measures[measureName]['threshold']] = 0
             else:
-                measureName = ""
+                measureName = None
 
-        #print(labelNum)
-        #print(labelReg)
-        labelSubset = labelNum[labelReg==segRegion]
+        statList = []
+        if not measureName is None:
+            labelSubset = labelNum[labelReg==segRegion]
 
-        statList = self.GetStats(labelView, labelSubset, measureView, measureName)
-        for i in range(len(statList)):
-            statList[i]['system']=systemName
+            statList = self.GetStats(labelView, labelSubset, measureView, measureName)
+            for i in range(len(statList)):
+                statList[i]['system']=systemName
 
         return(statList)
 
@@ -231,9 +242,11 @@ class Quantsifier():
         if self.verbose:
             print("GetStats() ")
 
-        statList = [ (self.LabelStats(labelView, int(i))) for i in labelValues ]
+        statList = []    
 
-        if measureName != "":
+        if measureName == "volume":
+            statList = [ (self.LabelStats(labelView, int(i))) for i in labelValues ]
+        else:
             statList += [ (self.MeasureStats(measureView[labelView==i], int(i), measureName) ) for i in labelValues ]
 
         return statList
