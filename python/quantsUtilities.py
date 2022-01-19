@@ -70,7 +70,8 @@ def getFTDCQuantsifier( imgFiles ):
     #bcLabels = bcLabels[bcLabels > 0]
     #q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
     bc=brainColorSubcorticalSystem()
-    q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
+    if not imgs['braincolor'] is None:
+        q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
     
 
     for sys in corticalSystemNames():
