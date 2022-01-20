@@ -67,6 +67,15 @@ class Quantsifier():
         valid = True
         return(valid)
 
+    def ssd(a,b,tolerance=0.00001):
+        sum = 0
+        for i in range(len(a)):
+            diff = a[i]-a[i]
+            sum += diff*diff
+
+        return(diff)
+        
+
     def ValidateInput(self, img):
         # Check all image headers for consistency
         valid = True
@@ -77,19 +86,32 @@ class Quantsifier():
             self.refspace['size'] = img.shape
             valid = True
         else:
-            valid = self.refspace['origin'] == img.GetOrigin()
-            valid = valid and self.refspace['spacing'] == img.GetSpacing()
-            valid = valid and self.refspace['direction'] == img.GetDirection()
-            valid = valid and self.refspace['size'] == img.shape
+            if  self.ssd( self.refspace['origin'], img.GetOrigin() ) > 0.0001:
+                valid = False
+                print("Unmatched origins ")
+                print(self.refspace['origin'])
+                print(img.GetOrigin())
+
+            if self.ssd( self.refspace['spacing'], img.GetSpacing() ) > 0.0001:
+                valid= False
+                print("Unmatched spacing")
+                print(self.refspace['spacing'])
+                print(img.GetSpacing())
+
+            if self.ssd( self.refspace['direction'], img.GetDirection() ) > 0.0001:
+                valid=False
+                print("Unmatched direction")
+                print(self.refspace['direction'])
+                print(img.GetDirection())
+
+            if self.ssd( self.refspace['size'], img.shape) > 0.0001:
+                valid=False
+                print("Unmatched size")
+                print(self.refspace['size'])
+                print( img.shape )
 
         if not valid:
             print("Invalid input image")
-            print(self.refspace)
-            print(img.GetOrigin())
-            print(img.GetSpacing())
-            print(img.GetDirection())
-            print(img.shape)
-
 
         return(valid)
 
