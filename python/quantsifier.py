@@ -69,6 +69,10 @@ class Quantsifier():
 
     def ssd(self,a,b,tolerance=0.00001):
         sum = 0
+        if isinstance(a, type(itk.Matrix[itk.D,3,3]()) ):
+            a = itk.GetArrayFromMatrix(a).flatten().tolist()
+            b = itk.GetArrayFromMatrix(b).flatten().tolist()
+
         for i in range(len(a)):
             diff = a[i]-a[i]
             sum += diff*diff
