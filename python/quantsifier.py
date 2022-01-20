@@ -67,7 +67,7 @@ class Quantsifier():
         valid = True
         return(valid)
 
-    def ssd(a,b,tolerance=0.00001):
+    def ssd(self,a,b,tolerance=0.00001):
         sum = 0
         for i in range(len(a)):
             diff = a[i]-a[i]
