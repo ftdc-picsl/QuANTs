@@ -84,6 +84,12 @@ class Quantsifier():
 
         if not valid:
             print("Invalid input image")
+            print(self.refspace)
+            print(img.GetOrigin())
+            print(img.GetSpacing())
+            print(img.GetDirection())
+            print(img.shape)
+
 
         return(valid)
 
