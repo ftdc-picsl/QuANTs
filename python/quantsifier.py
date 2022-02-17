@@ -32,6 +32,8 @@ class Quantsifier():
                 self.measures[name] = {"image":measure, "regions":regions, "threshold":threshold}
                 if self.verbose:
                     print("Added measure image named: "+name)
+            else:
+                print("Validation failed for "+name)
                 
     def SetSegmentation(self, segmentation):
         if self.ValidateInput(segmentation):
@@ -39,9 +41,11 @@ class Quantsifier():
             self.segmentationRegions = np.unique(itk.array_view_from_image(self.segmentation))
             if 0 in self.segmentationRegions:
                 self.segmentationRegions = np.delete(self.segmentationRegions, 0)
-        if self.verbose:
-            print("Segmentation regions: "+str(self.segmentationRegions))
-        self.voxvol = np.prod( itk.GetArrayFromVnlVector( segmentation.GetSpacing().GetVnlVector() ) )
+            if self.verbose:
+                print("Segmentation regions: "+str(self.segmentationRegions))
+            self.voxvol = np.prod( itk.GetArrayFromVnlVector( segmentation.GetSpacing().GetVnlVector() ) )
+        else:
+            print("Validation failed for segmentation image")
 
 
     def AddSegmentationMaskingRule( self, region, include=None, exclude=None ):
