@@ -384,10 +384,10 @@ def getFTDCInputs(directory):
 
 def getFTDCQuantsifier( imgFiles ):
     q = Quantsifier()
-
     imgs = imgFiles
     for tag in imgFiles.keys():
         if len(imgFiles[tag])>0:
+            print("Reading "+imgFiles[tag][0])
             imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
         else:
             imgs[tag] = None
