@@ -3,12 +3,17 @@ import numpy as np
 import pandas as pd
 import glob
 import os
+import logging
 
 class Quantsifier():
 
     def __init__(self):
 
         #super().__init__()
+        logging.basicConfig()
+        self.log = logging.getLogger(__name__)
+        self.log.setLevel(logging.INFO)
+
         self.labels = {}
         self.measures = {}
         self.voxvol=0
@@ -28,14 +33,17 @@ class Quantsifier():
 
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
+    def SetLoggingLevel(self, level):
+        self.log.setLevel(level)
+
     def AddMeasure(self, measure, name, regions, threshold=0.00001):
         if not name in self.measures.keys():
             if self.ValidateInput(measure):
                 self.measures[name] = {"image":measure, "regions":regions, "threshold":threshold}
                 if self.verbose:
-                    print("Added measure image named: "+name)
+                    self.log.info("Added measure image named: "+name)
             else:
-                print("Validation failed for "+name)
+                self.log.error("Validation failed for "+name)
                 
     def SetSegmentation(self, segmentation):
         if self.ValidateInput(segmentation):
@@ -44,10 +52,10 @@ class Quantsifier():
             if 0 in self.segmentationRegions:
                 self.segmentationRegions = np.delete(self.segmentationRegions, 0)
             if self.verbose:
-                print("Segmentation regions: "+str(self.segmentationRegions))
+                self.log.info("Segmentation regions: "+str(self.segmentationRegions))
             self.voxvol = np.prod( itk.GetArrayFromVnlVector( segmentation.GetSpacing().GetVnlVector() ) )
         else:
-            print("Validation failed for segmentation image")
+            self.log.error("Validation failed for segmentation image")
 
 
     def AddSegmentationMaskingRule( self, region, include=None, exclude=None ):
@@ -98,30 +106,22 @@ class Quantsifier():
         else:
             if  self.ssd( self.refspace['origin'], img.GetOrigin() ) > 0.0001:
                 valid = False
-                print("Unmatched origins ")
-                print(self.refspace['origin'])
-                print(img.GetOrigin())
+                self.log.error("Unmatched origins ")
 
             if self.ssd( self.refspace['spacing'], img.GetSpacing() ) > 0.0001:
                 valid= False
-                print("Unmatched spacing")
-                print(self.refspace['spacing'])
-                print(img.GetSpacing())
+                self.log.error("Unmatched spacing")
 
             if self.ssd( self.refspace['direction'], img.GetDirection() ) > 0.0001:
                 valid=False
-                print("Unmatched direction")
-                print(self.refspace['direction'])
-                print(img.GetDirection())
+                self.log.error("Unmatched direction")
 
             if self.ssd( self.refspace['size'], img.shape) > 0.0001:
                 valid=False
-                print("Unmatched size")
-                print(self.refspace['size'])
-                print( img.shape )
+                self.log.error("Unmatched size")
 
         if not valid:
-            print("Invalid input image")
+            self.log.error("Invalid input image")
 
         return(valid)
 
@@ -162,8 +162,6 @@ class Quantsifier():
         
 
     def Update(self):
-        if self.verbose:
-            print("Update")
 
         if None in [self.mask, self.segmentation]:
             return False
@@ -173,14 +171,10 @@ class Quantsifier():
         # Precompute segmentation region masks
         for i in self.segmentationRegions:
             self.regionMasks[i] = self.GetSegmentationMask(i)
-        if self.verbose:
-            print("Precomputed region masks")
 
         stats = []
-        print( "Summarizing "+str(len(self.labels.keys())) + " labeling systems" )
+        self.log.info( "Summarizing "+str(len(self.labels.keys())) + " labeling systems" )
         for sysName in self.labels.keys():
-            if self.verbose:
-                print("Summarizing system: " + sysName)
 
             measuresToUse = ['volume']
             if not self.measures is None:
@@ -188,15 +182,12 @@ class Quantsifier():
 
             sysMeasures = self.labels[sysName][3]
             if not sysMeasures is None:
-
                 applicableMeaures = set(sysMeasures).intersection(measureNames)
                 if len(applicableMeaures) > 0:
                     measuresToUse.extend(applicableMeaures)
 
 
             for mName in measuresToUse:
-                if self.verbose:
-                    print("Summarizing measure:"+mName)
                 mStats = self.Summarize(sysName, mName)
                 if not mStats is None:
                     stats += mStats
@@ -227,10 +218,8 @@ class Quantsifier():
 
     def Summarize(self, systemName, measureName):
 
-        print("  >> Summarize( "+systemName+" "+measureName+" )")
+        self.log.info("Summarize( %s %s )", systemName, measureName)
 
-        if self.verbose:
-            print("Summarize( "+systemName+" "+measureName+" )")
 
         stats=[]
         for r in self.segmentationRegions:
@@ -241,9 +230,6 @@ class Quantsifier():
         return(stats)
 
     def SummarizeRegion(self, systemName, measureName, segRegion):
-
-        if self.verbose:
-            print("SummarizeRegion() for region=="+str(segRegion))
 
         labelImage = self.labels[systemName][0]
         labelNum = self.labels[systemName][1]
@@ -387,7 +373,7 @@ def getFTDCQuantsifier( imgFiles ):
     imgs = imgFiles
     for tag in imgFiles.keys():
         if len(imgFiles[tag])>0:
-            print("Reading "+imgFiles[tag][0])
+            #print("Reading "+imgFiles[tag][0])
             imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
         else:
             imgs[tag] = None
@@ -443,5 +429,5 @@ def parseFile( fname ):
     fileParts = file.split("_")
     sub = bidsTagValue( fileParts[0] )
     ses = bidsTagValue( fileParts[1] )
-    
+
     return((sub,ses))
