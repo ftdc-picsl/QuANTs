@@ -223,8 +223,6 @@ class Quantsifier():
 
         return(df)
 
-
-
     def Summarize(self, systemName, measureName):
 
         print("  >> Summarize( "+systemName+" "+measureName+" )")
@@ -322,3 +320,51 @@ class Quantsifier():
 
         return(dat)
     
+
+def getFTDCQuantsifier( imgFiles ):
+    q = qf.Quantsifier()
+
+    imgs = imgFiles
+    for tag in imgFiles.keys():
+        if len(imgFiles[tag])>0:
+            imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
+        else:
+            imgs[tag] = None
+
+    # set images
+    q.SetSegmentation(imgs['seg'])
+    q.SetMask(imgs['mask'])
+
+    # Add measure named 'thickness' for voxels with segmentation==2
+    q.AddMeasure(imgs['thickness'], 'thickness', [2])
+    q.AddMeasure(imgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
+
+
+    # Masking rule for subcortical(=4) == include everything except CSF(=1) and Whitematter(=3)
+    q.AddSegmentationMaskingRule( 4, exclude=[1,3] )
+    #q.AddSegmentationMaskingRule( 5, include=[1,2,3,4,5,6] ) 
+
+
+    # Add ANTsCT segmentation as a labeling system
+    q.AddLabelingSystem(imgs['seg'], np.asarray([1,2,3,4,5,6]), np.asarray([1,2,3,4,5,6]), 'antsct', ['thickness','intensity0N4'] )
+
+    # Add brainmask as a labeling system
+    q.AddLabelingSystem(imgs['mask'], np.asarray([1]), np.asarray([1]), 'brain', [None])
+
+    # Subcortical regions
+    #bcLabels = np.unique(itk.GetArrayViewFromImage(imgs['braincolor']))
+    #bcLabels = bcLabels[bcLabels > 0]
+    #q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
+    bc=brainColorSubcorticalSystem()
+    if not imgs['braincolor'] is None:
+        q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
+    
+
+    for sys in corticalSystemNames():
+        if not imgs[sys] is None:
+            lbl = imgs[sys]
+            cxLabels = np.unique(itk.GetArrayViewFromImage(lbl))
+            cxLabels = cxLabels[cxLabels > 0]
+            q.AddLabelingSystem(lbl, cxLabels, np.full(len(cxLabels), 2), sys, ['thickness'])
+
+    return(q)
