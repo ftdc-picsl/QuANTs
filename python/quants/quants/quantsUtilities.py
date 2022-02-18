@@ -4,68 +4,6 @@ import numpy as np
 import pandas as pd
 import glob
 import os
-
-def brainColorSubcorticalSystem():
-    sysDict={4:1,11:1,23:4,30:4,31:4,32:4,35:5,36:4,37:4,38:6,39:6,40:6,41:6,44:3,45:3,46:1,47:4,48:4,49:1,50:1,51:1,52:1,55:4,56:4,57:4,58:4,59:4,60:4,61:4,62:4,63:1,64:1,69:1,71:6,72:6,73:6,75:4,76:4}
-    
-    k, v = [], []
-    for key, value in sysDict.items():
-        k.append(key)
-        v.append(value)  
-
-    return( (k,v) )
-    
-
-def corticalSystemNames():
-
-    names =  ['lausanne33', 
-        'lausanne60', 
-        'lausanne125', 
-        'lausanne250', 
-        'schaefer100x7',
-        'schaefer100x17',
-        'schaefer200x7',
-        'schaefer200x17',
-        'schaefer300x7',
-        'schaefer300x17',
-        'schaefer500x7',
-        'schaefer500x17']
-
-    return(names)
-
-
-
-def getFTDCInputs(directory):
-
-    suffix = {"t1": "*ExtractedBrain0N4.nii.gz",
-              "mask": "*BrainExtractionMask.nii.gz",
-              "seg": "*BrainSegmentation.nii.gz",
-              "n4": "*BrainSegmentation0N4.nii.gz",
-              "gmp": "*BrainSegmentationPosteriors2.nii.gz",
-              "thickness": "*CorticalThickness.nii.gz",
-              "dkt31": "*DKT31.nii.gz",
-              "braincolor": "*BrainColorSubcortical.nii.gz",
-              "lausanne33":"*LausanneCorticalScale33.nii.gz",
-              "lausanne60":"*LausanneCorticalScale60.nii.gz",
-              "lausanne125": "*LausanneCorticalScale125.nii.gz",
-              "lausanne250": "*LausanneCorticalScale250.nii.gz",
-              "schaefer100x7":"*Schaefer2018_100Parcels7Networks.nii.gz",
-              "schaefer100x17":"*Schaefer2018_100Parcels17Networks.nii.gz",
-              "schaefer200x7":"*Schaefer2018_200Parcels7Networks.nii.gz",
-              "schaefer200x17":"*Schaefer2018_200Parcels17Networks.nii.gz",
-              "schaefer300x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
-              "schaefer300x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
-              "schaefer500x7":"*Schaefer2018_500Parcels7Networks.nii.gz",
-              "schaefer500x17":"*Schaefer2018_500Parcels17Networks.nii.gz"
-    }
-
-    imgFiles = suffix
-
-    for tag in suffix.keys():
-        files = glob.glob(os.path.join(directory, suffix[tag]))
-        imgFiles[tag] = files
-
-    return(imgFiles)
     
 
 
