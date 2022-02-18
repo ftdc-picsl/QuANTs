@@ -1,4 +1,5 @@
 from .quantsifier import Quantsifier
+from .quantsifier import getFTDCQuantsifier
 from .quantsUtilities import getFTDCInputs
 
 def whatIsQuants():
