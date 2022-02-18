@@ -429,3 +429,19 @@ def getFTDCQuantsifier( imgFiles ):
             q.AddLabelingSystem(lbl, cxLabels, np.full(len(cxLabels), 2), sys, ['thickness'])
 
     return(q)
+
+def bidsTagValue( tag ):
+    parts = tag.split("-")
+    parts.pop(0)
+    val = "-".join(parts)
+    return(val)
+    
+
+def parseFile( fname ):
+
+    file = os.path.basename(fname)
+    fileParts = file.split("_")
+    sub = bidsTagValue( fileParts[0] )
+    ses = bidsTagValue( fileParts[1] )
+    
+    return((sub,ses))
