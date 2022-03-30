@@ -1,6 +1,7 @@
 import itk
-import quantsifier as qf
-import quantsUtilities as qu
+#import quantsifier as qf
+#import quantsUtilities as qu
+import quants
 import numpy as np
 import pandas as pd
 import os 
@@ -22,9 +23,9 @@ dir = sys.argv[1]
 odir = sys.argv[2]
 
 bidsInfo = parsePath(dir)
-filenames =  qu.getFTDCInputs(dir)
+filenames =  quants.getFTDCInputs(dir)
 
-x = qu.getFTDCQuantsifier(filenames)
+x = quants.getFTDCQuantsifier(filenames)
 x.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
 x.Update()
 stats = x.GetOutput()
