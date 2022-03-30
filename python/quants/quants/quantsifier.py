@@ -356,6 +356,8 @@ def getFTDCInputs(directory):
               "schaefer200x17":"*Schaefer2018_200Parcels17Networks.nii.gz",
               "schaefer300x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
               "schaefer300x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
+              "schaefer400x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
+              "schaefer400x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
               "schaefer500x7":"*Schaefer2018_500Parcels7Networks.nii.gz",
               "schaefer500x17":"*Schaefer2018_500Parcels17Networks.nii.gz"
     }
