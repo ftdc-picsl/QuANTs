@@ -330,6 +330,8 @@ def corticalSystemNames():
         'schaefer200x17',
         'schaefer300x7',
         'schaefer300x17',
+        'schaefer400x7',
+        'schaefer400x17',
         'schaefer500x7',
         'schaefer500x17']
 
@@ -339,27 +341,27 @@ def corticalSystemNames():
 def getFTDCInputs(directory):
 
     suffix = {"t1": "*ExtractedBrain0N4.nii.gz",
-              "mask": "*BrainExtractionMask.nii.gz",
-              "seg": "*BrainSegmentation.nii.gz",
-              "n4": "*BrainSegmentation0N4.nii.gz",
-              "gmp": "*BrainSegmentationPosteriors2.nii.gz",
-              "thickness": "*CorticalThickness.nii.gz",
-              "dkt31": "*DKT31.nii.gz",
-              "braincolor": "*BrainColorSubcortical.nii.gz",
-              "lausanne33":"*LausanneCorticalScale33.nii.gz",
-              "lausanne60":"*LausanneCorticalScale60.nii.gz",
-              "lausanne125": "*LausanneCorticalScale125.nii.gz",
-              "lausanne250": "*LausanneCorticalScale250.nii.gz",
-              "schaefer100x7":"*Schaefer2018_100Parcels7Networks.nii.gz",
-              "schaefer100x17":"*Schaefer2018_100Parcels17Networks.nii.gz",
-              "schaefer200x7":"*Schaefer2018_200Parcels7Networks.nii.gz",
-              "schaefer200x17":"*Schaefer2018_200Parcels17Networks.nii.gz",
-              "schaefer300x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
-              "schaefer300x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
-              "schaefer400x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
-              "schaefer400x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
-              "schaefer500x7":"*Schaefer2018_500Parcels7Networks.nii.gz",
-              "schaefer500x17":"*Schaefer2018_500Parcels17Networks.nii.gz"
+            "mask": "*BrainExtractionMask.nii.gz",
+            "seg": "*BrainSegmentation.nii.gz",
+            "n4": "*BrainSegmentation0N4.nii.gz",
+            "gmp": "*BrainSegmentationPosteriors2.nii.gz",
+            "thickness": "*CorticalThickness.nii.gz",
+            "dkt31": "*DKT31.nii.gz",
+            "braincolor": "*BrainColorSubcortical.nii.gz",
+            "lausanne33":"*LausanneCorticalScale33.nii.gz",
+            "lausanne60":"*LausanneCorticalScale60.nii.gz",
+            "lausanne125": "*LausanneCorticalScale125.nii.gz",
+            "lausanne250": "*LausanneCorticalScale250.nii.gz",
+            "schaefer100x7":"*Schaefer2018_100Parcels7Networks.nii.gz",
+            "schaefer100x17":"*Schaefer2018_100Parcels17Networks.nii.gz",
+            "schaefer200x7":"*Schaefer2018_200Parcels7Networks.nii.gz",
+            "schaefer200x17":"*Schaefer2018_200Parcels17Networks.nii.gz",
+            "schaefer300x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
+            "schaefer300x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
+            "schaefer400x7":"*Schaefer2018_400Parcels7Networks.nii.gz",
+            "schaefer400x17":"*Schaefer2018_400Parcels17Networks.nii.gz",
+            "schaefer500x7":"*Schaefer2018_500Parcels7Networks.nii.gz",
+            "schaefer500x17":"*Schaefer2018_500Parcels17Networks.nii.gz"
     }
 
     imgFiles = suffix
