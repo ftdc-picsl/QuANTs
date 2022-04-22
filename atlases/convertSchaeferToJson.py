@@ -9,6 +9,16 @@ nameParts = os.path.split(defFile)[1].split("_")
 nParcels = nameParts[1].replace("Parcels", "")
 nNetworks = nameParts[2].replace("Networks", "")
 atlasName = "Schaefer"+nParcels+"x"+nNetworks
+
+
+version="0.0"
+if int(nNetworks)==7:
+    version="1"
+if int(nNetworks)==17:
+    version="2"
+release="0.21.3"
+
+atlasName=atlasName+'v'+version
 print(atlasName)
 
 hemiAbb = { 
@@ -119,6 +129,10 @@ reg17Abb = {
 atlasDict = {
     "Name": atlasName,
     "Identifier": atlasName,
+    "Version": version,
+    "Release": release,
+    "Git-Repo": "",
+    "Git-Commit": "",
     "Description": "",
     "DevNotes": [""],
     "QuantsVersion" : "1.0",
@@ -143,6 +157,8 @@ if int(nNetworks)==17:
 
 nodeList = []
 networkRegions = {}
+
+masking = {"Group": "Tissue", "Include": [ "Cortical Gray Matter"] }
 
 with open(defFile, 'r') as file:
     lines = file.readlines();
@@ -179,7 +195,7 @@ with open(defFile, 'r') as file:
         nGroups.append( {"Name": "Region", "Value": regionName, "GroupID": int(localId)})
         nGroups.append( {"Name": "Network", "Value": networkName})
 
-        node = { "Name": name, "ImageID": int(id), "RGB": [r,g,b], "Groups": nGroups}
+        node = { "Name": name, "ImageID": int(id), "RGB": [r,g,b], "Groups": nGroups, "Masking": masking}
         nodeList.append(node)
 
         if network in networkRegions.keys():
@@ -213,6 +229,7 @@ hemiGroup["Values"].append( { "Name": "right", "Abbreviation": "RH"})
 hemiGroup["Values"].append( { "Name": "none", "Abbreviation": "none"})
 
 tissueGroup = {"Name": "Tissue", "Values": []}
+tissueGroup["Values"].append( { "Name": "Other", "Abbreviation": "OTHER", "GroupID": 0})
 tissueGroup["Values"].append( { "Name": "Cortical Spinal Fluid", "Abbreviation": "CSF", "GroupID": 1})
 tissueGroup["Values"].append( { "Name": "Cortical Gray Matter", "Abbreviation": "CGM", "GroupID": 2})
 tissueGroup["Values"].append( { "Name": "Whitematter", "Abbreviation": "WM", "GroupID": 3})
@@ -223,7 +240,10 @@ tissueGroup["Values"].append( { "Name": "Cerebellum", "Abbreviation": "CBM", "Gr
 networkGroup = {"Name": "Network", "Values": networkList}
 regionGroup = {"Name": "Region", "Values": regionList}
 
+
+
 atlasDict["Groups"] = [ hemiGroup, tissueGroup, networkGroup, regionGroup ]
+
 #atlasDict["Networks"]=networkList
 #atlasDict["Regions"]=regionList
 atlasDict["ROI"]=nodeList

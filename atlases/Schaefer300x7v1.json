@@ -1,6 +1,10 @@
 {
-  "Name": "Schaefer400x7",
-  "Identifier": "Schaefer400x7",
+  "Name": "Schaefer300x7",
+  "Identifier": "Schaefer300x7",
+  "Version": "1.0",
+  "Release": "0.21.3",
+  "Git-Repo": "",
+  "Git-Commit": "",
   "Description": "",
   "DevNotes": [
     ""
@@ -217,7 +221,7 @@
       "RGB": [
         120,
         17,
-        128
+        132
       ],
       "Groups": [
         {
@@ -245,7 +249,7 @@
       "RGB": [
         120,
         17,
-        129
+        133
       ],
       "Groups": [
         {
@@ -273,7 +277,7 @@
       "RGB": [
         120,
         17,
-        130
+        134
       ],
       "Groups": [
         {
@@ -300,8 +304,8 @@
       "ImageID": 4,
       "RGB": [
         120,
-        17,
-        131
+        18,
+        127
       ],
       "Groups": [
         {
@@ -328,8 +332,8 @@
       "ImageID": 5,
       "RGB": [
         120,
-        17,
-        132
+        18,
+        128
       ],
       "Groups": [
         {
@@ -356,8 +360,8 @@
       "ImageID": 6,
       "RGB": [
         120,
-        17,
-        133
+        18,
+        129
       ],
       "Groups": [
         {
@@ -384,8 +388,8 @@
       "ImageID": 7,
       "RGB": [
         120,
-        17,
-        134
+        18,
+        130
       ],
       "Groups": [
         {
@@ -413,7 +417,7 @@
       "RGB": [
         120,
         18,
-        127
+        131
       ],
       "Groups": [
         {
@@ -441,7 +445,7 @@
       "RGB": [
         120,
         18,
-        128
+        132
       ],
       "Groups": [
         {
@@ -469,7 +473,7 @@
       "RGB": [
         120,
         18,
-        129
+        133
       ],
       "Groups": [
         {
@@ -497,7 +501,7 @@
       "RGB": [
         120,
         18,
-        130
+        135
       ],
       "Groups": [
         {
@@ -525,7 +529,7 @@
       "RGB": [
         120,
         18,
-        131
+        136
       ],
       "Groups": [
         {
@@ -553,7 +557,7 @@
       "RGB": [
         120,
         18,
-        132
+        137
       ],
       "Groups": [
         {
@@ -581,7 +585,7 @@
       "RGB": [
         120,
         18,
-        133
+        138
       ],
       "Groups": [
         {
@@ -609,7 +613,7 @@
       "RGB": [
         120,
         18,
-        135
+        139
       ],
       "Groups": [
         {
@@ -637,7 +641,7 @@
       "RGB": [
         120,
         18,
-        136
+        140
       ],
       "Groups": [
         {
@@ -665,7 +669,7 @@
       "RGB": [
         120,
         18,
-        137
+        141
       ],
       "Groups": [
         {
@@ -692,8 +696,8 @@
       "ImageID": 18,
       "RGB": [
         120,
-        18,
-        138
+        19,
+        134
       ],
       "Groups": [
         {
@@ -720,8 +724,8 @@
       "ImageID": 19,
       "RGB": [
         120,
-        18,
-        139
+        19,
+        135
       ],
       "Groups": [
         {
@@ -748,8 +752,8 @@
       "ImageID": 20,
       "RGB": [
         120,
-        18,
-        140
+        19,
+        136
       ],
       "Groups": [
         {
@@ -776,8 +780,8 @@
       "ImageID": 21,
       "RGB": [
         120,
-        18,
-        141
+        19,
+        137
       ],
       "Groups": [
         {
@@ -805,7 +809,7 @@
       "RGB": [
         120,
         19,
-        134
+        138
       ],
       "Groups": [
         {
@@ -833,7 +837,7 @@
       "RGB": [
         120,
         19,
-        135
+        139
       ],
       "Groups": [
         {
@@ -861,7 +865,7 @@
       "RGB": [
         120,
         19,
-        136
+        140
       ],
       "Groups": [
         {
@@ -884,208 +888,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Vis_25",
+      "Name": "7Networks_LH_SomMot_1",
       "ImageID": 25,
       "RGB": [
-        120,
-        19,
-        137
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 25
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_26",
-      "ImageID": 26,
-      "RGB": [
-        120,
-        19,
-        138
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 26
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_27",
-      "ImageID": 27,
-      "RGB": [
-        120,
-        19,
-        139
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 27
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_28",
-      "ImageID": 28,
-      "RGB": [
-        120,
-        19,
-        140
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 28
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_29",
-      "ImageID": 29,
-      "RGB": [
-        120,
-        19,
-        141
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 29
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_30",
-      "ImageID": 30,
-      "RGB": [
-        120,
-        20,
-        134
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 30
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Vis_31",
-      "ImageID": 31,
-      "RGB": [
-        120,
-        20,
-        135
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 31
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_1",
-      "ImageID": 32,
-      "RGB": [
         70,
-        128,
-        179
+        129,
+        175
       ],
       "Groups": [
         {
@@ -1109,11 +917,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_2",
-      "ImageID": 33,
+      "ImageID": 26,
       "RGB": [
         70,
-        128,
-        180
+        129,
+        176
       ],
       "Groups": [
         {
@@ -1137,11 +945,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_3",
-      "ImageID": 34,
+      "ImageID": 27,
       "RGB": [
         70,
         129,
-        173
+        177
       ],
       "Groups": [
         {
@@ -1165,11 +973,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_4",
-      "ImageID": 35,
+      "ImageID": 28,
       "RGB": [
         70,
         129,
-        174
+        178
       ],
       "Groups": [
         {
@@ -1193,11 +1001,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_5",
-      "ImageID": 36,
+      "ImageID": 29,
       "RGB": [
         70,
         129,
-        175
+        179
       ],
       "Groups": [
         {
@@ -1221,11 +1029,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_6",
-      "ImageID": 37,
+      "ImageID": 30,
       "RGB": [
         70,
         129,
-        176
+        180
       ],
       "Groups": [
         {
@@ -1249,11 +1057,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_7",
-      "ImageID": 38,
+      "ImageID": 31,
       "RGB": [
         70,
-        129,
-        177
+        130,
+        173
       ],
       "Groups": [
         {
@@ -1277,11 +1085,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_8",
-      "ImageID": 39,
+      "ImageID": 32,
       "RGB": [
         70,
-        129,
-        178
+        130,
+        174
       ],
       "Groups": [
         {
@@ -1305,11 +1113,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_9",
-      "ImageID": 40,
+      "ImageID": 33,
       "RGB": [
         70,
-        129,
-        179
+        130,
+        175
       ],
       "Groups": [
         {
@@ -1333,11 +1141,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_10",
-      "ImageID": 41,
+      "ImageID": 34,
       "RGB": [
         70,
-        129,
-        180
+        130,
+        176
       ],
       "Groups": [
         {
@@ -1361,11 +1169,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_11",
-      "ImageID": 42,
+      "ImageID": 35,
       "RGB": [
         70,
         130,
-        173
+        177
       ],
       "Groups": [
         {
@@ -1389,11 +1197,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_12",
-      "ImageID": 43,
+      "ImageID": 36,
       "RGB": [
         70,
         130,
-        174
+        178
       ],
       "Groups": [
         {
@@ -1417,11 +1225,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_13",
-      "ImageID": 44,
+      "ImageID": 37,
       "RGB": [
         70,
         130,
-        175
+        179
       ],
       "Groups": [
         {
@@ -1445,11 +1253,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_14",
-      "ImageID": 45,
+      "ImageID": 38,
       "RGB": [
         70,
         130,
-        176
+        181
       ],
       "Groups": [
         {
@@ -1473,11 +1281,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_15",
-      "ImageID": 46,
+      "ImageID": 39,
       "RGB": [
         70,
         130,
-        177
+        182
       ],
       "Groups": [
         {
@@ -1501,11 +1309,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_16",
-      "ImageID": 47,
+      "ImageID": 40,
       "RGB": [
         70,
         130,
-        178
+        183
       ],
       "Groups": [
         {
@@ -1529,11 +1337,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_17",
-      "ImageID": 48,
+      "ImageID": 41,
       "RGB": [
         70,
         130,
-        179
+        184
       ],
       "Groups": [
         {
@@ -1557,11 +1365,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_18",
-      "ImageID": 49,
+      "ImageID": 42,
       "RGB": [
         70,
         130,
-        181
+        185
       ],
       "Groups": [
         {
@@ -1585,11 +1393,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_19",
-      "ImageID": 50,
+      "ImageID": 43,
       "RGB": [
         70,
         130,
-        182
+        186
       ],
       "Groups": [
         {
@@ -1613,11 +1421,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_20",
-      "ImageID": 51,
+      "ImageID": 44,
       "RGB": [
         70,
         130,
-        183
+        187
       ],
       "Groups": [
         {
@@ -1641,11 +1449,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_21",
-      "ImageID": 52,
+      "ImageID": 45,
       "RGB": [
         70,
-        130,
-        184
+        131,
+        180
       ],
       "Groups": [
         {
@@ -1669,11 +1477,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_22",
-      "ImageID": 53,
+      "ImageID": 46,
       "RGB": [
         70,
-        130,
-        185
+        131,
+        181
       ],
       "Groups": [
         {
@@ -1697,11 +1505,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_23",
-      "ImageID": 54,
+      "ImageID": 47,
       "RGB": [
         70,
-        130,
-        186
+        131,
+        182
       ],
       "Groups": [
         {
@@ -1725,11 +1533,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_24",
-      "ImageID": 55,
+      "ImageID": 48,
       "RGB": [
         70,
-        130,
-        187
+        131,
+        183
       ],
       "Groups": [
         {
@@ -1753,11 +1561,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_25",
-      "ImageID": 56,
+      "ImageID": 49,
       "RGB": [
         70,
         131,
-        180
+        184
       ],
       "Groups": [
         {
@@ -1781,11 +1589,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_26",
-      "ImageID": 57,
+      "ImageID": 50,
       "RGB": [
         70,
         131,
-        181
+        185
       ],
       "Groups": [
         {
@@ -1809,11 +1617,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_27",
-      "ImageID": 58,
+      "ImageID": 51,
       "RGB": [
         70,
         131,
-        182
+        186
       ],
       "Groups": [
         {
@@ -1837,11 +1645,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_28",
-      "ImageID": 59,
+      "ImageID": 52,
       "RGB": [
         70,
         131,
-        183
+        187
       ],
       "Groups": [
         {
@@ -1865,11 +1673,11 @@
     },
     {
       "Name": "7Networks_LH_SomMot_29",
-      "ImageID": 60,
+      "ImageID": 53,
       "RGB": [
         70,
-        131,
-        184
+        132,
+        180
       ],
       "Groups": [
         {
@@ -1892,236 +1700,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_SomMot_30",
-      "ImageID": 61,
-      "RGB": [
-        70,
-        131,
-        185
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 30
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_31",
-      "ImageID": 62,
-      "RGB": [
-        70,
-        131,
-        186
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 31
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_32",
-      "ImageID": 63,
-      "RGB": [
-        70,
-        131,
-        187
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 32
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_33",
-      "ImageID": 64,
-      "RGB": [
-        70,
-        132,
-        180
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 33
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_34",
-      "ImageID": 65,
-      "RGB": [
-        70,
-        132,
-        181
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 34
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_35",
-      "ImageID": 66,
-      "RGB": [
-        70,
-        132,
-        182
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 35
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_36",
-      "ImageID": 67,
-      "RGB": [
-        70,
-        132,
-        183
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 36
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SomMot_37",
-      "ImageID": 68,
-      "RGB": [
-        70,
-        132,
-        184
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 37
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_DorsAttn_Post_1",
-      "ImageID": 69,
+      "ImageID": 54,
       "RGB": [
         0,
         118,
-        7
+        10
       ],
       "Groups": [
         {
@@ -2145,11 +1729,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_2",
-      "ImageID": 70,
+      "ImageID": 55,
       "RGB": [
         0,
         118,
-        8
+        11
       ],
       "Groups": [
         {
@@ -2173,11 +1757,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_3",
-      "ImageID": 71,
+      "ImageID": 56,
       "RGB": [
         0,
         118,
-        9
+        12
       ],
       "Groups": [
         {
@@ -2201,11 +1785,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_4",
-      "ImageID": 72,
+      "ImageID": 57,
       "RGB": [
         0,
         118,
-        10
+        13
       ],
       "Groups": [
         {
@@ -2229,11 +1813,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_5",
-      "ImageID": 73,
+      "ImageID": 58,
       "RGB": [
         0,
         118,
-        11
+        15
       ],
       "Groups": [
         {
@@ -2257,11 +1841,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_6",
-      "ImageID": 74,
+      "ImageID": 59,
       "RGB": [
         0,
         118,
-        12
+        16
       ],
       "Groups": [
         {
@@ -2285,11 +1869,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_7",
-      "ImageID": 75,
+      "ImageID": 60,
       "RGB": [
         0,
         118,
-        13
+        17
       ],
       "Groups": [
         {
@@ -2313,11 +1897,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_8",
-      "ImageID": 76,
+      "ImageID": 61,
       "RGB": [
         0,
         118,
-        15
+        18
       ],
       "Groups": [
         {
@@ -2341,11 +1925,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_9",
-      "ImageID": 77,
+      "ImageID": 62,
       "RGB": [
         0,
         118,
-        16
+        19
       ],
       "Groups": [
         {
@@ -2369,11 +1953,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_10",
-      "ImageID": 78,
+      "ImageID": 63,
       "RGB": [
         0,
         118,
-        17
+        20
       ],
       "Groups": [
         {
@@ -2397,11 +1981,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_11",
-      "ImageID": 79,
+      "ImageID": 64,
       "RGB": [
         0,
         118,
-        18
+        21
       ],
       "Groups": [
         {
@@ -2425,11 +2009,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_12",
-      "ImageID": 80,
+      "ImageID": 65,
       "RGB": [
         0,
-        118,
-        19
+        119,
+        14
       ],
       "Groups": [
         {
@@ -2452,148 +2036,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_DorsAttn_Post_13",
-      "ImageID": 81,
-      "RGB": [
-        0,
-        118,
-        20
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 13
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_DorsAttn_Post_14",
-      "ImageID": 82,
-      "RGB": [
-        0,
-        118,
-        21
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 14
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_DorsAttn_Post_15",
-      "ImageID": 83,
-      "RGB": [
-        0,
-        119,
-        14
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 15
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_DorsAttn_Post_16",
-      "ImageID": 84,
-      "RGB": [
-        0,
-        119,
-        15
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 16
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_DorsAttn_Post_17",
-      "ImageID": 85,
-      "RGB": [
-        0,
-        119,
-        16
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 17
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_DorsAttn_FEF_1",
-      "ImageID": 86,
+      "ImageID": 66,
       "RGB": [
         0,
         118,
@@ -2621,11 +2065,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_FEF_2",
-      "ImageID": 87,
+      "ImageID": 67,
       "RGB": [
         0,
         119,
-        17
+        15
       ],
       "Groups": [
         {
@@ -2649,11 +2093,11 @@
     },
     {
       "Name": "7Networks_LH_DorsAttn_FEF_3",
-      "ImageID": 88,
+      "ImageID": 68,
       "RGB": [
         0,
         119,
-        18
+        16
       ],
       "Groups": [
         {
@@ -2676,40 +2120,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_DorsAttn_FEF_4",
-      "ImageID": 89,
-      "RGB": [
-        0,
-        119,
-        19
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal eye fields",
-          "GroupID": 4
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_DorsAttn_PrCv_1",
-      "ImageID": 90,
+      "ImageID": 69,
       "RGB": [
         0,
         119,
-        20
+        17
       ],
       "Groups": [
         {
@@ -2732,36 +2148,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_DorsAttn_PrCv_2",
-      "ImageID": 91,
-      "RGB": [
-        0,
-        119,
-        21
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "percentral ventral",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_SalVentAttn_ParOper_1",
-      "ImageID": 92,
+      "ImageID": 70,
       "RGB": [
         196,
         58,
@@ -2789,7 +2177,7 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_ParOper_2",
-      "ImageID": 93,
+      "ImageID": 71,
       "RGB": [
         196,
         58,
@@ -2817,7 +2205,7 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_ParOper_3",
-      "ImageID": 94,
+      "ImageID": 72,
       "RGB": [
         196,
         58,
@@ -2844,40 +2232,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_SalVentAttn_ParOper_4",
-      "ImageID": 95,
+      "Name": "7Networks_LH_SalVentAttn_TempOcc_1",
+      "ImageID": 73,
       "RGB": [
         196,
         58,
         254
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal operculum",
-          "GroupID": 4
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SalVentAttn_TempOcc_1",
-      "ImageID": 96,
-      "RGB": [
-        196,
-        58,
-        255
       ],
       "Groups": [
         {
@@ -2901,11 +2261,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_1",
-      "ImageID": 97,
+      "ImageID": 74,
       "RGB": [
         196,
         59,
-        247
+        248
       ],
       "Groups": [
         {
@@ -2929,11 +2289,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_2",
-      "ImageID": 98,
+      "ImageID": 75,
       "RGB": [
         196,
         59,
-        248
+        249
       ],
       "Groups": [
         {
@@ -2957,11 +2317,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_3",
-      "ImageID": 99,
+      "ImageID": 76,
       "RGB": [
         196,
         59,
-        249
+        251
       ],
       "Groups": [
         {
@@ -2985,11 +2345,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_4",
-      "ImageID": 100,
+      "ImageID": 77,
       "RGB": [
         196,
         59,
-        251
+        252
       ],
       "Groups": [
         {
@@ -3013,11 +2373,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_5",
-      "ImageID": 101,
+      "ImageID": 78,
       "RGB": [
         196,
         59,
-        252
+        253
       ],
       "Groups": [
         {
@@ -3041,11 +2401,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_6",
-      "ImageID": 102,
+      "ImageID": 79,
       "RGB": [
         196,
         59,
-        253
+        254
       ],
       "Groups": [
         {
@@ -3069,11 +2429,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_7",
-      "ImageID": 103,
+      "ImageID": 80,
       "RGB": [
         196,
         59,
-        254
+        255
       ],
       "Groups": [
         {
@@ -3096,64 +2456,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_SalVentAttn_FrOperIns_8",
-      "ImageID": 104,
-      "RGB": [
-        196,
-        59,
-        255
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal operculum insula",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SalVentAttn_FrOperIns_9",
-      "ImageID": 105,
-      "RGB": [
-        193,
-        52,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal operculum insula",
-          "GroupID": 9
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_SalVentAttn_PFCl_1",
-      "ImageID": 106,
+      "ImageID": 81,
       "RGB": [
         193,
         52,
@@ -3181,11 +2485,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_1",
-      "ImageID": 107,
+      "ImageID": 82,
       "RGB": [
         197,
         58,
-        248
+        251
       ],
       "Groups": [
         {
@@ -3209,11 +2513,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_2",
-      "ImageID": 108,
+      "ImageID": 83,
       "RGB": [
         197,
         58,
-        249
+        252
       ],
       "Groups": [
         {
@@ -3237,11 +2541,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_3",
-      "ImageID": 109,
+      "ImageID": 84,
       "RGB": [
         197,
         58,
-        251
+        253
       ],
       "Groups": [
         {
@@ -3265,11 +2569,11 @@
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_4",
-      "ImageID": 110,
+      "ImageID": 85,
       "RGB": [
         197,
         58,
-        252
+        254
       ],
       "Groups": [
         {
@@ -3292,96 +2596,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_SalVentAttn_Med_5",
-      "ImageID": 111,
-      "RGB": [
-        197,
-        58,
-        253
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SalVentAttn_Med_6",
-      "ImageID": 112,
-      "RGB": [
-        197,
-        58,
-        254
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_SalVentAttn_Med_7",
-      "ImageID": 113,
-      "RGB": [
-        197,
-        58,
-        255
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Limbic_OFC_1",
-      "ImageID": 114,
+      "ImageID": 86,
       "RGB": [
         220,
         248,
-        163
+        165
       ],
       "Groups": [
         {
@@ -3405,11 +2625,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_OFC_2",
-      "ImageID": 115,
+      "ImageID": 87,
       "RGB": [
         220,
         248,
-        165
+        166
       ],
       "Groups": [
         {
@@ -3433,11 +2653,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_OFC_3",
-      "ImageID": 116,
+      "ImageID": 88,
       "RGB": [
         220,
         248,
-        166
+        167
       ],
       "Groups": [
         {
@@ -3460,68 +2680,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Limbic_OFC_4",
-      "ImageID": 117,
-      "RGB": [
-        220,
-        248,
-        167
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "orbital frontal cortex",
-          "GroupID": 4
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Limbic_OFC_5",
-      "ImageID": 118,
-      "RGB": [
-        220,
-        248,
-        168
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "orbital frontal cortex",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Limbic_TempPole_1",
-      "ImageID": 119,
+      "ImageID": 89,
       "RGB": [
         220,
         248,
-        164
+        163
       ],
       "Groups": [
         {
@@ -3545,11 +2709,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_2",
-      "ImageID": 120,
+      "ImageID": 90,
       "RGB": [
         220,
         248,
-        169
+        164
       ],
       "Groups": [
         {
@@ -3573,11 +2737,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_3",
-      "ImageID": 121,
+      "ImageID": 91,
       "RGB": [
         220,
         248,
-        170
+        168
       ],
       "Groups": [
         {
@@ -3601,11 +2765,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_4",
-      "ImageID": 122,
+      "ImageID": 92,
       "RGB": [
         220,
         248,
-        171
+        169
       ],
       "Groups": [
         {
@@ -3629,11 +2793,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_5",
-      "ImageID": 123,
+      "ImageID": 93,
       "RGB": [
         220,
         248,
-        172
+        170
       ],
       "Groups": [
         {
@@ -3657,11 +2821,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_6",
-      "ImageID": 124,
+      "ImageID": 94,
       "RGB": [
         220,
-        249,
-        165
+        248,
+        171
       ],
       "Groups": [
         {
@@ -3685,11 +2849,11 @@
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_7",
-      "ImageID": 125,
+      "ImageID": 95,
       "RGB": [
         220,
-        249,
-        166
+        248,
+        172
       ],
       "Groups": [
         {
@@ -3712,40 +2876,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Limbic_TempPole_8",
-      "ImageID": 126,
-      "RGB": [
-        220,
-        249,
-        167
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal pole",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Cont_Par_1",
-      "ImageID": 127,
+      "ImageID": 96,
       "RGB": [
         230,
         148,
-        33
+        35
       ],
       "Groups": [
         {
@@ -3769,11 +2905,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_Par_2",
-      "ImageID": 128,
+      "ImageID": 97,
       "RGB": [
         230,
         148,
-        35
+        36
       ],
       "Groups": [
         {
@@ -3797,11 +2933,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_Par_3",
-      "ImageID": 129,
+      "ImageID": 98,
       "RGB": [
         230,
         148,
-        36
+        37
       ],
       "Groups": [
         {
@@ -3825,11 +2961,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_Par_4",
-      "ImageID": 130,
+      "ImageID": 99,
       "RGB": [
         230,
         148,
-        37
+        38
       ],
       "Groups": [
         {
@@ -3852,68 +2988,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Cont_Par_5",
-      "ImageID": 131,
-      "RGB": [
-        230,
-        148,
-        38
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Cont_Par_6",
-      "ImageID": 132,
+      "Name": "7Networks_LH_Cont_Temp_1",
+      "ImageID": 100,
       "RGB": [
         230,
         148,
         39
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Cont_Temp_1",
-      "ImageID": 133,
-      "RGB": [
-        230,
-        148,
-        40
       ],
       "Groups": [
         {
@@ -3937,11 +3017,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_OFC_1",
-      "ImageID": 134,
+      "ImageID": 101,
       "RGB": [
         230,
         149,
-        32
+        33
       ],
       "Groups": [
         {
@@ -3965,11 +3045,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_1",
-      "ImageID": 135,
+      "ImageID": 102,
       "RGB": [
         230,
         149,
-        33
+        34
       ],
       "Groups": [
         {
@@ -3993,11 +3073,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_2",
-      "ImageID": 136,
+      "ImageID": 103,
       "RGB": [
         230,
         149,
-        34
+        36
       ],
       "Groups": [
         {
@@ -4021,11 +3101,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_3",
-      "ImageID": 137,
+      "ImageID": 104,
       "RGB": [
         230,
         149,
-        36
+        37
       ],
       "Groups": [
         {
@@ -4049,11 +3129,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_4",
-      "ImageID": 138,
+      "ImageID": 105,
       "RGB": [
         230,
         149,
-        37
+        38
       ],
       "Groups": [
         {
@@ -4077,11 +3157,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_5",
-      "ImageID": 139,
+      "ImageID": 106,
       "RGB": [
         230,
         149,
-        38
+        39
       ],
       "Groups": [
         {
@@ -4105,11 +3185,11 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_6",
-      "ImageID": 140,
+      "ImageID": 107,
       "RGB": [
         230,
         149,
-        39
+        40
       ],
       "Groups": [
         {
@@ -4132,92 +3212,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Cont_PFCl_7",
-      "ImageID": 141,
-      "RGB": [
-        230,
-        149,
-        40
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Cont_PFCl_8",
-      "ImageID": 142,
-      "RGB": [
-        230,
-        149,
-        41
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Cont_PFCv_1",
-      "ImageID": 143,
-      "RGB": [
-        231,
-        148,
-        36
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "ventral prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Cont_pCun_1",
-      "ImageID": 144,
+      "ImageID": 108,
       "RGB": [
         231,
         149,
@@ -4245,7 +3241,7 @@
     },
     {
       "Name": "7Networks_LH_Cont_pCun_2",
-      "ImageID": 145,
+      "ImageID": 109,
       "RGB": [
         231,
         149,
@@ -4273,7 +3269,7 @@
     },
     {
       "Name": "7Networks_LH_Cont_Cing_1",
-      "ImageID": 146,
+      "ImageID": 110,
       "RGB": [
         231,
         149,
@@ -4301,7 +3297,7 @@
     },
     {
       "Name": "7Networks_LH_Cont_Cing_2",
-      "ImageID": 147,
+      "ImageID": 111,
       "RGB": [
         231,
         149,
@@ -4329,7 +3325,7 @@
     },
     {
       "Name": "7Networks_LH_Cont_PFCmp_1",
-      "ImageID": 148,
+      "ImageID": 112,
       "RGB": [
         230,
         148,
@@ -4357,11 +3353,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_1",
-      "ImageID": 149,
+      "ImageID": 113,
       "RGB": [
         205,
         62,
-        72
+        75
       ],
       "Groups": [
         {
@@ -4385,11 +3381,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_2",
-      "ImageID": 150,
+      "ImageID": 114,
       "RGB": [
         205,
         62,
-        73
+        76
       ],
       "Groups": [
         {
@@ -4413,11 +3409,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_3",
-      "ImageID": 151,
+      "ImageID": 115,
       "RGB": [
         205,
         62,
-        74
+        77
       ],
       "Groups": [
         {
@@ -4441,11 +3437,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_4",
-      "ImageID": 152,
+      "ImageID": 116,
       "RGB": [
         205,
         62,
-        75
+        78
       ],
       "Groups": [
         {
@@ -4469,11 +3465,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_5",
-      "ImageID": 153,
+      "ImageID": 117,
       "RGB": [
         205,
         62,
-        76
+        80
       ],
       "Groups": [
         {
@@ -4497,11 +3493,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_6",
-      "ImageID": 154,
+      "ImageID": 118,
       "RGB": [
         205,
         62,
-        77
+        81
       ],
       "Groups": [
         {
@@ -4525,11 +3521,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_7",
-      "ImageID": 155,
+      "ImageID": 119,
       "RGB": [
         205,
         62,
-        78
+        82
       ],
       "Groups": [
         {
@@ -4553,11 +3549,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Temp_8",
-      "ImageID": 156,
+      "ImageID": 120,
       "RGB": [
         205,
         62,
-        80
+        83
       ],
       "Groups": [
         {
@@ -4580,68 +3576,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Default_Temp_9",
-      "ImageID": 157,
-      "RGB": [
-        205,
-        62,
-        81
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 9
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_Temp_10",
-      "ImageID": 158,
-      "RGB": [
-        205,
-        62,
-        82
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 10
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Default_Par_1",
-      "ImageID": 159,
+      "ImageID": 121,
       "RGB": [
         205,
         62,
-        83
+        84
       ],
       "Groups": [
         {
@@ -4665,11 +3605,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Par_2",
-      "ImageID": 160,
+      "ImageID": 122,
       "RGB": [
         205,
         62,
-        84
+        85
       ],
       "Groups": [
         {
@@ -4693,11 +3633,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Par_3",
-      "ImageID": 161,
+      "ImageID": 123,
       "RGB": [
         205,
         62,
-        85
+        86
       ],
       "Groups": [
         {
@@ -4721,11 +3661,11 @@
     },
     {
       "Name": "7Networks_LH_Default_Par_4",
-      "ImageID": 162,
+      "ImageID": 124,
       "RGB": [
         205,
-        62,
-        86
+        63,
+        79
       ],
       "Groups": [
         {
@@ -4748,92 +3688,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Default_Par_5",
-      "ImageID": 163,
-      "RGB": [
-        205,
-        63,
-        79
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_Par_6",
-      "ImageID": 164,
-      "RGB": [
-        205,
-        63,
-        80
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_Par_7",
-      "ImageID": 165,
-      "RGB": [
-        205,
-        63,
-        81
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Default_PFC_1",
-      "ImageID": 166,
+      "ImageID": 125,
       "RGB": [
         205,
         63,
@@ -4861,7 +3717,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_2",
-      "ImageID": 167,
+      "ImageID": 126,
       "RGB": [
         205,
         63,
@@ -4889,7 +3745,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_3",
-      "ImageID": 168,
+      "ImageID": 127,
       "RGB": [
         205,
         63,
@@ -4917,7 +3773,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_4",
-      "ImageID": 169,
+      "ImageID": 128,
       "RGB": [
         205,
         63,
@@ -4945,7 +3801,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_5",
-      "ImageID": 170,
+      "ImageID": 129,
       "RGB": [
         205,
         63,
@@ -4973,7 +3829,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_6",
-      "ImageID": 171,
+      "ImageID": 130,
       "RGB": [
         205,
         63,
@@ -5001,7 +3857,7 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_7",
-      "ImageID": 172,
+      "ImageID": 131,
       "RGB": [
         205,
         63,
@@ -5029,11 +3885,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_8",
-      "ImageID": 173,
+      "ImageID": 132,
       "RGB": [
         205,
         63,
-        82
+        80
       ],
       "Groups": [
         {
@@ -5057,11 +3913,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_9",
-      "ImageID": 174,
+      "ImageID": 133,
       "RGB": [
         205,
         63,
-        83
+        81
       ],
       "Groups": [
         {
@@ -5085,11 +3941,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_10",
-      "ImageID": 175,
+      "ImageID": 134,
       "RGB": [
         205,
         63,
-        84
+        82
       ],
       "Groups": [
         {
@@ -5113,11 +3969,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_11",
-      "ImageID": 176,
+      "ImageID": 135,
       "RGB": [
         205,
         63,
-        85
+        83
       ],
       "Groups": [
         {
@@ -5141,11 +3997,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_12",
-      "ImageID": 177,
+      "ImageID": 136,
       "RGB": [
         205,
-        64,
-        78
+        63,
+        84
       ],
       "Groups": [
         {
@@ -5169,11 +4025,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_13",
-      "ImageID": 178,
+      "ImageID": 137,
       "RGB": [
         205,
-        64,
-        79
+        63,
+        85
       ],
       "Groups": [
         {
@@ -5197,11 +4053,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_14",
-      "ImageID": 179,
+      "ImageID": 138,
       "RGB": [
         205,
         64,
-        80
+        78
       ],
       "Groups": [
         {
@@ -5225,11 +4081,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_15",
-      "ImageID": 180,
+      "ImageID": 139,
       "RGB": [
         205,
         64,
-        81
+        79
       ],
       "Groups": [
         {
@@ -5253,11 +4109,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_16",
-      "ImageID": 181,
+      "ImageID": 140,
       "RGB": [
         205,
         64,
-        82
+        80
       ],
       "Groups": [
         {
@@ -5281,11 +4137,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_17",
-      "ImageID": 182,
+      "ImageID": 141,
       "RGB": [
         205,
         64,
-        83
+        81
       ],
       "Groups": [
         {
@@ -5309,11 +4165,11 @@
     },
     {
       "Name": "7Networks_LH_Default_PFC_18",
-      "ImageID": 183,
+      "ImageID": 142,
       "RGB": [
         205,
         64,
-        84
+        82
       ],
       "Groups": [
         {
@@ -5336,176 +4192,8 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Default_PFC_19",
-      "ImageID": 184,
-      "RGB": [
-        205,
-        64,
-        85
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 19
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_PFC_20",
-      "ImageID": 185,
-      "RGB": [
-        205,
-        65,
-        78
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 20
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_PFC_21",
-      "ImageID": 186,
-      "RGB": [
-        205,
-        65,
-        79
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 21
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_PFC_22",
-      "ImageID": 187,
-      "RGB": [
-        205,
-        65,
-        80
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 22
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_PFC_23",
-      "ImageID": 188,
-      "RGB": [
-        205,
-        65,
-        81
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 23
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_PFC_24",
-      "ImageID": 189,
-      "RGB": [
-        205,
-        65,
-        82
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "prefrontal cortex",
-          "GroupID": 24
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_LH_Default_pCunPCC_1",
-      "ImageID": 190,
+      "ImageID": 143,
       "RGB": [
         205,
         63,
@@ -5533,7 +4221,7 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_2",
-      "ImageID": 191,
+      "ImageID": 144,
       "RGB": [
         205,
         63,
@@ -5561,11 +4249,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_3",
-      "ImageID": 192,
+      "ImageID": 145,
       "RGB": [
         205,
         64,
-        86
+        83
       ],
       "Groups": [
         {
@@ -5589,11 +4277,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_4",
-      "ImageID": 193,
+      "ImageID": 146,
       "RGB": [
         205,
-        65,
-        83
+        64,
+        84
       ],
       "Groups": [
         {
@@ -5617,11 +4305,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_5",
-      "ImageID": 194,
+      "ImageID": 147,
       "RGB": [
         205,
-        65,
-        84
+        64,
+        85
       ],
       "Groups": [
         {
@@ -5645,11 +4333,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_6",
-      "ImageID": 195,
+      "ImageID": 148,
       "RGB": [
         205,
-        65,
-        85
+        64,
+        86
       ],
       "Groups": [
         {
@@ -5673,11 +4361,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_7",
-      "ImageID": 196,
+      "ImageID": 149,
       "RGB": [
         205,
         65,
-        86
+        79
       ],
       "Groups": [
         {
@@ -5701,11 +4389,11 @@
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_8",
-      "ImageID": 197,
+      "ImageID": 150,
       "RGB": [
         205,
-        66,
-        79
+        65,
+        80
       ],
       "Groups": [
         {
@@ -5728,96 +4416,12 @@
       ]
     },
     {
-      "Name": "7Networks_LH_Default_pCunPCC_9",
-      "ImageID": 198,
-      "RGB": [
-        205,
-        66,
-        80
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 9
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_pCunPCC_10",
-      "ImageID": 199,
-      "RGB": [
-        205,
-        66,
-        81
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 10
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_LH_Default_pCunPCC_11",
-      "ImageID": 200,
-      "RGB": [
-        205,
-        66,
-        82
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 11
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Vis_1",
-      "ImageID": 201,
+      "ImageID": 151,
       "RGB": [
-        124,
+        120,
         17,
-        130
+        133
       ],
       "Groups": [
         {
@@ -5841,11 +4445,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_2",
-      "ImageID": 202,
+      "ImageID": 152,
       "RGB": [
-        124,
+        120,
         17,
-        131
+        134
       ],
       "Groups": [
         {
@@ -5869,11 +4473,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_3",
-      "ImageID": 203,
+      "ImageID": 153,
       "RGB": [
-        124,
+        120,
         17,
-        132
+        135
       ],
       "Groups": [
         {
@@ -5897,11 +4501,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_4",
-      "ImageID": 204,
+      "ImageID": 154,
       "RGB": [
-        124,
-        17,
-        133
+        120,
+        18,
+        128
       ],
       "Groups": [
         {
@@ -5925,11 +4529,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_5",
-      "ImageID": 205,
+      "ImageID": 155,
       "RGB": [
-        124,
-        17,
-        134
+        120,
+        18,
+        129
       ],
       "Groups": [
         {
@@ -5953,11 +4557,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_6",
-      "ImageID": 206,
+      "ImageID": 156,
       "RGB": [
-        124,
-        17,
-        135
+        120,
+        18,
+        130
       ],
       "Groups": [
         {
@@ -5981,11 +4585,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_7",
-      "ImageID": 207,
+      "ImageID": 157,
       "RGB": [
-        124,
+        120,
         18,
-        128
+        131
       ],
       "Groups": [
         {
@@ -6009,11 +4613,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_8",
-      "ImageID": 208,
+      "ImageID": 158,
       "RGB": [
-        124,
+        120,
         18,
-        129
+        132
       ],
       "Groups": [
         {
@@ -6037,11 +4641,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_9",
-      "ImageID": 209,
+      "ImageID": 159,
       "RGB": [
-        124,
+        120,
         18,
-        130
+        133
       ],
       "Groups": [
         {
@@ -6065,11 +4669,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_10",
-      "ImageID": 210,
+      "ImageID": 160,
       "RGB": [
-        124,
+        120,
         18,
-        131
+        134
       ],
       "Groups": [
         {
@@ -6093,11 +4697,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_11",
-      "ImageID": 211,
+      "ImageID": 161,
       "RGB": [
-        124,
+        120,
         18,
-        132
+        136
       ],
       "Groups": [
         {
@@ -6121,11 +4725,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_12",
-      "ImageID": 212,
+      "ImageID": 162,
       "RGB": [
-        124,
+        120,
         18,
-        133
+        137
       ],
       "Groups": [
         {
@@ -6149,11 +4753,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_13",
-      "ImageID": 213,
+      "ImageID": 163,
       "RGB": [
-        124,
+        120,
         18,
-        134
+        138
       ],
       "Groups": [
         {
@@ -6177,11 +4781,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_14",
-      "ImageID": 214,
+      "ImageID": 164,
       "RGB": [
-        124,
+        120,
         18,
-        136
+        139
       ],
       "Groups": [
         {
@@ -6205,11 +4809,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_15",
-      "ImageID": 215,
+      "ImageID": 165,
       "RGB": [
-        124,
+        120,
         18,
-        137
+        140
       ],
       "Groups": [
         {
@@ -6233,11 +4837,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_16",
-      "ImageID": 216,
+      "ImageID": 166,
       "RGB": [
-        124,
+        120,
         18,
-        138
+        141
       ],
       "Groups": [
         {
@@ -6261,11 +4865,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_17",
-      "ImageID": 217,
+      "ImageID": 167,
       "RGB": [
-        124,
+        120,
         18,
-        139
+        142
       ],
       "Groups": [
         {
@@ -6289,11 +4893,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_18",
-      "ImageID": 218,
+      "ImageID": 168,
       "RGB": [
-        124,
-        18,
-        140
+        120,
+        19,
+        135
       ],
       "Groups": [
         {
@@ -6317,11 +4921,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_19",
-      "ImageID": 219,
+      "ImageID": 169,
       "RGB": [
-        124,
-        18,
-        141
+        120,
+        19,
+        136
       ],
       "Groups": [
         {
@@ -6345,11 +4949,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_20",
-      "ImageID": 220,
+      "ImageID": 170,
       "RGB": [
-        124,
-        18,
-        142
+        120,
+        19,
+        137
       ],
       "Groups": [
         {
@@ -6373,11 +4977,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_21",
-      "ImageID": 221,
+      "ImageID": 171,
       "RGB": [
-        124,
+        120,
         19,
-        135
+        138
       ],
       "Groups": [
         {
@@ -6401,11 +5005,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_22",
-      "ImageID": 222,
+      "ImageID": 172,
       "RGB": [
-        124,
+        120,
         19,
-        136
+        139
       ],
       "Groups": [
         {
@@ -6429,11 +5033,11 @@
     },
     {
       "Name": "7Networks_RH_Vis_23",
-      "ImageID": 223,
+      "ImageID": 173,
       "RGB": [
-        124,
+        120,
         19,
-        137
+        140
       ],
       "Groups": [
         {
@@ -6456,208 +5060,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Vis_24",
-      "ImageID": 224,
-      "RGB": [
-        124,
-        19,
-        138
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 24
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_25",
-      "ImageID": 225,
-      "RGB": [
-        124,
-        19,
-        139
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 25
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_26",
-      "ImageID": 226,
-      "RGB": [
-        124,
-        19,
-        140
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 26
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_27",
-      "ImageID": 227,
-      "RGB": [
-        124,
-        19,
-        141
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 27
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_28",
-      "ImageID": 228,
-      "RGB": [
-        124,
-        19,
-        142
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 28
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_29",
-      "ImageID": 229,
-      "RGB": [
-        124,
-        20,
-        135
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 29
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Vis_30",
-      "ImageID": 230,
-      "RGB": [
-        124,
-        20,
-        136
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 30
-        },
-        {
-          "Name": "Network",
-          "Value": "visual"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_SomMot_1",
-      "ImageID": 231,
+      "ImageID": 174,
       "RGB": [
-        74,
-        128,
-        179
+        70,
+        129,
+        177
       ],
       "Groups": [
         {
@@ -6681,11 +5089,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_2",
-      "ImageID": 232,
+      "ImageID": 175,
       "RGB": [
-        74,
-        128,
-        180
+        70,
+        129,
+        178
       ],
       "Groups": [
         {
@@ -6709,11 +5117,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_3",
-      "ImageID": 233,
+      "ImageID": 176,
       "RGB": [
-        74,
-        128,
-        181
+        70,
+        129,
+        179
       ],
       "Groups": [
         {
@@ -6737,11 +5145,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_4",
-      "ImageID": 234,
+      "ImageID": 177,
       "RGB": [
-        74,
+        70,
         129,
-        174
+        180
       ],
       "Groups": [
         {
@@ -6765,11 +5173,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_5",
-      "ImageID": 235,
+      "ImageID": 178,
       "RGB": [
-        74,
+        70,
         129,
-        175
+        181
       ],
       "Groups": [
         {
@@ -6793,11 +5201,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_6",
-      "ImageID": 236,
+      "ImageID": 179,
       "RGB": [
-        74,
-        129,
-        176
+        70,
+        130,
+        174
       ],
       "Groups": [
         {
@@ -6821,11 +5229,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_7",
-      "ImageID": 237,
+      "ImageID": 180,
       "RGB": [
-        74,
-        129,
-        177
+        70,
+        130,
+        175
       ],
       "Groups": [
         {
@@ -6849,11 +5257,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_8",
-      "ImageID": 238,
+      "ImageID": 181,
       "RGB": [
-        74,
-        129,
-        178
+        70,
+        130,
+        176
       ],
       "Groups": [
         {
@@ -6877,11 +5285,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_9",
-      "ImageID": 239,
+      "ImageID": 182,
       "RGB": [
-        74,
-        129,
-        179
+        70,
+        130,
+        177
       ],
       "Groups": [
         {
@@ -6905,11 +5313,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_10",
-      "ImageID": 240,
+      "ImageID": 183,
       "RGB": [
-        74,
-        129,
-        180
+        70,
+        130,
+        178
       ],
       "Groups": [
         {
@@ -6933,11 +5341,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_11",
-      "ImageID": 241,
+      "ImageID": 184,
       "RGB": [
-        74,
-        129,
-        181
+        70,
+        130,
+        179
       ],
       "Groups": [
         {
@@ -6961,11 +5369,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_12",
-      "ImageID": 242,
+      "ImageID": 185,
       "RGB": [
-        74,
+        70,
         130,
-        174
+        180
       ],
       "Groups": [
         {
@@ -6989,11 +5397,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_13",
-      "ImageID": 243,
+      "ImageID": 186,
       "RGB": [
-        74,
+        70,
         130,
-        175
+        182
       ],
       "Groups": [
         {
@@ -7017,11 +5425,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_14",
-      "ImageID": 244,
+      "ImageID": 187,
       "RGB": [
-        74,
+        70,
         130,
-        176
+        183
       ],
       "Groups": [
         {
@@ -7045,11 +5453,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_15",
-      "ImageID": 245,
+      "ImageID": 188,
       "RGB": [
-        74,
+        70,
         130,
-        177
+        184
       ],
       "Groups": [
         {
@@ -7073,11 +5481,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_16",
-      "ImageID": 246,
+      "ImageID": 189,
       "RGB": [
-        74,
+        70,
         130,
-        178
+        185
       ],
       "Groups": [
         {
@@ -7101,11 +5509,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_17",
-      "ImageID": 247,
+      "ImageID": 190,
       "RGB": [
-        74,
+        70,
         130,
-        179
+        186
       ],
       "Groups": [
         {
@@ -7129,11 +5537,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_18",
-      "ImageID": 248,
+      "ImageID": 191,
       "RGB": [
-        74,
+        70,
         130,
-        180
+        187
       ],
       "Groups": [
         {
@@ -7157,11 +5565,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_19",
-      "ImageID": 249,
+      "ImageID": 192,
       "RGB": [
-        74,
+        70,
         130,
-        182
+        188
       ],
       "Groups": [
         {
@@ -7185,11 +5593,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_20",
-      "ImageID": 250,
+      "ImageID": 193,
       "RGB": [
-        74,
-        130,
-        183
+        70,
+        131,
+        181
       ],
       "Groups": [
         {
@@ -7213,11 +5621,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_21",
-      "ImageID": 251,
+      "ImageID": 194,
       "RGB": [
-        74,
-        130,
-        184
+        70,
+        131,
+        182
       ],
       "Groups": [
         {
@@ -7241,11 +5649,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_22",
-      "ImageID": 252,
+      "ImageID": 195,
       "RGB": [
-        74,
-        130,
-        185
+        70,
+        131,
+        183
       ],
       "Groups": [
         {
@@ -7269,11 +5677,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_23",
-      "ImageID": 253,
+      "ImageID": 196,
       "RGB": [
-        74,
-        130,
-        186
+        70,
+        131,
+        184
       ],
       "Groups": [
         {
@@ -7297,11 +5705,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_24",
-      "ImageID": 254,
+      "ImageID": 197,
       "RGB": [
-        74,
-        130,
-        187
+        70,
+        131,
+        185
       ],
       "Groups": [
         {
@@ -7325,11 +5733,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_25",
-      "ImageID": 255,
+      "ImageID": 198,
       "RGB": [
-        74,
-        130,
-        188
+        70,
+        131,
+        186
       ],
       "Groups": [
         {
@@ -7353,11 +5761,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_26",
-      "ImageID": 256,
+      "ImageID": 199,
       "RGB": [
-        74,
+        70,
         131,
-        181
+        187
       ],
       "Groups": [
         {
@@ -7381,11 +5789,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_27",
-      "ImageID": 257,
+      "ImageID": 200,
       "RGB": [
-        74,
+        70,
         131,
-        182
+        188
       ],
       "Groups": [
         {
@@ -7409,11 +5817,11 @@
     },
     {
       "Name": "7Networks_RH_SomMot_28",
-      "ImageID": 258,
+      "ImageID": 201,
       "RGB": [
-        74,
-        131,
-        183
+        70,
+        132,
+        181
       ],
       "Groups": [
         {
@@ -7436,348 +5844,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_SomMot_29",
-      "ImageID": 259,
-      "RGB": [
-        74,
-        131,
-        184
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 29
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_30",
-      "ImageID": 260,
-      "RGB": [
-        74,
-        131,
-        185
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 30
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_31",
-      "ImageID": 261,
-      "RGB": [
-        74,
-        131,
-        186
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 31
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_32",
-      "ImageID": 262,
-      "RGB": [
-        74,
-        131,
-        187
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 32
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_33",
-      "ImageID": 263,
-      "RGB": [
-        74,
-        131,
-        188
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 33
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_34",
-      "ImageID": 264,
-      "RGB": [
-        74,
-        132,
-        181
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 34
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_35",
-      "ImageID": 265,
-      "RGB": [
-        74,
-        132,
-        182
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 35
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_36",
-      "ImageID": 266,
-      "RGB": [
-        74,
-        132,
-        183
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 36
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_37",
-      "ImageID": 267,
-      "RGB": [
-        74,
-        132,
-        184
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 37
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_38",
-      "ImageID": 268,
-      "RGB": [
-        74,
-        132,
-        185
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 38
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_39",
-      "ImageID": 269,
-      "RGB": [
-        74,
-        132,
-        186
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 39
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SomMot_40",
-      "ImageID": 270,
-      "RGB": [
-        74,
-        132,
-        187
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 40
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_DorsAttn_Post_1",
-      "ImageID": 271,
+      "ImageID": 202,
       "RGB": [
-        4,
-        118,
-        15
+        0,
+        119,
+        10
       ],
       "Groups": [
         {
@@ -7801,11 +5873,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_2",
-      "ImageID": 272,
+      "ImageID": 203,
       "RGB": [
-        4,
+        0,
         119,
-        8
+        11
       ],
       "Groups": [
         {
@@ -7829,11 +5901,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_3",
-      "ImageID": 273,
+      "ImageID": 204,
       "RGB": [
-        4,
+        0,
         119,
-        9
+        12
       ],
       "Groups": [
         {
@@ -7857,11 +5929,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_4",
-      "ImageID": 274,
+      "ImageID": 205,
       "RGB": [
-        4,
+        0,
         119,
-        10
+        13
       ],
       "Groups": [
         {
@@ -7885,11 +5957,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_5",
-      "ImageID": 275,
+      "ImageID": 206,
       "RGB": [
-        4,
+        0,
         119,
-        11
+        14
       ],
       "Groups": [
         {
@@ -7913,11 +5985,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_6",
-      "ImageID": 276,
+      "ImageID": 207,
       "RGB": [
-        4,
+        0,
         119,
-        12
+        16
       ],
       "Groups": [
         {
@@ -7941,11 +6013,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_7",
-      "ImageID": 277,
+      "ImageID": 208,
       "RGB": [
-        4,
+        0,
         119,
-        13
+        17
       ],
       "Groups": [
         {
@@ -7969,11 +6041,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_8",
-      "ImageID": 278,
+      "ImageID": 209,
       "RGB": [
-        4,
+        0,
         119,
-        14
+        18
       ],
       "Groups": [
         {
@@ -7997,11 +6069,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_9",
-      "ImageID": 279,
+      "ImageID": 210,
       "RGB": [
-        4,
+        0,
         119,
-        16
+        19
       ],
       "Groups": [
         {
@@ -8025,11 +6097,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_10",
-      "ImageID": 280,
+      "ImageID": 211,
       "RGB": [
-        4,
+        0,
         119,
-        17
+        20
       ],
       "Groups": [
         {
@@ -8053,11 +6125,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_11",
-      "ImageID": 281,
+      "ImageID": 212,
       "RGB": [
-        4,
+        0,
         119,
-        18
+        21
       ],
       "Groups": [
         {
@@ -8081,11 +6153,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_12",
-      "ImageID": 282,
+      "ImageID": 213,
       "RGB": [
-        4,
+        0,
         119,
-        19
+        22
       ],
       "Groups": [
         {
@@ -8109,11 +6181,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_13",
-      "ImageID": 283,
+      "ImageID": 214,
       "RGB": [
-        4,
-        119,
-        20
+        0,
+        120,
+        15
       ],
       "Groups": [
         {
@@ -8137,11 +6209,11 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_14",
-      "ImageID": 284,
+      "ImageID": 215,
       "RGB": [
-        4,
-        119,
-        21
+        0,
+        120,
+        16
       ],
       "Groups": [
         {
@@ -8164,150 +6236,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_DorsAttn_Post_15",
-      "ImageID": 285,
-      "RGB": [
-        4,
-        119,
-        22
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 15
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_DorsAttn_Post_16",
-      "ImageID": 286,
-      "RGB": [
-        4,
-        120,
-        15
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 16
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_DorsAttn_Post_17",
-      "ImageID": 287,
-      "RGB": [
-        4,
-        120,
-        16
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 17
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_DorsAttn_Post_18",
-      "ImageID": 288,
-      "RGB": [
-        4,
-        120,
-        17
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 18
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_DorsAttn_Post_19",
-      "ImageID": 289,
-      "RGB": [
-        4,
-        120,
-        18
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "posterior",
-          "GroupID": 19
-        },
-        {
-          "Name": "Network",
-          "Value": "dorsal attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_DorsAttn_FEF_1",
-      "ImageID": 290,
+      "ImageID": 216,
       "RGB": [
-        5,
+        1,
         118,
         15
       ],
@@ -8333,9 +6265,9 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_FEF_2",
-      "ImageID": 291,
+      "ImageID": 217,
       "RGB": [
-        5,
+        1,
         118,
         16
       ],
@@ -8361,9 +6293,9 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_FEF_3",
-      "ImageID": 292,
+      "ImageID": 218,
       "RGB": [
-        5,
+        1,
         118,
         17
       ],
@@ -8389,9 +6321,9 @@
     },
     {
       "Name": "7Networks_RH_DorsAttn_PrCv_1",
-      "ImageID": 293,
+      "ImageID": 219,
       "RGB": [
-        5,
+        1,
         118,
         18
       ],
@@ -8417,11 +6349,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_1",
-      "ImageID": 294,
+      "ImageID": 220,
       "RGB": [
-        201,
+        197,
         58,
-        249
+        250
       ],
       "Groups": [
         {
@@ -8445,11 +6377,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_2",
-      "ImageID": 295,
+      "ImageID": 221,
       "RGB": [
-        201,
+        197,
         58,
-        250
+        252
       ],
       "Groups": [
         {
@@ -8473,11 +6405,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_3",
-      "ImageID": 296,
+      "ImageID": 222,
       "RGB": [
-        201,
+        197,
         58,
-        252
+        253
       ],
       "Groups": [
         {
@@ -8501,11 +6433,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_4",
-      "ImageID": 297,
+      "ImageID": 223,
       "RGB": [
-        201,
+        197,
         58,
-        253
+        254
       ],
       "Groups": [
         {
@@ -8529,11 +6461,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_5",
-      "ImageID": 298,
+      "ImageID": 224,
       "RGB": [
-        201,
+        197,
         58,
-        254
+        255
       ],
       "Groups": [
         {
@@ -8556,66 +6488,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_SalVentAttn_TempOccPar_6",
-      "ImageID": 299,
-      "RGB": [
-        201,
-        58,
-        255
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal occipital parietal",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SalVentAttn_TempOccPar_7",
-      "ImageID": 300,
-      "RGB": [
-        198,
-        51,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal occipital parietal",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_SalVentAttn_PrC_1",
-      "ImageID": 301,
+      "ImageID": 225,
       "RGB": [
-        201,
+        197,
         59,
         251
       ],
@@ -8641,11 +6517,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_1",
-      "ImageID": 302,
+      "ImageID": 226,
       "RGB": [
-        201,
+        197,
         59,
-        249
+        250
       ],
       "Groups": [
         {
@@ -8669,11 +6545,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_2",
-      "ImageID": 303,
+      "ImageID": 227,
       "RGB": [
-        201,
+        197,
         59,
-        250
+        252
       ],
       "Groups": [
         {
@@ -8697,11 +6573,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_3",
-      "ImageID": 304,
+      "ImageID": 228,
       "RGB": [
-        201,
+        197,
         59,
-        252
+        253
       ],
       "Groups": [
         {
@@ -8725,11 +6601,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_4",
-      "ImageID": 305,
+      "ImageID": 229,
       "RGB": [
-        201,
+        197,
         59,
-        253
+        254
       ],
       "Groups": [
         {
@@ -8753,11 +6629,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_5",
-      "ImageID": 306,
+      "ImageID": 230,
       "RGB": [
-        201,
+        197,
         59,
-        254
+        255
       ],
       "Groups": [
         {
@@ -8781,11 +6657,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_6",
-      "ImageID": 307,
+      "ImageID": 231,
       "RGB": [
-        201,
-        59,
-        255
+        194,
+        52,
+        250
       ],
       "Groups": [
         {
@@ -8808,96 +6684,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_SalVentAttn_FrOperIns_7",
-      "ImageID": 308,
-      "RGB": [
-        198,
-        52,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal operculum insula",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SalVentAttn_FrOperIns_8",
-      "ImageID": 309,
-      "RGB": [
-        198,
-        52,
-        251
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal operculum insula",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SalVentAttn_PFCl_1",
-      "ImageID": 310,
-      "RGB": [
-        200,
-        57,
-        251
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_SalVentAttn_Med_1",
-      "ImageID": 311,
+      "ImageID": 232,
       "RGB": [
-        200,
+        196,
         57,
-        247
+        248
       ],
       "Groups": [
         {
@@ -8921,11 +6713,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_2",
-      "ImageID": 312,
+      "ImageID": 233,
       "RGB": [
-        200,
+        196,
         57,
-        248
+        250
       ],
       "Groups": [
         {
@@ -8949,11 +6741,11 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_3",
-      "ImageID": 313,
+      "ImageID": 234,
       "RGB": [
-        200,
+        196,
         57,
-        250
+        251
       ],
       "Groups": [
         {
@@ -8977,9 +6769,9 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_4",
-      "ImageID": 314,
+      "ImageID": 235,
       "RGB": [
-        200,
+        196,
         57,
         252
       ],
@@ -9005,9 +6797,9 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_5",
-      "ImageID": 315,
+      "ImageID": 236,
       "RGB": [
-        200,
+        196,
         57,
         253
       ],
@@ -9033,9 +6825,9 @@
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_6",
-      "ImageID": 316,
+      "ImageID": 237,
       "RGB": [
-        200,
+        196,
         57,
         254
       ],
@@ -9060,68 +6852,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_SalVentAttn_Med_7",
-      "ImageID": 317,
-      "RGB": [
-        200,
-        57,
-        255
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_SalVentAttn_Med_8",
-      "ImageID": 318,
-      "RGB": [
-        200,
-        58,
-        249
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Limbic_OFC_1",
-      "ImageID": 319,
+      "ImageID": 238,
       "RGB": [
-        224,
+        220,
         249,
-        163
+        165
       ],
       "Groups": [
         {
@@ -9145,11 +6881,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_OFC_2",
-      "ImageID": 320,
+      "ImageID": 239,
       "RGB": [
-        224,
+        220,
         249,
-        165
+        166
       ],
       "Groups": [
         {
@@ -9173,11 +6909,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_OFC_3",
-      "ImageID": 321,
+      "ImageID": 240,
       "RGB": [
-        224,
+        220,
         249,
-        166
+        167
       ],
       "Groups": [
         {
@@ -9201,11 +6937,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_OFC_4",
-      "ImageID": 322,
+      "ImageID": 241,
       "RGB": [
-        224,
+        220,
         249,
-        167
+        168
       ],
       "Groups": [
         {
@@ -9228,66 +6964,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Limbic_OFC_5",
-      "ImageID": 323,
-      "RGB": [
-        224,
-        249,
-        168
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "orbital frontal cortex",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Limbic_OFC_6",
-      "ImageID": 324,
-      "RGB": [
-        224,
-        249,
-        169
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "orbital frontal cortex",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Limbic_TempPole_1",
-      "ImageID": 325,
+      "ImageID": 242,
       "RGB": [
-        224,
+        220,
         249,
         164
       ],
@@ -9313,11 +6993,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_2",
-      "ImageID": 326,
+      "ImageID": 243,
       "RGB": [
-        224,
+        220,
         249,
-        170
+        169
       ],
       "Groups": [
         {
@@ -9341,11 +7021,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_3",
-      "ImageID": 327,
+      "ImageID": 244,
       "RGB": [
-        224,
+        220,
         249,
-        171
+        170
       ],
       "Groups": [
         {
@@ -9369,11 +7049,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_4",
-      "ImageID": 328,
+      "ImageID": 245,
       "RGB": [
-        224,
+        220,
         249,
-        172
+        171
       ],
       "Groups": [
         {
@@ -9397,11 +7077,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_5",
-      "ImageID": 329,
+      "ImageID": 246,
       "RGB": [
-        224,
-        250,
-        165
+        220,
+        249,
+        172
       ],
       "Groups": [
         {
@@ -9425,11 +7105,11 @@
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_6",
-      "ImageID": 330,
+      "ImageID": 247,
       "RGB": [
-        224,
+        220,
         250,
-        166
+        165
       ],
       "Groups": [
         {
@@ -9452,40 +7132,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Limbic_TempPole_7",
-      "ImageID": 331,
-      "RGB": [
-        224,
-        250,
-        167
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal pole",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Cont_Par_1",
-      "ImageID": 332,
+      "ImageID": 248,
       "RGB": [
-        234,
+        230,
         147,
-        33
+        35
       ],
       "Groups": [
         {
@@ -9509,11 +7161,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_Par_2",
-      "ImageID": 333,
+      "ImageID": 249,
       "RGB": [
-        234,
+        230,
         147,
-        35
+        36
       ],
       "Groups": [
         {
@@ -9537,11 +7189,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_Par_3",
-      "ImageID": 334,
+      "ImageID": 250,
       "RGB": [
-        234,
+        230,
         147,
-        36
+        37
       ],
       "Groups": [
         {
@@ -9564,94 +7216,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Cont_Par_4",
-      "ImageID": 335,
-      "RGB": [
-        234,
-        147,
-        37
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 4
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Cont_Par_5",
-      "ImageID": 336,
-      "RGB": [
-        234,
-        147,
-        38
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 5
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Cont_Par_6",
-      "ImageID": 337,
-      "RGB": [
-        234,
-        147,
-        39
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal",
-          "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Cont_Temp_1",
-      "ImageID": 338,
+      "ImageID": 251,
       "RGB": [
-        234,
+        230,
         147,
         34
       ],
@@ -9676,38 +7244,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Cont_Temp_2",
-      "ImageID": 339,
-      "RGB": [
-        234,
-        147,
-        40
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Cont_PFCv_1",
-      "ImageID": 340,
+      "ImageID": 252,
       "RGB": [
-        233,
+        229,
         148,
         35
       ],
@@ -9733,11 +7273,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_1",
-      "ImageID": 341,
+      "ImageID": 253,
       "RGB": [
-        233,
+        229,
         148,
-        27
+        29
       ],
       "Groups": [
         {
@@ -9761,11 +7301,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_2",
-      "ImageID": 342,
+      "ImageID": 254,
       "RGB": [
-        233,
+        229,
         148,
-        28
+        30
       ],
       "Groups": [
         {
@@ -9789,11 +7329,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_3",
-      "ImageID": 343,
+      "ImageID": 255,
       "RGB": [
-        233,
+        229,
         148,
-        29
+        31
       ],
       "Groups": [
         {
@@ -9817,11 +7357,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_4",
-      "ImageID": 344,
+      "ImageID": 256,
       "RGB": [
-        233,
+        229,
         148,
-        30
+        32
       ],
       "Groups": [
         {
@@ -9845,11 +7385,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_5",
-      "ImageID": 345,
+      "ImageID": 257,
       "RGB": [
-        233,
+        229,
         148,
-        31
+        34
       ],
       "Groups": [
         {
@@ -9873,11 +7413,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_6",
-      "ImageID": 346,
+      "ImageID": 258,
       "RGB": [
-        233,
+        229,
         148,
-        32
+        36
       ],
       "Groups": [
         {
@@ -9901,11 +7441,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_7",
-      "ImageID": 347,
+      "ImageID": 259,
       "RGB": [
-        233,
+        229,
         148,
-        34
+        37
       ],
       "Groups": [
         {
@@ -9929,11 +7469,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_8",
-      "ImageID": 348,
+      "ImageID": 260,
       "RGB": [
-        233,
+        229,
         148,
-        36
+        38
       ],
       "Groups": [
         {
@@ -9957,11 +7497,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_9",
-      "ImageID": 349,
+      "ImageID": 261,
       "RGB": [
-        233,
+        229,
         148,
-        37
+        39
       ],
       "Groups": [
         {
@@ -9985,11 +7525,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_10",
-      "ImageID": 350,
+      "ImageID": 262,
       "RGB": [
-        233,
+        229,
         148,
-        38
+        40
       ],
       "Groups": [
         {
@@ -10013,11 +7553,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_11",
-      "ImageID": 351,
+      "ImageID": 263,
       "RGB": [
-        233,
-        148,
-        39
+        229,
+        149,
+        33
       ],
       "Groups": [
         {
@@ -10041,11 +7581,11 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_12",
-      "ImageID": 352,
+      "ImageID": 264,
       "RGB": [
-        233,
-        148,
-        40
+        229,
+        149,
+        34
       ],
       "Groups": [
         {
@@ -10068,94 +7608,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Cont_PFCl_13",
-      "ImageID": 353,
-      "RGB": [
-        233,
-        149,
-        33
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 13
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Cont_PFCl_14",
-      "ImageID": 354,
-      "RGB": [
-        233,
-        149,
-        34
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 14
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Cont_PFCl_15",
-      "ImageID": 355,
-      "RGB": [
-        233,
-        149,
-        35
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 15
-        },
-        {
-          "Name": "Network",
-          "Value": "control"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Cont_pCun_1",
-      "ImageID": 356,
+      "ImageID": 265,
       "RGB": [
-        233,
+        229,
         147,
         35
       ],
@@ -10181,9 +7637,9 @@
     },
     {
       "Name": "7Networks_RH_Cont_pCun_2",
-      "ImageID": 357,
+      "ImageID": 266,
       "RGB": [
-        233,
+        229,
         147,
         36
       ],
@@ -10209,9 +7665,9 @@
     },
     {
       "Name": "7Networks_RH_Cont_Cing_1",
-      "ImageID": 358,
+      "ImageID": 267,
       "RGB": [
-        233,
+        229,
         147,
         34
       ],
@@ -10237,9 +7693,9 @@
     },
     {
       "Name": "7Networks_RH_Cont_Cing_2",
-      "ImageID": 359,
+      "ImageID": 268,
       "RGB": [
-        233,
+        229,
         147,
         37
       ],
@@ -10265,9 +7721,9 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCmp_1",
-      "ImageID": 360,
+      "ImageID": 269,
       "RGB": [
-        234,
+        230,
         148,
         37
       ],
@@ -10293,9 +7749,9 @@
     },
     {
       "Name": "7Networks_RH_Cont_PFCmp_2",
-      "ImageID": 361,
+      "ImageID": 270,
       "RGB": [
-        234,
+        230,
         148,
         38
       ],
@@ -10321,9 +7777,9 @@
     },
     {
       "Name": "7Networks_RH_Default_Par_1",
-      "ImageID": 362,
+      "ImageID": 271,
       "RGB": [
-        209,
+        205,
         62,
         76
       ],
@@ -10349,9 +7805,9 @@
     },
     {
       "Name": "7Networks_RH_Default_Par_2",
-      "ImageID": 363,
+      "ImageID": 272,
       "RGB": [
-        209,
+        205,
         62,
         78
       ],
@@ -10377,9 +7833,9 @@
     },
     {
       "Name": "7Networks_RH_Default_Par_3",
-      "ImageID": 364,
+      "ImageID": 273,
       "RGB": [
-        209,
+        205,
         62,
         79
       ],
@@ -10405,9 +7861,9 @@
     },
     {
       "Name": "7Networks_RH_Default_Par_4",
-      "ImageID": 365,
+      "ImageID": 274,
       "RGB": [
-        209,
+        205,
         62,
         80
       ],
@@ -10433,9 +7889,9 @@
     },
     {
       "Name": "7Networks_RH_Default_Par_5",
-      "ImageID": 366,
+      "ImageID": 275,
       "RGB": [
-        209,
+        205,
         62,
         81
       ],
@@ -10461,11 +7917,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_1",
-      "ImageID": 367,
+      "ImageID": 276,
       "RGB": [
-        209,
+        205,
         61,
-        76
+        77
       ],
       "Groups": [
         {
@@ -10489,11 +7945,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_2",
-      "ImageID": 368,
+      "ImageID": 277,
       "RGB": [
-        209,
+        205,
         61,
-        77
+        79
       ],
       "Groups": [
         {
@@ -10517,11 +7973,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_3",
-      "ImageID": 369,
+      "ImageID": 278,
       "RGB": [
-        209,
+        205,
         61,
-        79
+        80
       ],
       "Groups": [
         {
@@ -10545,11 +8001,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_4",
-      "ImageID": 370,
+      "ImageID": 279,
       "RGB": [
-        209,
+        205,
         61,
-        80
+        81
       ],
       "Groups": [
         {
@@ -10573,11 +8029,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_5",
-      "ImageID": 371,
+      "ImageID": 280,
       "RGB": [
-        209,
+        205,
         61,
-        81
+        82
       ],
       "Groups": [
         {
@@ -10601,11 +8057,11 @@
     },
     {
       "Name": "7Networks_RH_Default_Temp_6",
-      "ImageID": 372,
+      "ImageID": 281,
       "RGB": [
-        209,
+        205,
         61,
-        82
+        83
       ],
       "Groups": [
         {
@@ -10628,66 +8084,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Default_Temp_7",
-      "ImageID": 373,
-      "RGB": [
-        209,
-        61,
-        83
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_Temp_8",
-      "ImageID": 374,
-      "RGB": [
-        209,
-        61,
-        84
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Default_PFCv_1",
-      "ImageID": 375,
+      "ImageID": 282,
       "RGB": [
-        209,
+        205,
         61,
         78
       ],
@@ -10713,11 +8113,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCv_2",
-      "ImageID": 376,
+      "ImageID": 283,
       "RGB": [
-        209,
-        62,
-        77
+        205,
+        61,
+        84
       ],
       "Groups": [
         {
@@ -10741,11 +8141,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCv_3",
-      "ImageID": 377,
+      "ImageID": 284,
       "RGB": [
-        209,
+        205,
         62,
-        82
+        77
       ],
       "Groups": [
         {
@@ -10768,40 +8168,12 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Default_PFCv_4",
-      "ImageID": 378,
-      "RGB": [
-        209,
-        62,
-        83
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "ventral prefrontal cortex",
-          "GroupID": 4
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Default_PFCdPFCm_1",
-      "ImageID": 379,
+      "ImageID": 285,
       "RGB": [
-        208,
+        204,
         62,
-        73
+        75
       ],
       "Groups": [
         {
@@ -10825,11 +8197,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_2",
-      "ImageID": 380,
+      "ImageID": 286,
       "RGB": [
-        208,
+        204,
         62,
-        74
+        76
       ],
       "Groups": [
         {
@@ -10853,11 +8225,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_3",
-      "ImageID": 381,
+      "ImageID": 287,
       "RGB": [
-        208,
+        204,
         62,
-        75
+        77
       ],
       "Groups": [
         {
@@ -10881,11 +8253,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_4",
-      "ImageID": 382,
+      "ImageID": 288,
       "RGB": [
-        208,
+        204,
         62,
-        76
+        79
       ],
       "Groups": [
         {
@@ -10909,11 +8281,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_5",
-      "ImageID": 383,
+      "ImageID": 289,
       "RGB": [
-        208,
+        204,
         62,
-        77
+        80
       ],
       "Groups": [
         {
@@ -10937,11 +8309,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_6",
-      "ImageID": 384,
+      "ImageID": 290,
       "RGB": [
-        208,
+        204,
         62,
-        79
+        81
       ],
       "Groups": [
         {
@@ -10965,11 +8337,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_7",
-      "ImageID": 385,
+      "ImageID": 291,
       "RGB": [
-        208,
+        204,
         62,
-        80
+        82
       ],
       "Groups": [
         {
@@ -10993,11 +8365,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_8",
-      "ImageID": 386,
+      "ImageID": 292,
       "RGB": [
-        208,
+        204,
         62,
-        81
+        83
       ],
       "Groups": [
         {
@@ -11021,11 +8393,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_9",
-      "ImageID": 387,
+      "ImageID": 293,
       "RGB": [
-        208,
+        204,
         62,
-        82
+        84
       ],
       "Groups": [
         {
@@ -11049,11 +8421,11 @@
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_10",
-      "ImageID": 388,
+      "ImageID": 294,
       "RGB": [
-        208,
+        204,
         62,
-        83
+        85
       ],
       "Groups": [
         {
@@ -11076,94 +8448,10 @@
       ]
     },
     {
-      "Name": "7Networks_RH_Default_PFCdPFCm_11",
-      "ImageID": 389,
-      "RGB": [
-        208,
-        62,
-        84
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
-          "GroupID": 11
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_PFCdPFCm_12",
-      "ImageID": 390,
-      "RGB": [
-        208,
-        62,
-        85
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
-          "GroupID": 12
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_PFCdPFCm_13",
-      "ImageID": 391,
-      "RGB": [
-        208,
-        63,
-        78
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
-          "GroupID": 13
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
       "Name": "7Networks_RH_Default_pCunPCC_1",
-      "ImageID": 392,
+      "ImageID": 295,
       "RGB": [
-        208,
+        204,
         62,
         78
       ],
@@ -11189,9 +8477,9 @@
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_2",
-      "ImageID": 393,
+      "ImageID": 296,
       "RGB": [
-        208,
+        204,
         63,
         77
       ],
@@ -11217,11 +8505,11 @@
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_3",
-      "ImageID": 394,
+      "ImageID": 297,
       "RGB": [
-        208,
+        204,
         63,
-        79
+        78
       ],
       "Groups": [
         {
@@ -11245,11 +8533,11 @@
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_4",
-      "ImageID": 395,
+      "ImageID": 298,
       "RGB": [
-        208,
+        204,
         63,
-        80
+        79
       ],
       "Groups": [
         {
@@ -11273,11 +8561,11 @@
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_5",
-      "ImageID": 396,
+      "ImageID": 299,
       "RGB": [
-        208,
+        204,
         63,
-        81
+        80
       ],
       "Groups": [
         {
@@ -11301,11 +8589,11 @@
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_6",
-      "ImageID": 397,
+      "ImageID": 300,
       "RGB": [
-        208,
+        204,
         63,
-        82
+        81
       ],
       "Groups": [
         {
@@ -11320,90 +8608,6 @@
           "Name": "Region",
           "Value": "precuneus posterior cingulate cortex",
           "GroupID": 6
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_pCunPCC_7",
-      "ImageID": 398,
-      "RGB": [
-        208,
-        63,
-        83
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 7
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_pCunPCC_8",
-      "ImageID": 399,
-      "RGB": [
-        208,
-        63,
-        84
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 8
-        },
-        {
-          "Name": "Network",
-          "Value": "default"
-        }
-      ]
-    },
-    {
-      "Name": "7Networks_RH_Default_pCunPCC_9",
-      "ImageID": 400,
-      "RGB": [
-        208,
-        64,
-        77
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 9
         },
         {
           "Name": "Network",

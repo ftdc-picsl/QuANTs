@@ -1,6 +1,10 @@
 {
-  "Name": "Schaefer100x17",
-  "Identifier": "Schaefer100x17",
+  "Name": "Schaefer100x7",
+  "Identifier": "Schaefer100x7",
+  "Version": "1.0",
+  "Release": "0.21.3",
+  "Git-Repo": "",
+  "Git-Commit": "",
   "Description": "",
   "DevNotes": [
     ""
@@ -79,72 +83,32 @@
       "Name": "Network",
       "Values": [
         {
-          "Name": "control A",
-          "Abbreviation": "ContA"
+          "Name": "control",
+          "Abbreviation": "Cont"
         },
         {
-          "Name": "control B",
-          "Abbreviation": "ContB"
+          "Name": "default",
+          "Abbreviation": "Default"
         },
         {
-          "Name": "control C",
-          "Abbreviation": "ContC"
+          "Name": "dorsal attention",
+          "Abbreviation": "DorsAttn"
         },
         {
-          "Name": "default A",
-          "Abbreviation": "DefaultA"
+          "Name": "limbic",
+          "Abbreviation": "Limbic"
         },
         {
-          "Name": "default B",
-          "Abbreviation": "DefaultB"
+          "Name": "salience ventral attention",
+          "Abbreviation": "SalVentAttn"
         },
         {
-          "Name": "default C",
-          "Abbreviation": "DefaultC"
+          "Name": "somatomotor",
+          "Abbreviation": "SomMot"
         },
         {
-          "Name": "dorsal attention A",
-          "Abbreviation": "DorsAttnA"
-        },
-        {
-          "Name": "dorsal attention B",
-          "Abbreviation": "DorsAttnB"
-        },
-        {
-          "Name": "limbic A",
-          "Abbreviation": "LimbicA"
-        },
-        {
-          "Name": "limbic B",
-          "Abbreviation": "LimbicB"
-        },
-        {
-          "Name": "salience ventral attention A",
-          "Abbreviation": "SalVentAttnA"
-        },
-        {
-          "Name": "salience ventral attention B",
-          "Abbreviation": "SalVentAttnB"
-        },
-        {
-          "Name": "somatomotor A",
-          "Abbreviation": "SomMotA"
-        },
-        {
-          "Name": "somatomotor B",
-          "Abbreviation": "SomMotB"
-        },
-        {
-          "Name": "temporal parietal",
-          "Abbreviation": "TempPar"
-        },
-        {
-          "Name": "central visual",
-          "Abbreviation": "VisCent"
-        },
-        {
-          "Name": "peripheral visual",
-          "Abbreviation": "VisPeri"
+          "Name": "visual",
+          "Abbreviation": "Vis"
         }
       ]
     },
@@ -152,88 +116,40 @@
       "Name": "Region",
       "Values": [
         {
-          "Name": "anterior temporal",
-          "Abbreviation": "AntTemp"
-        },
-        {
-          "Name": "auditory",
-          "Abbreviation": "Aud"
-        },
-        {
-          "Name": "central",
-          "Abbreviation": "Cent"
-        },
-        {
-          "Name": "cingulate anterior",
-          "Abbreviation": "Cinga"
-        },
-        {
-          "Name": "mid-cingulate",
-          "Abbreviation": "Cingm"
-        },
-        {
-          "Name": "cingulate posterior",
-          "Abbreviation": "Cingp"
-        },
-        {
-          "Name": "extrastriate cortex",
-          "Abbreviation": "ExStr"
-        },
-        {
-          "Name": "extra-striate inferior",
-          "Abbreviation": "ExStrInf"
-        },
-        {
-          "Name": "extra-striate superior",
-          "Abbreviation": "ExStrSup"
+          "Name": "cingulate",
+          "Abbreviation": "Cing"
         },
         {
           "Name": "frontal eye fields",
           "Abbreviation": "FEF"
         },
         {
-          "Name": "frontal medial",
-          "Abbreviation": "FrMed"
+          "Name": "frontal operculum insula",
+          "Abbreviation": "FrOperIns"
         },
         {
-          "Name": "frontal operculum",
-          "Abbreviation": "FrOper"
-        },
-        {
-          "Name": "interior parietal lobule",
-          "Abbreviation": "IPL"
-        },
-        {
-          "Name": "intraparietal sulcus",
-          "Abbreviation": "IPS"
-        },
-        {
-          "Name": "insula",
-          "Abbreviation": "Ins"
+          "Name": "medial",
+          "Abbreviation": "Med"
         },
         {
           "Name": "orbital frontal cortex",
           "Abbreviation": "OFC"
         },
         {
+          "Name": "prefrontal cortex",
+          "Abbreviation": "PFC"
+        },
+        {
           "Name": "dorsal prefrontal cortex",
           "Abbreviation": "PFCd"
         },
         {
+          "Name": "dorsal prefrontal cortex medial prefrontal cortex",
+          "Abbreviation": "PFCdPFCm"
+        },
+        {
           "Name": "lateral prefrontal cortex",
           "Abbreviation": "PFCl"
-        },
-        {
-          "Name": "lateral dorsal prefrontal cortex",
-          "Abbreviation": "PFCld"
-        },
-        {
-          "Name": "lateral ventral prefrontal cortex",
-          "Abbreviation": "PFClv"
-        },
-        {
-          "Name": "medial prefrontal cortex",
-          "Abbreviation": "PFCm"
         },
         {
           "Name": "medial posterior prefrontal cortex",
@@ -248,48 +164,24 @@
           "Abbreviation": "PHC"
         },
         {
-          "Name": "parietal medial",
-          "Abbreviation": "ParMed"
-        },
-        {
-          "Name": "parietal occipital",
-          "Abbreviation": "ParOcc"
+          "Name": "parietal",
+          "Abbreviation": "Par"
         },
         {
           "Name": "parietal operculum",
           "Abbreviation": "ParOper"
         },
         {
-          "Name": "post central",
-          "Abbreviation": "PostC"
+          "Name": "posterior",
+          "Abbreviation": "Post"
         },
         {
           "Name": "precentral",
           "Abbreviation": "PrC"
         },
         {
-          "Name": "precentral ventral",
+          "Name": "percentral ventral",
           "Abbreviation": "PrCv"
-        },
-        {
-          "Name": "retrosplenial",
-          "Abbreviation": "Rsp"
-        },
-        {
-          "Name": "S2",
-          "Abbreviation": "S2"
-        },
-        {
-          "Name": "superior parietal lobule",
-          "Abbreviation": "SPL"
-        },
-        {
-          "Name": "striate calcarine",
-          "Abbreviation": "StriCal"
-        },
-        {
-          "Name": "striate cortex",
-          "Abbreviation": "Striate"
         },
         {
           "Name": "temporal",
@@ -297,11 +189,15 @@
         },
         {
           "Name": "temporal occipital",
+          "Abbreviation": "TempOCC"
+        },
+        {
+          "Name": "temporal occipital",
           "Abbreviation": "TempOcc"
         },
         {
-          "Name": "temporal parietal",
-          "Abbreviation": "TempPar"
+          "Name": "temporal occipital parietal",
+          "Abbreviation": "TempOccPar"
         },
         {
           "Name": "temporal pole",
@@ -320,8 +216,120 @@
   ],
   "ROI": [
     {
-      "Name": "17Networks_LH_VisCent_ExStr_1",
+      "Name": "7Networks_LH_Vis_1",
       "ImageID": 1,
+      "RGB": [
+        120,
+        18,
+        131
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Vis_2",
+      "ImageID": 2,
+      "RGB": [
+        120,
+        18,
+        132
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Vis_3",
+      "ImageID": 3,
+      "RGB": [
+        120,
+        18,
+        133
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 3
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Vis_4",
+      "ImageID": 4,
+      "RGB": [
+        120,
+        18,
+        135
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 4
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Vis_5",
+      "ImageID": 5,
       "RGB": [
         120,
         18,
@@ -338,18 +346,18 @@
         },
         {
           "Name": "Region",
-          "Value": "extrastriate cortex",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 5
         },
         {
           "Name": "Network",
-          "Value": "central visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisCent_ExStr_2",
-      "ImageID": 2,
+      "Name": "7Networks_LH_Vis_6",
+      "ImageID": 6,
       "RGB": [
         120,
         18,
@@ -366,18 +374,18 @@
         },
         {
           "Name": "Region",
-          "Value": "extrastriate cortex",
-          "GroupID": 2
+          "Value": "none",
+          "GroupID": 6
         },
         {
           "Name": "Network",
-          "Value": "central visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisCent_Striate_1",
-      "ImageID": 3,
+      "Name": "7Networks_LH_Vis_7",
+      "ImageID": 7,
       "RGB": [
         120,
         18,
@@ -394,18 +402,18 @@
         },
         {
           "Name": "Region",
-          "Value": "striate cortex",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 7
         },
         {
           "Name": "Network",
-          "Value": "central visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisCent_ExStr_3",
-      "ImageID": 4,
+      "Name": "7Networks_LH_Vis_8",
+      "ImageID": 8,
       "RGB": [
         120,
         18,
@@ -422,22 +430,22 @@
         },
         {
           "Name": "Region",
-          "Value": "extrastriate cortex",
-          "GroupID": 3
+          "Value": "none",
+          "GroupID": 8
         },
         {
           "Name": "Network",
-          "Value": "central visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisPeri_ExStrInf_1",
-      "ImageID": 5,
+      "Name": "7Networks_LH_Vis_9",
+      "ImageID": 9,
       "RGB": [
-        255,
-        0,
-        2
+        120,
+        18,
+        140
       ],
       "Groups": [
         {
@@ -450,22 +458,22 @@
         },
         {
           "Name": "Region",
-          "Value": "extra-striate inferior",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 9
         },
         {
           "Name": "Network",
-          "Value": "peripheral visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisPeri_StriCal_1",
-      "ImageID": 6,
+      "Name": "7Networks_LH_SomMot_1",
+      "ImageID": 10,
       "RGB": [
-        255,
-        0,
-        3
+        70,
+        130,
+        179
       ],
       "Groups": [
         {
@@ -478,46 +486,18 @@
         },
         {
           "Name": "Region",
-          "Value": "striate calcarine",
+          "Value": "none",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "peripheral visual"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_VisPeri_ExStrSup_1",
-      "ImageID": 7,
-      "RGB": [
-        255,
-        0,
-        4
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "extra-striate superior",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "peripheral visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SomMotA_1",
-      "ImageID": 8,
+      "Name": "7Networks_LH_SomMot_2",
+      "ImageID": 11,
       "RGB": [
         70,
         130,
@@ -535,17 +515,17 @@
         {
           "Name": "Region",
           "Value": "none",
-          "GroupID": 1
+          "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "somatomotor A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SomMotA_2",
-      "ImageID": 9,
+      "Name": "7Networks_LH_SomMot_3",
+      "ImageID": 12,
       "RGB": [
         70,
         130,
@@ -563,105 +543,21 @@
         {
           "Name": "Region",
           "Value": "none",
-          "GroupID": 2
+          "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "somatomotor A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SomMotB_Aud_1",
-      "ImageID": 10,
-      "RGB": [
-        43,
-        204,
-        165
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "auditory",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SomMotB_S2_1",
-      "ImageID": 11,
-      "RGB": [
-        43,
-        204,
-        166
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "S2",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SomMotB_S2_2",
-      "ImageID": 12,
-      "RGB": [
-        43,
-        204,
-        167
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "S2",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SomMotB_Cent_1",
+      "Name": "7Networks_LH_SomMot_4",
       "ImageID": 13,
       "RGB": [
-        43,
-        204,
-        168
+        70,
+        130,
+        183
       ],
       "Groups": [
         {
@@ -674,22 +570,22 @@
         },
         {
           "Name": "Region",
-          "Value": "central",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 4
         },
         {
           "Name": "Network",
-          "Value": "somatomotor B"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnA_TempOcc_1",
+      "Name": "7Networks_LH_SomMot_5",
       "ImageID": 14,
       "RGB": [
-        74,
-        156,
-        61
+        70,
+        130,
+        184
       ],
       "Groups": [
         {
@@ -702,22 +598,22 @@
         },
         {
           "Name": "Region",
-          "Value": "temporal occipital",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 5
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnA_ParOcc_1",
+      "Name": "7Networks_LH_SomMot_6",
       "ImageID": 15,
       "RGB": [
-        74,
-        156,
-        62
+        70,
+        130,
+        185
       ],
       "Groups": [
         {
@@ -730,22 +626,22 @@
         },
         {
           "Name": "Region",
-          "Value": "parietal occipital",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 6
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnA_SPL_1",
+      "Name": "7Networks_LH_DorsAttn_Post_1",
       "ImageID": 16,
       "RGB": [
-        74,
-        156,
-        63
+        0,
+        118,
+        13
       ],
       "Groups": [
         {
@@ -758,18 +654,46 @@
         },
         {
           "Name": "Region",
-          "Value": "superior parietal lobule",
+          "Value": "posterior",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnB_PostC_1",
+      "Name": "7Networks_LH_DorsAttn_Post_2",
       "ImageID": 17,
+      "RGB": [
+        0,
+        118,
+        15
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posterior",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_DorsAttn_Post_3",
+      "ImageID": 18,
       "RGB": [
         0,
         118,
@@ -786,18 +710,18 @@
         },
         {
           "Name": "Region",
-          "Value": "post central",
-          "GroupID": 1
+          "Value": "posterior",
+          "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnB_PostC_2",
-      "ImageID": 18,
+      "Name": "7Networks_LH_DorsAttn_Post_4",
+      "ImageID": 19,
       "RGB": [
         0,
         118,
@@ -814,18 +738,18 @@
         },
         {
           "Name": "Region",
-          "Value": "post central",
-          "GroupID": 2
+          "Value": "posterior",
+          "GroupID": 4
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnB_PostC_3",
-      "ImageID": 19,
+      "Name": "7Networks_LH_DorsAttn_Post_5",
+      "ImageID": 20,
       "RGB": [
         0,
         118,
@@ -842,22 +766,78 @@
         },
         {
           "Name": "Region",
-          "Value": "post central",
-          "GroupID": 3
+          "Value": "posterior",
+          "GroupID": 5
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DorsAttnB_FEF_1",
-      "ImageID": 20,
+      "Name": "7Networks_LH_DorsAttn_Post_6",
+      "ImageID": 21,
       "RGB": [
         0,
-        119,
-        15
+        118,
+        19
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posterior",
+          "GroupID": 6
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_DorsAttn_PrCv_1",
+      "ImageID": 22,
+      "RGB": [
+        0,
+        118,
+        20
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "percentral ventral",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_DorsAttn_FEF_1",
+      "ImageID": 23,
+      "RGB": [
+        0,
+        118,
+        21
       ],
       "Groups": [
         {
@@ -875,13 +855,13 @@
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SalVentAttnA_ParOper_1",
-      "ImageID": 21,
+      "Name": "7Networks_LH_SalVentAttn_ParOper_1",
+      "ImageID": 24,
       "RGB": [
         196,
         58,
@@ -903,13 +883,13 @@
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention A"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SalVentAttnA_Ins_1",
-      "ImageID": 22,
+      "Name": "7Networks_LH_SalVentAttn_FrOperIns_1",
+      "ImageID": 25,
       "RGB": [
         196,
         59,
@@ -926,18 +906,18 @@
         },
         {
           "Name": "Region",
-          "Value": "insula",
+          "Value": "frontal operculum insula",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention A"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SalVentAttnA_Ins_2",
-      "ImageID": 23,
+      "Name": "7Networks_LH_SalVentAttn_FrOperIns_2",
+      "ImageID": 26,
       "RGB": [
         196,
         59,
@@ -954,78 +934,22 @@
         },
         {
           "Name": "Region",
-          "Value": "insula",
+          "Value": "frontal operculum insula",
           "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention A"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SalVentAttnA_ParMed_1",
-      "ImageID": 24,
+      "Name": "7Networks_LH_SalVentAttn_PFCl_1",
+      "ImageID": 27,
       "RGB": [
         196,
         59,
         253
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal medial",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SalVentAttnA_FrMed_1",
-      "ImageID": 25,
-      "RGB": [
-        197,
-        58,
-        251
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "frontal medial",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_SalVentAttnB_PFCl_1",
-      "ImageID": 26,
-      "RGB": [
-        255,
-        153,
-        214
       ],
       "Groups": [
         {
@@ -1043,17 +967,17 @@
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention B"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_SalVentAttnB_PFCmp_1",
-      "ImageID": 27,
+      "Name": "7Networks_LH_SalVentAttn_Med_1",
+      "ImageID": 28,
       "RGB": [
-        255,
-        151,
-        214
+        197,
+        58,
+        251
       ],
       "Groups": [
         {
@@ -1066,22 +990,78 @@
         },
         {
           "Name": "Region",
-          "Value": "medial posterior prefrontal cortex",
+          "Value": "medial",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention B"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_LimbicB_OFC_1",
-      "ImageID": 28,
+      "Name": "7Networks_LH_SalVentAttn_Med_2",
+      "ImageID": 29,
       "RGB": [
-        122,
-        135,
-        51
+        197,
+        58,
+        252
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medial",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "salience ventral attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_SalVentAttn_Med_3",
+      "ImageID": 30,
+      "RGB": [
+        197,
+        58,
+        253
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medial",
+          "GroupID": 3
+        },
+        {
+          "Name": "Network",
+          "Value": "salience ventral attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Limbic_OFC_1",
+      "ImageID": 31,
+      "RGB": [
+        220,
+        248,
+        165
       ],
       "Groups": [
         {
@@ -1099,41 +1079,13 @@
         },
         {
           "Name": "Network",
-          "Value": "limbic B"
+          "Value": "limbic"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_LimbicA_TempPole_1",
-      "ImageID": 29,
-      "RGB": [
-        220,
-        248,
-        165
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal pole",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "limbic A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_LimbicA_TempPole_2",
-      "ImageID": 30,
+      "Name": "7Networks_LH_Limbic_TempPole_1",
+      "ImageID": 32,
       "RGB": [
         220,
         248,
@@ -1151,21 +1103,49 @@
         {
           "Name": "Region",
           "Value": "temporal pole",
-          "GroupID": 2
+          "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "limbic A"
+          "Value": "limbic"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_ContA_IPS_1",
-      "ImageID": 31,
+      "Name": "7Networks_LH_Limbic_TempPole_2",
+      "ImageID": 33,
+      "RGB": [
+        220,
+        248,
+        167
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "temporal pole",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "limbic"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Cont_Par_1",
+      "ImageID": 34,
       "RGB": [
         230,
         148,
-        36
+        35
       ],
       "Groups": [
         {
@@ -1178,106 +1158,22 @@
         },
         {
           "Name": "Region",
-          "Value": "intraparietal sulcus",
+          "Value": "parietal",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control A"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_ContA_PFCl_1",
-      "ImageID": 32,
-      "RGB": [
-        230,
-        149,
-        36
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "control A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_ContA_PFCl_2",
-      "ImageID": 33,
-      "RGB": [
-        230,
-        149,
-        37
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "control A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_ContB_PFClv_1",
-      "ImageID": 34,
-      "RGB": [
-        136,
-        50,
-        75
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "lateral ventral prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "control B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_ContC_pCun_1",
+      "Name": "7Networks_LH_Cont_PFCl_1",
       "ImageID": 35,
       "RGB": [
-        119,
-        140,
-        177
+        230,
+        149,
+        36
       ],
       "Groups": [
         {
@@ -1290,22 +1186,22 @@
         },
         {
           "Name": "Region",
-          "Value": "precuneus",
+          "Value": "lateral prefrontal cortex",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control C"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_ContC_pCun_2",
+      "Name": "7Networks_LH_Cont_pCun_1",
       "ImageID": 36,
       "RGB": [
-        119,
-        140,
-        178
+        231,
+        149,
+        35
       ],
       "Groups": [
         {
@@ -1319,21 +1215,21 @@
         {
           "Name": "Region",
           "Value": "precuneus",
-          "GroupID": 2
+          "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control C"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_ContC_Cingp_1",
+      "Name": "7Networks_LH_Cont_Cing_1",
       "ImageID": 37,
       "RGB": [
-        119,
-        140,
-        179
+        231,
+        149,
+        36
       ],
       "Groups": [
         {
@@ -1346,130 +1242,18 @@
         },
         {
           "Name": "Region",
-          "Value": "cingulate posterior",
+          "Value": "cingulate",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control C"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultA_PFCd_1",
+      "Name": "7Networks_LH_Default_Temp_1",
       "ImageID": 38,
-      "RGB": [
-        255,
-        255,
-        2
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "dorsal prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_DefaultA_pCunPCC_1",
-      "ImageID": 39,
-      "RGB": [
-        255,
-        254,
-        1
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_DefaultA_PFCm_1",
-      "ImageID": 40,
-      "RGB": [
-        254,
-        255,
-        1
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_DefaultB_Temp_1",
-      "ImageID": 41,
-      "RGB": [
-        205,
-        62,
-        79
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_DefaultB_Temp_2",
-      "ImageID": 42,
       "RGB": [
         205,
         62,
@@ -1487,17 +1271,17 @@
         {
           "Name": "Region",
           "Value": "temporal",
-          "GroupID": 2
+          "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultB_IPL_1",
-      "ImageID": 43,
+      "Name": "7Networks_LH_Default_Temp_2",
+      "ImageID": 39,
       "RGB": [
         205,
         62,
@@ -1514,17 +1298,129 @@
         },
         {
           "Name": "Region",
-          "Value": "interior parietal lobule",
-          "GroupID": 1
+          "Value": "temporal",
+          "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultB_PFCd_1",
+      "Name": "7Networks_LH_Default_Par_1",
+      "ImageID": 40,
+      "RGB": [
+        205,
+        62,
+        82
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parietal",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_Par_2",
+      "ImageID": 41,
+      "RGB": [
+        205,
+        62,
+        83
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parietal",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_PFC_1",
+      "ImageID": 42,
+      "RGB": [
+        205,
+        63,
+        76
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "prefrontal cortex",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_PFC_2",
+      "ImageID": 43,
+      "RGB": [
+        205,
+        63,
+        77
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "prefrontal cortex",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_PFC_3",
       "ImageID": 44,
       "RGB": [
         205,
@@ -1542,17 +1438,17 @@
         },
         {
           "Name": "Region",
-          "Value": "dorsal prefrontal cortex",
-          "GroupID": 1
+          "Value": "prefrontal cortex",
+          "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultB_PFCl_1",
+      "Name": "7Networks_LH_Default_PFC_4",
       "ImageID": 45,
       "RGB": [
         205,
@@ -1570,22 +1466,22 @@
         },
         {
           "Name": "Region",
-          "Value": "lateral prefrontal cortex",
-          "GroupID": 1
+          "Value": "prefrontal cortex",
+          "GroupID": 4
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultB_PFCv_1",
+      "Name": "7Networks_LH_Default_PFC_5",
       "ImageID": 46,
       "RGB": [
-        206,
-        62,
-        79
+        205,
+        63,
+        81
       ],
       "Groups": [
         {
@@ -1598,22 +1494,22 @@
         },
         {
           "Name": "Region",
-          "Value": "ventral prefrontal cortex",
-          "GroupID": 1
+          "Value": "prefrontal cortex",
+          "GroupID": 5
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultB_PFCv_2",
+      "Name": "7Networks_LH_Default_PFC_6",
       "ImageID": 47,
       "RGB": [
-        206,
-        62,
-        80
+        205,
+        63,
+        82
       ],
       "Groups": [
         {
@@ -1626,83 +1522,111 @@
         },
         {
           "Name": "Region",
-          "Value": "ventral prefrontal cortex",
+          "Value": "prefrontal cortex",
+          "GroupID": 6
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_PFC_7",
+      "ImageID": 48,
+      "RGB": [
+        205,
+        63,
+        83
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "prefrontal cortex",
+          "GroupID": 7
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_pCunPCC_1",
+      "ImageID": 49,
+      "RGB": [
+        205,
+        63,
+        84
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus posterior cingulate cortex",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_LH_Default_pCunPCC_2",
+      "ImageID": 50,
+      "RGB": [
+        205,
+        63,
+        85
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus posterior cingulate cortex",
           "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_LH_DefaultC_Rsp_1",
-      "ImageID": 48,
+      "Name": "7Networks_RH_Vis_1",
+      "ImageID": 51,
       "RGB": [
-        0,
-        0,
-        132
+        124,
+        18,
+        133
       ],
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "retrosplenial",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default C"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_DefaultC_PHC_1",
-      "ImageID": 49,
-      "RGB": [
-        0,
-        1,
-        131
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parahippocampal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default C"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_LH_TempPar_1",
-      "ImageID": 50,
-      "RGB": [
-        9,
-        41,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -1715,16 +1639,44 @@
         },
         {
           "Name": "Network",
-          "Value": "temporal parietal"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_VisCent_ExStr_1",
-      "ImageID": 51,
+      "Name": "7Networks_RH_Vis_2",
+      "ImageID": 52,
       "RGB": [
         124,
-        19,
+        18,
+        134
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Vis_3",
+      "ImageID": 53,
+      "RGB": [
+        124,
+        18,
         136
       ],
       "Groups": [
@@ -1738,246 +1690,22 @@
         },
         {
           "Name": "Region",
-          "Value": "extrastriate cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "central visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_VisCent_ExStr_2",
-      "ImageID": 52,
-      "RGB": [
-        124,
-        19,
-        137
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "extrastriate cortex",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "central visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_VisCent_ExStr_3",
-      "ImageID": 53,
-      "RGB": [
-        124,
-        19,
-        138
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "extrastriate cortex",
+          "Value": "none",
           "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "central visual"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_VisPeri_StriCal_1",
+      "Name": "7Networks_RH_Vis_4",
       "ImageID": 54,
       "RGB": [
-        250,
-        0,
-        2
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "striate calcarine",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "peripheral visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_VisPeri_ExStrInf_1",
-      "ImageID": 55,
-      "RGB": [
-        250,
-        0,
-        3
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "extra-striate inferior",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "peripheral visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_VisPeri_ExStrSup_1",
-      "ImageID": 56,
-      "RGB": [
-        250,
-        0,
-        4
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "extra-striate superior",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "peripheral visual"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SomMotA_1",
-      "ImageID": 57,
-      "RGB": [
-        74,
-        131,
-        182
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SomMotA_2",
-      "ImageID": 58,
-      "RGB": [
-        74,
-        131,
-        183
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 2
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SomMotA_3",
-      "ImageID": 59,
-      "RGB": [
-        74,
-        131,
-        184
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 3
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SomMotA_4",
-      "ImageID": 60,
-      "RGB": [
-        74,
-        131,
-        185
+        124,
+        18,
+        137
       ],
       "Groups": [
         {
@@ -1995,17 +1723,17 @@
         },
         {
           "Name": "Network",
-          "Value": "somatomotor A"
+          "Value": "visual"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SomMotB_Aud_1",
-      "ImageID": 61,
+      "Name": "7Networks_RH_Vis_5",
+      "ImageID": 55,
       "RGB": [
-        47,
-        205,
-        165
+        124,
+        18,
+        138
       ],
       "Groups": [
         {
@@ -2018,22 +1746,134 @@
         },
         {
           "Name": "Region",
-          "Value": "auditory",
+          "Value": "none",
+          "GroupID": 5
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Vis_6",
+      "ImageID": 56,
+      "RGB": [
+        124,
+        18,
+        139
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 6
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Vis_7",
+      "ImageID": 57,
+      "RGB": [
+        124,
+        18,
+        140
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 7
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Vis_8",
+      "ImageID": 58,
+      "RGB": [
+        124,
+        18,
+        141
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 8
+        },
+        {
+          "Name": "Network",
+          "Value": "visual"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_SomMot_1",
+      "ImageID": 59,
+      "RGB": [
+        74,
+        130,
+        179
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "somatomotor B"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SomMotB_S2_1",
-      "ImageID": 62,
+      "Name": "7Networks_RH_SomMot_2",
+      "ImageID": 60,
       "RGB": [
-        47,
-        205,
-        166
+        74,
+        130,
+        180
       ],
       "Groups": [
         {
@@ -2046,50 +1886,106 @@
         },
         {
           "Name": "Region",
-          "Value": "S2",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "somatomotor B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SomMotB_S2_2",
-      "ImageID": 63,
-      "RGB": [
-        47,
-        205,
-        167
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "S2",
+          "Value": "none",
           "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "somatomotor B"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SomMotB_Cent_1",
+      "Name": "7Networks_RH_SomMot_3",
+      "ImageID": 61,
+      "RGB": [
+        74,
+        130,
+        182
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 3
+        },
+        {
+          "Name": "Network",
+          "Value": "somatomotor"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_SomMot_4",
+      "ImageID": 62,
+      "RGB": [
+        74,
+        130,
+        183
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 4
+        },
+        {
+          "Name": "Network",
+          "Value": "somatomotor"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_SomMot_5",
+      "ImageID": 63,
+      "RGB": [
+        74,
+        130,
+        184
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "none",
+          "GroupID": 5
+        },
+        {
+          "Name": "Network",
+          "Value": "somatomotor"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_SomMot_6",
       "ImageID": 64,
       "RGB": [
-        47,
-        205,
-        168
+        74,
+        130,
+        185
       ],
       "Groups": [
         {
@@ -2102,22 +1998,22 @@
         },
         {
           "Name": "Region",
-          "Value": "central",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 6
         },
         {
           "Name": "Network",
-          "Value": "somatomotor B"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnA_TempOcc_1",
+      "Name": "7Networks_RH_SomMot_7",
       "ImageID": 65,
       "RGB": [
-        79,
-        155,
-        62
+        74,
+        130,
+        186
       ],
       "Groups": [
         {
@@ -2130,22 +2026,22 @@
         },
         {
           "Name": "Region",
-          "Value": "temporal occipital",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 7
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnA_ParOcc_1",
+      "Name": "7Networks_RH_SomMot_8",
       "ImageID": 66,
       "RGB": [
-        79,
-        155,
-        63
+        74,
+        130,
+        187
       ],
       "Groups": [
         {
@@ -2158,22 +2054,22 @@
         },
         {
           "Name": "Region",
-          "Value": "parietal occipital",
-          "GroupID": 1
+          "Value": "none",
+          "GroupID": 8
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "somatomotor"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnA_SPL_1",
+      "Name": "7Networks_RH_DorsAttn_Post_1",
       "ImageID": 67,
       "RGB": [
-        79,
-        155,
-        64
+        4,
+        119,
+        14
       ],
       "Groups": [
         {
@@ -2186,21 +2082,21 @@
         },
         {
           "Name": "Region",
-          "Value": "superior parietal lobule",
+          "Value": "posterior",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention A"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnB_PostC_1",
+      "Name": "7Networks_RH_DorsAttn_Post_2",
       "ImageID": 68,
       "RGB": [
-        5,
-        118,
+        4,
+        119,
         16
       ],
       "Groups": [
@@ -2214,21 +2110,21 @@
         },
         {
           "Name": "Region",
-          "Value": "post central",
-          "GroupID": 1
+          "Value": "posterior",
+          "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnB_PostC_2",
+      "Name": "7Networks_RH_DorsAttn_Post_3",
       "ImageID": 69,
       "RGB": [
-        5,
-        118,
+        4,
+        119,
         17
       ],
       "Groups": [
@@ -2242,22 +2138,106 @@
         },
         {
           "Name": "Region",
-          "Value": "post central",
-          "GroupID": 2
+          "Value": "posterior",
+          "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DorsAttnB_FEF_1",
+      "Name": "7Networks_RH_DorsAttn_Post_4",
       "ImageID": 70,
       "RGB": [
-        5,
+        4,
         119,
+        18
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posterior",
+          "GroupID": 4
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_DorsAttn_Post_5",
+      "ImageID": 71,
+      "RGB": [
+        4,
+        119,
+        19
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posterior",
+          "GroupID": 5
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_DorsAttn_PrCv_1",
+      "ImageID": 72,
+      "RGB": [
+        5,
+        118,
         15
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "percentral ventral",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "dorsal attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_DorsAttn_FEF_1",
+      "ImageID": 73,
+      "RGB": [
+        5,
+        118,
+        16
       ],
       "Groups": [
         {
@@ -2275,100 +2255,16 @@
         },
         {
           "Name": "Network",
-          "Value": "dorsal attention B"
+          "Value": "dorsal attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SalVentAttnA_ParOper_1",
-      "ImageID": 71,
-      "RGB": [
-        200,
-        58,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal operculum",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SalVentAttnA_Ins_1",
-      "ImageID": 72,
-      "RGB": [
-        199,
-        58,
-        251
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "insula",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SalVentAttnA_ParMed_1",
-      "ImageID": 73,
-      "RGB": [
-        199,
-        57,
-        251
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "parietal medial",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "salience ventral attention A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_SalVentAttnA_FrMed_1",
+      "Name": "7Networks_RH_SalVentAttn_TempOccPar_1",
       "ImageID": 74,
       "RGB": [
-        199,
-        57,
+        201,
+        58,
         252
       ],
       "Groups": [
@@ -2382,22 +2278,22 @@
         },
         {
           "Name": "Region",
-          "Value": "frontal medial",
+          "Value": "temporal occipital parietal",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention A"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SalVentAttnB_IPL_1",
+      "Name": "7Networks_RH_SalVentAttn_TempOccPar_2",
       "ImageID": 75,
       "RGB": [
-        250,
-        152,
-        214
+        201,
+        58,
+        253
       ],
       "Groups": [
         {
@@ -2410,22 +2306,22 @@
         },
         {
           "Name": "Region",
-          "Value": "interior parietal lobule",
-          "GroupID": 1
+          "Value": "temporal occipital parietal",
+          "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention B"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SalVentAttnB_PFCl_1",
+      "Name": "7Networks_RH_SalVentAttn_FrOperIns_1",
       "ImageID": 76,
       "RGB": [
-        250,
-        151,
-        214
+        201,
+        59,
+        252
       ],
       "Groups": [
         {
@@ -2438,22 +2334,22 @@
         },
         {
           "Name": "Region",
-          "Value": "lateral prefrontal cortex",
+          "Value": "frontal operculum insula",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention B"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_SalVentAttnB_PFCmp_1",
+      "Name": "7Networks_RH_SalVentAttn_Med_1",
       "ImageID": 77,
       "RGB": [
-        250,
-        153,
-        214
+        200,
+        57,
+        250
       ],
       "Groups": [
         {
@@ -2466,22 +2362,50 @@
         },
         {
           "Name": "Region",
-          "Value": "medial posterior prefrontal cortex",
+          "Value": "medial",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "salience ventral attention B"
+          "Value": "salience ventral attention"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_LimbicB_OFC_1",
+      "Name": "7Networks_RH_SalVentAttn_Med_2",
       "ImageID": 78,
       "RGB": [
-        126,
-        135,
-        52
+        200,
+        57,
+        251
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medial",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "salience ventral attention"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Limbic_OFC_1",
+      "ImageID": 79,
+      "RGB": [
+        224,
+        249,
+        165
       ],
       "Groups": [
         {
@@ -2499,16 +2423,16 @@
         },
         {
           "Name": "Network",
-          "Value": "limbic B"
+          "Value": "limbic"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_LimbicA_TempPole_1",
-      "ImageID": 79,
+      "Name": "7Networks_RH_Limbic_TempPole_1",
+      "ImageID": 80,
       "RGB": [
         224,
-        248,
+        249,
         166
       ],
       "Groups": [
@@ -2527,13 +2451,13 @@
         },
         {
           "Name": "Network",
-          "Value": "limbic A"
+          "Value": "limbic"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContA_IPS_1",
-      "ImageID": 80,
+      "Name": "7Networks_RH_Cont_Par_1",
+      "ImageID": 81,
       "RGB": [
         234,
         147,
@@ -2550,22 +2474,50 @@
         },
         {
           "Name": "Region",
-          "Value": "intraparietal sulcus",
+          "Value": "parietal",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control A"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContA_PFCl_1",
-      "ImageID": 81,
+      "Name": "7Networks_RH_Cont_Par_2",
+      "ImageID": 82,
+      "RGB": [
+        234,
+        147,
+        36
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parietal",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "control"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Cont_PFCl_1",
+      "ImageID": 83,
       "RGB": [
         233,
         148,
-        35
+        34
       ],
       "Groups": [
         {
@@ -2583,17 +2535,17 @@
         },
         {
           "Name": "Network",
-          "Value": "control A"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContA_PFCl_2",
-      "ImageID": 82,
+      "Name": "7Networks_RH_Cont_PFCl_2",
+      "ImageID": 84,
       "RGB": [
         233,
         148,
-        36
+        35
       ],
       "Groups": [
         {
@@ -2611,73 +2563,17 @@
         },
         {
           "Name": "Network",
-          "Value": "control A"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContB_Temp_1",
-      "ImageID": 83,
-      "RGB": [
-        140,
-        51,
-        76
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "temporal",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "control B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_ContB_IPL_1",
-      "ImageID": 84,
-      "RGB": [
-        139,
-        50,
-        74
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "interior parietal lobule",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "control B"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_ContB_PFCld_1",
+      "Name": "7Networks_RH_Cont_PFCl_3",
       "ImageID": 85,
       "RGB": [
-        139,
-        49,
-        75
+        233,
+        148,
+        36
       ],
       "Groups": [
         {
@@ -2690,22 +2586,22 @@
         },
         {
           "Name": "Region",
-          "Value": "lateral dorsal prefrontal cortex",
-          "GroupID": 1
+          "Value": "lateral prefrontal cortex",
+          "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "control B"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContB_PFClv_1",
+      "Name": "7Networks_RH_Cont_PFCl_4",
       "ImageID": 86,
       "RGB": [
-        139,
-        49,
-        74
+        233,
+        148,
+        37
       ],
       "Groups": [
         {
@@ -2718,22 +2614,22 @@
         },
         {
           "Name": "Region",
-          "Value": "lateral ventral prefrontal cortex",
-          "GroupID": 1
+          "Value": "lateral prefrontal cortex",
+          "GroupID": 4
         },
         {
           "Name": "Network",
-          "Value": "control B"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContC_Cingp_1",
+      "Name": "7Networks_RH_Cont_Cing_1",
       "ImageID": 87,
       "RGB": [
-        123,
-        141,
-        177
+        234,
+        148,
+        37
       ],
       "Groups": [
         {
@@ -2746,22 +2642,50 @@
         },
         {
           "Name": "Region",
-          "Value": "cingulate posterior",
+          "Value": "cingulate",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "control C"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_ContC_pCun_1",
+      "Name": "7Networks_RH_Cont_PFCmp_1",
       "ImageID": 88,
       "RGB": [
-        123,
-        141,
-        178
+        234,
+        148,
+        38
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medial posterior prefrontal cortex",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "control"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Cont_pCun_1",
+      "ImageID": 89,
+      "RGB": [
+        234,
+        148,
+        39
       ],
       "Groups": [
         {
@@ -2779,45 +2703,17 @@
         },
         {
           "Name": "Network",
-          "Value": "control C"
+          "Value": "control"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultA_IPL_1",
-      "ImageID": 89,
-      "RGB": [
-        251,
-        254,
-        2
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "interior parietal lobule",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_DefaultA_PFCd_1",
+      "Name": "7Networks_RH_Default_Par_1",
       "ImageID": 90,
       "RGB": [
-        251,
-        255,
-        3
+        209,
+        62,
+        78
       ],
       "Groups": [
         {
@@ -2830,22 +2726,22 @@
         },
         {
           "Name": "Region",
-          "Value": "dorsal prefrontal cortex",
+          "Value": "parietal",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "default A"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultA_pCunPCC_1",
+      "Name": "7Networks_RH_Default_Temp_1",
       "ImageID": 91,
       "RGB": [
-        251,
-        253,
-        1
+        209,
+        61,
+        79
       ],
       "Groups": [
         {
@@ -2858,49 +2754,21 @@
         },
         {
           "Name": "Region",
-          "Value": "precuneus posterior cingulate cortex",
+          "Value": "temporal",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "default A"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultA_PFCm_1",
+      "Name": "7Networks_RH_Default_Temp_2",
       "ImageID": 92,
       "RGB": [
-        249,
-        255,
-        1
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "medial prefrontal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default A"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_DefaultB_PFCd_1",
-      "ImageID": 93,
-      "RGB": [
-        210,
-        63,
+        209,
+        61,
         80
       ],
       "Groups": [
@@ -2914,21 +2782,49 @@
         },
         {
           "Name": "Region",
-          "Value": "dorsal prefrontal cortex",
-          "GroupID": 1
+          "Value": "temporal",
+          "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultB_PFCv_1",
+      "Name": "7Networks_RH_Default_Temp_3",
+      "ImageID": 93,
+      "RGB": [
+        209,
+        61,
+        81
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "temporal",
+          "GroupID": 3
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Default_PFCv_1",
       "ImageID": 94,
       "RGB": [
         209,
-        62,
+        61,
         78
       ],
       "Groups": [
@@ -2947,17 +2843,17 @@
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultB_PFCv_2",
+      "Name": "7Networks_RH_Default_PFCv_2",
       "ImageID": 95,
       "RGB": [
         209,
-        62,
-        79
+        61,
+        82
       ],
       "Groups": [
         {
@@ -2975,17 +2871,17 @@
         },
         {
           "Name": "Network",
-          "Value": "default B"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultC_Rsp_1",
+      "Name": "7Networks_RH_Default_PFCdPFCm_1",
       "ImageID": 96,
       "RGB": [
-        5,
-        0,
-        131
+        208,
+        62,
+        79
       ],
       "Groups": [
         {
@@ -2998,22 +2894,22 @@
         },
         {
           "Name": "Region",
-          "Value": "retrosplenial",
+          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
           "GroupID": 1
         },
         {
           "Name": "Network",
-          "Value": "default C"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_DefaultC_PHC_1",
+      "Name": "7Networks_RH_Default_PFCdPFCm_2",
       "ImageID": 97,
       "RGB": [
-        5,
-        0,
-        132
+        208,
+        62,
+        80
       ],
       "Groups": [
         {
@@ -3026,78 +2922,22 @@
         },
         {
           "Name": "Region",
-          "Value": "parahippocampal cortex",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "default C"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_TempPar_1",
-      "ImageID": 98,
-      "RGB": [
-        16,
-        48,
-        255
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
-          "GroupID": 1
-        },
-        {
-          "Name": "Network",
-          "Value": "temporal parietal"
-        }
-      ]
-    },
-    {
-      "Name": "17Networks_RH_TempPar_2",
-      "ImageID": 99,
-      "RGB": [
-        13,
-        41,
-        250
-      ],
-      "Groups": [
-        {
-          "Name": "Hemisphere",
-          "Value": "right"
-        },
-        {
-          "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
-        },
-        {
-          "Name": "Region",
-          "Value": "none",
+          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
           "GroupID": 2
         },
         {
           "Name": "Network",
-          "Value": "temporal parietal"
+          "Value": "default"
         }
       ]
     },
     {
-      "Name": "17Networks_RH_TempPar_3",
-      "ImageID": 100,
+      "Name": "7Networks_RH_Default_PFCdPFCm_3",
+      "ImageID": 98,
       "RGB": [
-        13,
-        41,
-        251
+        208,
+        62,
+        81
       ],
       "Groups": [
         {
@@ -3110,12 +2950,68 @@
         },
         {
           "Name": "Region",
-          "Value": "none",
+          "Value": "dorsal prefrontal cortex medial prefrontal cortex",
           "GroupID": 3
         },
         {
           "Name": "Network",
-          "Value": "temporal parietal"
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Default_pCunPCC_1",
+      "ImageID": 99,
+      "RGB": [
+        208,
+        62,
+        78
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus posterior cingulate cortex",
+          "GroupID": 1
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
+        }
+      ]
+    },
+    {
+      "Name": "7Networks_RH_Default_pCunPCC_2",
+      "ImageID": 100,
+      "RGB": [
+        208,
+        62,
+        82
+      ],
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "Cortical Gray Matter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus posterior cingulate cortex",
+          "GroupID": 2
+        },
+        {
+          "Name": "Network",
+          "Value": "default"
         }
       ]
     }

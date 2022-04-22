@@ -1,6 +1,10 @@
 {
   "Name": "Schaefer300x17",
   "Identifier": "Schaefer300x17",
+  "Version": "2.0",
+  "Release": "0.21.3",
+  "Git-Repo": "",
+  "Git-Commit": "",
   "Description": "",
   "DevNotes": [
     ""
