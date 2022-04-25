@@ -234,7 +234,7 @@ tissueGroup["Values"].append( { "Name": "Cortical Spinal Fluid", "Abbreviation":
 tissueGroup["Values"].append( { "Name": "Cortical Gray Matter", "Abbreviation": "CGM", "GroupID": 2})
 tissueGroup["Values"].append( { "Name": "Whitematter", "Abbreviation": "WM", "GroupID": 3})
 tissueGroup["Values"].append( { "Name": "Subcortical Gray Matter", "Abbreviation": "SCGM", "GroupID": 4})
-tissueGroup["Values"].append( { "Name": "Brainstem", "Abbreviation": "GS", "GroupID": 5})
+tissueGroup["Values"].append( { "Name": "Brainstem", "Abbreviation": "BS", "GroupID": 5})
 tissueGroup["Values"].append( { "Name": "Cerebellum", "Abbreviation": "CBM", "GroupID": 6})
 
 networkGroup = {"Name": "Network", "Values": networkList}
