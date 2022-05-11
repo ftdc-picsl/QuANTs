@@ -1,9 +1,11 @@
 import itk
+import SimpleITK as sitk
 import numpy as np
 import pandas as pd
 import glob
 import os
 import logging
+import json
 
 class Quantsifier():
 
@@ -13,6 +15,17 @@ class Quantsifier():
         logging.basicConfig()
         self.log = logging.getLogger(__name__)
         self.log.setLevel(logging.INFO)
+
+        self.tissueNames = { "CorticoSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
+
+        self.networks = {}
+        self.template = None
+        self.templateImg = None
+        self.templateRes = "01"
+        self.templateDirectory = None
+
+        self.subjectMat = None
+        self.subjectWarp = None
 
         self.labels = {}
         self.measures = {}
@@ -36,10 +49,10 @@ class Quantsifier():
     def SetLoggingLevel(self, level):
         self.log.setLevel(level)
 
-    def AddMeasure(self, measure, name, regions, threshold=0.00001):
+    def AddMeasure(self, measure, name, tissues, threshold=0.00001):
         if not name in self.measures.keys():
             if self.ValidateInput(measure):
-                self.measures[name] = {"image":measure, "regions":regions, "threshold":threshold}
+                self.measures[name] = {"image":measure, "tissues":tissues, "threshold":threshold}
                 if self.verbose:
                     self.log.info("Added measure image named: "+name)
             else:
@@ -48,12 +61,13 @@ class Quantsifier():
     def SetSegmentation(self, segmentation):
         if self.ValidateInput(segmentation):
             self.segmentation = segmentation
-            self.segmentationRegions = np.unique(itk.array_view_from_image(self.segmentation))
-            if 0 in self.segmentationRegions:
-                self.segmentationRegions = np.delete(self.segmentationRegions, 0)
-            if self.verbose:
-                self.log.info("Segmentation regions: "+str(self.segmentationRegions))
-            self.voxvol = np.prod( itk.GetArrayFromVnlVector( segmentation.GetSpacing().GetVnlVector() ) )
+
+            #self.segmentationRegions = np.unique(itk.array_view_from_image(self.segmentation))
+            #if 0 in self.segmentationRegions:
+            #    self.segmentationRegions = np.delete(self.segmentationRegions, 0)
+            #if self.verbose:
+            #    self.log.info("Segmentation regions: "+str(self.segmentationRegions))
+            #self.voxvol = np.prod( itk.GetArrayFromVnlVector( segmentation.GetSpacing().GetVnlVector() ) )
         else:
             self.log.error("Validation failed for segmentation image")
 
@@ -67,6 +81,28 @@ class Quantsifier():
     def SetMask(self, mask):
         if self.ValidateInput(mask):
             self.mask = mask
+
+
+    def AddNetwork(self, networkDefinition, networkImage):
+        tissueNumbers = []
+        for r in networkDefinition['ROI']:
+            for g in r['Groups']:
+                if g['Name']=="Tissue":
+                    if g['Value'] in self.tissueNames:
+                        tissueNumber = self.tissueNames[g['Value']]
+                        if not tissueNumber in tissueNumbers:
+                            tissueNumbers.append( tissueNumber )
+                    else:
+                        print("Unknown Tissue Name: " + g['Value'])
+
+        print( networkDefinition['Identifier'] + " -> " + str(tissueNumbers) )
+
+        self.networks[networkDefinition['Identifier']] = (networkDefinition, networkImage, tissueNumbers)
+
+    def SetTemplate(self, templateDefinition, templateDirectory):
+        self.template = templateDefinition
+        self.templateDirectory = templateDirectory
+
 
     def AddLabelingSystem(self, labelImage, numbers, regions, systemName, measures):
         if self.ValidateInput(labelImage) and ( not systemName in self.labels.keys() ):
@@ -95,6 +131,9 @@ class Quantsifier():
         
 
     def ValidateInput(self, img):
+
+        return(True)
+
         # Check all image headers for consistency
         valid = True
         if self.refspace['origin'] is None:
@@ -125,81 +164,101 @@ class Quantsifier():
 
         return(valid)
 
-    def GetSegmentationMask(self, region):
-        seg = itk.array_view_from_image(self.segmentation)
-        inmask = np.full(seg.shape, 1, dtype=np.int16)
+    def GetSegmentationMask(self, include):
+        mask=None
 
-        if not self.mask is None:
-            inmask[ itk.array_view_from_image(self.mask)==0]=0
-
-        if region in self.segmentationRules.keys():
-            rule = self.segmentationRules[region]
-
-            # Limit to segmentation inclusion regions
-            if not rule[0] is None:
-                inmask = np.full(seg.shape, 0)
-                for i in rule[0]:
-                    inmask[seg==i]=1
-
-            # Eliminate exclusion regions
-            if not rule[1] is None:
-                for i in rule[1]:
-                    inmask[seg==i]=0
-            
+        if len(include)==0:
+            mask = sitk.BinaryThreshold(mask, lowerThreshold=0)
         else:
-            inmask[seg!=region]=0
-        
-        # Apply global masking
-        if not self.mask is None:
-            inmask[ itk.array_view_from_image(self.mask)==0]=0
+            mask = sitk.Multiply( self.segmentation, 0 )
+            for i in include:
+                iMask = sitk.BinaryThreshold(self.segmentation, lowerThreshold=i, upperThreshold=i)
+                iMask = sitk.Cast(iMask, sitk.sitkUInt32)
+                mask = sitk.Add(mask, iMask)
 
-        segMask = itk.image_from_array(inmask)
-        segMask.SetSpacing( self.segmentation.GetSpacing() )
-        segMask.SetOrigin( self.segmentation.GetOrigin() )
-        segMask.SetDirection( self.segmentation.GetDirection() )
-
-        return(segMask)
+        return(mask)
         
+    def ApplyNetworkMasking(self, networkName, labels):
+
+        print("Masking "+networkName)
+        nDef = self.networks[networkName][0]
+        origLabels = sitk.Cast(labels, sitk.sitkUInt32)
+        for r in nDef['ROI']:
+            lbl = r['ImageID']
+            if 'Masking' in r:
+                tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
+                mask = self.GetSegmentationMask(tissues)
+        maskedLabels = sitk.Multiply(origLabels, mask)
+        return(maskedLabels)
+
 
     def Update(self):
 
-        if None in [self.mask, self.segmentation]:
-            return False
-        if len(self.labels)==0:
-            return False
+        self.log.info("Update()")
 
-        # Precompute segmentation region masks
-        for i in self.segmentationRegions:
-            self.regionMasks[i] = self.GetSegmentationMask(i)
+        if None in [self.mask, self.segmentation]:
+            print("Missing inputs")
+            return False
+        if len(self.networks)==0:
+            print("No networks")
+            return False
 
         stats = []
-        self.log.info( "Summarizing "+str(len(self.labels.keys())) + " labeling systems" )
-        for sysName in self.labels.keys():
 
-            measuresToUse = ['volume']
-            if not self.measures is None:
-                measureNames = self.measures.keys()
+        self.log.info("Summarizing "+str(len(self.networks.keys()))+ " networks" )
+        for network in self.networks.keys():
+            print(network)
+            nDef = self.networks[network][0]
+            nImg = self.networks[network][1]
+            nTissues = self.networks[network][2]
 
-            sysMeasures = self.labels[sysName][3]
-            if not sysMeasures is None:
-                applicableMeaures = set(sysMeasures).intersection(measureNames)
-                if len(applicableMeaures) > 0:
-                    measuresToUse.extend(applicableMeaures)
+            print( "Network: " + nDef['Identifier'] )
+            print( "Network Space: " + nDef['TemplateSpace'] )
+            
+            txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
+            txName = glob.glob( txNameGlob )
+            
+            if os.path.exists(txName[0]):
+                templateTx = sitk.ReadTransform(txName[0])
+                fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
 
+                resample = sitk.ResampleImageFilter()
+                resample.SetReferenceImage( self.segmentation )
+                resample.SetTransform( fullTx )
+                resample.SetInterpolator( sitk.sitkLabelGaussian )
+                subLabels = resample.Execute(nImg)
+                maskedLabels = self.ApplyNetworkMasking(network, subLabels)
 
-            for mName in measuresToUse:
-                mStats = self.Summarize(sysName, mName)
-                if not mStats is None:
-                    stats += mStats
+                # FIXME
+                #itk.WriteImage(maskedLabels, "masked_"+nDef['Identifier']+".nii.gz")
+
+                measuresToUse = ['volume']
+                if not self.measures is None:
+                    measureNames = self.measures.keys()
+
+                if not nTissues is None:
+                    for m in self.measures.keys():
+                        measureTissues = self.measures[m]['tissues']
+                        validTissues = set(nTissues).intersection(set(measureTissues))
+                        if len(validTissues) > 0:
+                            measuresToUse.append(m)
+
+                print(nDef['Identifier'] + " -> " + str(measuresToUse))
+
+                for mName in measuresToUse:
+                    mStats = self.Summarize(network, maskedLabels, mName)
+                    if not mStats is None:
+                        stats += mStats
 
         stats = [ self.EntryToDataFrame(x) for x in stats ]
         self.output=pd.concat(stats)
+        print(self.output)
     
     def GetOutput(self):
         return self.output
 
     def EntryToDataFrame(self, stats):
-       # "id","date","system","label","measure","metric","value"
+        # "id","date","system","label","measure","metric","value"
 
         metric = [ x for x in stats['values'].keys() ]
         value = [ stats['values'][x] for x in stats['values'].keys() ]
@@ -216,18 +275,51 @@ class Quantsifier():
 
         return(df)
 
-    def Summarize(self, systemName, measureName):
+    def Summarize(self, networkName, subjectLabels, measureName):
 
-        self.log.info("Summarize( %s %s )", systemName, measureName)
+        self.log.info("Summarize( %s, %s )", networkName, measureName)
 
+        nDef = self.networks[networkName][0]
+        #nImg = self.networks[networkName][1]
 
-        stats=[]
-        for r in self.segmentationRegions:
-            rstats = self.SummarizeRegion(systemName, measureName, r)
-            if len(rstats)>0:
-                stats += rstats
+        measureImg = subjectLabels
+        if measureName != "volume":
+            #print(measureName)
+            #print(self.measures.keys())
+            #print(self.measures[measureName])
+            measureImg = self.measures[measureName]['image']
 
-        return(stats)
+        nImg = sitk.Cast(subjectLabels, sitk.sitkUInt32)
+
+        stats = sitk.LabelIntensityStatisticsImageFilter()
+        stats.Execute(nImg, measureImg)
+        labelsInImage = stats.GetLabels()
+
+        statDat = []
+        for r in nDef['ROI']:
+            lbl = r['ImageID']
+            if lbl in labelsInImage:
+                if measureName=="volume":  
+                    dat = {"system": networkName, "label":lbl, "measure": "volume", "values": {} }
+                    dat['values']['numeric'] = stats.GetPhysicalSize(lbl)
+                    print(str(lbl) + " vox = " + str(stats.GetNumberOfPixels(lbl)))
+                    #print(str(lbl) + " " + measureName + " = " + str(stats.GetPhysicalSize(lbl)))
+                    statDat.append(dat)
+                else:
+                    dat = {"system": networkName, "label":lbl, "measure": measureName, "values": {} }
+                    dat['values']['mean'] = float(stats.GetMean(lbl))
+                    dat['values']['sd'] = float(stats.GetStandardDeviation(lbl))
+                    dat['values']['max'] = float(stats.GetMaximum(lbl))
+                    dat['values']['min'] = float(stats.GetMinimum(lbl))
+                    dat['values']['median'] = float(stats.GetMedian(lbl))
+                    statDat.append(dat)
+                    #print(str(lbl) + " " + measureName + " = " + str(stats.GetMean(lbl)))
+
+        #for r in self.segmentationRegions:
+        #    rstats = self.SummarizeRegion(systemName, measureName, r)
+        #    if len(rstats)>0:
+        #        stats += rstats
+        return(statDat)
 
     def SummarizeRegion(self, systemName, measureName, segRegion):
 
@@ -262,7 +354,6 @@ class Quantsifier():
 
         return(statList)
 
- 
     def GetStats(self, labelView, labelValues, measureView, measureName):
         if self.verbose:
             print("GetStats() ")
@@ -324,19 +415,27 @@ def corticalSystemNames():
         'lausanne60', 
         'lausanne125', 
         'lausanne250', 
-        'schaefer100x7',
-        'schaefer100x17',
-        'schaefer200x7',
-        'schaefer200x17',
-        'schaefer300x7',
-        'schaefer300x17',
-        'schaefer400x7',
-        'schaefer400x17',
-        'schaefer500x7',
-        'schaefer500x17']
+        'schaefer100x7v1',
+        'schaefer100x17v2',
+        'schaefer200x7v1',
+        'schaefer200x17v2',
+        'schaefer300x7v1',
+        'schaefer300x17v2',
+        'schaefer400x7v1',
+        'schaefer400x17v2',
+        'schaefer500x7v1',
+        'schaefer500x17v2']
 
     return(names)
 
+def getNetworks(directory):
+    fnames = glob.glob(os.path.join(directory, "*.json"))
+    networks = []
+    for f in fnames:
+        f1 = open(f)
+        networks.append(json.load(f1))
+        f1.close()
+    return(networks)
 
 def getFTDCInputs(directory):
 
@@ -346,22 +445,8 @@ def getFTDCInputs(directory):
             "n4": "*BrainSegmentation0N4.nii.gz",
             "gmp": "*BrainSegmentationPosteriors2.nii.gz",
             "thickness": "*CorticalThickness.nii.gz",
-            "dkt31": "*DKT31.nii.gz",
-            "braincolor": "*BrainColorSubcortical.nii.gz",
-            "lausanne33":"*LausanneCorticalScale33.nii.gz",
-            "lausanne60":"*LausanneCorticalScale60.nii.gz",
-            "lausanne125": "*LausanneCorticalScale125.nii.gz",
-            "lausanne250": "*LausanneCorticalScale250.nii.gz",
-            "schaefer100x7":"*Schaefer2018_100Parcels7Networks.nii.gz",
-            "schaefer100x17":"*Schaefer2018_100Parcels17Networks.nii.gz",
-            "schaefer200x7":"*Schaefer2018_200Parcels7Networks.nii.gz",
-            "schaefer200x17":"*Schaefer2018_200Parcels17Networks.nii.gz",
-            "schaefer300x7":"*Schaefer2018_300Parcels7Networks.nii.gz",
-            "schaefer300x17":"*Schaefer2018_300Parcels17Networks.nii.gz",
-            "schaefer400x7":"*Schaefer2018_400Parcels7Networks.nii.gz",
-            "schaefer400x17":"*Schaefer2018_400Parcels17Networks.nii.gz",
-            "schaefer500x7":"*Schaefer2018_500Parcels7Networks.nii.gz",
-            "schaefer500x17":"*Schaefer2018_500Parcels17Networks.nii.gz"
+            "warp" : "*_TemplateToSubject0Warp.nii.gz",
+            "mat" : "*_TemplateToSubject1GenericAffine.mat"
     }
 
     imgFiles = suffix
@@ -376,11 +461,14 @@ def getFTDCQuantsifier( imgFiles ):
     q = Quantsifier()
     imgs = imgFiles
     for tag in imgFiles.keys():
-        if len(imgFiles[tag])>0:
-            #print("Reading "+imgFiles[tag][0])
-            imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
-        else:
-            imgs[tag] = None
+        if tag != "mat":
+            if len(imgFiles[tag])>0:
+                #print("Reading "+imgFiles[tag][0])
+                imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
+            else:
+                imgs[tag] = None
+
+
 
     # set images
     q.SetSegmentation(imgs['seg'])
@@ -392,31 +480,31 @@ def getFTDCQuantsifier( imgFiles ):
 
 
     # Masking rule for subcortical(=4) == include everything except CSF(=1) and Whitematter(=3)
-    q.AddSegmentationMaskingRule( 4, exclude=[1,3] )
+    #q.AddSegmentationMaskingRule( 4, exclude=[1,3] )
     #q.AddSegmentationMaskingRule( 5, include=[1,2,3,4,5,6] ) 
 
 
     # Add ANTsCT segmentation as a labeling system
-    q.AddLabelingSystem(imgs['seg'], np.asarray([1,2,3,4,5,6]), np.asarray([1,2,3,4,5,6]), 'antsct', ['thickness','intensity0N4'] )
+    #q.AddLabelingSystem(imgs['seg'], np.asarray([1,2,3,4,5,6]), np.asarray([1,2,3,4,5,6]), 'antsct', ['thickness','intensity0N4'] )
 
     # Add brainmask as a labeling system
-    q.AddLabelingSystem(imgs['mask'], np.asarray([1]), np.asarray([1]), 'brain', [None])
+    #q.AddLabelingSystem(imgs['mask'], np.asarray([1]), np.asarray([1]), 'brain', [None])
 
     # Subcortical regions
     #bcLabels = np.unique(itk.GetArrayViewFromImage(imgs['braincolor']))
     #bcLabels = bcLabels[bcLabels > 0]
     #q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
-    bc=brainColorSubcorticalSystem()
-    if not imgs['braincolor'] is None:
-        q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
+    #bc=brainColorSubcorticalSystem()
+    #if not imgs['braincolor'] is None:
+    #   q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
     
 
-    for sys in corticalSystemNames():
-        if not imgs[sys] is None:
-            lbl = imgs[sys]
-            cxLabels = np.unique(itk.GetArrayViewFromImage(lbl))
-            cxLabels = cxLabels[cxLabels > 0]
-            q.AddLabelingSystem(lbl, cxLabels, np.full(len(cxLabels), 2), sys, ['thickness'])
+    #for sys in corticalSystemNames():
+    #    if not imgs[sys] is None:
+    #        lbl = imgs[sys]
+    #        cxLabels = np.unique(itk.GetArrayViewFromImage(lbl))
+    #        cxLabels = cxLabels[cxLabels > 0]
+    #        q.AddLabelingSystem(lbl, cxLabels, np.full(len(cxLabels), 2), sys, ['thickness'])
 
     return(q)
 
