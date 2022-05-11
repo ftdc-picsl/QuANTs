@@ -25,7 +25,7 @@ dir = sys.argv[1]
 template = sys.argv[2]
 networkDir = sys.argv[3]
 networkImageDir = sys.argv[4]
-odir = sys.argv[5]
+oFile = sys.argv[5]
 
 q = quants.Quantsifier()
 
@@ -109,7 +109,7 @@ if len(inputFiles['mat']) > 0:
     stats = q.GetOutput()
 
     pd.set_option("display.max_rows", None, "display.max_columns", None)
-    ofile = os.path.join(odir, bidsInfo[0]+"_"+bidsInfo[1]+"_quants.csv")
-    stats.to_csv(ofile, index=False, float_format='%.4f')
+    #ofile = os.path.join(oFile, bidsInfo[0]+"_"+bidsInfo[1]+"_quants.csv")
+    stats.to_csv(oFile, index=False, float_format='%.4f')
 
     #print("Done")
