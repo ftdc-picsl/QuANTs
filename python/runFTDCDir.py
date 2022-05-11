@@ -53,59 +53,63 @@ for tag in inputFiles.keys():
                 inputImgs[tag] = None
 
 txMat = sitk.ReadTransform(inputFiles['mat'][0])
-txWarp = sitk.DisplacementFieldTransform( sitk.ReadImage(inputFiles['warp'][0]) )
-q.subjectMat = txMat
-q.subjectWarp = txWarp
 
-if 'thickness' in inputImgs:
-    print("Apply thickness masking")
-    thickMask = sitk.BinaryThreshold(inputImgs['thickness'], lowerThreshold=0.0001 )
-    thickMask = sitk.Cast(thickMask, sitk.sitkUInt32)
-    cortex = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
-    cortex = sitk.Multiply(thickMask, cortex)
+if len(txMat) > 0:
 
-    c1 = sitk.Threshold(inputImgs['seg'], lower=1, upper=1)
-    c3 = sitk.Threshold(inputImgs['seg'], lower=3, upper=3)
-    c4 = sitk.Threshold(inputImgs['seg'], lower=4, upper=4)
-    c5 = sitk.Threshold(inputImgs['seg'], lower=5, upper=5)
-    c6 = sitk.Threshold(inputImgs['seg'], lower=6, upper=6)
-
-    seg = sitk.Add(cortex, c1)
-    seg = sitk.Add(seg, c3)
-    seg = sitk.Add(seg, c4)
-    seg = sitk.Add(seg, c5)
-    seg = sitk.Add(seg, c6)
-    inputImgs['seg'] = seg
-    sitk.WriteImage(seg, "seg.nii.gz")
+    txWarp = sitk.DisplacementFieldTransform( sitk.ReadImage(inputFiles['warp'][0]) )
+    q.subjectMat = txMat
+    q.subjectWarp = txWarp
 
 
-q.SetSegmentation(inputImgs['seg'])
-q.SetMask(inputImgs['mask'])
+    if 'thickness' in inputImgs:
+        print("Apply thickness masking")
+        thickMask = sitk.BinaryThreshold(inputImgs['thickness'], lowerThreshold=0.0001 )
+        thickMask = sitk.Cast(thickMask, sitk.sitkUInt32)
+        cortex = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
+        cortex = sitk.Multiply(thickMask, cortex)
 
-# 1=CSF, 2=CGM, 3=WM, 4=SCGM, 5=BS, 6=CBM
-# Add measure named 'thickness' for voxels with segmentation==2
-q.AddMeasure(inputImgs['thickness'], 'thickness', [2])
-q.AddMeasure(inputImgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
+        c1 = sitk.Threshold(inputImgs['seg'], lower=1, upper=1)
+        c3 = sitk.Threshold(inputImgs['seg'], lower=3, upper=3)
+        c4 = sitk.Threshold(inputImgs['seg'], lower=4, upper=4)
+        c5 = sitk.Threshold(inputImgs['seg'], lower=5, upper=5)
+        c6 = sitk.Threshold(inputImgs['seg'], lower=6, upper=6)
+
+        seg = sitk.Add(cortex, c1)
+        seg = sitk.Add(seg, c3)
+        seg = sitk.Add(seg, c4)
+        seg = sitk.Add(seg, c5)
+        seg = sitk.Add(seg, c6)
+        inputImgs['seg'] = seg
+        sitk.WriteImage(seg, "seg.nii.gz")
 
 
-networks = quants.getNetworks(networkDir)
+    q.SetSegmentation(inputImgs['seg'])
+    q.SetMask(inputImgs['mask'])
 
-for n in networks:
-    #print( n["Identifier"])
-    if 'Filename' in n:
-        fname = os.path.join(networkImageDir, n['Filename'])
-        if os.path.exists(fname):
-            print("Adding Network: "+n["Identifier"])
-            img = sitk.ReadImage(fname)
-            q.AddNetwork(n,img)
+    # 1=CSF, 2=CGM, 3=WM, 4=SCGM, 5=BS, 6=CBM
+    # Add measure named 'thickness' for voxels with segmentation==2
+    q.AddMeasure(inputImgs['thickness'], 'thickness', [2])
+    q.AddMeasure(inputImgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
 
-#x = quants.getFTDCQuantsifier(filenames)
-q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
-q.Update()
-stats = q.GetOutput()
 
-pd.set_option("display.max_rows", None, "display.max_columns", None)
-ofile = os.path.join(odir, bidsInfo[0]+"_"+bidsInfo[1]+"_quants.csv")
-stats.to_csv(ofile, index=False, float_format='%.4f')
+    networks = quants.getNetworks(networkDir)
 
-#print("Done")
+    for n in networks:
+        #print( n["Identifier"])
+        if 'Filename' in n:
+            fname = os.path.join(networkImageDir, n['Filename'])
+            if os.path.exists(fname):
+                print("Adding Network: "+n["Identifier"])
+                img = sitk.ReadImage(fname)
+                q.AddNetwork(n,img)
+
+    #x = quants.getFTDCQuantsifier(filenames)
+    q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
+    q.Update()
+    stats = q.GetOutput()
+
+    pd.set_option("display.max_rows", None, "display.max_columns", None)
+    ofile = os.path.join(odir, bidsInfo[0]+"_"+bidsInfo[1]+"_quants.csv")
+    stats.to_csv(ofile, index=False, float_format='%.4f')
+
+    #print("Done")
