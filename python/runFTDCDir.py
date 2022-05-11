@@ -52,10 +52,10 @@ for tag in inputFiles.keys():
             else:
                 inputImgs[tag] = None
 
-txMat = sitk.ReadTransform(inputFiles['mat'][0])
 
-if len(txMat) > 0:
 
+if len(inputFiles['mat']) > 0:
+    txMat = sitk.ReadTransform(inputFiles['mat'][0])
     txWarp = sitk.DisplacementFieldTransform( sitk.ReadImage(inputFiles['warp'][0]) )
     q.subjectMat = txMat
     q.subjectWarp = txWarp
