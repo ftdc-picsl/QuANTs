@@ -29,13 +29,15 @@ odir = sys.argv[5]
 
 q = quants.Quantsifier()
 
-q.templateImg = sitk.ReadImage("/Users/jtduda/projects/Grossman/tpl-TustisonAging2019ANTs/tpl-TustisonAging2019ANTs_res-01_T1w.nii.gz")
+#q.templateImg = sitk.ReadImage("/Users/jtduda/projects/Grossman/tpl-TustisonAging2019ANTs/tpl-TustisonAging2019ANTs_res-01_T1w.nii.gz")
 
 templateDir = os.path.dirname(os.path.abspath(template))
 templateF = open(template)
 templateDef = json.load(templateF)
 templateF.close()
 q.SetTemplate(templateDef, templateDir)
+
+
 
 bidsInfo = parsePath(dir)
 inputFiles =  quants.getFTDCInputs(dir)
