@@ -1,6 +1,7 @@
 {
   "Name": "Tian_Subcortex_S4_3T",
   "Identifier": "Tian_Subcortex_S4_3T",
+  "Filename": "Tian_Subcortex_S4_3T_2009cAsym.nii.gz",
   "Version": "1",
   "Release": "1",
   "Git-Repo": "",
@@ -11,7 +12,7 @@
   ],
   "QuantsVersion": "1.0",
   "BIDSVersion": "1.0",
-  "TemplateSpace": "MNI152NonLinear2009cAsym",
+  "TemplateSpace": "MNI152NLin2009cAsym",
   "Species": "Homo sapiens",
   "Authors": "",
   "Maintainers": "",
@@ -52,22 +53,22 @@
           "GroupID": 0
         },
         {
-          "Name": "Cortical Spinal Fluid",
+          "Name": "CorticalSpinalFluid",
           "Abbreviation": "CSF",
           "GroupID": 1
         },
         {
-          "Name": "Cortical Gray Matter",
+          "Name": "CorticalGrayMatter",
           "Abbreviation": "CGM",
           "GroupID": 2
         },
         {
-          "Name": "Whitematter",
+          "Name": "WhiteMatter",
           "Abbreviation": "WM",
           "GroupID": 3
         },
         {
-          "Name": "Subcortical Gray Matter",
+          "Name": "SubcorticalGrayMatter",
           "Abbreviation": "SCGM",
           "GroupID": 4
         },
@@ -125,7 +126,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -135,8 +136,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -152,7 +153,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -162,8 +163,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -179,7 +180,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -189,8 +190,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -206,7 +207,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -216,8 +217,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -233,7 +234,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -243,8 +244,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -260,7 +261,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -270,8 +271,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -287,7 +288,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -297,8 +298,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -314,7 +315,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -324,8 +325,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -341,7 +342,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -351,8 +352,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -368,7 +369,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -378,8 +379,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -395,7 +396,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -405,8 +406,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -422,7 +423,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -432,8 +433,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -449,7 +450,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -459,8 +460,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -476,7 +477,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -486,8 +487,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -503,7 +504,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -513,8 +514,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -530,7 +531,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -540,8 +541,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -557,7 +558,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -567,8 +568,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -584,7 +585,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -594,8 +595,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -611,7 +612,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -621,8 +622,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -638,7 +639,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -648,8 +649,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -665,7 +666,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -675,8 +676,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -692,7 +693,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -702,8 +703,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -719,7 +720,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -729,8 +730,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -746,7 +747,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -756,8 +757,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -773,7 +774,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -783,8 +784,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -800,7 +801,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -810,8 +811,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -827,7 +828,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -837,8 +838,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -854,7 +855,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -864,8 +865,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -881,7 +882,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -891,8 +892,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -908,7 +909,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -918,8 +919,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -935,7 +936,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -945,8 +946,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -962,7 +963,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -972,8 +973,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -989,7 +990,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -999,8 +1000,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1016,7 +1017,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1026,8 +1027,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1043,7 +1044,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1053,8 +1054,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1070,7 +1071,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1080,8 +1081,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1097,7 +1098,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1107,8 +1108,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1124,7 +1125,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1134,8 +1135,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1151,7 +1152,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1161,8 +1162,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1178,7 +1179,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1188,8 +1189,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1205,7 +1206,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1215,8 +1216,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1232,7 +1233,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1242,8 +1243,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1259,7 +1260,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1269,8 +1270,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1286,7 +1287,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1296,8 +1297,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1313,7 +1314,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1323,8 +1324,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1340,7 +1341,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1350,8 +1351,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1367,7 +1368,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1377,8 +1378,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1394,7 +1395,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1404,8 +1405,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1421,7 +1422,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1431,8 +1432,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1448,7 +1449,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1458,8 +1459,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1475,7 +1476,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1485,8 +1486,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1502,7 +1503,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1512,8 +1513,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1529,7 +1530,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1539,8 +1540,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]
@@ -1556,7 +1557,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Subortical Gray Matter"
+          "Value": "SubcorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1566,8 +1567,8 @@
       "Masking": {
         "Group": "Tissue",
         "Include": [
-          "Cortical Gray Matter",
-          "Subcortical Gray Matter",
+          "CorticalGrayMatter",
+          "SubcorticalGrayMatter",
           "Brainstem",
           "Cerebellum"
         ]

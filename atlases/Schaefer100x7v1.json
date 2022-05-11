@@ -1,7 +1,8 @@
 {
-  "Name": "Schaefer100x7",
-  "Identifier": "Schaefer100x7",
-  "Version": "1.0",
+  "Name": "Schaefer100x7v1",
+  "Identifier": "Schaefer100x7v1",
+  "Filename": "Schaefer2018_100Parcels_7Networks_order_FSLMNI152_1mm.nii.gz",
+  "Version": "1",
   "Release": "0.21.3",
   "Git-Repo": "",
   "Git-Commit": "",
@@ -11,7 +12,7 @@
   ],
   "QuantsVersion": "1.0",
   "BIDSVersion": "1.0",
-  "TemplateSpace": "TustisonAging2019ANTs",
+  "TemplateSpace": "MNI152NLin6Asym",
   "res": "01",
   "Species": "Homo sapiens",
   "Authors": "",
@@ -48,28 +49,33 @@
       "Name": "Tissue",
       "Values": [
         {
-          "Name": "Cortical Spinal Fluid",
+          "Name": "Other",
+          "Abbreviation": "OTHER",
+          "GroupID": 0
+        },
+        {
+          "Name": "CorticalSpinalFluid",
           "Abbreviation": "CSF",
           "GroupID": 1
         },
         {
-          "Name": "Cortical Gray Matter",
+          "Name": "CorticalGrayMatter",
           "Abbreviation": "CGM",
           "GroupID": 2
         },
         {
-          "Name": "Whitematter",
+          "Name": "WhiteMatter",
           "Abbreviation": "WM",
           "GroupID": 3
         },
         {
-          "Name": "Subcortical Gray Matter",
+          "Name": "SubcorticalGrayMatter",
           "Abbreviation": "SCGM",
           "GroupID": 4
         },
         {
           "Name": "Brainstem",
-          "Abbreviation": "GS",
+          "Abbreviation": "BS",
           "GroupID": 5
         },
         {
@@ -230,7 +236,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -241,7 +247,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_2",
@@ -258,7 +270,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -269,7 +281,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_3",
@@ -286,7 +304,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -297,7 +315,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_4",
@@ -314,7 +338,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -325,7 +349,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_5",
@@ -342,7 +372,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -353,7 +383,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_6",
@@ -370,7 +406,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -381,7 +417,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_7",
@@ -398,7 +440,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -409,7 +451,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_8",
@@ -426,7 +474,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -437,7 +485,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Vis_9",
@@ -454,7 +508,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -465,7 +519,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_1",
@@ -482,7 +542,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -493,7 +553,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_2",
@@ -510,7 +576,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -521,7 +587,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_3",
@@ -538,7 +610,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -549,7 +621,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_4",
@@ -566,7 +644,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -577,7 +655,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_5",
@@ -594,7 +678,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -605,7 +689,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SomMot_6",
@@ -622,7 +712,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -633,7 +723,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_1",
@@ -650,7 +746,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -661,7 +757,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_2",
@@ -678,7 +780,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -689,7 +791,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_3",
@@ -706,7 +814,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -717,7 +825,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_4",
@@ -734,7 +848,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -745,7 +859,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_5",
@@ -762,7 +882,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -773,7 +893,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_Post_6",
@@ -790,7 +916,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -801,7 +927,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_PrCv_1",
@@ -818,7 +950,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -829,7 +961,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_DorsAttn_FEF_1",
@@ -846,7 +984,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -857,7 +995,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_ParOper_1",
@@ -874,7 +1018,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -885,7 +1029,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_1",
@@ -902,7 +1052,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -913,7 +1063,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_FrOperIns_2",
@@ -930,7 +1086,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -941,7 +1097,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_PFCl_1",
@@ -958,7 +1120,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -969,7 +1131,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_1",
@@ -986,7 +1154,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -997,7 +1165,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_2",
@@ -1014,7 +1188,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1025,7 +1199,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_SalVentAttn_Med_3",
@@ -1042,7 +1222,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1053,7 +1233,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Limbic_OFC_1",
@@ -1070,7 +1256,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1081,7 +1267,13 @@
           "Name": "Network",
           "Value": "limbic"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_1",
@@ -1098,7 +1290,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1109,7 +1301,13 @@
           "Name": "Network",
           "Value": "limbic"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Limbic_TempPole_2",
@@ -1126,7 +1324,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1137,7 +1335,13 @@
           "Name": "Network",
           "Value": "limbic"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Cont_Par_1",
@@ -1154,7 +1358,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1165,7 +1369,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Cont_PFCl_1",
@@ -1182,7 +1392,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1193,7 +1403,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Cont_pCun_1",
@@ -1210,7 +1426,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1221,7 +1437,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Cont_Cing_1",
@@ -1238,7 +1460,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1249,7 +1471,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_Temp_1",
@@ -1266,7 +1494,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1277,7 +1505,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_Temp_2",
@@ -1294,7 +1528,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1305,7 +1539,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_Par_1",
@@ -1322,7 +1562,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1333,7 +1573,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_Par_2",
@@ -1350,7 +1596,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1361,7 +1607,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_1",
@@ -1378,7 +1630,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1389,7 +1641,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_2",
@@ -1406,7 +1664,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1417,7 +1675,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_3",
@@ -1434,7 +1698,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1445,7 +1709,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_4",
@@ -1462,7 +1732,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1473,7 +1743,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_5",
@@ -1490,7 +1766,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1501,7 +1777,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_6",
@@ -1518,7 +1800,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1529,7 +1811,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_PFC_7",
@@ -1546,7 +1834,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1557,7 +1845,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_1",
@@ -1574,7 +1868,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1585,7 +1879,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_LH_Default_pCunPCC_2",
@@ -1602,7 +1902,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1613,7 +1913,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_1",
@@ -1630,7 +1936,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1641,7 +1947,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_2",
@@ -1658,7 +1970,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1669,7 +1981,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_3",
@@ -1686,7 +2004,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1697,7 +2015,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_4",
@@ -1714,7 +2038,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1725,7 +2049,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_5",
@@ -1742,7 +2072,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1753,7 +2083,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_6",
@@ -1770,7 +2106,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1781,7 +2117,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_7",
@@ -1798,7 +2140,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1809,7 +2151,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Vis_8",
@@ -1826,7 +2174,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1837,7 +2185,13 @@
           "Name": "Network",
           "Value": "visual"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_1",
@@ -1854,7 +2208,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1865,7 +2219,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_2",
@@ -1882,7 +2242,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1893,7 +2253,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_3",
@@ -1910,7 +2276,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1921,7 +2287,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_4",
@@ -1938,7 +2310,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1949,7 +2321,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_5",
@@ -1966,7 +2344,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -1977,7 +2355,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_6",
@@ -1994,7 +2378,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2005,7 +2389,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_7",
@@ -2022,7 +2412,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2033,7 +2423,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SomMot_8",
@@ -2050,7 +2446,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2061,7 +2457,13 @@
           "Name": "Network",
           "Value": "somatomotor"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_1",
@@ -2078,7 +2480,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2089,7 +2491,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_2",
@@ -2106,7 +2514,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2117,7 +2525,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_3",
@@ -2134,7 +2548,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2145,7 +2559,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_4",
@@ -2162,7 +2582,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2173,7 +2593,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_Post_5",
@@ -2190,7 +2616,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2201,7 +2627,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_PrCv_1",
@@ -2218,7 +2650,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2229,7 +2661,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_DorsAttn_FEF_1",
@@ -2246,7 +2684,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2257,7 +2695,13 @@
           "Name": "Network",
           "Value": "dorsal attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_1",
@@ -2274,7 +2718,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2285,7 +2729,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SalVentAttn_TempOccPar_2",
@@ -2302,7 +2752,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2313,7 +2763,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SalVentAttn_FrOperIns_1",
@@ -2330,7 +2786,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2341,7 +2797,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_1",
@@ -2358,7 +2820,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2369,7 +2831,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_SalVentAttn_Med_2",
@@ -2386,7 +2854,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2397,7 +2865,13 @@
           "Name": "Network",
           "Value": "salience ventral attention"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Limbic_OFC_1",
@@ -2414,7 +2888,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2425,7 +2899,13 @@
           "Name": "Network",
           "Value": "limbic"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Limbic_TempPole_1",
@@ -2442,7 +2922,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2453,7 +2933,13 @@
           "Name": "Network",
           "Value": "limbic"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_Par_1",
@@ -2470,7 +2956,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2481,7 +2967,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_Par_2",
@@ -2498,7 +2990,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2509,7 +3001,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_1",
@@ -2526,7 +3024,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2537,7 +3035,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_2",
@@ -2554,7 +3058,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2565,7 +3069,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_3",
@@ -2582,7 +3092,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2593,7 +3103,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_PFCl_4",
@@ -2610,7 +3126,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2621,7 +3137,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_Cing_1",
@@ -2638,7 +3160,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2649,7 +3171,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_PFCmp_1",
@@ -2666,7 +3194,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2677,7 +3205,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Cont_pCun_1",
@@ -2694,7 +3228,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2705,7 +3239,13 @@
           "Name": "Network",
           "Value": "control"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_Par_1",
@@ -2722,7 +3262,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2733,7 +3273,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_Temp_1",
@@ -2750,7 +3296,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2761,7 +3307,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_Temp_2",
@@ -2778,7 +3330,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2789,7 +3341,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_Temp_3",
@@ -2806,7 +3364,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2817,7 +3375,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_PFCv_1",
@@ -2834,7 +3398,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2845,7 +3409,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_PFCv_2",
@@ -2862,7 +3432,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2873,7 +3443,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_1",
@@ -2890,7 +3466,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2901,7 +3477,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_2",
@@ -2918,7 +3500,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2929,7 +3511,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_PFCdPFCm_3",
@@ -2946,7 +3534,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2957,7 +3545,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_1",
@@ -2974,7 +3568,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -2985,7 +3579,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     },
     {
       "Name": "7Networks_RH_Default_pCunPCC_2",
@@ -3002,7 +3602,7 @@
         },
         {
           "Name": "Tissue",
-          "Value": "Cortical Gray Matter"
+          "Value": "CorticalGrayMatter"
         },
         {
           "Name": "Region",
@@ -3013,7 +3613,13 @@
           "Name": "Network",
           "Value": "default"
         }
-      ]
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
     }
   ]
 }
