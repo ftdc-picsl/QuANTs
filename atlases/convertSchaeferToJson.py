@@ -129,6 +129,7 @@ reg17Abb = {
 atlasDict = {
     "Name": atlasName,
     "Identifier": atlasName,
+    "Filename": "Schaefer2018_"+str(nParcels)+"Parcels_"+str(nNetworks)+"Networks_order_FSLMNI152_1mm.nii.gz",
     "Version": version,
     "Release": release,
     "Git-Repo": "",
@@ -137,7 +138,7 @@ atlasDict = {
     "DevNotes": [""],
     "QuantsVersion" : "1.0",
     "BIDSVersion": "1.0",
-    "TemplateSpace": "TustisonAging2019ANTs",
+    "TemplateSpace": "MNI152NLin6Asym",
     "res" : "01",
     "Species": "Homo sapiens",
     "Authors": "",
@@ -158,7 +159,7 @@ if int(nNetworks)==17:
 nodeList = []
 networkRegions = {}
 
-masking = {"Group": "Tissue", "Include": [ "Cortical Gray Matter"] }
+masking = {"Group": "Tissue", "Include": [ "CorticalGrayMatter"] }
 
 with open(defFile, 'r') as file:
     lines = file.readlines();
@@ -191,7 +192,7 @@ with open(defFile, 'r') as file:
         
         #print( atlas + " " + hemi + " " + network + " " + str(region) + " " + localId)
         nGroups = [ {"Name": "Hemisphere", "Value": hemisphere} ]
-        nGroups.append( { "Name": "Tissue", "Value": "Cortical Gray Matter"} )
+        nGroups.append( { "Name": "Tissue", "Value": "CorticalGrayMatter"} )
         nGroups.append( {"Name": "Region", "Value": regionName, "GroupID": int(localId)})
         nGroups.append( {"Name": "Network", "Value": networkName})
 
@@ -230,10 +231,10 @@ hemiGroup["Values"].append( { "Name": "none", "Abbreviation": "none"})
 
 tissueGroup = {"Name": "Tissue", "Values": []}
 tissueGroup["Values"].append( { "Name": "Other", "Abbreviation": "OTHER", "GroupID": 0})
-tissueGroup["Values"].append( { "Name": "Cortical Spinal Fluid", "Abbreviation": "CSF", "GroupID": 1})
-tissueGroup["Values"].append( { "Name": "Cortical Gray Matter", "Abbreviation": "CGM", "GroupID": 2})
-tissueGroup["Values"].append( { "Name": "Whitematter", "Abbreviation": "WM", "GroupID": 3})
-tissueGroup["Values"].append( { "Name": "Subcortical Gray Matter", "Abbreviation": "SCGM", "GroupID": 4})
+tissueGroup["Values"].append( { "Name": "CorticalSpinalFluid", "Abbreviation": "CSF", "GroupID": 1})
+tissueGroup["Values"].append( { "Name": "CorticalGrayMatter", "Abbreviation": "CGM", "GroupID": 2})
+tissueGroup["Values"].append( { "Name": "WhiteMatter", "Abbreviation": "WM", "GroupID": 3})
+tissueGroup["Values"].append( { "Name": "SubcorticalGrayMatter", "Abbreviation": "SCGM", "GroupID": 4})
 tissueGroup["Values"].append( { "Name": "Brainstem", "Abbreviation": "BS", "GroupID": 5})
 tissueGroup["Values"].append( { "Name": "Cerebellum", "Abbreviation": "CBM", "GroupID": 6})
 

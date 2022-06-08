@@ -8,6 +8,7 @@ import pandas as pd
 import os 
 import sys
 import json
+import glob
 
 
 def parsePath( path ):
@@ -80,7 +81,7 @@ if len(inputFiles['mat']) > 0:
         seg = sitk.Add(seg, c5)
         seg = sitk.Add(seg, c6)
         inputImgs['seg'] = seg
-        sitk.WriteImage(seg, "seg.nii.gz")
+        #sitk.WriteImage(seg, "seg.nii.gz")
 
 
     q.SetSegmentation(inputImgs['seg'])
@@ -94,14 +95,32 @@ if len(inputFiles['mat']) > 0:
 
     networks = quants.getNetworks(networkDir)
 
+    # Add networks with labels in NATIVE space (ie no template labels exist)
     for n in networks:
-        #print( n["Identifier"])
-        if 'Filename' in n:
-            fname = os.path.join(networkImageDir, n['Filename'])
-            if os.path.exists(fname):
-                print("Adding Network: "+n["Identifier"])
-                img = sitk.ReadImage(fname)
+        print( n['Identifier'])
+        templateSpace = n['TemplateSpace']
+
+        if templateSpace=='NATIVE':
+            print("Looking for NATIVE labels matching: "+n['Filename'])
+            nativeLabelName = glob.glob( os.path.join(dir, n['Filename']))
+            print(nativeLabelName)
+
+            if len(nativeLabelName)==1:
+                img = sitk.ReadImage(nativeLabelName[0])
                 q.AddNetwork(n,img)
+            else:
+                if len(nativeLabelName)==0:
+                    print("WARNING: No NATIVE label image found")
+                else:
+                    print("WARNING: Could not find a unique file for NATIVE labels")
+
+        else:
+            if 'Filename' in n:
+                fname = os.path.join(networkImageDir, n['Filename'])
+                if os.path.exists(fname):
+                    print("Adding Network: "+n["Identifier"])
+                    img = sitk.ReadImage(fname)
+                    q.AddNetwork(n,img)
 
     #x = quants.getFTDCQuantsifier(filenames)
     q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})

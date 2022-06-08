@@ -16,7 +16,7 @@ class Quantsifier():
         self.log = logging.getLogger(__name__)
         self.log.setLevel(logging.INFO)
 
-        self.tissueNames = { "CorticoSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
+        self.tissueNames = { "Other": 0, "CorticalSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
 
         self.networks = {}
         self.template = None
@@ -94,6 +94,7 @@ class Quantsifier():
                             tissueNumbers.append( tissueNumber )
                     else:
                         print("Unknown Tissue Name: " + g['Value'])
+                        print( self.tissueNames )
 
         print( networkDefinition['Identifier'] + " -> " + str(tissueNumbers) )
 
@@ -177,18 +178,29 @@ class Quantsifier():
                 mask = sitk.Add(mask, iMask)
 
         return(mask)
-        
+
+    def GetSingleLabel(self, img, label):
+        iMask = sitk.BinaryThreshold(img, lowerThreshold=label, upperThreshold=label)
+        iMask = iMask * int(label)
+        return(iMask)
+
     def ApplyNetworkMasking(self, networkName, labels):
 
         print("Masking "+networkName)
         nDef = self.networks[networkName][0]
         origLabels = sitk.Cast(labels, sitk.sitkUInt32)
+        maskedLabels = origLabels * 0
+
         for r in nDef['ROI']:
             lbl = r['ImageID']
             if 'Masking' in r:
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 mask = self.GetSegmentationMask(tissues)
-        maskedLabels = sitk.Multiply(origLabels, mask)
+                rImg = self.GetSingleLabel(origLabels, int(lbl)) 
+                maskedLabel = sitk.Multiply(rImg, mask)
+                maskedLabels = sitk.Add(maskedLabels, maskedLabel)
+
+        #maskedLabels = sitk.Multiply(origLabels, mask)
         return(maskedLabels)
 
 
@@ -214,41 +226,50 @@ class Quantsifier():
 
             print( "Network: " + nDef['Identifier'] )
             print( "Network Space: " + nDef['TemplateSpace'] )
+
+            subLabels = None
+            maskedLabels = None
             
-            txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
-            txName = glob.glob( txNameGlob )
+            if nDef['TemplateSpace']=='NATIVE':
+                subLabels = nImg 
+                #maskedLabels = self.ApplyNetworkMasking(network, subLabels)
+                maskedLabels = subLabels
+            else:
+                txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
+                txName = glob.glob( txNameGlob )
             
-            if os.path.exists(txName[0]):
-                templateTx = sitk.ReadTransform(txName[0])
-                fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
+                if os.path.exists(txName[0]):
+                    templateTx = sitk.ReadTransform(txName[0])
+                    fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
 
-                resample = sitk.ResampleImageFilter()
-                resample.SetReferenceImage( self.segmentation )
-                resample.SetTransform( fullTx )
-                resample.SetInterpolator( sitk.sitkLabelGaussian )
-                subLabels = resample.Execute(nImg)
-                maskedLabels = self.ApplyNetworkMasking(network, subLabels)
+                    resample = sitk.ResampleImageFilter()
+                    resample.SetReferenceImage( self.segmentation )
+                    resample.SetTransform( fullTx )
+                    resample.SetInterpolator( sitk.sitkLabelGaussian )
+                    subLabels = resample.Execute(nImg)
+                    maskedLabels = self.ApplyNetworkMasking(network, subLabels)
+                else:
+                    print("ERROR: No template transform found")
 
-                # FIXME
-                #itk.WriteImage(maskedLabels, "masked_"+nDef['Identifier']+".nii.gz")
+            
 
-                measuresToUse = ['volume']
-                if not self.measures is None:
-                    measureNames = self.measures.keys()
+            measuresToUse = ['volume']
+            if not self.measures is None:
+                measureNames = self.measures.keys()
 
-                if not nTissues is None:
-                    for m in self.measures.keys():
-                        measureTissues = self.measures[m]['tissues']
-                        validTissues = set(nTissues).intersection(set(measureTissues))
-                        if len(validTissues) > 0:
-                            measuresToUse.append(m)
+            if not nTissues is None:
+                for m in self.measures.keys():
+                    measureTissues = self.measures[m]['tissues']
+                    validTissues = set(nTissues).intersection(set(measureTissues))
+                    if len(validTissues) > 0:
+                        measuresToUse.append(m)
 
-                print(nDef['Identifier'] + " -> " + str(measuresToUse))
+            print(nDef['Identifier'] + " -> " + str(measuresToUse))
 
-                for mName in measuresToUse:
-                    mStats = self.Summarize(network, maskedLabels, mName)
-                    if not mStats is None:
-                        stats += mStats
+            for mName in measuresToUse:
+                mStats = self.Summarize(network, maskedLabels, mName)
+                if not mStats is None:
+                    stats += mStats
 
         stats = [ self.EntryToDataFrame(x) for x in stats ]
         self.output=pd.concat(stats)
@@ -283,37 +304,58 @@ class Quantsifier():
         #nImg = self.networks[networkName][1]
 
         measureImg = subjectLabels
+        measureTissueNumbers = []
         if measureName != "volume":
-            #print(measureName)
-            #print(self.measures.keys())
-            #print(self.measures[measureName])
             measureImg = self.measures[measureName]['image']
+            measureTissueNumbers = self.measures[measureName]['tissues']
 
+        print(subjectLabels)
+
+        print( np.unique(sitk.GetArrayFromImage(subjectLabels)) )
         nImg = sitk.Cast(subjectLabels, sitk.sitkUInt32)
+        print( np.unique(sitk.GetArrayFromImage(nImg)) )
+
 
         stats = sitk.LabelIntensityStatisticsImageFilter()
         stats.Execute(nImg, measureImg)
         labelsInImage = stats.GetLabels()
+        print(labelsInImage)
 
         statDat = []
         for r in nDef['ROI']:
             lbl = r['ImageID']
+        
+            rTissueNumbers = []
+            if 'Groups' in r:
+                gps = r['Groups']
+                for g in gps:
+                    if g['Name']=="Tissue":
+                        rTissueNumbers.append(self.tissueNames[g['Value']])
+
+            print(lbl)
+            print(measureTissueNumbers)
+            print(rTissueNumbers)
+            tissueOverlap = [value for value in measureTissueNumbers if value in rTissueNumbers]
+            print(tissueOverlap)
+
             if lbl in labelsInImage:
                 if measureName=="volume":  
+                    print("volume for "+str(lbl))
                     dat = {"system": networkName, "label":lbl, "measure": "volume", "values": {} }
                     dat['values']['numeric'] = stats.GetPhysicalSize(lbl)
                     print(str(lbl) + " vox = " + str(stats.GetNumberOfPixels(lbl)))
                     #print(str(lbl) + " " + measureName + " = " + str(stats.GetPhysicalSize(lbl)))
                     statDat.append(dat)
                 else:
-                    dat = {"system": networkName, "label":lbl, "measure": measureName, "values": {} }
-                    dat['values']['mean'] = float(stats.GetMean(lbl))
-                    dat['values']['sd'] = float(stats.GetStandardDeviation(lbl))
-                    dat['values']['max'] = float(stats.GetMaximum(lbl))
-                    dat['values']['min'] = float(stats.GetMinimum(lbl))
-                    dat['values']['median'] = float(stats.GetMedian(lbl))
-                    statDat.append(dat)
-                    #print(str(lbl) + " " + measureName + " = " + str(stats.GetMean(lbl)))
+                    if len(tissueOverlap)>0:
+                        dat = {"system": networkName, "label":lbl, "measure": measureName, "values": {} }
+                        dat['values']['mean'] = float(stats.GetMean(lbl))
+                        dat['values']['sd'] = float(stats.GetStandardDeviation(lbl))
+                        dat['values']['max'] = float(stats.GetMaximum(lbl))
+                        dat['values']['min'] = float(stats.GetMinimum(lbl))
+                        dat['values']['median'] = float(stats.GetMedian(lbl))
+                        statDat.append(dat)
+                        #print(str(lbl) + " " + measureName + " = " + str(stats.GetMean(lbl)))
 
         #for r in self.segmentationRegions:
         #    rstats = self.SummarizeRegion(systemName, measureName, r)
