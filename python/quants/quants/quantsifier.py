@@ -240,7 +240,15 @@ class Quantsifier():
                 subLabels = nImg 
                 maskedLabels = self.ApplyNetworkMasking(network, subLabels)
                 maskedLabels = subLabels
-
+                if not self.outputDirectory is None:
+                    path = os.path.join( self.outputDirectory, 'sub-'+self.constants['id'], 'ses-'+self.constants['date'])
+                    prefix = os.path.join( path, 'sub-'+self.constants['id']+"_ses-"+self.constants['date'] )
+                    fName1 = prefix + '_' + nDef['Identifier'] + '_original.nii.gz'
+                    fName2 = prefix + '_' + nDef['Identifier'] + '_masked.nii.gz'
+                    if not os.path.exists(path):
+                        os.makedirs(path)
+                    sitk.WriteImage( subLabels, fName1)
+                    sitk.WriteImage( maskedLabels, fName2 )
             else:
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName = glob.glob( txNameGlob )
