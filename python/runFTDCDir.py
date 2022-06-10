@@ -124,6 +124,7 @@ if len(inputFiles['mat']) > 0:
 
     #x = quants.getFTDCQuantsifier(filenames)
     q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
+    q.SetOutputDirectory( os.path.dirname(oFile) )
     q.Update()
     stats = q.GetOutput()
 

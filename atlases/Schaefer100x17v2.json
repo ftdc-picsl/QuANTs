@@ -1,7 +1,7 @@
 {
   "Name": "Schaefer100x17v2",
   "Identifier": "Schaefer100x17v2",
-  "Filename": "Schaefer2018_100Parcels_17Networks_order_FSLMNI152_1mm.nii.gz",
+  "Filename": "tpl-MNI152NLin2009cAsym_res-01_atlas-Schaefer2018_desc-100Parcels17Networks_dseg.nii.gz",
   "Version": "2",
   "Release": "0.21.3",
   "Git-Repo": "",
@@ -12,7 +12,7 @@
   ],
   "QuantsVersion": "1.0",
   "BIDSVersion": "1.0",
-  "TemplateSpace": "MNI152NLin6Asym",
+  "TemplateSpace": "MNI152NLin2009cAsym",
   "res": "01",
   "Species": "Homo sapiens",
   "Authors": "",

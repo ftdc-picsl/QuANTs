@@ -43,11 +43,15 @@ class Quantsifier():
         self.labelNumbers = None
         self.labelRegions = None
         self.output = None
+        self.outputDiretory = None
 
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
     def SetLoggingLevel(self, level):
         self.log.setLevel(level)
+
+    def SetOutputDirectory(self, dir):
+        self.outputDirectory = dir
 
     def AddMeasure(self, measure, name, tissues, threshold=0.00001):
         if not name in self.measures.keys():
@@ -181,7 +185,9 @@ class Quantsifier():
 
     def GetSingleLabel(self, img, label):
         iMask = sitk.BinaryThreshold(img, lowerThreshold=label, upperThreshold=label)
+        iMask = sitk.Cast(iMask, sitk.sitkUInt32)
         iMask = iMask * int(label)
+
         return(iMask)
 
     def ApplyNetworkMasking(self, networkName, labels):
@@ -232,8 +238,9 @@ class Quantsifier():
             
             if nDef['TemplateSpace']=='NATIVE':
                 subLabels = nImg 
-                #maskedLabels = self.ApplyNetworkMasking(network, subLabels)
+                maskedLabels = self.ApplyNetworkMasking(network, subLabels)
                 maskedLabels = subLabels
+
             else:
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName = glob.glob( txNameGlob )
@@ -248,6 +255,16 @@ class Quantsifier():
                     resample.SetInterpolator( sitk.sitkLabelGaussian )
                     subLabels = resample.Execute(nImg)
                     maskedLabels = self.ApplyNetworkMasking(network, subLabels)
+                    if not self.outputDirectory is None:
+                        path = os.path.join( self.outputDirectory, 'sub-'+self.constants['id'], 'ses-'+self.constants['date'])
+                        prefix = os.path.join( path, 'sub-'+self.constants['id']+"_ses-"+self.constants['date'] )
+                        fName1 = prefix + '_' + nDef['Identifier'] + '_original.nii.gz'
+                        fName2 = prefix + '_' + nDef['Identifier'] + '_masked.nii.gz'
+                        if not os.path.exists(path):
+                            os.makedirs(path)
+
+                        sitk.WriteImage( subLabels, fName1)
+                        sitk.WriteImage( maskedLabels, fName2 )
                 else:
                     print("ERROR: No template transform found")
 
