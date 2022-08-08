@@ -31,11 +31,11 @@
       "Name": "Hemisphere",
       "Values": [
         {
-          "Name": "left",
+          "Name": "left,",
           "Abbreviation": "lr"
         },
         {
-          "Name": "right",
+          "Name": "right,",
           "Abbreviation": "rh"
         },
         {
@@ -122,7 +122,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -149,7 +149,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -176,7 +176,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -203,7 +203,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -230,7 +230,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -257,7 +257,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -284,7 +284,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -311,7 +311,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right"
+          "Value": "right,"
         },
         {
           "Name": "Tissue",
@@ -338,7 +338,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -365,7 +365,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -392,7 +392,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -419,7 +419,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -446,7 +446,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -473,7 +473,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -500,7 +500,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",
@@ -527,7 +527,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left"
+          "Value": "left,"
         },
         {
           "Name": "Tissue",

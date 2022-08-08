@@ -22,8 +22,8 @@ atlasName=atlasName+'v'+version
 print(atlasName)
 
 hemiAbb = { 
-    "LH" : "left",
-    "RH" : "right"
+    "LH" : "left,",
+    "RH" : "right,"
 }
 net7Abb = {
     "Vis" : "visual",
@@ -225,8 +225,8 @@ for abb,name in sorted(regionAbb.items()):
 
 #jOut = json.dumps({"nodes":nodeList})
 hemiGroup = {"Name": "Hemisphere", "Values": []}
-hemiGroup["Values"].append( { "Name": "left", "Abbreviation": "LH"})
-hemiGroup["Values"].append( { "Name": "right", "Abbreviation": "RH"})
+hemiGroup["Values"].append( { "Name": "left,", "Abbreviation": "LH"})
+hemiGroup["Values"].append( { "Name": "right,", "Abbreviation": "RH"})
 hemiGroup["Values"].append( { "Name": "none", "Abbreviation": "none"})
 
 tissueGroup = {"Name": "Tissue", "Values": []}
@@ -240,8 +240,6 @@ tissueGroup["Values"].append( { "Name": "Cerebellum", "Abbreviation": "CBM", "Gr
 
 networkGroup = {"Name": "Network", "Values": networkList}
 regionGroup = {"Name": "Region", "Values": regionList}
-
-
 
 atlasDict["Groups"] = [ hemiGroup, tissueGroup, networkGroup, regionGroup ]
 

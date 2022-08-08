@@ -90,31 +90,38 @@
       "Values": [
         {
           "Name": "control",
-          "Abbreviation": "Cont"
+          "Abbreviation": "Cont",
+          "Order": 6
         },
         {
           "Name": "default",
-          "Abbreviation": "Default"
+          "Abbreviation": "Default",
+          "Order": 7
         },
         {
           "Name": "dorsal attention",
-          "Abbreviation": "DorsAttn"
+          "Abbreviation": "DorsAttn",
+          "Order": 3
         },
         {
           "Name": "limbic",
-          "Abbreviation": "Limbic"
+          "Abbreviation": "Limbic",
+          "Order": 5
         },
         {
           "Name": "salience ventral attention",
-          "Abbreviation": "SalVentAttn"
+          "Abbreviation": "SalVentAttn",
+          "Order": 4
         },
         {
           "Name": "somatomotor",
-          "Abbreviation": "SomMot"
+          "Abbreviation": "SomMot",
+          "Order": 2
         },
         {
           "Name": "visual",
-          "Abbreviation": "Vis"
+          "Abbreviation": "Vis",
+          "Order": 1
         }
       ]
     },
