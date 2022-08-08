@@ -90,71 +90,88 @@
       "Values": [
         {
           "Name": "control A",
-          "Abbreviation": "ContA"
+          "Abbreviation": "ContA",
+          "Order": 12
         },
         {
           "Name": "control B",
-          "Abbreviation": "ContB"
+          "Abbreviation": "ContB",
+          "Order": 13
         },
         {
           "Name": "control C",
-          "Abbreviation": "ContC"
+          "Abbreviation": "ContC",
+          "Order": 11
         },
         {
           "Name": "default A",
-          "Abbreviation": "DefaultA"
+          "Abbreviation": "DefaultA",
+          "Order": 16
         },
         {
           "Name": "default B",
-          "Abbreviation": "DefaultB"
+          "Abbreviation": "DefaultB",
+          "Order": 17
         },
         {
           "Name": "default C",
-          "Abbreviation": "DefaultC"
+          "Abbreviation": "DefaultC",
+          "Order": 15
         },
         {
           "Name": "dorsal attention A",
-          "Abbreviation": "DorsAttnA"
+          "Abbreviation": "DorsAttnA",
+          "Order": 5
         },
         {
           "Name": "dorsal attention B",
-          "Abbreviation": "DorsAttnB"
+          "Abbreviation": "DorsAttnB",
+          "Order": 6
         },
         {
           "Name": "limbic A",
-          "Abbreviation": "LimbicA"
+          "Abbreviation": "LimbicA",
+          "Order": 9
         },
         {
           "Name": "limbic B",
-          "Abbreviation": "LimbicB"
+          "Abbreviation": "LimbicB",
+          "Order": 10
         },
         {
           "Name": "salience ventral attention A",
-          "Abbreviation": "SalVentAttnA"
+          "Abbreviation": "SalVentAttnA",
+          "Order": 7
         },
         {
           "Name": "salience ventral attention B",
-          "Abbreviation": "SalVentAttnB"
+          "Abbreviation": "SalVentAttnB",
+          "Order": 8
         },
         {
           "Name": "somatomotor A",
-          "Abbreviation": "SomMotA"
+          "Abbreviation": "SomMotA",
+          "Order": 3
         },
         {
           "Name": "somatomotor B",
-          "Abbreviation": "SomMotB"
+          "Abbreviation": "SomMotB",
+          "Order": 4
         },
         {
           "Name": "temporal parietal",
-          "Abbreviation": "TempPar"
+          "Abbreviation": "TempPar",
+          "Order": 14
         },
         {
           "Name": "central visual",
-          "Abbreviation": "VisCent"
+          "Abbreviation": "VisCent",
+          "Order": 1
         },
         {
           "Name": "peripheral visual",
-          "Abbreviation": "VisPeri"
+          "Abbreviation": "VisPeri",
+          "Order": 2
         }
       ]
     },
