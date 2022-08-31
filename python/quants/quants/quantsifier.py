@@ -350,7 +350,8 @@ class Quantsifier():
         statDat = []
         for r in nDef['ROI']:
             lbl = r['ImageID']
-        
+            roiName = r['Name']
+       
             rTissueNumbers = []
             if 'Groups' in r:
                 gps = r['Groups']
@@ -358,7 +359,7 @@ class Quantsifier():
                     if g['Name']=="Tissue":
                         rTissueNumbers.append(self.tissueNames[g['Value']])
 
-            print(lbl)
+            print(lbl, roiName)
             print(measureTissueNumbers)
             print(rTissueNumbers)
             tissueOverlap = [value for value in measureTissueNumbers if value in rTissueNumbers]
@@ -367,14 +368,14 @@ class Quantsifier():
             if lbl in labelsInImage:
                 if measureName=="volume":  
                     print("volume for "+str(lbl))
-                    dat = {"system": networkName, "label":lbl, "measure": "volume", "values": {} }
+                    dat = {"system": networkName, "label":lbl, "name": roiName, "measure": "volume", "values": {} }
                     dat['values']['numeric'] = stats.GetPhysicalSize(lbl)
                     print(str(lbl) + " vox = " + str(stats.GetNumberOfPixels(lbl)))
                     #print(str(lbl) + " " + measureName + " = " + str(stats.GetPhysicalSize(lbl)))
                     statDat.append(dat)
                 else:
                     if len(tissueOverlap)>0:
-                        dat = {"system": networkName, "label":lbl, "measure": measureName, "values": {} }
+                        dat = {"system": networkName, "label":lbl, "name": roiName, "measure": measureName, "values": {} }
                         dat['values']['mean'] = float(stats.GetMean(lbl))
                         dat['values']['sd'] = float(stats.GetStandardDeviation(lbl))
                         dat['values']['max'] = float(stats.GetMaximum(lbl))
