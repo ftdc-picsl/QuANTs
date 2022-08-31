@@ -342,6 +342,7 @@ class Quantsifier():
 
 
         stats = sitk.LabelIntensityStatisticsImageFilter()
+        stats.SetGlobalDefaultCoordinateTolerance(1e-04)
         stats.Execute(nImg, measureImg)
         labelsInImage = stats.GetLabels()
         print(labelsInImage)
