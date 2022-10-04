@@ -12,9 +12,12 @@ class Quantsifier():
     def __init__(self):
 
         #super().__init__()
-        logging.basicConfig()
+        logging.basicConfig(
+            format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
+            level=logging.INFO,
+            datefmt='%Y-%m-%d %H:%M:%S')
         self.log = logging.getLogger(__name__)
-        self.log.setLevel(logging.INFO)
+        #self.log.setLevel(logging.INFO)
 
         self.tissueNames = { "Other": 0, "CorticalSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
 
