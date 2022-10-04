@@ -98,9 +98,9 @@ if len(inputFiles['mat']) > 0:
 
 
     networks = quants.getNetworks(networkDir)
-    def networkIdentifierFunc(x):
-        return( x['Identifier'])
-    networks.sort(key=networkIdentifierFunc)
+    #def networkIdentifierFunc(x):
+    #    return( x['Identifier'])
+    #networks.sort(key=networkIdentifierFunc)
 
     # Add networks with labels in NATIVE space (ie no template labels exist)
     for n in networks:
@@ -129,6 +129,8 @@ if len(inputFiles['mat']) > 0:
                     logging.info("Adding Network: "+n["Identifier"])
                     img = sitk.ReadImage(fname)
                     q.AddNetwork(n,img)
+            else:
+                logging.error("No template image found for "+n['Identifier'])
 
     #x = quants.getFTDCQuantsifier(filenames)
     q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
@@ -138,5 +140,6 @@ if len(inputFiles['mat']) > 0:
 
     pd.set_option("display.max_rows", None, "display.max_columns", None)
     stats.to_csv(oFile, index=False, float_format='%.4f')
+    logging.info("Output written to: "+oFile)
 
     #print("Done")
