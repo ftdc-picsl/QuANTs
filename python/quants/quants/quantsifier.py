@@ -270,7 +270,7 @@ class Quantsifier():
                     if nDef['TemplateSpace']==self.template["Identifier"]:
                         fullTx = sitk.CompositeTransform( [self.subjectWarp, self.subjectMat] )
                     else:
-                        templateTx = sitk.ReadTransform(txName[0])
+                        templateTx = sitk.ReadTransform(txName)
                         fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
 
                     resample = sitk.ResampleImageFilter()
