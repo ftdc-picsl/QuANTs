@@ -525,8 +525,11 @@ def getNetworks(directory):
     for f in fnames:
         logging.info("Reading network file: "+f)
         f1 = open(f)
-        networks.append(json.load(f1))
+        x=json.load(f1)
+        networks.append(x)
         f1.close()
+        logging.info("Loaded: "+x['Identifier'])
+
     return(networks)
 
 def getFTDCInputs(directory):
