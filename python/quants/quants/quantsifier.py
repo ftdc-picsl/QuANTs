@@ -318,7 +318,7 @@ class Quantsifier():
                     if len(validTissues) > 0:
                         measuresToUse.append(m)
 
-            print(nDef['Identifier'] + " -> " + str(measuresToUse))
+            #print(nDef['Identifier'] + " -> " + str(measuresToUse))
 
             for mName in measuresToUse:
                 mStats = self.Summarize(network, maskedLabels, mName)
@@ -327,7 +327,7 @@ class Quantsifier():
 
         stats = [ self.EntryToDataFrame(x) for x in stats ]
         self.output=pd.concat(stats)
-        print(self.output)
+        #print(self.output)
     
     def GetOutput(self):
         return self.output
@@ -555,12 +555,9 @@ def getFTDCQuantsifier( imgFiles ):
     for tag in imgFiles.keys():
         if tag != "mat":
             if len(imgFiles[tag])>0:
-                #print("Reading "+imgFiles[tag][0])
                 imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
             else:
                 imgs[tag] = None
-
-
 
     # set images
     q.SetSegmentation(imgs['seg'])
