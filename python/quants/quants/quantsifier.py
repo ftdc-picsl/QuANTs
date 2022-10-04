@@ -19,6 +19,7 @@ class Quantsifier():
         self.log = logging.getLogger(__name__)
         #self.log.setLevel(logging.INFO)
 
+        # Mapping from tissue names to ANTsCT segmentation labels
         self.tissueNames = { "Other": 0, "CorticalSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
 
         self.networks = {}
@@ -58,6 +59,11 @@ class Quantsifier():
     def SetOutputDirectory(self, dir):
         self.outputDirectory = dir
 
+    # Add a scalar image to quantify values in
+    #   measure - itkImage of values to summarize
+    #   name - what to call these values in output files
+    #   tissues - which tissues should these values be examined in
+    #   threshold - values below this are ignored
     def AddMeasure(self, measure, name, tissues, threshold=0.00001):
         if not name in self.measures.keys():
             if self.ValidateInput(measure):
@@ -67,6 +73,8 @@ class Quantsifier():
             else:
                 self.log.error("Validation failed for "+name)
                 
+    # Set the segmentation image (6 tissue)
+    #   segmentation - itkImage
     def SetSegmentation(self, segmentation):
         if self.ValidateInput(segmentation):
             self.segmentation = segmentation
@@ -265,7 +273,7 @@ class Quantsifier():
                         txName=txNames[0]
                 else:
                     self.log.error("Multiple template transforms found")
-                    print(txNames)
+                    #print(txNames)
 
                 if (not txName is None) or (nDef['TemplateSpace']==self.template["Identifier"]):
                     
@@ -295,7 +303,7 @@ class Quantsifier():
                         sitk.WriteImage( subLabels, fName1)
                         sitk.WriteImage( maskedLabels, fName2 )
                 else:
-                    print("ERROR: No template transform found")
+                    self.log.error("No template transform found")
 
             
 
@@ -356,18 +364,17 @@ class Quantsifier():
             measureImg = self.measures[measureName]['image']
             measureTissueNumbers = self.measures[measureName]['tissues']
 
-        print(subjectLabels)
-
-        print( np.unique(sitk.GetArrayFromImage(subjectLabels)) )
+        #print(subjectLabels)
+        #print( np.unique(sitk.GetArrayFromImage(subjectLabels)) )
         nImg = sitk.Cast(subjectLabels, sitk.sitkUInt32)
-        print( np.unique(sitk.GetArrayFromImage(nImg)) )
+        #print( np.unique(sitk.GetArrayFromImage(nImg)) )
 
 
         stats = sitk.LabelIntensityStatisticsImageFilter()
         stats.SetGlobalDefaultCoordinateTolerance(1e-04)
         stats.Execute(nImg, measureImg)
         labelsInImage = stats.GetLabels()
-        print(labelsInImage)
+        #print(labelsInImage)
 
         statDat = []
         for r in nDef['ROI']:
@@ -381,18 +388,18 @@ class Quantsifier():
                     if g['Name']=="Tissue":
                         rTissueNumbers.append(self.tissueNames[g['Value']])
 
-            print(lbl, roiName)
-            print(measureTissueNumbers)
-            print(rTissueNumbers)
+            #print(lbl, roiName)
+            #print(measureTissueNumbers)
+            #print(rTissueNumbers)
             tissueOverlap = [value for value in measureTissueNumbers if value in rTissueNumbers]
-            print(tissueOverlap)
+            #print(tissueOverlap)
 
             if lbl in labelsInImage:
                 if measureName=="volume":  
-                    print("volume for "+str(lbl))
+                    #print("volume for "+str(lbl))
                     dat = {"system": networkName, "label":lbl, "name": roiName, "measure": "volume", "values": {} }
                     dat['values']['numeric'] = stats.GetPhysicalSize(lbl)
-                    print(str(lbl) + " vox = " + str(stats.GetNumberOfPixels(lbl)))
+                    #print(str(lbl) + " vox = " + str(stats.GetNumberOfPixels(lbl)))
                     #print(str(lbl) + " " + measureName + " = " + str(stats.GetPhysicalSize(lbl)))
                     statDat.append(dat)
                 else:
@@ -446,9 +453,7 @@ class Quantsifier():
         return(statList)
 
     def GetStats(self, labelView, labelValues, measureView, measureName):
-        if self.verbose:
-            print("GetStats() ")
-
+        self.log.debug("GetStats()")
         statList = []    
 
         if measureName == "volume":
@@ -459,15 +464,11 @@ class Quantsifier():
         return statList
 
     def LabelStats(self, labelView, number):
-        #if self.verbose:
-        #    print("LabelStats()")
         dat = {"label":number, "measure": "volume", "values": {} }
         dat['values']['numeric'] = self.voxvol*float(np.sum(labelView==number))
         return(dat)
 
     def MeasureStats( self, values, number, measureName ):
-        #if self.verbose:
-        #    print("MeasureStats()")
 
         dat = {"label":number, "measure": measureName, "values": {} }
         #"mean": None, "sd": None, "min": None, "max": None, "median": None, "q1": None, "q3": None}
@@ -568,34 +569,6 @@ def getFTDCQuantsifier( imgFiles ):
     # Add measure named 'thickness' for voxels with segmentation==2
     q.AddMeasure(imgs['thickness'], 'thickness', [2])
     q.AddMeasure(imgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
-
-
-    # Masking rule for subcortical(=4) == include everything except CSF(=1) and Whitematter(=3)
-    #q.AddSegmentationMaskingRule( 4, exclude=[1,3] )
-    #q.AddSegmentationMaskingRule( 5, include=[1,2,3,4,5,6] ) 
-
-
-    # Add ANTsCT segmentation as a labeling system
-    #q.AddLabelingSystem(imgs['seg'], np.asarray([1,2,3,4,5,6]), np.asarray([1,2,3,4,5,6]), 'antsct', ['thickness','intensity0N4'] )
-
-    # Add brainmask as a labeling system
-    #q.AddLabelingSystem(imgs['mask'], np.asarray([1]), np.asarray([1]), 'brain', [None])
-
-    # Subcortical regions
-    #bcLabels = np.unique(itk.GetArrayViewFromImage(imgs['braincolor']))
-    #bcLabels = bcLabels[bcLabels > 0]
-    #q.AddLabelingSystem(imgs['braincolor'], bcLabels,  np.full(len(bcLabels), 4), 'braincolor', [None])
-    #bc=brainColorSubcorticalSystem()
-    #if not imgs['braincolor'] is None:
-    #   q.AddLabelingSystem(imgs['braincolor'], bc[0], bc[1], 'braincolor', [None])
-    
-
-    #for sys in corticalSystemNames():
-    #    if not imgs[sys] is None:
-    #        lbl = imgs[sys]
-    #        cxLabels = np.unique(itk.GetArrayViewFromImage(lbl))
-    #        cxLabels = cxLabels[cxLabels > 0]
-    #        q.AddLabelingSystem(lbl, cxLabels, np.full(len(cxLabels), 2), sys, ['thickness'])
 
     return(q)
 
