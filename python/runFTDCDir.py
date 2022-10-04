@@ -98,7 +98,9 @@ if len(inputFiles['mat']) > 0:
 
 
     networks = quants.getNetworks(networkDir)
-    networks.sort()
+    def networkIdentifierFunc(x):
+        return( x['Identifier'])
+    networks.sort(key=networkIdentifierFunc)
 
     # Add networks with labels in NATIVE space (ie no template labels exist)
     for n in networks:
