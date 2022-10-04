@@ -48,6 +48,8 @@ class Quantsifier():
         self.output = None
         self.outputDiretory = None
 
+        self.saveImages = True
+
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
     def SetLoggingLevel(self, level):
@@ -100,11 +102,9 @@ class Quantsifier():
                         if not tissueNumber in tissueNumbers:
                             tissueNumbers.append( tissueNumber )
                     else:
-                        print("Unknown Tissue Name: " + g['Value'])
-                        print( self.tissueNames )
+                        self.log.warning("Unknown Tissue Name: " + g['Value'])
 
-        print( networkDefinition['Identifier'] + " -> " + str(tissueNumbers) )
-
+        #print( networkDefinition['Identifier'] + " -> " + str(tissueNumbers) )
         self.networks[networkDefinition['Identifier']] = (networkDefinition, networkImage, tissueNumbers)
 
     def SetTemplate(self, templateDefinition, templateDirectory):
@@ -117,7 +117,7 @@ class Quantsifier():
             if self.ValidateSystemLabels(labelImage, regions):
                 self.labels[systemName] = (labelImage, numbers, regions, measures)
                 if self.verbose:
-                    print("Added image labels for system: "+systemName)
+                    self.log.info("Added image labels for system: "+systemName)
 
     def ValidateSystemLabels(self, labels, system):
 
@@ -233,9 +233,9 @@ class Quantsifier():
             nImg = self.networks[network][1]
             nTissues = self.networks[network][2]
 
-            print( "Network: " + nDef['Identifier'] )
-            print( "Network Space: " + nDef['TemplateSpace'] )
-
+            #print( "Network: " + nDef['Identifier'] )
+            #print( "Network Space: " + nDef['TemplateSpace'] )
+            self.log.info("Network: "+nDeg['Identifier']+" in space: "+nDef['TemplateSpace'])
             subLabels = None
             maskedLabels = None
             
@@ -249,10 +249,11 @@ class Quantsifier():
                     prefix = os.path.join( path, 'sub-'+self.constants['id']+"_ses-"+self.constants['date'] )
                     fName1 = prefix + '_' + nDef['Identifier'] + '_original.nii.gz'
                     fName2 = prefix + '_' + nDef['Identifier'] + '_masked.nii.gz'
-                    if not os.path.exists(path):
-                        os.makedirs(path)
-                    sitk.WriteImage( subLabels, fName1)
-                    sitk.WriteImage( maskedLabels, fName2 )
+                    if self.saveImages:
+                        if not os.path.exists(path):
+                            os.makedirs(path)
+                        sitk.WriteImage( subLabels, fName1)
+                        sitk.WriteImage( maskedLabels, fName2 )
 
             # Labels are in an arbitrary space
             else:
@@ -283,7 +284,7 @@ class Quantsifier():
                     resample.SetInterpolator( sitk.sitkLabelGaussian )
                     subLabels = resample.Execute(nImg)
                     maskedLabels = self.ApplyNetworkMasking(network, subLabels)
-                    if not self.outputDirectory is None:
+                    if self.saveImages
                         path = os.path.join( self.outputDirectory, 'sub-'+self.constants['id'], 'ses-'+self.constants['date'])
                         prefix = os.path.join( path, 'sub-'+self.constants['id']+"_ses-"+self.constants['date'] )
                         fName1 = prefix + '_' + nDef['Identifier'] + '_original.nii.gz'
@@ -337,7 +338,8 @@ class Quantsifier():
 
         df.insert(len(self.constants.keys()), 'system', [stats['system']]*nRow )
         df.insert(1+len(self.constants.keys()), 'label', [stats['label']]*nRow )
-        df.insert(2+len(self.constants.keys()), 'measure', [stats['measure']]*nRow )        
+        df.insert(2+len(self.constants.keys()), 'name', [stats['name']]*nRow )
+        df.insert(3+len(self.constants.keys()), 'measure', [stats['measure']]*nRow )        
 
         return(df)
 
