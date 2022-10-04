@@ -284,7 +284,7 @@ class Quantsifier():
                     resample.SetInterpolator( sitk.sitkLabelGaussian )
                     subLabels = resample.Execute(nImg)
                     maskedLabels = self.ApplyNetworkMasking(network, subLabels)
-                    if self.saveImages
+                    if self.saveImages:
                         path = os.path.join( self.outputDirectory, 'sub-'+self.constants['id'], 'ses-'+self.constants['date'])
                         prefix = os.path.join( path, 'sub-'+self.constants['id']+"_ses-"+self.constants['date'] )
                         fName1 = prefix + '_' + nDef['Identifier'] + '_original.nii.gz'
