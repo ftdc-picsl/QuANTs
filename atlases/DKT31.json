@@ -1,7 +1,7 @@
 {
   "Name": "DKT31",
   "Identifier": "DKT31",
-  "Filename": "*DKT31*",
+  "Filename": "tpl-TustisonAging2019ANTs_res-01_atlas-DKT_desc-31_dseg.nii.gz",
   "Version": "1",
   "Release": "1",
   "Git-Repo": "",
@@ -12,7 +12,7 @@
   ],
   "QuantsVersion": "1.0",
   "BIDSVersion": "1.0",
-  "TemplateSpace": "NATIVE",
+  "TemplateSpace": "TustisonAging2019ANTs",
   "res": "01",
   "Species": "Homo sapiens",
   "Authors": "",
