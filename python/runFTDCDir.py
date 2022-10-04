@@ -37,8 +37,6 @@ oFile = sys.argv[5]
 
 q = quants.Quantsifier()
 
-#q.templateImg = sitk.ReadImage("/Users/jtduda/projects/Grossman/tpl-TustisonAging2019ANTs/tpl-TustisonAging2019ANTs_res-01_T1w.nii.gz")
-
 templateDir = os.path.dirname(os.path.abspath(template))
 templateF = open(template)
 templateDef = json.load(templateF)
@@ -49,13 +47,12 @@ q.SetTemplate(templateDef, templateDir)
 
 bidsInfo = parsePath(dir)
 inputFiles =  quants.getFTDCInputs(dir)
-#print(inputFiles)
 inputImgs = {}
 for tag in inputFiles.keys():
     if tag != 'mat':
         if tag != 'warp':
             if len(inputFiles[tag])>0:
-                print("Reading "+inputFiles[tag][0])
+                #print("Reading "+inputFiles[tag][0])
                 inputImgs[tag] = sitk.ReadImage(inputFiles[tag][0])
             else:
                 inputImgs[tag] = None
@@ -136,7 +133,6 @@ if len(inputFiles['mat']) > 0:
     stats = q.GetOutput()
 
     pd.set_option("display.max_rows", None, "display.max_columns", None)
-    #ofile = os.path.join(oFile, bidsInfo[0]+"_"+bidsInfo[1]+"_quants.csv")
     stats.to_csv(oFile, index=False, float_format='%.4f')
 
     #print("Done")

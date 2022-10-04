@@ -203,7 +203,7 @@ class Quantsifier():
 
     def ApplyNetworkMasking(self, networkName, labels):
 
-        print("Masking "+networkName)
+        #print("Masking "+networkName)
         nDef = self.networks[networkName][0]
         origLabels = sitk.Cast(labels, sitk.sitkUInt32)
         maskedLabels = origLabels * 0
