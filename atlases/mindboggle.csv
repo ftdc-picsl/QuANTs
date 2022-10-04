@@ -1,0 +1,202 @@
+"number","common","name","abbreviation","hemisphere","lobe","cortex","bilateral"
+1,0,"unlabeled",NA,NA,NA,0,NA
+2,0,"aals",NA,NA,NA,NA,NA
+3,0,"ahls",NA,NA,NA,NA,NA
+4,1,"3rd ventricle",NA,NA,"ventricle",0,NA
+5,0,"calcarine",NA,NA,NA,NA,NA
+6,0,"central",NA,NA,NA,NA,NA
+7,0,"central insular",NA,NA,NA,NA,NA
+8,0,"cingulate",NA,NA,NA,NA,NA
+9,0,"circular",NA,NA,NA,NA,NA
+10,0,"collateral",NA,NA,NA,NA,NA
+11,1,"4th ventricle",NA,NA,"ventricle",0,NA
+12,0,"first transverse",NA,NA,NA,NA,NA
+13,0,"heschls",NA,NA,NA,NA,NA
+14,0,"inferior frontal",NA,NA,NA,NA,NA
+15,0,"5th ventricle",NA,NA,"ventricle",0,NA
+16,0,"intraparietal",NA,NA,NA,NA,NA
+17,0,"primary inter",NA,NA,NA,NA,NA
+18,0,"lateral occipital",NA,NA,NA,NA,NA
+19,0,"occ temporal",NA,NA,NA,NA,NA
+20,0,"olfactory",NA,NA,NA,NA,NA
+21,0,"par occipital",NA,NA,NA,NA,NA
+22,0,"pals",NA,NA,NA,NA,NA
+23,1,"accumbens area",NA,"right","subcortical",0,NA
+24,0,"phls",NA,NA,NA,NA,NA
+25,0,"postcentral",NA,NA,NA,NA,NA
+26,0,"precentral",NA,NA,NA,NA,NA
+27,0,"subparietal",NA,NA,NA,NA,NA
+28,0,"superior frontal",NA,NA,NA,NA,NA
+29,0,"superior temporal",NA,NA,NA,NA,NA
+30,1,"accumbens area",NA,"left","subcortical",0,NA
+31,1,"amygdala",NA,"right","subcortical",0,NA
+32,1,"amygdala",NA,"left","subcortical",0,NA
+33,0,"amygdala anterior",NA,"right","subcortical",0,NA
+34,0,"amygdala anterior",NA,"left","subcortical",0,NA
+35,1,"brain stem",NA,NA,"subcortical",0,NA
+36,1,"caudate",NA,"right","subcortical",0,NA
+37,1,"caudate",NA,"left","subcortical",0,NA
+38,1,"cerebellum exterior",NA,"right","cerebellum",0,NA
+39,1,"cerebellum exterior",NA,"left","cerebellum",0,NA
+40,1,"cerebellum white matter",NA,"right","cerebellum",0,NA
+41,1,"cerebellum white matter",NA,"left","cerebellum",0,NA
+42,0,"cerebral exterior",NA,"right",NA,0,NA
+43,0,"cerebral exterior",NA,"left",NA,0,NA
+44,1,"cerebral white matter",NA,"right",NA,0,NA
+45,1,"cerebral white matter",NA,"left",NA,0,NA
+46,1,"csf",NA,NA,NA,0,NA
+47,1,"hippocampus",NA,"right","subcortical",0,NA
+48,1,"hippocampus",NA,"left","subcortical",0,NA
+49,1,"inf lat vent",NA,"right","ventricle",0,NA
+50,1,"inf lat vent",NA,"left","ventricle",0,NA
+51,1,"lateral ventricle",NA,"right","ventricle",0,NA
+52,1,"lateral ventricle",NA,"left","ventricle",0,NA
+53,0,"lesion",NA,"right",NA,0,NA
+54,0,"lesion",NA,"left",NA,0,NA
+55,1,"pallidum",NA,"right","subcortical",0,NA
+56,1,"pallidum",NA,"left","subcortical",0,NA
+57,1,"putamen",NA,"right","subcortical",0,NA
+58,1,"putamen",NA,"left","subcortical",0,NA
+59,1,"thalamus proper",NA,"right","subcortical",0,NA
+60,1,"thalamus proper",NA,"left","subcortical",0,NA
+61,1,"ventral dc",NA,"right","subcortical",0,NA
+62,1,"ventral dc",NA,"left","subcortical",0,NA
+63,0,"vessel",NA,"right",NA,0,NA
+64,0,"vessel",NA,"left",NA,0,NA
+65,0,"insula",NA,"right","temporal",1,NA
+66,0,"insula",NA,"left","temporal",1,NA
+67,0,"operculum",NA,"right","temporal",1,NA
+68,0,"operculum",NA,"left","temporal",1,NA
+69,1,"optic chiasm",NA,NA,NA,0,NA
+70,0,"basal forebrain",NA,NA,"subcortical",0,NA
+71,1,"cerebellar vermal lobules i-v",NA,NA,"cerebellum",0,NA
+72,1,"cerebellar vermal lobules vi-vii",NA,NA,"cerebellum",0,NA
+73,1,"cerebellar vermal lobules viii-x",NA,NA,"cerebellum",0,NA
+74,0,"vitamin e tablet",NA,NA,NA,0,NA
+75,1,"basal forebrain",NA,"left","subcortical",0,NA
+76,1,"basal forebrain",NA,"right","subcortical",0,NA
+80,0,"frontomarginal",NA,NA,NA,NA,NA
+81,0,"inferior rostral",NA,NA,NA,NA,NA
+82,0,"inferior temporal",NA,NA,NA,NA,NA
+83,0,"lateral orbital",NA,NA,NA,NA,NA
+84,0,"superior rostral",NA,NA,NA,NA,NA
+85,0,"lateral",NA,NA,NA,NA,NA
+86,0,"anterior occipital",NA,NA,NA,NA,NA
+87,0,"lhos",NA,NA,NA,NA,NA
+88,0,"mhos",NA,NA,NA,NA,NA
+89,0,"superior vermal sulcus",NA,NA,NA,NA,NA
+90,0,"central vermal sulcus",NA,NA,NA,NA,NA
+91,0,"inferior vermal sulcus",NA,NA,NA,NA,NA
+92,0,"lateral vermal sulcus",NA,NA,NA,NA,NA
+93,0,"thos",NA,NA,NA,NA,NA
+97,0,"red",NA,NA,NA,NA,NA
+98,0,"yellow",NA,NA,NA,NA,NA
+99,0,"cyan",NA,NA,NA,NA,NA
+100,1,"anterior cingulate gyrus","ACgG","right","limbic",1,"1"
+101,1,"anterior cingulate gyrus","ACgG","left","limbic",1,"1"
+102,1,"anterior insula","Alns","right","insular",1,"2"
+103,1,"anterior insula","Alns","left","insular",1,"2"
+104,1,"anterior orbital gyrus","AOrG","right","frontal",1,"3"
+105,1,"anterior orbital gyrus","AOrG","left","frontal",1,"3"
+106,1,"angular gyrus","AnG","right","parietal",1,"4"
+107,1,"angular gyrus","AnG","left","parietal",1,"4"
+108,1,"calcarine cortex","Calc","right","occipital",1,"5"
+109,1,"calcarine cortex","Calc","left","occipital",1,"5"
+110,0,"cingulate gyrus","CgG","right",NA,1,NA
+111,0,"cingulate gyrus","CgG","left",NA,1,NA
+112,1,"central operculum","CO","right","frontal",1,"6"
+113,1,"central operculum","CO","left","frontal",1,"6"
+114,1,"cuneus","Cun","right","occipital",1,"7"
+115,1,"cuneus","Cun","left","occipital",1,"7"
+116,1,"entorhinal area","Ent","right","limbic",1,"8"
+117,1,"entorhinal area","Ent","left","limbic",1,"8"
+118,1,"frontal operculum","FO","right","frontal",1,"9"
+119,1,"frontal operculum","FO","left","frontal",1,"9"
+120,1,"frontal pole","FRP","right","frontal",1,"10"
+121,1,"frontal pole","FRP","left","frontal",1,"10"
+122,1,"fusiform gyrus","FuG","right","temporal",1,"11"
+123,1,"fusiform gyrus","FuG","left","temporal",1,"11"
+124,1,"gyrus rectus","GRe","right","frontal",1,"12"
+125,1,"gyrus rectus","GRe","left","frontal",1,"12"
+126,0,"inferior frontal gyrus","IFG","right","frontal",1,NA
+127,0,"inferior frontal gyrus","IFG","left","frontal",1,NA
+128,1,"inferior occipital gyrus","IOG","right","occipital",1,"13"
+129,1,"inferior occipital gyrus","IOG","left","occipital",1,"13"
+130,0,"intermediate orbital gyrus","IOrG","right",NA,1,NA
+131,0,"intermediate orbital gyrus","IOrG","left",NA,1,NA
+132,1,"inferior temporal gyrus","ITG","right","temporal",1,"14"
+133,1,"inferior temporal gyrus","ITG","left","temporal",1,"14"
+134,1,"lingual gyrus","LiG","right","occipital",1,"15"
+135,1,"lingual gyrus","LiG","left","occipital",1,"15"
+136,1,"lateral orbital gyrus","LOrG","right","frontal",1,"16"
+137,1,"lateral orbital gyrus","LOrG","left","frontal",1,"16"
+138,1,"middle cingulate gyrus","MGgG","right","limbic",1,"17"
+139,1,"middle cingulate gyrus","MGgG","left","limbic",1,"17"
+140,1,"medial frontal cortex","MFC","right","frontal",1,"18"
+141,1,"medial frontal cortex","MFC","left","frontal",1,"18"
+142,1,"middle frontal gyrus","MFG","right","frontal",1,"19"
+143,1,"middle frontal gyrus","MFG","left","frontal",1,"19"
+144,1,"middle occipital gyrus","MOG","right","occipital",1,"20"
+145,1,"middle occipital gyrus","MOG","left","occipital",1,"20"
+146,1,"medial orbital gyrus","MOrG","right","frontal",1,"21"
+147,1,"medial orbital gyrus","MOrG","left","frontal",1,"21"
+148,1,"postcentral gyrus medial segment","MPoG","right","parietal",1,"22"
+149,1,"postcentral gyrus medial segment","MPoG","left","parietal",1,"22"
+150,1,"precentral gyrus medial segment","MPrG","right","frontal",1,"23"
+151,1,"precentral gyrus medial segment","MPrG","left","frontal",1,"23"
+152,1,"superior frontal gyrus medial segment","MSFG","right","frontal",1,"24"
+153,1,"superior frontal gyrus medial segment","MSFG","left","frontal",1,"24"
+154,1,"middle temporal gyrus","MTG","right","temporal",1,"25"
+155,1,"middle temporal gyrus","MTG","left","temporal",1,"25"
+156,1,"occipital pole","OCP","right","occipital",1,"26"
+157,1,"occipital pole","OCP","left","occipital",1,"26"
+158,0,"orbitofrontal cortex","OFC","right","frontal",1,NA
+159,0,"orbitofrontal cortex","OFC","left","frontal",1,NA
+160,1,"occipital fusiform gyrus","OFuG","right","occipital",1,"27"
+161,1,"occipital fusiform gyrus","OFuG","left","occipital",1,"27"
+162,1,"opercular part of the inferior frontal gyrus","OpIFG","right","frontal",1,"28"
+163,1,"opercular part of the inferior frontal gyrus","OpIFG","left","frontal",1,"28"
+164,1,"orbital part of the inferior frontal gyrus","OrIFG","right","frontal",1,"28"
+165,1,"orbital part of the inferior frontal gyrus","OrIFG","left","frontal",1,"28"
+166,1,"posterior cingulate gyrus","PCgG","right","limbic",1,"29"
+167,1,"posterior cingulate gyrus","PCgG","left","limbic",1,"29"
+168,1,"precuneus","PCu","right","parietal",1,"30"
+169,1,"precuneus","PCu","left","parietal",1,"30"
+170,1,"parahippocampal gyrus","PHG","right","limbic",1,"30"
+171,1,"parahippocampal gyrus","PHG","left","limbic",1,"31"
+172,1,"posterior insula","Plns","right","insular",1,"2"
+173,1,"posterior insula","Plns","left","insular",1,"2"
+174,1,"parietal operculum","PO","right","parietal",1,"32"
+175,1,"parietal operculum","PO","left","parietal",1,"32"
+176,1,"postcentral gyrus","PoG","right","parietal",1,"22"
+177,1,"postcentral gyrus","PoG","left","parietal",1,"22"
+178,1,"posterior orbital gyrus","POrG","right","frontal",1,"33"
+179,1,"posterior orbital gyrus","POrG","left","frontal",1,"33"
+180,1,"planum polare","PP","right","frontal",1,"34"
+181,1,"planum polare","PP","left","frontal",1,"34"
+182,1,"precentral gyrus","PrG","right","frontal",1,"35"
+183,1,"precentral gyrus","PrG","left","frontal",1,"35"
+184,1,"planum temporale","PT","right","temporal",1,"36"
+185,1,"planum temporale","PT","left","temporal",1,"36"
+186,1,"subcallosal area","SCA","right","frontal",1,"12"
+187,1,"subcallosal area","SCA","left","frontal",1,"12"
+188,0,"supracalcarine cortex","SCLC","right",NA,1,NA
+189,0,"supracalcarine cortex","SCLC","left",NA,1,NA
+190,1,"superior frontal gyrus","SFG","right","frontal",1,"37"
+191,1,"superior frontal gyrus","SFG","left","frontal",1,"37"
+192,1,"supplementary motor cortex","SMC","right","frontal",1,"38"
+193,1,"supplementary motor cortex","SMC","left","frontal",1,"38"
+194,1,"supramarginal gyrus","SMG","right","parietal",1,"39"
+195,1,"supramarginal gyrus","SMG","left","parietal",1,"39"
+196,1,"superior occipital gyrus","SOG","right","occipital",1,"40"
+197,1,"superior occipital gyrus","SOG","left","occipital",1,"40"
+198,1,"superior parietal lobule","SPL","right","parietal",1,"41"
+199,1,"superior parietal lobule","SPL","left","parietal",1,"41"
+200,1,"superior temporal gyrus","STG","right","temporal",1,"42"
+201,1,"superior temporal gyrus","STG","left","temporal",1,"42"
+202,1,"temporal pole","TMP","right","temporal",1,"43"
+203,1,"temporal pole","TMP","left","temporal",1,"43"
+204,1,"triangular part of the inferior frontal gyrus","TrlFG","right","frontal",1,"44"
+205,1,"triangular part of the inferior frontal gyrus","TrlFG","left","frontal",1,"44"
+206,1,"transverse temporal gyrus","TTG","right","temporal",1,"45"
+207,1,"transverse temporal gyrus","TTG","left","temporal",1,"45"

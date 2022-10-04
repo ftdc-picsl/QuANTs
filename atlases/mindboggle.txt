@@ -1,0 +1,506 @@
+      "Name": "Region",
+      "Values": [
+        {
+          "Name": "3rd ventricle",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "4th ventricle",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "5th ventricle",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "aals",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "accumbens area",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "ahls",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "amygdala",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "amygdala anterior",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "angular gyrus",
+          "Abbreviation": "AnG"
+        },
+        {
+          "Name": "anterior cingulate gyrus",
+          "Abbreviation": "ACgG"
+        },
+        {
+          "Name": "anterior insula",
+          "Abbreviation": "Alns"
+        },
+        {
+          "Name": "anterior occipital",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "anterior orbital gyrus",
+          "Abbreviation": "AOrG"
+        },
+        {
+          "Name": "basal forebrain",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "brain stem",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "calcarine",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "calcarine cortex",
+          "Abbreviation": "Calc"
+        },
+        {
+          "Name": "caudate",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "central",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "central insular",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "central operculum",
+          "Abbreviation": "CO"
+        },
+        {
+          "Name": "central vermal sulcus",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebellar vermal lobules i-v",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebellar vermal lobules vi-vii",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebellar vermal lobules viii-x",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebellum exterior",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebellum white matter",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebral exterior",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cerebral white matter",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cingulate",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cingulate gyrus",
+          "Abbreviation": "CgG"
+        },
+        {
+          "Name": "circular",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "collateral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "csf",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "cuneus",
+          "Abbreviation": "Cun"
+        },
+        {
+          "Name": "cyan",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "entorhinal area",
+          "Abbreviation": "Ent"
+        },
+        {
+          "Name": "first transverse",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "frontal operculum",
+          "Abbreviation": "FO"
+        },
+        {
+          "Name": "frontal pole",
+          "Abbreviation": "FRP"
+        },
+        {
+          "Name": "frontomarginal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "fusiform gyrus",
+          "Abbreviation": "FuG"
+        },
+        {
+          "Name": "gyrus rectus",
+          "Abbreviation": "GRe"
+        },
+        {
+          "Name": "heschls",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "hippocampus",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "inf lat vent",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "inferior frontal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "inferior frontal gyrus",
+          "Abbreviation": "IFG"
+        },
+        {
+          "Name": "inferior occipital gyrus",
+          "Abbreviation": "IOG"
+        },
+        {
+          "Name": "inferior rostral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "inferior temporal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "inferior temporal gyrus",
+          "Abbreviation": "ITG"
+        },
+        {
+          "Name": "inferior vermal sulcus",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "insula",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "intermediate orbital gyrus",
+          "Abbreviation": "IOrG"
+        },
+        {
+          "Name": "intraparietal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lateral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lateral occipital",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lateral orbital",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lateral orbital gyrus",
+          "Abbreviation": "LOrG"
+        },
+        {
+          "Name": "lateral ventricle",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lateral vermal sulcus",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lesion",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lhos",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "lingual gyrus",
+          "Abbreviation": "LiG"
+        },
+        {
+          "Name": "medial frontal cortex",
+          "Abbreviation": "MFC"
+        },
+        {
+          "Name": "medial orbital gyrus",
+          "Abbreviation": "MOrG"
+        },
+        {
+          "Name": "mhos",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "middle cingulate gyrus",
+          "Abbreviation": "MGgG"
+        },
+        {
+          "Name": "middle frontal gyrus",
+          "Abbreviation": "MFG"
+        },
+        {
+          "Name": "middle occipital gyrus",
+          "Abbreviation": "MOG"
+        },
+        {
+          "Name": "middle temporal gyrus",
+          "Abbreviation": "MTG"
+        },
+        {
+          "Name": "occ temporal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "occipital fusiform gyrus",
+          "Abbreviation": "OFuG"
+        },
+        {
+          "Name": "occipital pole",
+          "Abbreviation": "OCP"
+        },
+        {
+          "Name": "olfactory",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "opercular part of the inferior frontal gyrus",
+          "Abbreviation": "OpIFG"
+        },
+        {
+          "Name": "operculum",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "optic chiasm",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "orbital part of the inferior frontal gyrus",
+          "Abbreviation": "OrIFG"
+        },
+        {
+          "Name": "orbitofrontal cortex",
+          "Abbreviation": "OFC"
+        },
+        {
+          "Name": "pallidum",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "pals",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "par occipital",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "parahippocampal gyrus",
+          "Abbreviation": "PHG"
+        },
+        {
+          "Name": "parietal operculum",
+          "Abbreviation": "PO"
+        },
+        {
+          "Name": "phls",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "planum polare",
+          "Abbreviation": "PP"
+        },
+        {
+          "Name": "planum temporale",
+          "Abbreviation": "PT"
+        },
+        {
+          "Name": "postcentral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "postcentral gyrus",
+          "Abbreviation": "PoG"
+        },
+        {
+          "Name": "postcentral gyrus medial segment",
+          "Abbreviation": "MPoG"
+        },
+        {
+          "Name": "posterior cingulate gyrus",
+          "Abbreviation": "PCgG"
+        },
+        {
+          "Name": "posterior insula",
+          "Abbreviation": "Plns"
+        },
+        {
+          "Name": "posterior orbital gyrus",
+          "Abbreviation": "POrG"
+        },
+        {
+          "Name": "precentral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "precentral gyrus",
+          "Abbreviation": "PrG"
+        },
+        {
+          "Name": "precentral gyrus medial segment",
+          "Abbreviation": "MPrG"
+        },
+        {
+          "Name": "precuneus",
+          "Abbreviation": "PCu"
+        },
+        {
+          "Name": "primary inter",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "putamen",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "red",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "subcallosal area",
+          "Abbreviation": "SCA"
+        },
+        {
+          "Name": "subparietal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "superior frontal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "superior frontal gyrus",
+          "Abbreviation": "SFG"
+        },
+        {
+          "Name": "superior frontal gyrus medial segment",
+          "Abbreviation": "MSFG"
+        },
+        {
+          "Name": "superior occipital gyrus",
+          "Abbreviation": "SOG"
+        },
+        {
+          "Name": "superior parietal lobule",
+          "Abbreviation": "SPL"
+        },
+        {
+          "Name": "superior rostral",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "superior temporal",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "superior temporal gyrus",
+          "Abbreviation": "STG"
+        },
+        {
+          "Name": "superior vermal sulcus",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "supplementary motor cortex",
+          "Abbreviation": "SMC"
+        },
+        {
+          "Name": "supracalcarine cortex",
+          "Abbreviation": "SCLC"
+        },
+        {
+          "Name": "supramarginal gyrus",
+          "Abbreviation": "SMG"
+        },
+        {
+          "Name": "temporal pole",
+          "Abbreviation": "TMP"
+        },
+        {
+          "Name": "thalamus proper",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "thos",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "transverse temporal gyrus",
+          "Abbreviation": "TTG"
+        },
+        {
+          "Name": "triangular part of the inferior frontal gyrus",
+          "Abbreviation": "TrlFG"
+        },
+        {
+          "Name": "unlabeled",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "ventral dc",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "vessel",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "vitamin e tablet",
+          "Abbreviation": "NA"
+        },
+        {
+          "Name": "yellow",
+          "Abbreviation": "NA"
+        },
