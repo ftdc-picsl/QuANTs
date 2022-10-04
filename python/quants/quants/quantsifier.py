@@ -254,9 +254,15 @@ class Quantsifier():
             # Labels are in an arbitrary space
             else:
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
-                txName = glob.glob( txNameGlob )
-            
-                if os.path.exists(txName[0]) or (nDef['TemplateSpace']==self.template["Identifier"]):
+                txName=None
+                txNames = glob.glob( txNameGlob )
+                if len(txNames)==1:
+                    if os.path.exists(txNames[0]):
+                        txName=txNames[0]
+                else:
+                    self.log.error("Multiple template transforms found")
+
+                if (not txName is None) or (nDef['TemplateSpace']==self.template["Identifier"]):
                     
                     fullTx=None
 
