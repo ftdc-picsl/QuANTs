@@ -235,7 +235,7 @@ class Quantsifier():
 
             #print( "Network: " + nDef['Identifier'] )
             #print( "Network Space: " + nDef['TemplateSpace'] )
-            self.log.info("Network: "+nDeg['Identifier']+" in space: "+nDef['TemplateSpace'])
+            self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
             subLabels = None
             maskedLabels = None
             
