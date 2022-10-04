@@ -261,6 +261,7 @@ class Quantsifier():
                         txName=txNames[0]
                 else:
                     self.log.error("Multiple template transforms found")
+                    print(txNames)
 
                 if (not txName is None) or (nDef['TemplateSpace']==self.template["Identifier"]):
                     
