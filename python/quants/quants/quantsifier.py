@@ -256,14 +256,15 @@ class Quantsifier():
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName = glob.glob( txNameGlob )
             
-                if os.path.exists(txName[0]):
-                    templateTx = sitk.ReadTransform(txName[0])
+                if os.path.exists(txName[0]) or (nDef['TemplateSpace']==self.template["Identifier"]):
+                    
                     fullTx=None
 
                     # Get transform from label space to subject space
                     if nDef['TemplateSpace']==self.template["Identifier"]:
                         fullTx = sitk.CompositeTransform( [self.subjectWarp, self.subjectMat] )
                     else:
+                        templateTx = sitk.ReadTransform(txName[0])
                         fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
 
                     resample = sitk.ResampleImageFilter()
