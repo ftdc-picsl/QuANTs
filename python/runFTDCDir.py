@@ -105,9 +105,9 @@ if len(inputFiles['mat']) > 0:
         templateSpace = n['TemplateSpace']
 
         if templateSpace=='NATIVE':
-            logging.info("Looking for NATIVE labels matching: "+n['Filename'])
+            #logging.info("Looking for NATIVE labels matching: "+n['Filename'])
             nativeLabelName = glob.glob( os.path.join(dir, n['Filename']))
-            logging.info(nativeLabelName)
+            #logging.info(nativeLabelName)
 
             if len(nativeLabelName)==1:
                 img = sitk.ReadImage(nativeLabelName[0])
@@ -117,6 +117,8 @@ if len(inputFiles['mat']) > 0:
                     logging.warning("No NATIVE label image found")
                 else:
                     logging.warning("Could not find a unique file for NATIVE labels")
+                    for nm in nativeLabelName:
+                        logging.warning("  tx="+nm)
 
         else:
             if 'Filename' in n:
