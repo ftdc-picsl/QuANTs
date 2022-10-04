@@ -268,12 +268,11 @@ class Quantsifier():
                 if len(txNames)==1:
                     if os.path.exists(txNames[0]):
                         txName=txNames[0]
-                elif len(txNames)==0:
-                    self.log.error("No template transform found for "+nDef['Identifier'])
                 else:
-                    self.log.error("Multiple template transforms found")
-                    for t in txNames:
-                        self.log.error("  template transform: "+t)
+                    if len(txNames) > 1:
+                        self.log.error("Multiple template transforms found")
+                        for t in txNames:
+                            self.log.error("  template transform: "+t)
 
                 if (not txName is None) or (nDef['TemplateSpace']==self.template["Identifier"]):
                     
