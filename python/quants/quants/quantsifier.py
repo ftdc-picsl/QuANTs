@@ -233,16 +233,12 @@ class Quantsifier():
             return False
 
         stats = []
-
         self.log.info("Summarizing "+str(len(self.networks.keys()))+ " networks" )
         for network in self.networks.keys():
-            print(network)
             nDef = self.networks[network][0]
             nImg = self.networks[network][1]
             nTissues = self.networks[network][2]
 
-            #print( "Network: " + nDef['Identifier'] )
-            #print( "Network Space: " + nDef['TemplateSpace'] )
             self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
             subLabels = None
             maskedLabels = None
@@ -273,7 +269,8 @@ class Quantsifier():
                         txName=txNames[0]
                 else:
                     self.log.error("Multiple template transforms found")
-                    #print(txNames)
+                    for t in txNames:
+                        self.log.error("  template transform: "+t)
 
                 if (not txName is None) or (nDef['TemplateSpace']==self.template["Identifier"]):
                     
