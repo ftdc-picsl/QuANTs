@@ -9,6 +9,7 @@ import os
 import sys
 import json
 import glob
+import logging
 
 
 def parsePath( path ):
@@ -21,6 +22,12 @@ def parsePath( path ):
     ses = sesTag.split('-')[1]
 
     return((id,ses))
+
+
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    datefmt='%Y-%m-%d %H:%M:%S')
 
 dir = sys.argv[1]
 template = sys.argv[2]
@@ -42,7 +49,7 @@ q.SetTemplate(templateDef, templateDir)
 
 bidsInfo = parsePath(dir)
 inputFiles =  quants.getFTDCInputs(dir)
-print(inputFiles)
+#print(inputFiles)
 inputImgs = {}
 for tag in inputFiles.keys():
     if tag != 'mat':
@@ -63,7 +70,7 @@ if len(inputFiles['mat']) > 0:
 
 
     if 'thickness' in inputImgs:
-        print("Apply thickness masking")
+        logging.info("Apply thickness masking")
         thickMask = sitk.BinaryThreshold(inputImgs['thickness'], lowerThreshold=0.0001 )
         thickMask = sitk.Cast(thickMask, sitk.sitkUInt32)
         cortex = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
@@ -97,28 +104,28 @@ if len(inputFiles['mat']) > 0:
 
     # Add networks with labels in NATIVE space (ie no template labels exist)
     for n in networks:
-        print( n['Identifier'])
+        logging.info( n['Identifier'])
         templateSpace = n['TemplateSpace']
 
         if templateSpace=='NATIVE':
-            print("Looking for NATIVE labels matching: "+n['Filename'])
+            logging.info("Looking for NATIVE labels matching: "+n['Filename'])
             nativeLabelName = glob.glob( os.path.join(dir, n['Filename']))
-            print(nativeLabelName)
+            logging.info(nativeLabelName)
 
             if len(nativeLabelName)==1:
                 img = sitk.ReadImage(nativeLabelName[0])
                 q.AddNetwork(n,img)
             else:
                 if len(nativeLabelName)==0:
-                    print("WARNING: No NATIVE label image found")
+                    logging.warning("No NATIVE label image found")
                 else:
-                    print("WARNING: Could not find a unique file for NATIVE labels")
+                    logging.warning("Could not find a unique file for NATIVE labels")
 
         else:
             if 'Filename' in n:
                 fname = os.path.join(networkImageDir, n['Filename'])
                 if os.path.exists(fname):
-                    print("Adding Network: "+n["Identifier"])
+                    logging.info("Adding Network: "+n["Identifier"])
                     img = sitk.ReadImage(fname)
                     q.AddNetwork(n,img)
 
