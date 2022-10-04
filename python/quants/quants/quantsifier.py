@@ -264,9 +264,12 @@ class Quantsifier():
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName=None
                 txNames = glob.glob( txNameGlob )
+
                 if len(txNames)==1:
                     if os.path.exists(txNames[0]):
                         txName=txNames[0]
+                elif len(txNames)==0:
+                    self.log.error("No template transform found for "+nDef['Identifier'])
                 else:
                     self.log.error("Multiple template transforms found")
                     for t in txNames:

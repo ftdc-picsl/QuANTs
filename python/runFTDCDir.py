@@ -101,7 +101,6 @@ if len(inputFiles['mat']) > 0:
 
     # Add networks with labels in NATIVE space (ie no template labels exist)
     for n in networks:
-        logging.info( n['Identifier'])
         templateSpace = n['TemplateSpace']
 
         if templateSpace=='NATIVE':
@@ -116,9 +115,9 @@ if len(inputFiles['mat']) > 0:
                 if len(nativeLabelName)==0:
                     logging.warning("No NATIVE label image found")
                 else:
-                    logging.warning("Could not find a unique file for NATIVE labels")
+                    logging.warning(n['Identifier']+" does not have unique label image")
                     for nm in nativeLabelName:
-                        logging.warning("  tx="+nm)
+                        logging.warning("  lbl="+nm)
 
         else:
             if 'Filename' in n:
