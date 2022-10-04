@@ -523,6 +523,7 @@ def getNetworks(directory):
     fnames = glob.glob(os.path.join(directory, "*.json"))
     networks = []
     for f in fnames:
+        logging.info("Reading network file: "+f)
         f1 = open(f)
         networks.append(json.load(f1))
         f1.close()
