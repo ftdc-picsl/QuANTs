@@ -215,10 +215,10 @@ class Quantsifier():
         self.log.info("Update()")
 
         if None in [self.mask, self.segmentation]:
-            print("Missing inputs")
+            self.log.error("Missing inputs")
             return False
         if len(self.networks)==0:
-            print("No networks")
+            self.log.error("No networks")
             return False
 
         stats = []
@@ -236,6 +236,7 @@ class Quantsifier():
             subLabels = None
             maskedLabels = None
             
+            # Labels are already in the subject space
             if nDef['TemplateSpace']=='NATIVE':
                 subLabels = nImg 
                 maskedLabels = self.ApplyNetworkMasking(network, subLabels)
@@ -249,13 +250,21 @@ class Quantsifier():
                         os.makedirs(path)
                     sitk.WriteImage( subLabels, fName1)
                     sitk.WriteImage( maskedLabels, fName2 )
+
+            # Labels are in an arbitrary space
             else:
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName = glob.glob( txNameGlob )
             
                 if os.path.exists(txName[0]):
                     templateTx = sitk.ReadTransform(txName[0])
-                    fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
+                    fullTx=None
+
+                    # Get transform from label space to subject space
+                    if nDef['TemplateSpace']==self.template["Identifier"]:
+                        fullTx = sitk.CompositeTransform( [self.subjectWarp, self.subjectMat] )
+                    else:
+                        fullTx = sitk.CompositeTransform( [templateTx, self.subjectWarp, self.subjectMat] )
 
                     resample = sitk.ResampleImageFilter()
                     resample.SetReferenceImage( self.segmentation )
