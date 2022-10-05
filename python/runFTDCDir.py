@@ -15,7 +15,7 @@ import argparse
 
 def parsePath( path ):
 
-    dirParts = os.path.split(dir.rstrip('/'))
+    dirParts = os.path.split(path.rstrip('/'))
     sesTag = dirParts[1]
     subTag = os.path.split(dirParts[0])[1]
 
@@ -48,6 +48,7 @@ def main():
     #networkImageDir = sys.argv[4]
     #oFile = sys.argv[5]
     dir = args.antsct_dir
+    print(dir)
     template = args.template
     networkDir = args.atlas_dir
     networkImageDir = args.atlas_images
@@ -61,7 +62,6 @@ def main():
     templateDef = json.load(templateF)
     templateF.close()
     q.SetTemplate(templateDef, templateDir)
-
 
 
     bidsInfo = parsePath(dir)
