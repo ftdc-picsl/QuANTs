@@ -31,7 +31,7 @@ atlasDict = {
     "DevNotes": [""],
     "QuantsVersion" : "1.0",
     "BIDSVersion": "1.0",
-    "TemplateSpace": "tpl-TustisonAging2019ANTs",
+    "TemplateSpace": "TustisonAging2019ANTs",
     "res" : "01",
     "Species": "Homo sapiens",
     "Authors": "",
