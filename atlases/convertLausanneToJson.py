@@ -22,7 +22,7 @@ hemiAbb = {
 atlasDict = {
     "Name": atlasName,
     "Identifier": atlasName,
-    "Filename": "tpl-TustisonAging2019ANTs_atlas-Lausanne_desc-Scale"+scale+"_dseg.nii.gz",
+    "Filename": "tpl-TustisonAging2019ANTs_res-01_atlas-Lausanne_desc-Scale"+scale+"_dseg.nii.gz",
     "Version": version,
     "Release": release,
     "Git-Repo": "",
