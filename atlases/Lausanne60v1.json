@@ -1,0 +1,2980 @@
+{
+  "Name": "Lausanne60v1",
+  "Identifier": "Lausanne60v1",
+  "Filename": "tpl-TustisonAging2019ANTs_atlas-Lausanne_desc-Scale60_dseg.nii.gz",
+  "Version": "1",
+  "Release": "1",
+  "Git-Repo": "",
+  "Git-Commit": "",
+  "Description": "",
+  "DevNotes": [
+    ""
+  ],
+  "QuantsVersion": "1.0",
+  "BIDSVersion": "1.0",
+  "TemplateSpace": "tpl-TustisonAging2019ANTs",
+  "res": "01",
+  "Species": "Homo sapiens",
+  "Authors": "",
+  "Maintainers": "",
+  "ReferenceAndLinks": [
+    "https://doi.org/10.1093/cercor/bhx179"
+  ],
+  "License": "",
+  "Domains": [
+    "Volume",
+    "Cortical",
+    "Functional",
+    "Connectivity"
+  ],
+  "Groups": [
+    {
+      "Name": "Hemisphere",
+      "Values": [
+        {
+          "Name": "left,",
+          "Abbreviation": "LH"
+        },
+        {
+          "Name": "right,",
+          "Abbreviation": "RH"
+        },
+        {
+          "Name": "none",
+          "Abbreviation": "none"
+        }
+      ]
+    },
+    {
+      "Name": "Tissue",
+      "Values": [
+        {
+          "Name": "Other",
+          "Abbreviation": "OTHER",
+          "GroupID": 0
+        },
+        {
+          "Name": "CorticalSpinalFluid",
+          "Abbreviation": "CSF",
+          "GroupID": 1
+        },
+        {
+          "Name": "CorticalGrayMatter",
+          "Abbreviation": "CGM",
+          "GroupID": 2
+        },
+        {
+          "Name": "WhiteMatter",
+          "Abbreviation": "WM",
+          "GroupID": 3
+        },
+        {
+          "Name": "SubcorticalGrayMatter",
+          "Abbreviation": "SCGM",
+          "GroupID": 4
+        },
+        {
+          "Name": "Brainstem",
+          "Abbreviation": "BS",
+          "GroupID": 5
+        },
+        {
+          "Name": "Cerebellum",
+          "Abbreviation": "CBM",
+          "GroupID": 6
+        }
+      ]
+    },
+    {
+      "Name": "Region",
+      "Values": [
+        "lateralorbitofrontal",
+        "parsorbitalis",
+        "frontalpole",
+        "medialorbitofrontal",
+        "parstriangularis",
+        "parsopercularis",
+        "rostralmiddlefrontal",
+        "superiorfrontal",
+        "caudalmiddlefrontal",
+        "precentral",
+        "paracentral",
+        "rostralanteriorcingulate",
+        "caudalanteriorcingulate",
+        "posteriorcingulate",
+        "isthmuscingulate",
+        "postcentral",
+        "supramarginal",
+        "superiorparietal",
+        "inferiorparietal",
+        "precuneus",
+        "cuneus",
+        "pericalcarine",
+        "lateraloccipital",
+        "lingual",
+        "fusiform",
+        "parahippocampal",
+        "entorhinal",
+        "temporalpole",
+        "inferiortemporal",
+        "middletemporal",
+        "bankssts",
+        "superiortemporal",
+        "transversetemporal",
+        "insula"
+      ]
+    }
+  ],
+  "ROI": [
+    {
+      "Name": "right-lateralorbitofrontal_1",
+      "ImageID": 1,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateralorbitofrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lateralorbitofrontal_2",
+      "ImageID": 2,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateralorbitofrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-parsorbitalis_1",
+      "ImageID": 3,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parsorbitalis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-frontalpole_1",
+      "ImageID": 4,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "frontalpole",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-medialorbitofrontal_1",
+      "ImageID": 5,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medialorbitofrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-medialorbitofrontal_2",
+      "ImageID": 6,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medialorbitofrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-parstriangularis_1",
+      "ImageID": 7,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parstriangularis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-parsopercularis_1",
+      "ImageID": 8,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parsopercularis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-rostralmiddlefrontal_1",
+      "ImageID": 9,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralmiddlefrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-rostralmiddlefrontal_2",
+      "ImageID": 10,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralmiddlefrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorfrontal_1",
+      "ImageID": 11,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorfrontal_2",
+      "ImageID": 12,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorfrontal_3",
+      "ImageID": 13,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorfrontal_4",
+      "ImageID": 14,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 4
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-caudalmiddlefrontal_1",
+      "ImageID": 15,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "caudalmiddlefrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-precentral_1",
+      "ImageID": 16,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-precentral_2",
+      "ImageID": 17,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-precentral_3",
+      "ImageID": 18,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-paracentral_1",
+      "ImageID": 19,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "paracentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-rostralanteriorcingulate_1",
+      "ImageID": 20,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralanteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-caudalanteriorcingulate_1",
+      "ImageID": 21,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "caudalanteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-posteriorcingulate_1",
+      "ImageID": 22,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-isthmuscingulate_1",
+      "ImageID": 23,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "isthmuscingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-postcentral_1",
+      "ImageID": 24,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "postcentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-postcentral_2",
+      "ImageID": 25,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "postcentral",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-supramarginal_1",
+      "ImageID": 26,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "supramarginal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-supramarginal_2",
+      "ImageID": 27,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "supramarginal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorparietal_1",
+      "ImageID": 28,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorparietal_2",
+      "ImageID": 29,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiorparietal_3",
+      "ImageID": 30,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-inferiorparietal_1",
+      "ImageID": 31,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiorparietal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-inferiorparietal_2",
+      "ImageID": 32,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiorparietal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-inferiorparietal_3",
+      "ImageID": 33,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiorparietal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-precuneus_1",
+      "ImageID": 34,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-precuneus_2",
+      "ImageID": 35,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-cuneus_1",
+      "ImageID": 36,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "cuneus",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-pericalcarine_1",
+      "ImageID": 37,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "pericalcarine",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lateraloccipital_1",
+      "ImageID": 38,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateraloccipital",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lateraloccipital_2",
+      "ImageID": 39,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateraloccipital",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lateraloccipital_3",
+      "ImageID": 40,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateraloccipital",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lingual_1",
+      "ImageID": 41,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lingual",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-lingual_2",
+      "ImageID": 42,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lingual",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-fusiform_1",
+      "ImageID": 43,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "fusiform",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-fusiform_2",
+      "ImageID": 44,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "fusiform",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-parahippocampal_1",
+      "ImageID": 45,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parahippocampal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-entorhinal_1",
+      "ImageID": 46,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "entorhinal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-temporalpole_1",
+      "ImageID": 47,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "temporalpole",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-inferiortemporal_1",
+      "ImageID": 48,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiortemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-inferiortemporal_2",
+      "ImageID": 49,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiortemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-middletemporal_1",
+      "ImageID": 50,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "middletemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-middletemporal_2",
+      "ImageID": 51,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "middletemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-bankssts_1",
+      "ImageID": 52,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "bankssts",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiortemporal_1",
+      "ImageID": 53,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiortemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-superiortemporal_2",
+      "ImageID": 54,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiortemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-transversetemporal_1",
+      "ImageID": 55,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "transversetemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-insula_1",
+      "ImageID": 56,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "insula",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "right-insula_2",
+      "ImageID": 57,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "right,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "insula",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lateralorbitofrontal_1",
+      "ImageID": 65,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateralorbitofrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lateralorbitofrontal_2",
+      "ImageID": 66,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateralorbitofrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-parsorbitalis_1",
+      "ImageID": 67,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parsorbitalis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-frontalpole_1",
+      "ImageID": 68,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "frontalpole",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-medialorbitofrontal_1",
+      "ImageID": 69,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "medialorbitofrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-parstriangularis_1",
+      "ImageID": 70,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parstriangularis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-parsopercularis_1",
+      "ImageID": 71,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parsopercularis",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-rostralmiddlefrontal_1",
+      "ImageID": 72,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralmiddlefrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-rostralmiddlefrontal_2",
+      "ImageID": 73,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralmiddlefrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-rostralmiddlefrontal_3",
+      "ImageID": 74,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralmiddlefrontal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorfrontal_1",
+      "ImageID": 75,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorfrontal_2",
+      "ImageID": 76,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorfrontal_3",
+      "ImageID": 77,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorfrontal_4",
+      "ImageID": 78,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorfrontal",
+          "GroupID": 4
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-caudalmiddlefrontal_1",
+      "ImageID": 79,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "caudalmiddlefrontal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precentral_1",
+      "ImageID": 80,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precentral_2",
+      "ImageID": 81,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precentral_3",
+      "ImageID": 82,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precentral_4",
+      "ImageID": 83,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precentral",
+          "GroupID": 4
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-paracentral_1",
+      "ImageID": 84,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "paracentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-rostralanteriorcingulate_1",
+      "ImageID": 85,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "rostralanteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-caudalanteriorcingulate_1",
+      "ImageID": 86,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "caudalanteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-posteriorcingulate_1",
+      "ImageID": 87,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "posteriorcingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-isthmuscingulate_1",
+      "ImageID": 88,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "isthmuscingulate",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-postcentral_1",
+      "ImageID": 89,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "postcentral",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-postcentral_2",
+      "ImageID": 90,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "postcentral",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-postcentral_3",
+      "ImageID": 91,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "postcentral",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-supramarginal_1",
+      "ImageID": 92,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "supramarginal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-supramarginal_2",
+      "ImageID": 93,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "supramarginal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorparietal_1",
+      "ImageID": 94,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorparietal_2",
+      "ImageID": 95,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiorparietal_3",
+      "ImageID": 96,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiorparietal",
+          "GroupID": 3
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-inferiorparietal_1",
+      "ImageID": 97,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiorparietal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-inferiorparietal_2",
+      "ImageID": 98,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiorparietal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precuneus_1",
+      "ImageID": 99,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-precuneus_2",
+      "ImageID": 100,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "precuneus",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-cuneus_1",
+      "ImageID": 101,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "cuneus",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-pericalcarine_1",
+      "ImageID": 102,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "pericalcarine",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lateraloccipital_1",
+      "ImageID": 103,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateraloccipital",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lateraloccipital_2",
+      "ImageID": 104,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lateraloccipital",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lingual_1",
+      "ImageID": 105,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lingual",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-lingual_2",
+      "ImageID": 106,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "lingual",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-fusiform_1",
+      "ImageID": 107,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "fusiform",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-fusiform_2",
+      "ImageID": 108,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "fusiform",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-parahippocampal_1",
+      "ImageID": 109,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "parahippocampal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-entorhinal_1",
+      "ImageID": 110,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "entorhinal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-temporalpole_1",
+      "ImageID": 111,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "temporalpole",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-inferiortemporal_1",
+      "ImageID": 112,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiortemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-inferiortemporal_2",
+      "ImageID": 113,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "inferiortemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-middletemporal_1",
+      "ImageID": 114,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "middletemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-middletemporal_2",
+      "ImageID": 115,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "middletemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-bankssts_1",
+      "ImageID": 116,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "bankssts",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiortemporal_1",
+      "ImageID": 117,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiortemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-superiortemporal_2",
+      "ImageID": 118,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "superiortemporal",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-transversetemporal_1",
+      "ImageID": 119,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "transversetemporal",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-insula_1",
+      "ImageID": 120,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "insula",
+          "GroupID": 1
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    },
+    {
+      "Name": "left-insula_2",
+      "ImageID": 121,
+      "Groups": [
+        {
+          "Name": "Hemisphere",
+          "Value": "left,"
+        },
+        {
+          "Name": "Tissue",
+          "Value": "CorticalGrayMatter"
+        },
+        {
+          "Name": "Region",
+          "Value": "insula",
+          "GroupID": 2
+        }
+      ],
+      "Masking": {
+        "Group": "Tissue",
+        "Include": [
+          "CorticalGrayMatter"
+        ]
+      }
+    }
+  ]
+}
