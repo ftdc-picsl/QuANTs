@@ -29,6 +29,7 @@ def main():
 
     threader = itk.MultiThreaderBase.New()
     threader.SetGlobalDefaultNumberOfThreads(1)
+    print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads())
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
