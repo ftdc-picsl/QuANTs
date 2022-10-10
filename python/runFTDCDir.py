@@ -25,6 +25,17 @@ def parsePath( path ):
     return((id,ses))
 
 
+def getMyPID( uname, output ):
+    stream = os.popen("ps -elf | grep "+uname)
+    jobList = stream.read().split('\n')
+    stream.close()
+    thisJob = [ x for x in jobList if output in x ]
+
+    return(thisJob)
+
+    
+    
+
 def main():
 
     threader = itk.MultiThreaderBase.New()
@@ -44,6 +55,8 @@ def main():
     parser.add_argument("--output", type=str, required=True, help="Output filename")
     args = parser.parse_args()
     print(args)
+
+    print( getMyPID('jtduda, args.output') )
 
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
