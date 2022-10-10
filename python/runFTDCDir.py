@@ -31,6 +31,9 @@ def main():
     threader.SetGlobalDefaultNumberOfThreads(1)
     print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
 
+    sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
+    print("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
+
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         description="Summarize ROI values using ANTsCT output")
