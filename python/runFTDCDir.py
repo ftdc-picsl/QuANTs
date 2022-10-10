@@ -56,7 +56,7 @@ def main():
     args = parser.parse_args()
     print(args)
 
-    print( getMyPID('jtduda, args.output') )
+    print( getMyPID('jtduda', args.output) )
 
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
