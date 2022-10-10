@@ -53,6 +53,29 @@ class Quantsifier():
 
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
+
+    def getMyPID( self, uname  ):
+        stream = os.popen("ps -elf | grep "+uname)
+        jobList = stream.read().split('\n')
+        stream.close()
+        thisJob = [ x for x in jobList if self.output in x ]
+
+        if len(thisJob) > 1:
+            return None
+
+        return(thisJob[0].split(' ')[3])
+
+    def getMyThreads( self, uname ):
+        pid = getMyPID( uname, self.output )
+        if not pid is None:
+            stream = os.popen("ps -o thcount "+str(pid) )
+            outtxt = stream.read().split('\n')
+            stream.close()
+            return( outtxt[1] )
+        else:
+            return None
+    
+
     def SetLoggingLevel(self, level):
         self.log.setLevel(level)
 
@@ -70,6 +93,7 @@ class Quantsifier():
                 self.measures[name] = {"image":measure, "tissues":tissues, "threshold":threshold}
                 if self.verbose:
                     self.log.info("Added measure image named: "+name)
+                    self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
             else:
                 self.log.error("Validation failed for "+name)
                 
@@ -224,6 +248,7 @@ class Quantsifier():
     def Update(self):
 
         self.log.info("Update()")
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
 
         if None in [self.mask, self.segmentation]:
             self.log.error("Missing inputs")
@@ -234,12 +259,14 @@ class Quantsifier():
 
         stats = []
         self.log.info("Summarizing "+str(len(self.networks.keys()))+ " networks" )
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
         for network in self.networks.keys():
             nDef = self.networks[network][0]
             nImg = self.networks[network][1]
             nTissues = self.networks[network][2]
 
             self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
+            self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
             subLabels = None
             maskedLabels = None
             
@@ -353,6 +380,7 @@ class Quantsifier():
     def Summarize(self, networkName, subjectLabels, measureName):
 
         self.log.info("Summarize( %s, %s )", networkName, measureName)
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
 
         nDef = self.networks[networkName][0]
         #nImg = self.networks[networkName][1]
@@ -453,6 +481,7 @@ class Quantsifier():
 
     def GetStats(self, labelView, labelValues, measureView, measureName):
         self.log.debug("GetStats()")
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
         statList = []    
 
         if measureName == "volume":
@@ -523,12 +552,14 @@ def getNetworks(directory):
     fnames = glob.glob(os.path.join(directory, "*.json"))
     networks = []
     for f in fnames:
-        logging.debug("Reading network file: "+f)
+        self.log.debug("Reading network file: "+f)
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
         f1 = open(f)
         x=json.load(f1)
         networks.append(x)
         f1.close()
-        logging.debug("Loaded: "+x['Identifier'])
+        self.log.debug("Loaded: "+x['Identifier'])
+        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
 
     return(networks)
 
