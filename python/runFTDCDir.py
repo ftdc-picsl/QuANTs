@@ -35,6 +35,13 @@ def getMyPID( uname, output ):
         return None
 
     return(thisJob[0].split(' ')[3])
+
+def getMyThreads( uname, output ):
+    pid = getMyPID( uname, output )
+    stream = os.popen("ps -o thcount "+str(pid) )
+    output = stream.read().split('\n')
+    stream.close()
+    return( output[1] )
     
     
 
@@ -58,7 +65,11 @@ def main():
     args = parser.parse_args()
     print(args)
 
-    psOut = getMyPID('jtduda', args.output) )
+    psOut = getMyPID( 'jtduda', args.output )
+    threads = getMyThreads( 'jtduda', args.output )
+    print("nThreads="+str(threads))
+
+
 
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
