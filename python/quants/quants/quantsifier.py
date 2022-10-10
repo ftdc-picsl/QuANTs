@@ -552,14 +552,14 @@ def getNetworks(directory):
     fnames = glob.glob(os.path.join(directory, "*.json"))
     networks = []
     for f in fnames:
-        self.log.debug("Reading network file: "+f)
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        logging.debug("Reading network file: "+f)
+        logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
         f1 = open(f)
         x=json.load(f1)
         networks.append(x)
         f1.close()
-        self.log.debug("Loaded: "+x['Identifier'])
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        logging.debug("Loaded: "+x['Identifier'])
+        logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
 
     return(networks)
 
