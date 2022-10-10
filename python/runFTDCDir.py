@@ -26,6 +26,10 @@ def parsePath( path ):
 
 
 def main():
+
+    threader = itk.MultiThreaderBase.New()
+    threader.SetGlobalDefaultNumberOfThreads(1)
+
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         description="Summarize ROI values using ANTsCT output")
