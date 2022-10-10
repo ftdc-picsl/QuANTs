@@ -31,8 +31,10 @@ def getMyPID( uname, output ):
     stream.close()
     thisJob = [ x for x in jobList if output in x ]
 
-    return(thisJob)
+    if len(thisJob) > 1:
+        return None
 
+    return(thisJob[0].split(' ')[3])
     
     
 
@@ -56,7 +58,7 @@ def main():
     args = parser.parse_args()
     print(args)
 
-    print( getMyPID('jtduda', args.output) )
+    psOut = getMyPID('jtduda', args.output) )
 
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
