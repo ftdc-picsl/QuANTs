@@ -85,6 +85,7 @@ class Quantsifier():
             pid=str(thisJob[0].split(' ')[3])
 
             print(thisJob)
+            print(thisJob[0].split('\t'))
 
             print("pid="+pid)
             return(pid)
