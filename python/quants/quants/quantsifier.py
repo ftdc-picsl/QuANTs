@@ -6,6 +6,7 @@ import glob
 import os
 import logging
 import json
+import re
 
 class Quantsifier():
 
@@ -83,11 +84,12 @@ class Quantsifier():
                 return None
 
             thisJob = thisJob[0]
+            thisJob = re.sub(' +', ' ', thisJob)
             print(thisJob)
             for p in thisJob.split(" "):
                 print(p)
 
-            pid=str(thisJob[0].split(' ')[3])
+            pid=str(thisJob.split(' ')[6])
 
 
 
