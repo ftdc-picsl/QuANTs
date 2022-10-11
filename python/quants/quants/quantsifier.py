@@ -553,13 +553,13 @@ def getNetworks(directory):
     networks = []
     for f in fnames:
         logging.debug("Reading network file: "+f)
-        logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
+        #logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
         f1 = open(f)
         x=json.load(f1)
         networks.append(x)
         f1.close()
         logging.debug("Loaded: "+x['Identifier'])
-        logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
+        #logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
 
     return(networks)
 
