@@ -54,7 +54,10 @@ class Quantsifier():
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
 
-    def getMyPID( self, uname  ):
+    def getMyPID( self ):
+        s1 = os.popen("whoami")
+        uname = s1.read().split('\n')[0]
+
         stream = os.popen("ps -elf | grep "+uname)
         jobList = stream.read().split('\n')
         stream.close()
@@ -65,8 +68,8 @@ class Quantsifier():
 
         return(thisJob[0].split(' ')[3])
 
-    def getMyThreads( self, uname ):
-        pid = self.getMyPID( uname, self.output )
+    def getMyThreads( self ):
+        pid = self.getMyPID()
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
             outtxt = stream.read().split('\n')
