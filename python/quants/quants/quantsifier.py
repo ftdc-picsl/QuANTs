@@ -66,7 +66,7 @@ class Quantsifier():
         return(thisJob[0].split(' ')[3])
 
     def getMyThreads( self, uname ):
-        pid = getMyPID( uname, self.output )
+        pid = self.getMyPID( uname, self.output )
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
             outtxt = stream.read().split('\n')
