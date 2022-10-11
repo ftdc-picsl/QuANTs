@@ -49,10 +49,10 @@ def main():
 
     threader = itk.MultiThreaderBase.New()
     threader.SetGlobalDefaultNumberOfThreads(1)
-    print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
+    logging.info("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
 
     sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
-    print("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
+    logging.info("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -67,7 +67,7 @@ def main():
 
     psOut = getMyPID( 'jtduda', args.output )
     threads = getMyThreads( 'jtduda', args.output )
-    print("Started with nThreads="+str(threads))
+    logging.info("Started with nThreads="+str(threads))
 
 
 
@@ -91,7 +91,10 @@ def main():
 
     q = quants.Quantsifier()
     q.threadString=oFile
-    print("q.threadString= "+q.threadString)
+    logging.info("q.threadString= "+q.threadString)
+
+    threads = getMyThreads( 'jtduda', args.output )
+    logging.info("Initilzed quantsifier with nThreads="+str(threads))
 
     templateDir = os.path.dirname(os.path.abspath(template))
     templateF = open(template)
@@ -112,6 +115,8 @@ def main():
                 else:
                     inputImgs[tag] = None
 
+    threads = getMyThreads( 'jtduda', args.output )
+    logging.info("Set quantsifier inputs with nThreads="+str(threads))
 
 
     if len(inputFiles['mat']) > 0:
@@ -119,7 +124,6 @@ def main():
         txWarp = sitk.DisplacementFieldTransform( sitk.ReadImage(inputFiles['warp'][0]) )
         q.subjectMat = txMat
         q.subjectWarp = txWarp
-
 
         if 'thickness' in inputImgs:
             logging.info("Apply thickness masking")
@@ -141,6 +145,9 @@ def main():
             seg = sitk.Add(seg, c6)
             inputImgs['seg'] = seg
             #sitk.WriteImage(seg, "seg.nii.gz")
+
+            threads = getMyThreads( 'jtduda', args.output )
+            logging.info("Applied thickness masking with nThreads="+str(threads))
 
 
         q.SetSegmentation(inputImgs['seg'])
@@ -191,7 +198,8 @@ def main():
         q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
         q.SetOutputDirectory( os.path.dirname(oFile) )
 
-        print("Pre Update() with nThreads="+str(threads))
+        threads = getMyThreads( 'jtduda', args.output )
+        logging.info("Pre Update() with nThreads="+str(threads))
         q.Update()
         stats = q.GetOutput()
 
