@@ -47,12 +47,6 @@ def getMyThreads( uname, output ):
 
 def main():
 
-    threader = itk.MultiThreaderBase.New()
-    threader.SetGlobalDefaultNumberOfThreads(1)
-    logging.info("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
-
-    sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
-    logging.info("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -69,12 +63,18 @@ def main():
     threads = getMyThreads( 'jtduda', args.output )
     logging.info("Started with nThreads="+str(threads))
 
-
-
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
         level=logging.INFO,
         datefmt='%Y-%m-%d %H:%M:%S')
+
+    threader = itk.MultiThreaderBase.New()
+    threader.SetGlobalDefaultNumberOfThreads(1)
+    logging.info("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
+
+    sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
+    logging.info("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
+
 
     #dir = sys.argv[1]
     #template = sys.argv[2]
