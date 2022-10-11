@@ -96,7 +96,7 @@ class Quantsifier():
                 self.measures[name] = {"image":measure, "tissues":tissues, "threshold":threshold}
                 if self.verbose:
                     self.log.info("Added measure image named: "+name)
-                    self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+                    self.log.info("nThreads"+str(self.getMyThreads()))
             else:
                 self.log.error("Validation failed for "+name)
                 
@@ -251,7 +251,7 @@ class Quantsifier():
     def Update(self):
 
         self.log.info("Update()")
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        self.log.info("nThreads"+str(self.getMyThreads()))
 
         if None in [self.mask, self.segmentation]:
             self.log.error("Missing inputs")
@@ -262,14 +262,14 @@ class Quantsifier():
 
         stats = []
         self.log.info("Summarizing "+str(len(self.networks.keys()))+ " networks" )
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        self.log.info("nThreads"+str(self.getMyThreads()))
         for network in self.networks.keys():
             nDef = self.networks[network][0]
             nImg = self.networks[network][1]
             nTissues = self.networks[network][2]
 
             self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
-            self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+            self.log.info("nThreads"+str(self.getMyThreads()))
             subLabels = None
             maskedLabels = None
             
@@ -383,7 +383,7 @@ class Quantsifier():
     def Summarize(self, networkName, subjectLabels, measureName):
 
         self.log.info("Summarize( %s, %s )", networkName, measureName)
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        self.log.info("nThreads"+str(self.getMyThreads()))
 
         nDef = self.networks[networkName][0]
         #nImg = self.networks[networkName][1]
@@ -484,7 +484,7 @@ class Quantsifier():
 
     def GetStats(self, labelView, labelValues, measureView, measureName):
         self.log.debug("GetStats()")
-        self.log.info("nThreads"+str(self.getMyThreads("jtduda")))
+        self.log.info("nThreads"+str(self.getMyThreads()))
         statList = []    
 
         if measureName == "volume":
@@ -556,13 +556,13 @@ def getNetworks(directory):
     networks = []
     for f in fnames:
         logging.debug("Reading network file: "+f)
-        #logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
+        #logging.debug("nThreads"+str(self.getMyThreads()))
         f1 = open(f)
         x=json.load(f1)
         networks.append(x)
         f1.close()
         logging.debug("Loaded: "+x['Identifier'])
-        #logging.debug("nThreads"+str(self.getMyThreads("jtduda")))
+        #logging.debug("nThreads"+str(self.getMyThreads()))
 
     return(networks)
 
