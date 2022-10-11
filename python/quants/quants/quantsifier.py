@@ -63,9 +63,6 @@ class Quantsifier():
 
         stream = os.popen("ps -elf | grep "+uname)
         jobList = stream.read().split('\n')
-        print(uname)
-        print(self.threadString)
-        print(jobList)
         stream.close()
 
         if self.threadString == "None":
@@ -73,7 +70,6 @@ class Quantsifier():
 
         if not jobList is None:
             thisJob = [ x for x in jobList if self.threadString in x ]
-            print(thisJob)
 
             if len(thisJob) > 1:
                 print("Too many jobs found for "+self.threadString)
@@ -90,8 +86,9 @@ class Quantsifier():
         pid = self.getMyPID()
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
-            outtxt = stream.read().split('\n')
+            outtxt = stream.read()
             print(outtxt)
+            outtxt = outtxt.split("\n")
             stream.close()
             return( outtxt[1] )
         else:
@@ -338,6 +335,8 @@ class Quantsifier():
                     resample.SetReferenceImage( self.segmentation )
                     resample.SetTransform( fullTx )
                     resample.SetInterpolator( sitk.sitkLabelGaussian )
+                    resample.SetNumberOfThreads(1)
+
                     subLabels = resample.Execute(nImg)
                     maskedLabels = self.ApplyNetworkMasking(network, subLabels)
                     if self.saveImages:
@@ -421,6 +420,7 @@ class Quantsifier():
 
         stats = sitk.LabelIntensityStatisticsImageFilter()
         stats.SetGlobalDefaultCoordinateTolerance(1e-04)
+        stats.SetNumberOfThreads(1)
         stats.Execute(nImg, measureImg)
         labelsInImage = stats.GetLabels()
         #print(labelsInImage)
