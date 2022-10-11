@@ -85,15 +85,7 @@ class Quantsifier():
 
             thisJob = thisJob[0]
             thisJob = re.sub(' +', ' ', thisJob)
-            print(thisJob)
-            for p in thisJob.split(" "):
-                print(p)
-
             pid=str(thisJob.split(' ')[3])
-
-
-
-            print("pid="+pid)
             return(pid)
         else:
             print("No jobs found for "+self.threadString)
@@ -106,7 +98,6 @@ class Quantsifier():
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
             outtxt = stream.read()
-            print(outtxt)
             outtxt = outtxt.split("\n")
             stream.close()
             return( outtxt[1] )
