@@ -19,6 +19,13 @@ class Quantsifier():
         self.log = logging.getLogger(__name__)
         #self.log.setLevel(logging.INFO)
 
+        threader = itk.MultiThreaderBase.New()
+        threader.SetGlobalDefaultNumberOfThreads(1)
+        print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
+
+        sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
+        print("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
+
         # Mapping from tissue names to ANTsCT segmentation labels
         self.tissueNames = { "Other": 0, "CorticalSpinalFluid" :1, "CorticalGrayMatter": 2, "WhiteMatter": 3, "SubcorticalGrayMatter": 4, "Brainstem": 5, "Cerebellum": 6}
 
