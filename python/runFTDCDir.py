@@ -1,3 +1,8 @@
+os.environ['ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS'] = str(1)
+os.environ[' MKL_NUM_THREADS'] = str(1)
+os.environ['OMP_NUM_THREADS'] = str(1)
+
+
 import itk
 import SimpleITK as sitk
 #import quantsifier as qf
@@ -59,14 +64,14 @@ def main():
     args = parser.parse_args()
     print(args)
 
-    psOut = getMyPID( 'jtduda', args.output )
-    threads = getMyThreads( 'jtduda', args.output )
-    logging.info("Started with nThreads="+str(threads))
-
     logging.basicConfig(
         format='%(asctime)s %(name)s %(levelname)-8s %(message)s',
         level=logging.INFO,
         datefmt='%Y-%m-%d %H:%M:%S')
+
+    psOut = getMyPID( 'jtduda', args.output )
+    threads = getMyThreads( 'jtduda', args.output )
+    logging.info("Started with nThreads="+str(threads))
 
     threader = itk.MultiThreaderBase.New()
     threader.SetGlobalDefaultNumberOfThreads(1)
@@ -76,18 +81,11 @@ def main():
     logging.info("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
 
 
-    #dir = sys.argv[1]
-    #template = sys.argv[2]
-    #networkDir = sys.argv[3]
-    #networkImageDir = sys.argv[4]
-    #oFile = sys.argv[5]
     dir = args.antsct_dir
-    print(dir)
     template = args.template
     networkDir = args.atlas_dir
     networkImageDir = args.atlas_images
     oFile = args.output
-
 
     q = quants.Quantsifier()
     q.threadString=oFile
