@@ -82,10 +82,14 @@ class Quantsifier():
                 print("Too many jobs found for "+self.threadString)
                 return None
 
+            thisJob = thisJob[0]
+            print(thisJob)
+            for p in thisJob.split(" "):
+                print(p)
+
             pid=str(thisJob[0].split(' ')[3])
 
-            print(thisJob)
-            print(thisJob[0].split('\t'))
+
 
             print("pid="+pid)
             return(pid)
