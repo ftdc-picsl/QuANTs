@@ -82,7 +82,9 @@ class Quantsifier():
                 print("Too many jobs found for "+self.threadString)
                 return None
 
-            return(thisJob[0].split(' ')[3])
+            pid=str(thisJob[0].split(' ')[3])
+            print("pid="+pid)
+            return(pid)
         else:
             print("No jobs found for "+self.threadString)
 
