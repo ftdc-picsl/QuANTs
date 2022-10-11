@@ -57,16 +57,23 @@ class Quantsifier():
     def getMyPID( self ):
         s1 = os.popen("whoami")
         uname = s1.read().split('\n')[0]
+        s1.close()
 
         stream = os.popen("ps -elf | grep "+uname)
         jobList = stream.read().split('\n')
         stream.close()
-        thisJob = [ x for x in jobList if self.output in x ]
+        if not jobList is None:
+            thisJob = [ x for x in jobList if self.output in x ]
 
-        if len(thisJob) > 1:
-            return None
+            if len(thisJob) > 1:
+                print("Too many jobs found for "+self.output)
+                return None
 
-        return(thisJob[0].split(' ')[3])
+            return(thisJob[0].split(' ')[3])
+        else:
+            print("No jobs found for "+self.output)
+
+        return(None)
 
     def getMyThreads( self ):
         pid = self.getMyPID()
