@@ -90,6 +90,7 @@ class Quantsifier():
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
             outtxt = stream.read().split('\n')
+            print(outtxt)
             stream.close()
             return( outtxt[1] )
         else:
