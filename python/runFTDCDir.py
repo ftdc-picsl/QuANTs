@@ -67,7 +67,7 @@ def main():
 
     psOut = getMyPID( 'jtduda', args.output )
     threads = getMyThreads( 'jtduda', args.output )
-    print("nThreads="+str(threads))
+    print("Started with nThreads="+str(threads))
 
 
 
@@ -188,6 +188,8 @@ def main():
         #x = quants.getFTDCQuantsifier(filenames)
         q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
         q.SetOutputDirectory( os.path.dirname(oFile) )
+
+        print("Pre Update() with nThreads="+str(threads))
         q.Update()
         stats = q.GetOutput()
 
