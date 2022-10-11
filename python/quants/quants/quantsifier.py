@@ -73,6 +73,7 @@ class Quantsifier():
 
         if not jobList is None:
             thisJob = [ x for x in jobList if self.threadString in x ]
+            print(thisJob)
 
             if len(thisJob) > 1:
                 print("Too many jobs found for "+self.threadString)

@@ -90,6 +90,8 @@ def main():
 
 
     q = quants.Quantsifier()
+    q.threadString=oFile
+    print("q.threadString= "+q.threadString)
 
     templateDir = os.path.dirname(os.path.abspath(template))
     templateF = open(template)
