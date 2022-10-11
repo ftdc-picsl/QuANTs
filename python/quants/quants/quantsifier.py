@@ -63,9 +63,12 @@ class Quantsifier():
 
         stream = os.popen("ps -elf | grep "+uname)
         jobList = stream.read().split('\n')
+        print(uname)
+        print(self.threadString)
+        print(jobList)
         stream.close()
 
-        if self.threadString is "None":
+        if self.threadString == "None":
             return None
 
         if not jobList is None:
