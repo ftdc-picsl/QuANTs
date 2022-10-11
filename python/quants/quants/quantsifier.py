@@ -83,6 +83,9 @@ class Quantsifier():
                 return None
 
             pid=str(thisJob[0].split(' ')[3])
+
+            print(thisJob)
+
             print("pid="+pid)
             return(pid)
         else:
