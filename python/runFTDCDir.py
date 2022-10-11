@@ -1,7 +1,8 @@
+import os 
 os.environ['ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS'] = str(1)
 os.environ[' MKL_NUM_THREADS'] = str(1)
 os.environ['OMP_NUM_THREADS'] = str(1)
-
+ 
 
 import itk
 import SimpleITK as sitk
@@ -10,7 +11,6 @@ import SimpleITK as sitk
 import quants
 import numpy as np
 import pandas as pd
-import os 
 import sys
 import json
 import glob
