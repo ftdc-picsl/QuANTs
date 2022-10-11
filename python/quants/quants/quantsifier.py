@@ -62,6 +62,10 @@ class Quantsifier():
         stream = os.popen("ps -elf | grep "+uname)
         jobList = stream.read().split('\n')
         stream.close()
+
+        if self.output is None:
+            return None
+
         if not jobList is None:
             thisJob = [ x for x in jobList if self.output in x ]
 
@@ -76,6 +80,7 @@ class Quantsifier():
         return(None)
 
     def getMyThreads( self ):
+
         pid = self.getMyPID()
         if not pid is None:
             stream = os.popen("ps -o thcount "+str(pid) )
