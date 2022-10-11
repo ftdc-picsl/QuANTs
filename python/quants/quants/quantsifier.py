@@ -89,7 +89,7 @@ class Quantsifier():
             for p in thisJob.split(" "):
                 print(p)
 
-            pid=str(thisJob.split(' ')[6])
+            pid=str(thisJob.split(' ')[3])
 
 
 
