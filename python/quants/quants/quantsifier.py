@@ -51,6 +51,8 @@ class Quantsifier():
 
         self.saveImages = True
 
+        self.threadString="None"
+
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
 
@@ -63,19 +65,19 @@ class Quantsifier():
         jobList = stream.read().split('\n')
         stream.close()
 
-        if self.output is None:
+        if self.threadString is "None":
             return None
 
         if not jobList is None:
-            thisJob = [ x for x in jobList if self.output in x ]
+            thisJob = [ x for x in jobList if self.threadString in x ]
 
             if len(thisJob) > 1:
-                print("Too many jobs found for "+self.output)
+                print("Too many jobs found for "+self.threadString)
                 return None
 
             return(thisJob[0].split(' ')[3])
         else:
-            print("No jobs found for "+self.output)
+            print("No jobs found for "+self.threadString)
 
         return(None)
 
