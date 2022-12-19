@@ -45,7 +45,7 @@ do
 done
 
 if [ "$ddir" == "NA" ]; then
-  ddir="${qdir}/QuANTs/atlases"
+  ddir="${qdir}/atlases"
 fi
 
 if [ "$file" == "NA" ]; then
