@@ -7,6 +7,9 @@ import os
 import logging
 import json
 import re
+import image_itk_ants as iia
+import ants
+
 
 class Quantsifier():
 
@@ -63,8 +66,19 @@ class Quantsifier():
 
         self.refspace = {'origin':None, 'spacing': None, 'direction': None, 'size': None}
 
+        self.label_propagation = {}
+
+    def AddLabelPropagation(self, network, prop_mask):
+
+        self.label_propagation[network] = prop_mask
+
 
     def getMyPID( self ):
+        """Get the process ID of the current process.
+
+        Returns:
+            str : process ID for this job
+        """
         s1 = os.popen("whoami")
         uname = s1.read().split('\n')[0]
         s1.close()
@@ -106,6 +120,11 @@ class Quantsifier():
     
 
     def SetLoggingLevel(self, level):
+        """Set level of logging
+
+        Args:
+            level (str): Level to use for logging
+        """
         self.log.setLevel(level)
 
     def SetOutputDirectory(self, dir):
@@ -254,6 +273,16 @@ class Quantsifier():
 
         return(iMask)
 
+    def LabelPropagation(self, mask, labels):
+        """Propagate labels through a mask using ants"""
+        antsMask = iia.sitk_2_ants(mask)
+        antsLabels = iia.sitk_2_ants(labels)
+        antsPropLabels = ants.iMath_propagate_labels_through_mask(mask, labels, 3, 0)
+        propLabels = iia.ants_2_sitk(antsPropLabels)
+        return(propLabels)
+
+
+
     def ApplyNetworkMasking(self, networkName, labels):
 
         #print("Masking "+networkName)
@@ -270,7 +299,12 @@ class Quantsifier():
                 maskedLabel = sitk.Multiply(rImg, mask)
                 maskedLabels = sitk.Add(maskedLabels, maskedLabel)
 
-        #maskedLabels = sitk.Multiply(origLabels, mask)
+        if networkName in self.label_propagation:
+            self.log.info("Apply label propagation for "+networkName+"")
+            prop_mask = self.label_propagation[networkName]
+            maskedLabels = sitk.Multiply(maskedLabels, prop_mask)
+
+
         return(maskedLabels)
 
 

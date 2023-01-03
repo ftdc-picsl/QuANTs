@@ -77,7 +77,7 @@ echo "Writing to log file $log"
 
 
 if [[ -f "$file" ]]; then
-  for i in `cat $file`; do
+  for i in `tail -n +2 $file`; do
     ida=$(echo $i | cut -d ',' -f1)
     id=${ida//[.]/x}
     tp=$(echo $i | cut -d ',' -f2)

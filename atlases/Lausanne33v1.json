@@ -125,6 +125,7 @@
       ]
     }
   ],
+  "LabelPropagation": "True",
   "ROI": [
     {
       "Name": "right-lateralorbitofrontal",

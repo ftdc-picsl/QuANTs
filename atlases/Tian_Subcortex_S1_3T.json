@@ -31,11 +31,11 @@
       "Name": "Hemisphere",
       "Values": [
         {
-          "Name": "left,",
+          "Name": "left",
           "Abbreviation": "lr"
         },
         {
-          "Name": "right,",
+          "Name": "right",
           "Abbreviation": "rh"
         },
         {
@@ -122,7 +122,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -139,7 +139,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -149,7 +150,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -166,7 +167,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -176,7 +178,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -193,7 +195,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -203,7 +206,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -220,7 +223,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -230,7 +234,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -247,7 +251,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -257,7 +262,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -274,7 +279,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -284,7 +290,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -301,7 +307,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -311,7 +318,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "right,"
+          "Value": "right"
         },
         {
           "Name": "Tissue",
@@ -328,7 +335,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -338,7 +346,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -355,7 +363,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -365,7 +374,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -382,7 +391,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -392,7 +402,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -409,7 +419,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -419,7 +430,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -436,7 +447,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -446,7 +458,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -463,7 +475,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -473,7 +486,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -490,7 +503,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -500,7 +514,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -517,7 +531,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     },
@@ -527,7 +542,7 @@
       "Groups": [
         {
           "Name": "Hemisphere",
-          "Value": "left,"
+          "Value": "left"
         },
         {
           "Name": "Tissue",
@@ -544,7 +559,8 @@
           "CorticalGrayMatter",
           "SubcorticalGrayMatter",
           "Brainstem",
-          "Cerebellum"
+          "Cerebellum",
+          "WhiteMatter"
         ]
       }
     }

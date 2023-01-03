@@ -6,8 +6,6 @@ os.environ['NUMEXPR_NUM_THREADS'] = str(1)
 
 import itk
 import SimpleITK as sitk
-#import quantsifier as qf
-#import quantsUtilities as qu
 import quants
 import numpy as np
 import pandas as pd
@@ -16,6 +14,8 @@ import json
 import glob
 import logging
 import argparse
+import time
+import os
 
 
 def parsePath( path ):
@@ -91,8 +91,9 @@ def main():
     q.threadString=oFile
     logging.info("q.threadString= "+q.threadString)
 
-    threads = getMyThreads( 'jtduda', args.output )
-    logging.info("Initilzed quantsifier with nThreads="+str(threads))
+    user = os.getlogin()
+    threads = getMyThreads( user, args.output )
+    logging.info("Initialized quantsifier with nThreads="+str(threads))
 
     templateDir = os.path.dirname(os.path.abspath(template))
     templateF = open(template)
@@ -113,9 +114,8 @@ def main():
                 else:
                     inputImgs[tag] = None
 
-    threads = getMyThreads( 'jtduda', args.output )
+    threads = getMyThreads( user, args.output )
     logging.info("Set quantsifier inputs with nThreads="+str(threads))
-
 
     if len(inputFiles['mat']) > 0:
         txMat = sitk.ReadTransform(inputFiles['mat'][0])
@@ -144,7 +144,7 @@ def main():
             inputImgs['seg'] = seg
             #sitk.WriteImage(seg, "seg.nii.gz")
 
-            threads = getMyThreads( 'jtduda', args.output )
+            threads = getMyThreads( user, args.output )
             logging.info("Applied thickness masking with nThreads="+str(threads))
 
 
@@ -195,8 +195,16 @@ def main():
         #x = quants.getFTDCQuantsifier(filenames)
         q.SetConstants({"id": bidsInfo[0], "date": bidsInfo[1]})
         q.SetOutputDirectory( os.path.dirname(oFile) )
+        if 'LabelPropagation' in n:
+            if n['LabelPropagation']=='True':
+                prop_mask = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
+                q.AddLabelPropagation(n['Identifier'], prop_mask)
+            
 
-        threads = getMyThreads( 'jtduda', args.output )
+        threads = getMyThreads( user, args.output )
+        logging.info("Pre Update() with nThreads="+str(threads))
+        time.sleep(5)
+        threads = getMyThreads( user, args.output )
         logging.info("Pre Update() with nThreads="+str(threads))
         q.Update()
         stats = q.GetOutput()
