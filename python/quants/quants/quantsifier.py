@@ -1,4 +1,4 @@
-import itk
+#import itk
 import SimpleITK as sitk
 import numpy as np
 import pandas as pd
@@ -10,7 +10,6 @@ import re
 from .image_itk_ants import ants_2_sitk
 from .image_itk_ants import sitk_2_ants
 import ants
-
 
 class Quantsifier():
 
