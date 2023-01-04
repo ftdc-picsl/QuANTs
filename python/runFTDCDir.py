@@ -124,7 +124,7 @@ def main():
         q.subjectWarp = txWarp
 
         if 'thickness' in inputImgs:
-            logging.info("Apply thickness masking")
+            logging.info("Apply thickness masking using" + inputFiles['thickness'][0])
             thickMask = sitk.BinaryThreshold(inputImgs['thickness'], lowerThreshold=0.0001 )
             thickMask = sitk.Cast(thickMask, sitk.sitkUInt32)
             cortex = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
@@ -199,7 +199,6 @@ def main():
             if n['LabelPropagation']=='True':
                 prop_mask = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
                 q.AddLabelPropagation(n['Identifier'], prop_mask)
-            
 
         threads = getMyThreads( user, args.output )
         logging.info("Pre Update() with nThreads="+str(threads))

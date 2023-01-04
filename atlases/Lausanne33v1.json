@@ -27,6 +27,7 @@
     "Functional",
     "Connectivity"
   ],
+  "LabelPropagation": "True",
   "Groups": [
     {
       "Name": "Hemisphere",
@@ -125,7 +126,6 @@
       ]
     }
   ],
-  "LabelPropagation": "True",
   "ROI": [
     {
       "Name": "right-lateralorbitofrontal",

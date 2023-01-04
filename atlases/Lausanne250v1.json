@@ -27,6 +27,7 @@
     "Functional",
     "Connectivity"
   ],
+  "LabelPropagation": "True", 
   "Groups": [
     {
       "Name": "Hemisphere",
