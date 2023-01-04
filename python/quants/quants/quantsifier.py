@@ -205,6 +205,50 @@ class Quantsifier():
         valid = True
         return(valid)
 
+    def ssd(self,a,b,tolerance=0.00001):
+        sum = 0
+
+        for i in range(len(a)):
+            diff = a[i]-a[i]
+            sum += diff*diff
+
+        return(diff)
+
+
+    def ValidateInput(self, img):
+
+        return(True)
+
+        # Check all image headers for consistency
+        valid = True
+        if self.refspace['origin'] is None:
+            self.refspace['origin'] = img.GetOrigin()
+            self.refspace['spacing'] = img.GetSpacing()
+            self.refspace['direction'] = img.GetDirection()
+            self.refspace['size'] = img.shape
+            valid = True
+        else:
+            if  self.ssd( self.refspace['origin'], img.GetOrigin() ) > 0.0001:
+                valid = False
+                self.log.error("Unmatched origins ")
+
+            if self.ssd( self.refspace['spacing'], img.GetSpacing() ) > 0.0001:
+                valid= False
+                self.log.error("Unmatched spacing")
+
+            if self.ssd( self.refspace['direction'], img.GetDirection() ) > 0.0001:
+                valid=False
+                self.log.error("Unmatched direction")
+
+            if self.ssd( self.refspace['size'], img.shape) > 0.0001:
+                valid=False
+                self.log.error("Unmatched size")
+
+        if not valid:
+            self.log.error("Invalid input image")
+
+        return(valid)
+
     def GetSegmentationMask(self, include):
         mask=None
 
