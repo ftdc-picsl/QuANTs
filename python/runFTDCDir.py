@@ -17,7 +17,6 @@ import argparse
 import time
 import os
 
-
 def parsePath( path ):
 
     dirParts = os.path.split(path.rstrip('/'))
@@ -91,7 +90,8 @@ def main():
     q.threadString=oFile
     logging.info("q.threadString= "+q.threadString)
 
-    user = os.getlogin()
+    #user = os.getlogin()
+    user = os.getenv('USER')
     threads = getMyThreads( user, args.output )
     logging.info("Initialized quantsifier with nThreads="+str(threads))
 
