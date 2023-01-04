@@ -4,7 +4,7 @@ os.environ['MKL_NUM_THREADS'] = str(1)
 os.environ['OMP_NUM_THREADS'] = str(1)
 os.environ['NUMEXPR_NUM_THREADS'] = str(1)
 
-import itk
+#import itk
 import SimpleITK as sitk
 import quants
 import numpy as np
