@@ -94,7 +94,7 @@ if [[ -f "$file" ]]; then
             echo "#BSUB -J quants_${id}_${tp}" >> $job
             echo "#BSUB -o ${ldir}/sub-${id}_ses-${tp}_quantslog.out" >> $job
             echo "#BSUB -e ${ldir}/sub-${id}_ses-${tp}_quantslog.err" >> $job
-            echo "module load python/3.8" >> $job
+            echo "module load python/3.9" >> $job
             echo "export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=1" >> $job
             echo "export MKL_NUM_THREADS=1" >> $job
             echo "export OMP_NUM_THREADS=1" >> $job
