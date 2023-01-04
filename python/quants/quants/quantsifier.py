@@ -23,9 +23,9 @@ class Quantsifier():
         self.log = logging.getLogger(__name__)
         #self.log.setLevel(logging.INFO)
 
-        threader = itk.MultiThreaderBase.New()
-        threader.SetGlobalDefaultNumberOfThreads(1)
-        print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
+        #threader = itk.MultiThreaderBase.New()
+        #threader.SetGlobalDefaultNumberOfThreads(1)
+        #print("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
 
         sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
         print("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
@@ -203,53 +203,6 @@ class Quantsifier():
 
         # FIXME - what needs to be done here?
         valid = True
-        return(valid)
-
-    def ssd(self,a,b,tolerance=0.00001):
-        sum = 0
-        if isinstance(a, type(itk.Matrix[itk.D,3,3]()) ):
-            a = itk.GetArrayFromMatrix(a).flatten().tolist()
-            b = itk.GetArrayFromMatrix(b).flatten().tolist()
-
-        for i in range(len(a)):
-            diff = a[i]-a[i]
-            sum += diff*diff
-
-        return(diff)
-        
-
-    def ValidateInput(self, img):
-
-        return(True)
-
-        # Check all image headers for consistency
-        valid = True
-        if self.refspace['origin'] is None:
-            self.refspace['origin'] = img.GetOrigin()
-            self.refspace['spacing'] = img.GetSpacing()
-            self.refspace['direction'] = img.GetDirection()
-            self.refspace['size'] = img.shape
-            valid = True
-        else:
-            if  self.ssd( self.refspace['origin'], img.GetOrigin() ) > 0.0001:
-                valid = False
-                self.log.error("Unmatched origins ")
-
-            if self.ssd( self.refspace['spacing'], img.GetSpacing() ) > 0.0001:
-                valid= False
-                self.log.error("Unmatched spacing")
-
-            if self.ssd( self.refspace['direction'], img.GetDirection() ) > 0.0001:
-                valid=False
-                self.log.error("Unmatched direction")
-
-            if self.ssd( self.refspace['size'], img.shape) > 0.0001:
-                valid=False
-                self.log.error("Unmatched size")
-
-        if not valid:
-            self.log.error("Invalid input image")
-
         return(valid)
 
     def GetSegmentationMask(self, include):
@@ -512,38 +465,7 @@ class Quantsifier():
         #        stats += rstats
         return(statDat)
 
-    def SummarizeRegion(self, systemName, measureName, segRegion):
 
-        labelImage = self.labels[systemName][0]
-        labelNum = self.labels[systemName][1]
-        labelReg = self.labels[systemName][2]
-
-
-        maskView = itk.array_view_from_image(self.mask)
-        labelView = np.copy(itk.array_view_from_image(labelImage))
-        segView = itk.array_view_from_image(self.regionMasks[segRegion])
-        labelView[segView==0] = 0
-
-        measureView = None 
-        if measureName != "volume":
-            if segRegion in self.measures[measureName]['regions']:
-                measureView = itk.array_view_from_image( self.measures[measureName]['image'] )
-                if self.measures[measureName]['threshold'] > 0:
-                    labelView[measureView < self.measures[measureName]['threshold']] = 0
-            else:
-                measureName = None
-
-        statList = []
-        if not measureName is None:
-            #print(labelReg==segRegion)
-            #labelSubset = labelNum[labelReg==segRegion]
-            labelSubset = [x for (x,y) in zip(labelNum, labelReg) if y==segRegion]
-
-            statList = self.GetStats(labelView, labelSubset, measureView, measureName)
-            for i in range(len(statList)):
-                statList[i]['system']=systemName
-
-        return(statList)
 
     def GetStats(self, labelView, labelValues, measureView, measureName):
         self.log.debug("GetStats()")
@@ -649,25 +571,25 @@ def getFTDCInputs(directory):
 
     return(imgFiles)
 
-def getFTDCQuantsifier( imgFiles ):
-    q = Quantsifier()
-    imgs = imgFiles
-    for tag in imgFiles.keys():
-        if tag != "mat":
-            if len(imgFiles[tag])>0:
-                imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
-            else:
-                imgs[tag] = None
+#def getFTDCQuantsifier( imgFiles ):
+#    q = Quantsifier()
+#    imgs = imgFiles
+#    for tag in imgFiles.keys():
+#        if tag != "mat":
+#            if len(imgFiles[tag])>0:
+#                imgs[tag] = itk.imread(imgFiles[tag][0], itk.F)
+#            else:
+#                imgs[tag] = None
 
-    # set images
-    q.SetSegmentation(imgs['seg'])
-    q.SetMask(imgs['mask'])
+#    # set images
+#    q.SetSegmentation(imgs['seg'])
+#    q.SetMask(imgs['mask'])
 
-    # Add measure named 'thickness' for voxels with segmentation==2
-    q.AddMeasure(imgs['thickness'], 'thickness', [2])
-    q.AddMeasure(imgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
+#    # Add measure named 'thickness' for voxels with segmentation==2
+#    q.AddMeasure(imgs['thickness'], 'thickness', [2])
+#    q.AddMeasure(imgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
 
-    return(q)
+#    return(q)
 
 def bidsTagValue( tag ):
     parts = tag.split("-")
