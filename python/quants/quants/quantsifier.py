@@ -7,8 +7,8 @@ import os
 import logging
 import json
 import re
-from image_itk_ants import ants_2_sitk
-from image_itk_ants import sitk_2_ants
+from .image_itk_ants import ants_2_sitk
+from .image_itk_ants import sitk_2_ants
 import ants
 
 
