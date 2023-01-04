@@ -7,7 +7,8 @@ import os
 import logging
 import json
 import re
-import image_itk_ants as iia
+from image_itk_ants import ants_2_sitk
+from image_itk_ants import sitk_2_ants
 import ants
 
 
@@ -275,10 +276,10 @@ class Quantsifier():
 
     def LabelPropagation(self, mask, labels):
         """Propagate labels through a mask using ants"""
-        antsMask = iia.sitk_2_ants(mask)
-        antsLabels = iia.sitk_2_ants(labels)
+        antsMask = sitk_2_ants(mask)
+        antsLabels = sitk_2_ants(labels)
         antsPropLabels = ants.iMath_propagate_labels_through_mask(mask, labels, 3, 0)
-        propLabels = iia.ants_2_sitk(antsPropLabels)
+        propLabels = ants_2_sitk(antsPropLabels)
         return(propLabels)
 
 
