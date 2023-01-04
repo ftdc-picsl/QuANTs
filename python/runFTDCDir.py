@@ -72,9 +72,9 @@ def main():
     threads = getMyThreads( 'jtduda', args.output )
     logging.info("Started with nThreads="+str(threads))
 
-    threader = itk.MultiThreaderBase.New()
-    threader.SetGlobalDefaultNumberOfThreads(1)
-    logging.info("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
+    #threader = itk.MultiThreaderBase.New()
+    #threader.SetGlobalDefaultNumberOfThreads(1)
+    #logging.info("ITK Max Threads = " + str(threader.GetGlobalDefaultNumberOfThreads()))
 
     sitk.ProcessObject.SetGlobalDefaultNumberOfThreads(1)
     logging.info("SimpleITK Max Threads = " + str(sitk.ProcessObject.GetGlobalDefaultNumberOfThreads()))
