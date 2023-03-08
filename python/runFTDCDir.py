@@ -136,6 +136,12 @@ def main():
         resample.SetNumberOfThreads(1)
         resizedJacobian = resample.Execute(logJacobian)
 
+        opath = os.path.join( os.path.dirname(args.output), 'sub-'_bidsInfo[0], 'ses-'+bidsInfo[1] )
+        if not os.path.exists(opath):
+            os.makedirs(opath)
+        jacName = os.path.join( opath, 'sub-'+bidsInfo[0]+"_ses-"+bidsInfo[1]+"_subject_log_jacobian.nii.gz" )
+        sitk.WriteImage(resizedJacobian, jacName)
+
         print("logJacobian")
         print(sitk.GetArrayFromImage(resizedJacobian).shape)
         print("t1")
@@ -215,6 +221,7 @@ def main():
         q.SetOutputDirectory( os.path.dirname(oFile) )
         if 'LabelPropagation' in n:
             if n['LabelPropagation']=='True':
+                print("Add Label Propagation for: "+n['Identifier'])
                 prop_mask = sitk.Threshold(inputImgs['seg'], lower=2, upper=2)
                 q.AddLabelPropagation(n['Identifier'], prop_mask)
 
