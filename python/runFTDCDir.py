@@ -122,6 +122,11 @@ def main():
         txWarp = sitk.DisplacementFieldTransform( sitk.ReadImage(inputFiles['warp'][0]) )
         q.subjectMat = txMat
         q.subjectWarp = txWarp
+        q.subjectWarpName = inputFiles['warp'][0]
+        
+        ants_t1 = ants.image_read(inputFiles['t1'][0])
+        logJacobian = ants.create_jacobian_determinant_image(ants_t1, inputFiles['warp'][0], True, True)
+        logJacobian = ants_2_sitk(logJacobian)
 
         if 'thickness' in inputImgs:
             logging.info("Apply thickness masking using" + inputFiles['thickness'][0])
@@ -155,7 +160,7 @@ def main():
         # Add measure named 'thickness' for voxels with segmentation==2
         q.AddMeasure(inputImgs['thickness'], 'thickness', [2])
         q.AddMeasure(inputImgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
-
+        q.AddMeasure(logJacobian, 'subject_log_jacobian', [1,2,3,4,5,6])
 
         networks = quants.getNetworks(networkDir)
         def networkIdentifierFunc(x):

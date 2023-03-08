@@ -41,6 +41,7 @@ class Quantsifier():
 
         self.subjectMat = None
         self.subjectWarp = None
+        self.logJacobian = None
 
         self.labels = {}
         self.measures = {}
@@ -277,6 +278,11 @@ class Quantsifier():
         antsPropLabels = ants.iMath_propagate_labels_through_mask(mask, labels, 3, 0)
         propLabels = ants_2_sitk(antsPropLabels)
         return(propLabels)
+
+    def GetLogJacobian(self):
+        antsWarp = sitk_2_ants(self.subjectWarp)
+        self. logJacobian = ants.create_jacobian_determinant_image(self.segmentation, antsWarp, 0, 0, 0)
+
 
 
 
