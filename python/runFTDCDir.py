@@ -128,8 +128,16 @@ def main():
         ants_t1 = ants.image_read(inputFiles['t1'][0])
         logJacobian = ants.create_jacobian_determinant_image(ants_t1, inputFiles['warp'][0], True, True)
         logJacobian = quants.ants_2_sitk(logJacobian)
+
+        resample = sitk.ResampleImageFilter()
+        resample.SetReferenceImage( inputImgs['t1'] )
+        #resample.SetTransform( fullTx )
+        resample.SetInterpolator( sitk.sitkLinear )
+        resample.SetNumberOfThreads(1)
+        resizedJacobian = resample.Execute(logJacobian)
+
         print("logJacobian")
-        print(sitk.GetArrayFromImage(logJacobian).shape)
+        print(sitk.GetArrayFromImage(resizedJacobian).shape)
         print("t1")
         print(sitk.GetArrayFromImage(inputImgs['t1']).shape)
  
@@ -165,7 +173,7 @@ def main():
         # Add measure named 'thickness' for voxels with segmentation==2
         q.AddMeasure(inputImgs['thickness'], 'thickness', [2])
         q.AddMeasure(inputImgs['t1'], 'intensity0N4', [1,2,3,4,5,6])
-        q.AddMeasure(logJacobian, 'subject_log_jacobian', [1,2,3,4,5,6])
+        q.AddMeasure(resizedJacobian, 'subject_log_jacobian', [1,2,3,4,5,6])
 
         networks = quants.getNetworks(networkDir)
         def networkIdentifierFunc(x):
