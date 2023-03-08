@@ -129,7 +129,7 @@ def main():
         logJacobian = ants.create_jacobian_determinant_image(ants_t1, inputFiles['warp'][0], True, True)
         logJacobian = quants.ants_2_sitk(logJacobian)
         print("logJacobian")
-        print(logJacobian.shape)
+        print(sitk.GetArrayFromImage(logJacobian).shape)
 
         if 'thickness' in inputImgs:
             logging.info("Apply thickness masking using" + inputFiles['thickness'][0])
