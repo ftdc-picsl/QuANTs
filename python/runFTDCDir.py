@@ -137,16 +137,12 @@ def main():
         resample.SetNumberOfThreads(1)
         resizedJacobian = resample.Execute(logJacobian)
 
-        opath = os.path.join( os.path.dirname(args.output), 'sub-'+bidsInfo[0], 'ses-'+bidsInfo[1] )
-        if not os.path.exists(opath):
-            os.makedirs(opath)
-        jacName = os.path.join( opath, 'sub-'+bidsInfo[0]+"_ses-"+bidsInfo[1]+"_subject_log_jacobian.nii.gz" )
-        sitk.WriteImage(resizedJacobian, jacName)
+        #opath = os.path.join( os.path.dirname(args.output), 'sub-'+bidsInfo[0], 'ses-'+bidsInfo[1] )
+        #if not os.path.exists(opath):
+        #    os.makedirs(opath)
+        #jacName = os.path.join( opath, 'sub-'+bidsInfo[0]+"_ses-"+bidsInfo[1]+"_subject_log_jacobian.nii.gz" )
+        #sitk.WriteImage(resizedJacobian, jacName)
 
-        print("logJacobian")
-        print(sitk.GetArrayFromImage(resizedJacobian).shape)
-        print("t1")
-        print(sitk.GetArrayFromImage(inputImgs['t1']).shape)
  
         if 'thickness' in inputImgs:
             logging.info("Apply thickness masking using" + inputFiles['thickness'][0])
