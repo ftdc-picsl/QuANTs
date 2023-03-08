@@ -130,7 +130,9 @@ def main():
         logJacobian = quants.ants_2_sitk(logJacobian)
         print("logJacobian")
         print(sitk.GetArrayFromImage(logJacobian).shape)
-
+        print("t1")
+        print(sitk.GetArrayFromImage(inputImgs['t1']).shape)
+ 
         if 'thickness' in inputImgs:
             logging.info("Apply thickness masking using" + inputFiles['thickness'][0])
             thickMask = sitk.BinaryThreshold(inputImgs['thickness'], lowerThreshold=0.0001 )
