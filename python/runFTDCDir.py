@@ -136,7 +136,7 @@ def main():
         resample.SetNumberOfThreads(1)
         resizedJacobian = resample.Execute(logJacobian)
 
-        opath = os.path.join( os.path.dirname(args.output), 'sub-'_bidsInfo[0], 'ses-'+bidsInfo[1] )
+        opath = os.path.join( os.path.dirname(args.output), 'sub-'+bidsInfo[0], 'ses-'+bidsInfo[1] )
         if not os.path.exists(opath):
             os.makedirs(opath)
         jacName = os.path.join( opath, 'sub-'+bidsInfo[0]+"_ses-"+bidsInfo[1]+"_subject_log_jacobian.nii.gz" )
