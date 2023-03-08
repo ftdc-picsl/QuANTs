@@ -129,9 +129,10 @@ def main():
         logJacobian = ants.create_jacobian_determinant_image(ants_t1, inputFiles['warp'][0], True, True)
         logJacobian = quants.ants_2_sitk(logJacobian)
 
+        # Apply the mat to get jacobian into subject space 
         resample = sitk.ResampleImageFilter()
         resample.SetReferenceImage( inputImgs['t1'] )
-        #resample.SetTransform( fullTx )
+        resample.SetTransform( sitk.ReadTransform(inputFiles['mat'][0]) )
         resample.SetInterpolator( sitk.sitkLinear )
         resample.SetNumberOfThreads(1)
         resizedJacobian = resample.Execute(logJacobian)
