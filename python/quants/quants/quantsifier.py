@@ -41,6 +41,7 @@ class Quantsifier():
 
         self.subjectMat = None
         self.subjectWarp = None
+        self.subjectWarpName = None
         self.logJacobian = None
 
         self.labels = {}
@@ -280,11 +281,9 @@ class Quantsifier():
         return(propLabels)
 
     def GetLogJacobian(self):
-        antsWarp = sitk_2_ants(self.subjectWarp)
-        self. logJacobian = ants.create_jacobian_determinant_image(self.segmentation, antsWarp, 0, 0, 0)
-
-
-
+        ants_seg = sitk_2_ants(self.segmentation)
+        antsLogJacobian = ants.create_jacobian_determinant_image(ants_seg, self.subjectWarpName, True, True)
+        self.logJacobian = ants_2_sitk(antsLogJacobian)
 
     def ApplyNetworkMasking(self, networkName, labels):
 
