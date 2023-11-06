@@ -302,8 +302,15 @@ class Quantsifier():
 
                 mask = self.GetSegmentationMask(tissues)
                 rImg = self.GetSingleLabel(origLabels, int(lbl)) 
+                rImgSum = np.sum(sitk.GetArrayViewFromImage(rImg))/float(lbl)
+
                 maskedLabel = sitk.Multiply(rImg, mask)
+                maskedSum = np.sum(sitk.GetArrayViewFromImage(maskedLabel))/float(lbl)
+
                 maskedLabels = sitk.Add(maskedLabels, maskedLabel)
+
+                print(rImgSum)
+                print(maskedSum)
 
         if networkName in self.label_propagation:
             self.log.info("Apply label propagation for "+networkName+"")
