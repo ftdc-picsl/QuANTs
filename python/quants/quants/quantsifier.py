@@ -385,6 +385,7 @@ class Quantsifier():
                     resample.SetInterpolator( sitk.sitkLabelGaussian )
                     resample.SetNumberOfThreads(1)
 
+                    self.log.info("Warping atlas labels into subject space")
                     subLabels = resample.Execute(nImg)
                     maskedLabels = self.ApplyNetworkMasking(network, subLabels)
                     if self.saveImages:
