@@ -287,7 +287,7 @@ class Quantsifier():
 
     def ApplyNetworkMasking(self, networkName, labels):
 
-        #print("Masking "+networkName)
+        self.log.info("Masking "+networkName)
         nDef = self.networks[networkName][0]
         origLabels = sitk.Cast(labels, sitk.sitkUInt32)
         maskedLabels = origLabels * 0
@@ -296,7 +296,7 @@ class Quantsifier():
             lbl = r['ImageID']
             if 'Masking' in r:
                 print("Masking "+r+" with "+str(r['Masking']['Include']))
-                
+
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 mask = self.GetSegmentationMask(tissues)
                 rImg = self.GetSingleLabel(origLabels, int(lbl)) 
