@@ -295,7 +295,8 @@ class Quantsifier():
         for r in nDef['ROI']:
             lbl = r['ImageID']
             if 'Masking' in r:
-                print("Masking "+r+" with "+str(r['Masking']['Include']))
+                tissue_list = ",".join(r['Masking']['Include'])
+                print("Masking "+r+" with: "+tissue_list)
 
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 mask = self.GetSegmentationMask(tissues)
@@ -333,7 +334,6 @@ class Quantsifier():
             nTissues = self.networks[network][2]
 
             self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
-            self.log.info("Line of text")
             self.log.info("nThreads"+str(self.getMyThreads()))
             subLabels = None
             maskedLabels = None
