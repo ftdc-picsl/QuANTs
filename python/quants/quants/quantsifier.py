@@ -295,6 +295,8 @@ class Quantsifier():
         for r in nDef['ROI']:
             lbl = r['ImageID']
             if 'Masking' in r:
+                print("Masking "+r+" with "+str(r['Masking']['Include']))
+                
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 mask = self.GetSegmentationMask(tissues)
                 rImg = self.GetSingleLabel(origLabels, int(lbl)) 
