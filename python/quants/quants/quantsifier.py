@@ -296,7 +296,7 @@ class Quantsifier():
             lbl = r['ImageID']
             if 'Masking' in r:
                 tissue_list = ",".join(r['Masking']['Include'])
-                print("Masking "+r+" with: "+tissue_list)
+                print("Masking "+r+" with: "+str(tissue_list))
 
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 mask = self.GetSegmentationMask(tissues)
