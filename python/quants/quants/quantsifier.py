@@ -295,11 +295,10 @@ class Quantsifier():
         for r in nDef['ROI']:
             lbl = r['ImageID']
             if 'Masking' in r:
-                print("Masking "+r+" with: "+str(tissue_list))
 
                 tissues = [ self.tissueNames[x] for x in r['Masking']['Include'] ] 
                 print("Masking "+r+" with: "+str(",".join(tissues)))
-                
+
                 mask = self.GetSegmentationMask(tissues)
                 rImg = self.GetSingleLabel(origLabels, int(lbl)) 
                 maskedLabel = sitk.Multiply(rImg, mask)
