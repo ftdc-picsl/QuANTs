@@ -333,6 +333,7 @@ class Quantsifier():
             nTissues = self.networks[network][2]
 
             self.log.info("Network: "+nDef['Identifier']+" in space: "+nDef['TemplateSpace'])
+            self.log.info("Line of text")
             self.log.info("nThreads"+str(self.getMyThreads()))
             subLabels = None
             maskedLabels = None
@@ -355,6 +356,7 @@ class Quantsifier():
 
             # Labels are in an arbitrary space
             else:
+                self.log.info("Warping atlas labels into subject space")
                 txNameGlob = os.path.join(self.templateDirectory, "*"+"from-"+nDef['TemplateSpace']+"*.h5")
                 txName=None
                 txNames = glob.glob( txNameGlob )
