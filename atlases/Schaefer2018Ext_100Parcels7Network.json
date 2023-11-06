@@ -1,7 +1,7 @@
 {
   "Name": "Schaefer2018Ext_100Parcels7Network",
   "Identifier": "Schaefer2018Ext_100Parcels7Network",
-  "Filename": "tpl-MNI152NLin2009cAsym_atlas-Schaefer2018Ext_100Parcels7Network_res-01_dseg.nii.gz",
+  "Filename": "tpl-MNI152NLin2009cAsym_res-01_atlas-Schaefer2018Ext_desc-100Parcels7NetworksLPS_dseg.nii.gz",
   "Version": "1",
   "Release": "1",
   "Git-Repo": "",
