@@ -24,8 +24,13 @@ def parsePath( path ):
     sesTag = dirParts[1]
     subTag = os.path.split(dirParts[0])[1]
 
-    id = subTag.split('-')[1]
-    ses = sesTag.split('-')[1]
+    id = subTag
+    ses = sesTag
+
+    if "sub-" in id:
+        id = id.split('-')[1]
+    if "ses-" in ses:
+        ses = ses.split('-')[1]
 
     return((id,ses))
 
