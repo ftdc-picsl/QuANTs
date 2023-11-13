@@ -110,6 +110,10 @@ def main():
 
     bidsInfo = parsePath(dir)
     inputFiles =  quants.getFTDCInputs(dir)
+    print(inputFiles)
+
+
+
     inputImgs = {}
     for tag in inputFiles.keys():
         if tag != 'mat':
