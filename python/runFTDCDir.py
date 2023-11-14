@@ -206,8 +206,8 @@ def main():
                             seg_name = glob.glob(os.path.join(seg_dir, n['Filename']))
                             if len(seg_name)>0:
                                 if os.path.exists(seg_name[0]):
-                                    nativeLabelName = seg_name[0]
-                                    logging.info("Using NATIVE segmentation: "+str(nativeLabelName))
+                                    nativeLabelName = seg_name
+                                    logging.info("Using NATIVE segmentation: "+str(nativeLabelName[0]))
                                     break
 
                 if len(nativeLabelName)==1:
