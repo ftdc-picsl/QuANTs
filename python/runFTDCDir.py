@@ -200,7 +200,7 @@ def main():
             if templateSpace=='NATIVE':
                 #logging.info("Looking for NATIVE labels matching: "+n['Filename'])
                 nativeLabelName = glob.glob( os.path.join(dir, n['Filename']))
-                if len(nativeLabelName==0):
+                if len(nativeLabelName)==0:
                     if args.seg_dirs is not None:
                         for seg_dir in args.seg_dirs:
                             seg_name = glob.glob(os.path.join(seg_dir, n['Filename']))
