@@ -615,8 +615,8 @@ def getFTDCInputs(directory):
             "n4": "*BrainSegmentation0N4.nii.gz",
             "gmp": "*BrainSegmentationPosteriors2.nii.gz",
             "thickness": "*CorticalThickness.nii.gz",
-            "warp" : "*_TemplateToSubject0Warp.nii.gz",
-            "mat" : "*_TemplateToSubject1GenericAffine.mat"
+            "warp" : "*TemplateToSubject0Warp.nii.gz",
+            "mat" : "*TemplateToSubject1GenericAffine.mat"
     }
 
     imgFiles = suffix
