@@ -66,6 +66,7 @@ def main():
     parser.add_argument("--atlas_dir", type=str, required=True, help="Directory with label system definition files (json)") 
     parser.add_argument("--atlas_images", type=str, required=True, help="Directory with label sytem images")
     parser.add_argument("--output", type=str, required=True, help="Output filename")
+    parser.add_argument("--seg_dirs", type=str, required=False, nargs='+', help="Directories to search for segmentations")
     args = parser.parse_args()
     print(args)
 
@@ -206,7 +207,7 @@ def main():
                     q.AddNetwork(n,img)
                 else:
                     if len(nativeLabelName)==0:
-                        logging.warning("No NATIVE label image found")
+                        logging.warning("No NATIVE label image found for "+n['Identifier']))
                     else:
                         logging.warning(n['Identifier']+" does not have unique label image")
                         for nm in nativeLabelName:
