@@ -207,7 +207,7 @@ def main():
                     q.AddNetwork(n,img)
                 else:
                     if len(nativeLabelName)==0:
-                        logging.warning("No NATIVE label image found for "+n['Identifier']))
+                        logging.warning("No NATIVE label image found for "+n['Identifier'])
                     else:
                         logging.warning(n['Identifier']+" does not have unique label image")
                         for nm in nativeLabelName:
